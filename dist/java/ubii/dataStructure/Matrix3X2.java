@@ -20,38 +20,44 @@ public final class Matrix3X2 {
 
     /**
      * <code>double m00 = 1;</code>
+     * @return The m00.
      */
     double getM00();
 
     /**
      * <code>double m01 = 2;</code>
+     * @return The m01.
      */
     double getM01();
 
     /**
      * <code>double m10 = 3;</code>
+     * @return The m10.
      */
     double getM10();
 
     /**
      * <code>double m11 = 4;</code>
+     * @return The m11.
      */
     double getM11();
 
     /**
      * <code>double m20 = 5;</code>
+     * @return The m20.
      */
     double getM20();
 
     /**
      * <code>double m21 = 6;</code>
+     * @return The m21.
      */
     double getM21();
   }
   /**
    * Protobuf type {@code ubii.dataStructure.Matrix3x2}
    */
-  public  static final class Matrix3x2 extends
+  public static final class Matrix3x2 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Matrix3x2)
       Matrix3x2OrBuilder {
@@ -61,87 +67,15 @@ public final class Matrix3X2 {
       super(builder);
     }
     private Matrix3x2() {
-      m00_ = 0D;
-      m01_ = 0D;
-      m10_ = 0D;
-      m11_ = 0D;
-      m20_ = 0D;
-      m21_ = 0D;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Matrix3x2();
     }
-    private Matrix3x2(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 9: {
 
-              m00_ = input.readDouble();
-              break;
-            }
-            case 17: {
-
-              m01_ = input.readDouble();
-              break;
-            }
-            case 25: {
-
-              m10_ = input.readDouble();
-              break;
-            }
-            case 33: {
-
-              m11_ = input.readDouble();
-              break;
-            }
-            case 41: {
-
-              m20_ = input.readDouble();
-              break;
-            }
-            case 49: {
-
-              m21_ = input.readDouble();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.dataStructure.Matrix3X2.internal_static_ubii_dataStructure_Matrix3x2_descriptor;
@@ -156,55 +90,67 @@ public final class Matrix3X2 {
     }
 
     public static final int M00_FIELD_NUMBER = 1;
-    private double m00_;
+    private double m00_ = 0D;
     /**
      * <code>double m00 = 1;</code>
+     * @return The m00.
      */
+    @java.lang.Override
     public double getM00() {
       return m00_;
     }
 
     public static final int M01_FIELD_NUMBER = 2;
-    private double m01_;
+    private double m01_ = 0D;
     /**
      * <code>double m01 = 2;</code>
+     * @return The m01.
      */
+    @java.lang.Override
     public double getM01() {
       return m01_;
     }
 
     public static final int M10_FIELD_NUMBER = 3;
-    private double m10_;
+    private double m10_ = 0D;
     /**
      * <code>double m10 = 3;</code>
+     * @return The m10.
      */
+    @java.lang.Override
     public double getM10() {
       return m10_;
     }
 
     public static final int M11_FIELD_NUMBER = 4;
-    private double m11_;
+    private double m11_ = 0D;
     /**
      * <code>double m11 = 4;</code>
+     * @return The m11.
      */
+    @java.lang.Override
     public double getM11() {
       return m11_;
     }
 
     public static final int M20_FIELD_NUMBER = 5;
-    private double m20_;
+    private double m20_ = 0D;
     /**
      * <code>double m20 = 5;</code>
+     * @return The m20.
      */
+    @java.lang.Override
     public double getM20() {
       return m20_;
     }
 
     public static final int M21_FIELD_NUMBER = 6;
-    private double m21_;
+    private double m21_ = 0D;
     /**
      * <code>double m21 = 6;</code>
+     * @return The m21.
      */
+    @java.lang.Override
     public double getM21() {
       return m21_;
     }
@@ -223,25 +169,25 @@ public final class Matrix3X2 {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (m00_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(m00_) != 0) {
         output.writeDouble(1, m00_);
       }
-      if (m01_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(m01_) != 0) {
         output.writeDouble(2, m01_);
       }
-      if (m10_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(m10_) != 0) {
         output.writeDouble(3, m10_);
       }
-      if (m11_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(m11_) != 0) {
         output.writeDouble(4, m11_);
       }
-      if (m20_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(m20_) != 0) {
         output.writeDouble(5, m20_);
       }
-      if (m21_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(m21_) != 0) {
         output.writeDouble(6, m21_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -250,31 +196,31 @@ public final class Matrix3X2 {
       if (size != -1) return size;
 
       size = 0;
-      if (m00_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(m00_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(1, m00_);
       }
-      if (m01_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(m01_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, m01_);
       }
-      if (m10_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(m10_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, m10_);
       }
-      if (m11_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(m11_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, m11_);
       }
-      if (m20_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(m20_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(5, m20_);
       }
-      if (m21_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(m21_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(6, m21_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -289,33 +235,26 @@ public final class Matrix3X2 {
       }
       ubii.dataStructure.Matrix3X2.Matrix3x2 other = (ubii.dataStructure.Matrix3X2.Matrix3x2) obj;
 
-      boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM00())
-          == java.lang.Double.doubleToLongBits(
-              other.getM00()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM01())
-          == java.lang.Double.doubleToLongBits(
-              other.getM01()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM10())
-          == java.lang.Double.doubleToLongBits(
-              other.getM10()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM11())
-          == java.lang.Double.doubleToLongBits(
-              other.getM11()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM20())
-          == java.lang.Double.doubleToLongBits(
-              other.getM20()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM21())
-          == java.lang.Double.doubleToLongBits(
-              other.getM21()));
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (java.lang.Double.doubleToLongBits(getM00())
+          != java.lang.Double.doubleToLongBits(
+              other.getM00())) return false;
+      if (java.lang.Double.doubleToLongBits(getM01())
+          != java.lang.Double.doubleToLongBits(
+              other.getM01())) return false;
+      if (java.lang.Double.doubleToLongBits(getM10())
+          != java.lang.Double.doubleToLongBits(
+              other.getM10())) return false;
+      if (java.lang.Double.doubleToLongBits(getM11())
+          != java.lang.Double.doubleToLongBits(
+              other.getM11())) return false;
+      if (java.lang.Double.doubleToLongBits(getM20())
+          != java.lang.Double.doubleToLongBits(
+              other.getM20())) return false;
+      if (java.lang.Double.doubleToLongBits(getM21())
+          != java.lang.Double.doubleToLongBits(
+              other.getM21())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -343,7 +282,7 @@ public final class Matrix3X2 {
       hash = (37 * hash) + M21_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getM21()));
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -460,34 +399,24 @@ public final class Matrix3X2 {
 
       // Construct using ubii.dataStructure.Matrix3X2.Matrix3x2.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         m00_ = 0D;
-
         m01_ = 0D;
-
         m10_ = 0D;
-
         m11_ = 0D;
-
         m20_ = 0D;
-
         m21_ = 0D;
-
         return this;
       }
 
@@ -514,48 +443,33 @@ public final class Matrix3X2 {
       @java.lang.Override
       public ubii.dataStructure.Matrix3X2.Matrix3x2 buildPartial() {
         ubii.dataStructure.Matrix3X2.Matrix3x2 result = new ubii.dataStructure.Matrix3X2.Matrix3x2(this);
-        result.m00_ = m00_;
-        result.m01_ = m01_;
-        result.m10_ = m10_;
-        result.m11_ = m11_;
-        result.m20_ = m20_;
-        result.m21_ = m21_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.dataStructure.Matrix3X2.Matrix3x2 result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.m00_ = m00_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.m01_ = m01_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.m10_ = m10_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.m11_ = m11_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.m20_ = m20_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.m21_ = m21_;
+        }
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.Matrix3X2.Matrix3x2) {
@@ -586,7 +500,7 @@ public final class Matrix3X2 {
         if (other.getM21() != 0D) {
           setM21(other.getM21());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -601,41 +515,91 @@ public final class Matrix3X2 {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.dataStructure.Matrix3X2.Matrix3x2 parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9: {
+                m00_ = input.readDouble();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 9
+              case 17: {
+                m01_ = input.readDouble();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 17
+              case 25: {
+                m10_ = input.readDouble();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 25
+              case 33: {
+                m11_ = input.readDouble();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 33
+              case 41: {
+                m20_ = input.readDouble();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 41
+              case 49: {
+                m21_ = input.readDouble();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 49
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.dataStructure.Matrix3X2.Matrix3x2) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private double m00_ ;
       /**
        * <code>double m00 = 1;</code>
+       * @return The m00.
        */
+      @java.lang.Override
       public double getM00() {
         return m00_;
       }
       /**
        * <code>double m00 = 1;</code>
+       * @param value The m00 to set.
+       * @return This builder for chaining.
        */
       public Builder setM00(double value) {
-        
+
         m00_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>double m00 = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM00() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         m00_ = 0D;
         onChanged();
         return this;
@@ -644,24 +608,30 @@ public final class Matrix3X2 {
       private double m01_ ;
       /**
        * <code>double m01 = 2;</code>
+       * @return The m01.
        */
+      @java.lang.Override
       public double getM01() {
         return m01_;
       }
       /**
        * <code>double m01 = 2;</code>
+       * @param value The m01 to set.
+       * @return This builder for chaining.
        */
       public Builder setM01(double value) {
-        
+
         m01_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
        * <code>double m01 = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM01() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         m01_ = 0D;
         onChanged();
         return this;
@@ -670,24 +640,30 @@ public final class Matrix3X2 {
       private double m10_ ;
       /**
        * <code>double m10 = 3;</code>
+       * @return The m10.
        */
+      @java.lang.Override
       public double getM10() {
         return m10_;
       }
       /**
        * <code>double m10 = 3;</code>
+       * @param value The m10 to set.
+       * @return This builder for chaining.
        */
       public Builder setM10(double value) {
-        
+
         m10_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
        * <code>double m10 = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM10() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         m10_ = 0D;
         onChanged();
         return this;
@@ -696,24 +672,30 @@ public final class Matrix3X2 {
       private double m11_ ;
       /**
        * <code>double m11 = 4;</code>
+       * @return The m11.
        */
+      @java.lang.Override
       public double getM11() {
         return m11_;
       }
       /**
        * <code>double m11 = 4;</code>
+       * @param value The m11 to set.
+       * @return This builder for chaining.
        */
       public Builder setM11(double value) {
-        
+
         m11_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
        * <code>double m11 = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM11() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         m11_ = 0D;
         onChanged();
         return this;
@@ -722,24 +704,30 @@ public final class Matrix3X2 {
       private double m20_ ;
       /**
        * <code>double m20 = 5;</code>
+       * @return The m20.
        */
+      @java.lang.Override
       public double getM20() {
         return m20_;
       }
       /**
        * <code>double m20 = 5;</code>
+       * @param value The m20 to set.
+       * @return This builder for chaining.
        */
       public Builder setM20(double value) {
-        
+
         m20_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
        * <code>double m20 = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM20() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         m20_ = 0D;
         onChanged();
         return this;
@@ -748,24 +736,30 @@ public final class Matrix3X2 {
       private double m21_ ;
       /**
        * <code>double m21 = 6;</code>
+       * @return The m21.
        */
+      @java.lang.Override
       public double getM21() {
         return m21_;
       }
       /**
        * <code>double m21 = 6;</code>
+       * @param value The m21 to set.
+       * @return This builder for chaining.
        */
       public Builder setM21(double value) {
-        
+
         m21_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
        * <code>double m21 = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM21() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         m21_ = 0D;
         onChanged();
         return this;
@@ -773,7 +767,7 @@ public final class Matrix3X2 {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -803,7 +797,18 @@ public final class Matrix3X2 {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Matrix3x2(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -842,18 +847,10 @@ public final class Matrix3X2 {
       "\001(\001\022\013\n\003m01\030\002 \001(\001\022\013\n\003m10\030\003 \001(\001\022\013\n\003m11\030\004 \001" +
       "(\001\022\013\n\003m20\030\005 \001(\001\022\013\n\003m21\030\006 \001(\001b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_dataStructure_Matrix3x2_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_Matrix3x2_fieldAccessorTable = new

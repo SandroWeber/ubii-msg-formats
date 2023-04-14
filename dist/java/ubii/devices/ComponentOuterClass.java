@@ -20,107 +20,133 @@ public final class ComponentOuterClass {
 
     /**
      * <code>string topic = 1;</code>
+     * @return The topic.
      */
     java.lang.String getTopic();
     /**
      * <code>string topic = 1;</code>
+     * @return The bytes for topic.
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
      * <code>string message_format = 2;</code>
+     * @return The messageFormat.
      */
     java.lang.String getMessageFormat();
     /**
      * <code>string message_format = 2;</code>
+     * @return The bytes for messageFormat.
      */
     com.google.protobuf.ByteString
         getMessageFormatBytes();
 
     /**
      * <code>.ubii.devices.Component.IOType io_type = 3;</code>
+     * @return The enum numeric value on the wire for ioType.
      */
     int getIoTypeValue();
     /**
      * <code>.ubii.devices.Component.IOType io_type = 3;</code>
+     * @return The ioType.
      */
     ubii.devices.ComponentOuterClass.Component.IOType getIoType();
 
     /**
      * <code>string device_id = 4;</code>
+     * @return The deviceId.
      */
     java.lang.String getDeviceId();
     /**
      * <code>string device_id = 4;</code>
+     * @return The bytes for deviceId.
      */
     com.google.protobuf.ByteString
         getDeviceIdBytes();
 
     /**
      * <code>repeated string tags = 5;</code>
+     * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
      * <code>repeated string tags = 5;</code>
+     * @return The count of tags.
      */
     int getTagsCount();
     /**
      * <code>repeated string tags = 5;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
      * <code>repeated string tags = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
 
     /**
      * <code>string description = 6;</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 6;</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
      * <code>string id = 7;</code>
+     * @return The id.
      */
     java.lang.String getId();
     /**
      * <code>string id = 7;</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
      * <code>string name = 8;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 8;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>repeated string notify_condition_ids = 9;</code>
+     * @return A list containing the notifyConditionIds.
      */
     java.util.List<java.lang.String>
         getNotifyConditionIdsList();
     /**
      * <code>repeated string notify_condition_ids = 9;</code>
+     * @return The count of notifyConditionIds.
      */
     int getNotifyConditionIdsCount();
     /**
      * <code>repeated string notify_condition_ids = 9;</code>
+     * @param index The index of the element to return.
+     * @return The notifyConditionIds at the given index.
      */
     java.lang.String getNotifyConditionIds(int index);
     /**
      * <code>repeated string notify_condition_ids = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the notifyConditionIds at the given index.
      */
     com.google.protobuf.ByteString
         getNotifyConditionIdsBytes(int index);
@@ -128,7 +154,7 @@ public final class ComponentOuterClass {
   /**
    * Protobuf type {@code ubii.devices.Component}
    */
-  public  static final class Component extends
+  public static final class Component extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.Component)
       ComponentOrBuilder {
@@ -142,122 +168,22 @@ public final class ComponentOuterClass {
       messageFormat_ = "";
       ioType_ = 0;
       deviceId_ = "";
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       description_ = "";
       id_ = "";
       name_ = "";
-      notifyConditionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      notifyConditionIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Component();
     }
-    private Component(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
 
-              topic_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              messageFormat_ = s;
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              ioType_ = rawValue;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              deviceId_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              tags_.add(s);
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                notifyConditionIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000100;
-              }
-              notifyConditionIds_.add(s);
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-          tags_ = tags_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-          notifyConditionIds_ = notifyConditionIds_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.devices.ComponentOuterClass.internal_static_ubii_devices_Component_descriptor;
@@ -306,6 +232,8 @@ public final class ComponentOuterClass {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -313,6 +241,10 @@ public final class ComponentOuterClass {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static IOType forNumber(int value) {
         switch (value) {
           case 0: return PUBLISHER;
@@ -335,6 +267,10 @@ public final class ComponentOuterClass {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -369,12 +305,14 @@ public final class ComponentOuterClass {
       // @@protoc_insertion_point(enum_scope:ubii.devices.Component.IOType)
     }
 
-    private int bitField0_;
     public static final int TOPIC_FIELD_NUMBER = 1;
-    private volatile java.lang.Object topic_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object topic_ = "";
     /**
      * <code>string topic = 1;</code>
+     * @return The topic.
      */
+    @java.lang.Override
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
       if (ref instanceof java.lang.String) {
@@ -389,7 +327,9 @@ public final class ComponentOuterClass {
     }
     /**
      * <code>string topic = 1;</code>
+     * @return The bytes for topic.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTopicBytes() {
       java.lang.Object ref = topic_;
@@ -405,10 +345,13 @@ public final class ComponentOuterClass {
     }
 
     public static final int MESSAGE_FORMAT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object messageFormat_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object messageFormat_ = "";
     /**
      * <code>string message_format = 2;</code>
+     * @return The messageFormat.
      */
+    @java.lang.Override
     public java.lang.String getMessageFormat() {
       java.lang.Object ref = messageFormat_;
       if (ref instanceof java.lang.String) {
@@ -423,7 +366,9 @@ public final class ComponentOuterClass {
     }
     /**
      * <code>string message_format = 2;</code>
+     * @return The bytes for messageFormat.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMessageFormatBytes() {
       java.lang.Object ref = messageFormat_;
@@ -439,27 +384,31 @@ public final class ComponentOuterClass {
     }
 
     public static final int IO_TYPE_FIELD_NUMBER = 3;
-    private int ioType_;
+    private int ioType_ = 0;
     /**
      * <code>.ubii.devices.Component.IOType io_type = 3;</code>
+     * @return The enum numeric value on the wire for ioType.
      */
-    public int getIoTypeValue() {
+    @java.lang.Override public int getIoTypeValue() {
       return ioType_;
     }
     /**
      * <code>.ubii.devices.Component.IOType io_type = 3;</code>
+     * @return The ioType.
      */
-    public ubii.devices.ComponentOuterClass.Component.IOType getIoType() {
-      @SuppressWarnings("deprecation")
-      ubii.devices.ComponentOuterClass.Component.IOType result = ubii.devices.ComponentOuterClass.Component.IOType.valueOf(ioType_);
+    @java.lang.Override public ubii.devices.ComponentOuterClass.Component.IOType getIoType() {
+      ubii.devices.ComponentOuterClass.Component.IOType result = ubii.devices.ComponentOuterClass.Component.IOType.forNumber(ioType_);
       return result == null ? ubii.devices.ComponentOuterClass.Component.IOType.UNRECOGNIZED : result;
     }
 
     public static final int DEVICE_ID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object deviceId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object deviceId_ = "";
     /**
      * <code>string device_id = 4;</code>
+     * @return The deviceId.
      */
+    @java.lang.Override
     public java.lang.String getDeviceId() {
       java.lang.Object ref = deviceId_;
       if (ref instanceof java.lang.String) {
@@ -474,7 +423,9 @@ public final class ComponentOuterClass {
     }
     /**
      * <code>string device_id = 4;</code>
+     * @return The bytes for deviceId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDeviceIdBytes() {
       java.lang.Object ref = deviceId_;
@@ -490,9 +441,12 @@ public final class ComponentOuterClass {
     }
 
     public static final int TAGS_FIELD_NUMBER = 5;
-    private com.google.protobuf.LazyStringList tags_;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      * <code>repeated string tags = 5;</code>
+     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -500,18 +454,23 @@ public final class ComponentOuterClass {
     }
     /**
      * <code>repeated string tags = 5;</code>
+     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
      * <code>repeated string tags = 5;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
     /**
      * <code>repeated string tags = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -519,10 +478,13 @@ public final class ComponentOuterClass {
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 6;
-    private volatile java.lang.Object description_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      * <code>string description = 6;</code>
+     * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -537,7 +499,9 @@ public final class ComponentOuterClass {
     }
     /**
      * <code>string description = 6;</code>
+     * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -553,10 +517,13 @@ public final class ComponentOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 7;
-    private volatile java.lang.Object id_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      * <code>string id = 7;</code>
+     * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -571,7 +538,9 @@ public final class ComponentOuterClass {
     }
     /**
      * <code>string id = 7;</code>
+     * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -587,10 +556,13 @@ public final class ComponentOuterClass {
     }
 
     public static final int NAME_FIELD_NUMBER = 8;
-    private volatile java.lang.Object name_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      * <code>string name = 8;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -605,7 +577,9 @@ public final class ComponentOuterClass {
     }
     /**
      * <code>string name = 8;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -621,9 +595,12 @@ public final class ComponentOuterClass {
     }
 
     public static final int NOTIFY_CONDITION_IDS_FIELD_NUMBER = 9;
-    private com.google.protobuf.LazyStringList notifyConditionIds_;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList notifyConditionIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      * <code>repeated string notify_condition_ids = 9;</code>
+     * @return A list containing the notifyConditionIds.
      */
     public com.google.protobuf.ProtocolStringList
         getNotifyConditionIdsList() {
@@ -631,18 +608,23 @@ public final class ComponentOuterClass {
     }
     /**
      * <code>repeated string notify_condition_ids = 9;</code>
+     * @return The count of notifyConditionIds.
      */
     public int getNotifyConditionIdsCount() {
       return notifyConditionIds_.size();
     }
     /**
      * <code>repeated string notify_condition_ids = 9;</code>
+     * @param index The index of the element to return.
+     * @return The notifyConditionIds at the given index.
      */
     public java.lang.String getNotifyConditionIds(int index) {
       return notifyConditionIds_.get(index);
     }
     /**
      * <code>repeated string notify_condition_ids = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the notifyConditionIds at the given index.
      */
     public com.google.protobuf.ByteString
         getNotifyConditionIdsBytes(int index) {
@@ -663,34 +645,34 @@ public final class ComponentOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTopicBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
       }
-      if (!getMessageFormatBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(messageFormat_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, messageFormat_);
       }
       if (ioType_ != ubii.devices.ComponentOuterClass.Component.IOType.PUBLISHER.getNumber()) {
         output.writeEnum(3, ioType_);
       }
-      if (!getDeviceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deviceId_);
       }
       for (int i = 0; i < tags_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tags_.getRaw(i));
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, id_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, name_);
       }
       for (int i = 0; i < notifyConditionIds_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, notifyConditionIds_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -699,17 +681,17 @@ public final class ComponentOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTopicBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
       }
-      if (!getMessageFormatBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(messageFormat_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, messageFormat_);
       }
       if (ioType_ != ubii.devices.ComponentOuterClass.Component.IOType.PUBLISHER.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, ioType_);
       }
-      if (!getDeviceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deviceId_);
       }
       {
@@ -720,13 +702,13 @@ public final class ComponentOuterClass {
         size += dataSize;
         size += 1 * getTagsList().size();
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, id_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, name_);
       }
       {
@@ -737,7 +719,7 @@ public final class ComponentOuterClass {
         size += dataSize;
         size += 1 * getNotifyConditionIdsList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -752,26 +734,25 @@ public final class ComponentOuterClass {
       }
       ubii.devices.ComponentOuterClass.Component other = (ubii.devices.ComponentOuterClass.Component) obj;
 
-      boolean result = true;
-      result = result && getTopic()
-          .equals(other.getTopic());
-      result = result && getMessageFormat()
-          .equals(other.getMessageFormat());
-      result = result && ioType_ == other.ioType_;
-      result = result && getDeviceId()
-          .equals(other.getDeviceId());
-      result = result && getTagsList()
-          .equals(other.getTagsList());
-      result = result && getDescription()
-          .equals(other.getDescription());
-      result = result && getId()
-          .equals(other.getId());
-      result = result && getName()
-          .equals(other.getName());
-      result = result && getNotifyConditionIdsList()
-          .equals(other.getNotifyConditionIdsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getTopic()
+          .equals(other.getTopic())) return false;
+      if (!getMessageFormat()
+          .equals(other.getMessageFormat())) return false;
+      if (ioType_ != other.ioType_) return false;
+      if (!getDeviceId()
+          .equals(other.getDeviceId())) return false;
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getNotifyConditionIdsList()
+          .equals(other.getNotifyConditionIdsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -803,7 +784,7 @@ public final class ComponentOuterClass {
         hash = (37 * hash) + NOTIFY_CONDITION_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getNotifyConditionIdsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -920,40 +901,29 @@ public final class ComponentOuterClass {
 
       // Construct using ubii.devices.ComponentOuterClass.Component.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         topic_ = "";
-
         messageFormat_ = "";
-
         ioType_ = 0;
-
         deviceId_ = "";
-
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        tags_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         description_ = "";
-
         id_ = "";
-
         name_ = "";
-
-        notifyConditionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        notifyConditionIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -980,62 +950,44 @@ public final class ComponentOuterClass {
       @java.lang.Override
       public ubii.devices.ComponentOuterClass.Component buildPartial() {
         ubii.devices.ComponentOuterClass.Component result = new ubii.devices.ComponentOuterClass.Component(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.topic_ = topic_;
-        result.messageFormat_ = messageFormat_;
-        result.ioType_ = ioType_;
-        result.deviceId_ = deviceId_;
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.tags_ = tags_;
-        result.description_ = description_;
-        result.id_ = id_;
-        result.name_ = name_;
-        if (((bitField0_ & 0x00000100) == 0x00000100)) {
-          notifyConditionIds_ = notifyConditionIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000100);
-        }
-        result.notifyConditionIds_ = notifyConditionIds_;
-        result.bitField0_ = to_bitField0_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.devices.ComponentOuterClass.Component result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.topic_ = topic_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.messageFormat_ = messageFormat_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.ioType_ = ioType_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.deviceId_ = deviceId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          tags_.makeImmutable();
+          result.tags_ = tags_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          notifyConditionIds_.makeImmutable();
+          result.notifyConditionIds_ = notifyConditionIds_;
+        }
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.devices.ComponentOuterClass.Component) {
@@ -1050,10 +1002,12 @@ public final class ComponentOuterClass {
         if (other == ubii.devices.ComponentOuterClass.Component.getDefaultInstance()) return this;
         if (!other.getTopic().isEmpty()) {
           topic_ = other.topic_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getMessageFormat().isEmpty()) {
           messageFormat_ = other.messageFormat_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.ioType_ != 0) {
@@ -1061,12 +1015,13 @@ public final class ComponentOuterClass {
         }
         if (!other.getDeviceId().isEmpty()) {
           deviceId_ = other.deviceId_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ |= 0x00000010;
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -1075,27 +1030,30 @@ public final class ComponentOuterClass {
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         if (!other.notifyConditionIds_.isEmpty()) {
           if (notifyConditionIds_.isEmpty()) {
             notifyConditionIds_ = other.notifyConditionIds_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ |= 0x00000100;
           } else {
             ensureNotifyConditionIdsIsMutable();
             notifyConditionIds_.addAll(other.notifyConditionIds_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1110,17 +1068,77 @@ public final class ComponentOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.devices.ComponentOuterClass.Component parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                topic_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                messageFormat_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                ioType_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 34: {
+                deviceId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTagsIsMutable();
+                tags_.add(s);
+                break;
+              } // case 42
+              case 50: {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 58: {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              case 66: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 74: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureNotifyConditionIdsIsMutable();
+                notifyConditionIds_.add(s);
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.devices.ComponentOuterClass.Component) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1128,6 +1146,7 @@ public final class ComponentOuterClass {
       private java.lang.Object topic_ = "";
       /**
        * <code>string topic = 1;</code>
+       * @return The topic.
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = topic_;
@@ -1143,6 +1162,7 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
+       * @return The bytes for topic.
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -1159,37 +1179,38 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
+       * @param value The topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopic(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         topic_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>string topic = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTopic() {
-        
         topic_ = getDefaultInstance().getTopic();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
        * <code>string topic = 1;</code>
+       * @param value The bytes for topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         topic_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1197,6 +1218,7 @@ public final class ComponentOuterClass {
       private java.lang.Object messageFormat_ = "";
       /**
        * <code>string message_format = 2;</code>
+       * @return The messageFormat.
        */
       public java.lang.String getMessageFormat() {
         java.lang.Object ref = messageFormat_;
@@ -1212,6 +1234,7 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>string message_format = 2;</code>
+       * @return The bytes for messageFormat.
        */
       public com.google.protobuf.ByteString
           getMessageFormatBytes() {
@@ -1228,37 +1251,38 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>string message_format = 2;</code>
+       * @param value The messageFormat to set.
+       * @return This builder for chaining.
        */
       public Builder setMessageFormat(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         messageFormat_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
        * <code>string message_format = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMessageFormat() {
-        
         messageFormat_ = getDefaultInstance().getMessageFormat();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
        * <code>string message_format = 2;</code>
+       * @param value The bytes for messageFormat to set.
+       * @return This builder for chaining.
        */
       public Builder setMessageFormatBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         messageFormat_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1266,43 +1290,51 @@ public final class ComponentOuterClass {
       private int ioType_ = 0;
       /**
        * <code>.ubii.devices.Component.IOType io_type = 3;</code>
+       * @return The enum numeric value on the wire for ioType.
        */
-      public int getIoTypeValue() {
+      @java.lang.Override public int getIoTypeValue() {
         return ioType_;
       }
       /**
        * <code>.ubii.devices.Component.IOType io_type = 3;</code>
+       * @param value The enum numeric value on the wire for ioType to set.
+       * @return This builder for chaining.
        */
       public Builder setIoTypeValue(int value) {
         ioType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
        * <code>.ubii.devices.Component.IOType io_type = 3;</code>
+       * @return The ioType.
        */
+      @java.lang.Override
       public ubii.devices.ComponentOuterClass.Component.IOType getIoType() {
-        @SuppressWarnings("deprecation")
-        ubii.devices.ComponentOuterClass.Component.IOType result = ubii.devices.ComponentOuterClass.Component.IOType.valueOf(ioType_);
+        ubii.devices.ComponentOuterClass.Component.IOType result = ubii.devices.ComponentOuterClass.Component.IOType.forNumber(ioType_);
         return result == null ? ubii.devices.ComponentOuterClass.Component.IOType.UNRECOGNIZED : result;
       }
       /**
        * <code>.ubii.devices.Component.IOType io_type = 3;</code>
+       * @param value The ioType to set.
+       * @return This builder for chaining.
        */
       public Builder setIoType(ubii.devices.ComponentOuterClass.Component.IOType value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000004;
         ioType_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <code>.ubii.devices.Component.IOType io_type = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIoType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         ioType_ = 0;
         onChanged();
         return this;
@@ -1311,6 +1343,7 @@ public final class ComponentOuterClass {
       private java.lang.Object deviceId_ = "";
       /**
        * <code>string device_id = 4;</code>
+       * @return The deviceId.
        */
       public java.lang.String getDeviceId() {
         java.lang.Object ref = deviceId_;
@@ -1326,6 +1359,7 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>string device_id = 4;</code>
+       * @return The bytes for deviceId.
        */
       public com.google.protobuf.ByteString
           getDeviceIdBytes() {
@@ -1342,69 +1376,78 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>string device_id = 4;</code>
+       * @param value The deviceId to set.
+       * @return This builder for chaining.
        */
       public Builder setDeviceId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         deviceId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
        * <code>string device_id = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDeviceId() {
-        
         deviceId_ = getDefaultInstance().getDeviceId();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
       /**
        * <code>string device_id = 4;</code>
+       * @param value The bytes for deviceId to set.
+       * @return This builder for chaining.
        */
       public Builder setDeviceIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         deviceId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!tags_.isModifiable()) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000010;
-         }
+        }
+        bitField0_ |= 0x00000010;
       }
       /**
        * <code>repeated string tags = 5;</code>
+       * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
-        return tags_.getUnmodifiableView();
+        tags_.makeImmutable();
+        return tags_;
       }
       /**
        * <code>repeated string tags = 5;</code>
+       * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
        * <code>repeated string tags = 5;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
       /**
        * <code>repeated string tags = 5;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -1412,61 +1455,70 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>repeated string tags = 5;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
        */
       public Builder setTags(
           int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureTagsIsMutable();
         tags_.set(index, value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string tags = 5;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTags(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureTagsIsMutable();
         tags_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string tags = 5;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
         ensureTagsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, tags_);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string tags = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTags() {
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string tags = 5;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         ensureTagsIsMutable();
         tags_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1474,6 +1526,7 @@ public final class ComponentOuterClass {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 6;</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -1489,6 +1542,7 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>string description = 6;</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -1505,37 +1559,38 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>string description = 6;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         description_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
        * <code>string description = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
-        
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
       /**
        * <code>string description = 6;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         description_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1543,6 +1598,7 @@ public final class ComponentOuterClass {
       private java.lang.Object id_ = "";
       /**
        * <code>string id = 7;</code>
+       * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -1558,6 +1614,7 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>string id = 7;</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -1574,37 +1631,38 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>string id = 7;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         id_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
       /**
        * <code>string id = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
-        
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
       /**
        * <code>string id = 7;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         id_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1612,6 +1670,7 @@ public final class ComponentOuterClass {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 8;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1627,6 +1686,7 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>string name = 8;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1643,69 +1703,78 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>string name = 8;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         name_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
       /**
        * <code>string name = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
-        
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
       /**
        * <code>string name = 8;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         name_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList notifyConditionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList notifyConditionIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       private void ensureNotifyConditionIdsIsMutable() {
-        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (!notifyConditionIds_.isModifiable()) {
           notifyConditionIds_ = new com.google.protobuf.LazyStringArrayList(notifyConditionIds_);
-          bitField0_ |= 0x00000100;
-         }
+        }
+        bitField0_ |= 0x00000100;
       }
       /**
        * <code>repeated string notify_condition_ids = 9;</code>
+       * @return A list containing the notifyConditionIds.
        */
       public com.google.protobuf.ProtocolStringList
           getNotifyConditionIdsList() {
-        return notifyConditionIds_.getUnmodifiableView();
+        notifyConditionIds_.makeImmutable();
+        return notifyConditionIds_;
       }
       /**
        * <code>repeated string notify_condition_ids = 9;</code>
+       * @return The count of notifyConditionIds.
        */
       public int getNotifyConditionIdsCount() {
         return notifyConditionIds_.size();
       }
       /**
        * <code>repeated string notify_condition_ids = 9;</code>
+       * @param index The index of the element to return.
+       * @return The notifyConditionIds at the given index.
        */
       public java.lang.String getNotifyConditionIds(int index) {
         return notifyConditionIds_.get(index);
       }
       /**
        * <code>repeated string notify_condition_ids = 9;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the notifyConditionIds at the given index.
        */
       public com.google.protobuf.ByteString
           getNotifyConditionIdsBytes(int index) {
@@ -1713,68 +1782,77 @@ public final class ComponentOuterClass {
       }
       /**
        * <code>repeated string notify_condition_ids = 9;</code>
+       * @param index The index to set the value at.
+       * @param value The notifyConditionIds to set.
+       * @return This builder for chaining.
        */
       public Builder setNotifyConditionIds(
           int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureNotifyConditionIdsIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureNotifyConditionIdsIsMutable();
         notifyConditionIds_.set(index, value);
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string notify_condition_ids = 9;</code>
+       * @param value The notifyConditionIds to add.
+       * @return This builder for chaining.
        */
       public Builder addNotifyConditionIds(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureNotifyConditionIdsIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureNotifyConditionIdsIsMutable();
         notifyConditionIds_.add(value);
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string notify_condition_ids = 9;</code>
+       * @param values The notifyConditionIds to add.
+       * @return This builder for chaining.
        */
       public Builder addAllNotifyConditionIds(
           java.lang.Iterable<java.lang.String> values) {
         ensureNotifyConditionIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, notifyConditionIds_);
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string notify_condition_ids = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearNotifyConditionIds() {
-        notifyConditionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        notifyConditionIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string notify_condition_ids = 9;</code>
+       * @param value The bytes of the notifyConditionIds to add.
+       * @return This builder for chaining.
        */
       public Builder addNotifyConditionIdsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         ensureNotifyConditionIdsIsMutable();
         notifyConditionIds_.add(value);
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1804,7 +1882,18 @@ public final class ComponentOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Component(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1855,7 +1944,7 @@ public final class ComponentOuterClass {
   /**
    * Protobuf type {@code ubii.devices.ComponentList}
    */
-  public  static final class ComponentList extends
+  public static final class ComponentList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.ComponentList)
       ComponentListOrBuilder {
@@ -1869,60 +1958,12 @@ public final class ComponentOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ComponentList();
     }
-    private ComponentList(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                elements_ = new java.util.ArrayList<ubii.devices.ComponentOuterClass.Component>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              elements_.add(
-                  input.readMessage(ubii.devices.ComponentOuterClass.Component.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          elements_ = java.util.Collections.unmodifiableList(elements_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.devices.ComponentOuterClass.internal_static_ubii_devices_ComponentList_descriptor;
@@ -1937,16 +1978,19 @@ public final class ComponentOuterClass {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<ubii.devices.ComponentOuterClass.Component> elements_;
     /**
      * <code>repeated .ubii.devices.Component elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.devices.ComponentOuterClass.Component> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.devices.Component elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1954,18 +1998,21 @@ public final class ComponentOuterClass {
     /**
      * <code>repeated .ubii.devices.Component elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.devices.Component elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.devices.ComponentOuterClass.Component getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.devices.Component elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.devices.ComponentOuterClass.ComponentOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
@@ -1988,7 +2035,7 @@ public final class ComponentOuterClass {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2001,7 +2048,7 @@ public final class ComponentOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2016,11 +2063,10 @@ public final class ComponentOuterClass {
       }
       ubii.devices.ComponentOuterClass.ComponentList other = (ubii.devices.ComponentOuterClass.ComponentList) obj;
 
-      boolean result = true;
-      result = result && getElementsList()
-          .equals(other.getElementsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getElementsList()
+          .equals(other.getElementsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2034,7 +2080,7 @@ public final class ComponentOuterClass {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2151,29 +2197,25 @@ public final class ComponentOuterClass {
 
       // Construct using ubii.devices.ComponentOuterClass.ComponentList.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getElementsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (elementsBuilder_ == null) {
           elements_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          elements_ = null;
           elementsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2200,9 +2242,15 @@ public final class ComponentOuterClass {
       @java.lang.Override
       public ubii.devices.ComponentOuterClass.ComponentList buildPartial() {
         ubii.devices.ComponentOuterClass.ComponentList result = new ubii.devices.ComponentOuterClass.ComponentList(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(ubii.devices.ComponentOuterClass.ComponentList result) {
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -2210,42 +2258,12 @@ public final class ComponentOuterClass {
         } else {
           result.elements_ = elementsBuilder_.build();
         }
-        onBuilt();
-        return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.devices.ComponentOuterClass.ComponentList result) {
+        int from_bitField0_ = bitField0_;
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.devices.ComponentOuterClass.ComponentList) {
@@ -2284,7 +2302,7 @@ public final class ComponentOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2299,17 +2317,43 @@ public final class ComponentOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.devices.ComponentOuterClass.ComponentList parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                ubii.devices.ComponentOuterClass.Component m =
+                    input.readMessage(
+                        ubii.devices.ComponentOuterClass.Component.parser(),
+                        extensionRegistry);
+                if (elementsBuilder_ == null) {
+                  ensureElementsIsMutable();
+                  elements_.add(m);
+                } else {
+                  elementsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.devices.ComponentOuterClass.ComponentList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2317,7 +2361,7 @@ public final class ComponentOuterClass {
       private java.util.List<ubii.devices.ComponentOuterClass.Component> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           elements_ = new java.util.ArrayList<ubii.devices.ComponentOuterClass.Component>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -2546,7 +2590,7 @@ public final class ComponentOuterClass {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
@@ -2556,7 +2600,7 @@ public final class ComponentOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2586,7 +2630,18 @@ public final class ComponentOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ComponentList(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2636,18 +2691,10 @@ public final class ComponentOuterClass {
       "lements\030\001 \003(\0132\027.ubii.devices.Componentb\006" +
       "proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_devices_Component_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_devices_Component_fieldAccessorTable = new

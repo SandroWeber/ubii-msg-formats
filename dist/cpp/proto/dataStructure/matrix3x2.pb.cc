@@ -5,114 +5,84 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
-
+#include <google/protobuf/port_def.inc>
 namespace ubii {
 namespace dataStructure {
 class Matrix3x2DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Matrix3x2>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Matrix3x2> _instance;
 } _Matrix3x2_default_instance_;
 }  // namespace dataStructure
 }  // namespace ubii
-namespace protobuf_proto_2fdataStructure_2fmatrix3x2_2eproto {
-static void InitDefaultsMatrix3x2() {
+static void InitDefaultsscc_info_Matrix3x2_proto_2fdataStructure_2fmatrix3x2_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::ubii::dataStructure::_Matrix3x2_default_instance_;
     new (ptr) ::ubii::dataStructure::Matrix3x2();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ubii::dataStructure::Matrix3x2::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_Matrix3x2 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsMatrix3x2}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Matrix3x2_proto_2fdataStructure_2fmatrix3x2_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Matrix3x2_proto_2fdataStructure_2fmatrix3x2_2eproto}, {}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Matrix3x2.base);
-}
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fdataStructure_2fmatrix3x2_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2fdataStructure_2fmatrix3x2_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fdataStructure_2fmatrix3x2_2eproto = nullptr;
 
-::google::protobuf::Metadata file_level_metadata[1];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fdataStructure_2fmatrix3x2_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, m00_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, m01_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, m10_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, m11_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, m20_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, m21_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, m00_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, m01_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, m10_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, m11_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, m20_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Matrix3x2, m21_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::dataStructure::Matrix3x2)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::dataStructure::_Matrix3x2_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::dataStructure::_Matrix3x2_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "proto/dataStructure/matrix3x2.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
-}
+const char descriptor_table_protodef_proto_2fdataStructure_2fmatrix3x2_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n#proto/dataStructure/matrix3x2.proto\022\022u"
+  "bii.dataStructure\"Y\n\tMatrix3x2\022\013\n\003m00\030\001 "
+  "\001(\001\022\013\n\003m01\030\002 \001(\001\022\013\n\003m10\030\003 \001(\001\022\013\n\003m11\030\004 \001"
+  "(\001\022\013\n\003m20\030\005 \001(\001\022\013\n\003m21\030\006 \001(\001b\006proto3"
+  ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fdataStructure_2fmatrix3x2_2eproto_deps[1] = {
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2fdataStructure_2fmatrix3x2_2eproto_sccs[1] = {
+  &scc_info_Matrix3x2_proto_2fdataStructure_2fmatrix3x2_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fdataStructure_2fmatrix3x2_2eproto_once;
+static bool descriptor_table_proto_2fdataStructure_2fmatrix3x2_2eproto_initialized = false;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fdataStructure_2fmatrix3x2_2eproto = {
+  &descriptor_table_proto_2fdataStructure_2fmatrix3x2_2eproto_initialized, descriptor_table_protodef_proto_2fdataStructure_2fmatrix3x2_2eproto, "proto/dataStructure/matrix3x2.proto", 156,
+  &descriptor_table_proto_2fdataStructure_2fmatrix3x2_2eproto_once, descriptor_table_proto_2fdataStructure_2fmatrix3x2_2eproto_sccs, descriptor_table_proto_2fdataStructure_2fmatrix3x2_2eproto_deps, 1, 0,
+  schemas, file_default_instances, TableStruct_proto_2fdataStructure_2fmatrix3x2_2eproto::offsets,
+  file_level_metadata_proto_2fdataStructure_2fmatrix3x2_2eproto, 1, file_level_enum_descriptors_proto_2fdataStructure_2fmatrix3x2_2eproto, file_level_service_descriptors_proto_2fdataStructure_2fmatrix3x2_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n#proto/dataStructure/matrix3x2.proto\022\022u"
-      "bii.dataStructure\"Y\n\tMatrix3x2\022\013\n\003m00\030\001 "
-      "\001(\001\022\013\n\003m01\030\002 \001(\001\022\013\n\003m10\030\003 \001(\001\022\013\n\003m11\030\004 \001"
-      "(\001\022\013\n\003m20\030\005 \001(\001\022\013\n\003m21\030\006 \001(\001b\006proto3"
-  };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 156);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "proto/dataStructure/matrix3x2.proto", &protobuf_RegisterTypes);
-}
-
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_proto_2fdataStructure_2fmatrix3x2_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_proto_2fdataStructure_2fmatrix3x2_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fdataStructure_2fmatrix3x2_2eproto), true);
 namespace ubii {
 namespace dataStructure {
 
@@ -120,25 +90,18 @@ namespace dataStructure {
 
 void Matrix3x2::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Matrix3x2::kM00FieldNumber;
-const int Matrix3x2::kM01FieldNumber;
-const int Matrix3x2::kM10FieldNumber;
-const int Matrix3x2::kM11FieldNumber;
-const int Matrix3x2::kM20FieldNumber;
-const int Matrix3x2::kM21FieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class Matrix3x2::_Internal {
+ public:
+};
 
 Matrix3x2::Matrix3x2()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_proto_2fdataStructure_2fmatrix3x2_2eproto::scc_info_Matrix3x2.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ubii.dataStructure.Matrix3x2)
 }
 Matrix3x2::Matrix3x2(const Matrix3x2& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&m00_, &from.m00_,
     static_cast<size_t>(reinterpret_cast<char*>(&m21_) -
@@ -163,20 +126,15 @@ void Matrix3x2::SharedDtor() {
 void Matrix3x2::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* Matrix3x2::descriptor() {
-  ::protobuf_proto_2fdataStructure_2fmatrix3x2_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2fdataStructure_2fmatrix3x2_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const Matrix3x2& Matrix3x2::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_proto_2fdataStructure_2fmatrix3x2_2eproto::scc_info_Matrix3x2.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Matrix3x2_proto_2fdataStructure_2fmatrix3x2_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void Matrix3x2::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.dataStructure.Matrix3x2)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -186,203 +144,120 @@ void Matrix3x2::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool Matrix3x2::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ubii.dataStructure.Matrix3x2)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* Matrix3x2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // double m00 = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(9u /* 9 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &m00_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+          m00_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
       // double m01 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(17u /* 17 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &m01_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
+          m01_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
       // double m10 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(25u /* 25 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &m10_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
+          m10_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
       // double m11 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(33u /* 33 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &m11_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 33)) {
+          m11_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
       // double m20 = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(41u /* 41 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &m20_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 41)) {
+          m20_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
       // double m21 = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(49u /* 49 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &m21_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 49)) {
+          m21_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:ubii.dataStructure.Matrix3x2)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:ubii.dataStructure.Matrix3x2)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void Matrix3x2::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ubii.dataStructure.Matrix3x2)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // double m00 = 1;
-  if (this->m00() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->m00(), output);
-  }
-
-  // double m01 = 2;
-  if (this->m01() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->m01(), output);
-  }
-
-  // double m10 = 3;
-  if (this->m10() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->m10(), output);
-  }
-
-  // double m11 = 4;
-  if (this->m11() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->m11(), output);
-  }
-
-  // double m20 = 5;
-  if (this->m20() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(5, this->m20(), output);
-  }
-
-  // double m21 = 6;
-  if (this->m21() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(6, this->m21(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ubii.dataStructure.Matrix3x2)
-}
-
-::google::protobuf::uint8* Matrix3x2::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* Matrix3x2::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ubii.dataStructure.Matrix3x2)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // double m00 = 1;
-  if (this->m00() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->m00(), target);
+  if (!(this->m00() <= 0 && this->m00() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_m00(), target);
   }
 
   // double m01 = 2;
-  if (this->m01() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->m01(), target);
+  if (!(this->m01() <= 0 && this->m01() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_m01(), target);
   }
 
   // double m10 = 3;
-  if (this->m10() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->m10(), target);
+  if (!(this->m10() <= 0 && this->m10() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_m10(), target);
   }
 
   // double m11 = 4;
-  if (this->m11() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->m11(), target);
+  if (!(this->m11() <= 0 && this->m11() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(4, this->_internal_m11(), target);
   }
 
   // double m20 = 5;
-  if (this->m20() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(5, this->m20(), target);
+  if (!(this->m20() <= 0 && this->m20() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(5, this->_internal_m20(), target);
   }
 
   // double m21 = 6;
-  if (this->m21() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(6, this->m21(), target);
+  if (!(this->m21() <= 0 && this->m21() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(6, this->_internal_m21(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.Matrix3x2)
   return target;
@@ -392,55 +267,58 @@ size_t Matrix3x2::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ubii.dataStructure.Matrix3x2)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // double m00 = 1;
-  if (this->m00() != 0) {
+  if (!(this->m00() <= 0 && this->m00() >= 0)) {
     total_size += 1 + 8;
   }
 
   // double m01 = 2;
-  if (this->m01() != 0) {
+  if (!(this->m01() <= 0 && this->m01() >= 0)) {
     total_size += 1 + 8;
   }
 
   // double m10 = 3;
-  if (this->m10() != 0) {
+  if (!(this->m10() <= 0 && this->m10() >= 0)) {
     total_size += 1 + 8;
   }
 
   // double m11 = 4;
-  if (this->m11() != 0) {
+  if (!(this->m11() <= 0 && this->m11() >= 0)) {
     total_size += 1 + 8;
   }
 
   // double m20 = 5;
-  if (this->m20() != 0) {
+  if (!(this->m20() <= 0 && this->m20() >= 0)) {
     total_size += 1 + 8;
   }
 
   // double m21 = 6;
-  if (this->m21() != 0) {
+  if (!(this->m21() <= 0 && this->m21() >= 0)) {
     total_size += 1 + 8;
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void Matrix3x2::MergeFrom(const ::google::protobuf::Message& from) {
+void Matrix3x2::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:ubii.dataStructure.Matrix3x2)
   GOOGLE_DCHECK_NE(&from, this);
   const Matrix3x2* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Matrix3x2>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Matrix3x2>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.dataStructure.Matrix3x2)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.dataStructure.Matrix3x2)
     MergeFrom(*source);
@@ -451,30 +329,30 @@ void Matrix3x2::MergeFrom(const Matrix3x2& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.Matrix3x2)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.m00() != 0) {
-    set_m00(from.m00());
+  if (!(from.m00() <= 0 && from.m00() >= 0)) {
+    _internal_set_m00(from._internal_m00());
   }
-  if (from.m01() != 0) {
-    set_m01(from.m01());
+  if (!(from.m01() <= 0 && from.m01() >= 0)) {
+    _internal_set_m01(from._internal_m01());
   }
-  if (from.m10() != 0) {
-    set_m10(from.m10());
+  if (!(from.m10() <= 0 && from.m10() >= 0)) {
+    _internal_set_m10(from._internal_m10());
   }
-  if (from.m11() != 0) {
-    set_m11(from.m11());
+  if (!(from.m11() <= 0 && from.m11() >= 0)) {
+    _internal_set_m11(from._internal_m11());
   }
-  if (from.m20() != 0) {
-    set_m20(from.m20());
+  if (!(from.m20() <= 0 && from.m20() >= 0)) {
+    _internal_set_m20(from._internal_m20());
   }
-  if (from.m21() != 0) {
-    set_m21(from.m21());
+  if (!(from.m21() <= 0 && from.m21() >= 0)) {
+    _internal_set_m21(from._internal_m21());
   }
 }
 
-void Matrix3x2::CopyFrom(const ::google::protobuf::Message& from) {
+void Matrix3x2::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:ubii.dataStructure.Matrix3x2)
   if (&from == this) return;
   Clear();
@@ -492,36 +370,30 @@ bool Matrix3x2::IsInitialized() const {
   return true;
 }
 
-void Matrix3x2::Swap(Matrix3x2* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Matrix3x2::InternalSwap(Matrix3x2* other) {
   using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(m00_, other->m00_);
   swap(m01_, other->m01_);
   swap(m10_, other->m10_);
   swap(m11_, other->m11_);
   swap(m20_, other->m20_);
   swap(m21_, other->m21_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata Matrix3x2::GetMetadata() const {
-  protobuf_proto_2fdataStructure_2fmatrix3x2_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2fdataStructure_2fmatrix3x2_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata Matrix3x2::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace dataStructure
 }  // namespace ubii
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::dataStructure::Matrix3x2* Arena::CreateMaybeMessage< ::ubii::dataStructure::Matrix3x2 >(Arena* arena) {
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::ubii::dataStructure::Matrix3x2* Arena::CreateMaybeMessage< ::ubii::dataStructure::Matrix3x2 >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::dataStructure::Matrix3x2 >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>

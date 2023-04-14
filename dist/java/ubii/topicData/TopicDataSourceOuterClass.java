@@ -20,30 +20,46 @@ public final class TopicDataSourceOuterClass {
 
     /**
      * <code>string topic = 1;</code>
+     * @return Whether the topic field is set.
+     */
+    boolean hasTopic();
+    /**
+     * <code>string topic = 1;</code>
+     * @return The topic.
      */
     java.lang.String getTopic();
     /**
      * <code>string topic = 1;</code>
+     * @return The bytes for topic.
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
      * <code>string regex = 2;</code>
+     * @return Whether the regex field is set.
+     */
+    boolean hasRegex();
+    /**
+     * <code>string regex = 2;</code>
+     * @return The regex.
      */
     java.lang.String getRegex();
     /**
      * <code>string regex = 2;</code>
+     * @return The bytes for regex.
      */
     com.google.protobuf.ByteString
         getRegexBytes();
 
     /**
      * <code>.ubii.devices.Component component = 3;</code>
+     * @return Whether the component field is set.
      */
     boolean hasComponent();
     /**
      * <code>.ubii.devices.Component component = 3;</code>
+     * @return The component.
      */
     ubii.devices.ComponentOuterClass.Component getComponent();
     /**
@@ -53,10 +69,12 @@ public final class TopicDataSourceOuterClass {
 
     /**
      * <code>.ubii.topicData.TopicDataRecord static_record = 4;</code>
+     * @return Whether the staticRecord field is set.
      */
     boolean hasStaticRecord();
     /**
      * <code>.ubii.topicData.TopicDataRecord static_record = 4;</code>
+     * @return The staticRecord.
      */
     ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord getStaticRecord();
     /**
@@ -64,12 +82,12 @@ public final class TopicDataSourceOuterClass {
      */
     ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder getStaticRecordOrBuilder();
 
-    public ubii.topicData.TopicDataSourceOuterClass.TopicDataSource.TypeCase getTypeCase();
+    ubii.topicData.TopicDataSourceOuterClass.TopicDataSource.TypeCase getTypeCase();
   }
   /**
    * Protobuf type {@code ubii.topicData.TopicDataSource}
    */
-  public  static final class TopicDataSource extends
+  public static final class TopicDataSource extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.topicData.TopicDataSource)
       TopicDataSourceOrBuilder {
@@ -82,88 +100,12 @@ public final class TopicDataSourceOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TopicDataSource();
     }
-    private TopicDataSource(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-              typeCase_ = 1;
-              type_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-              typeCase_ = 2;
-              type_ = s;
-              break;
-            }
-            case 26: {
-              ubii.devices.ComponentOuterClass.Component.Builder subBuilder = null;
-              if (typeCase_ == 3) {
-                subBuilder = ((ubii.devices.ComponentOuterClass.Component) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.devices.ComponentOuterClass.Component.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.devices.ComponentOuterClass.Component) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 3;
-              break;
-            }
-            case 34: {
-              ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.Builder subBuilder = null;
-              if (typeCase_ == 4) {
-                subBuilder = ((ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 4;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.topicData.TopicDataSourceOuterClass.internal_static_ubii_topicData_TopicDataSource_descriptor;
@@ -178,9 +120,11 @@ public final class TopicDataSourceOuterClass {
     }
 
     private int typeCase_ = 0;
+    @SuppressWarnings("serial")
     private java.lang.Object type_;
     public enum TypeCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       TOPIC(1),
       REGEX(2),
       COMPONENT(3),
@@ -191,6 +135,8 @@ public final class TopicDataSourceOuterClass {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -222,6 +168,14 @@ public final class TopicDataSourceOuterClass {
     public static final int TOPIC_FIELD_NUMBER = 1;
     /**
      * <code>string topic = 1;</code>
+     * @return Whether the topic field is set.
+     */
+    public boolean hasTopic() {
+      return typeCase_ == 1;
+    }
+    /**
+     * <code>string topic = 1;</code>
+     * @return The topic.
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = "";
@@ -242,6 +196,7 @@ public final class TopicDataSourceOuterClass {
     }
     /**
      * <code>string topic = 1;</code>
+     * @return The bytes for topic.
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -265,6 +220,14 @@ public final class TopicDataSourceOuterClass {
     public static final int REGEX_FIELD_NUMBER = 2;
     /**
      * <code>string regex = 2;</code>
+     * @return Whether the regex field is set.
+     */
+    public boolean hasRegex() {
+      return typeCase_ == 2;
+    }
+    /**
+     * <code>string regex = 2;</code>
+     * @return The regex.
      */
     public java.lang.String getRegex() {
       java.lang.Object ref = "";
@@ -285,6 +248,7 @@ public final class TopicDataSourceOuterClass {
     }
     /**
      * <code>string regex = 2;</code>
+     * @return The bytes for regex.
      */
     public com.google.protobuf.ByteString
         getRegexBytes() {
@@ -308,13 +272,17 @@ public final class TopicDataSourceOuterClass {
     public static final int COMPONENT_FIELD_NUMBER = 3;
     /**
      * <code>.ubii.devices.Component component = 3;</code>
+     * @return Whether the component field is set.
      */
+    @java.lang.Override
     public boolean hasComponent() {
       return typeCase_ == 3;
     }
     /**
      * <code>.ubii.devices.Component component = 3;</code>
+     * @return The component.
      */
+    @java.lang.Override
     public ubii.devices.ComponentOuterClass.Component getComponent() {
       if (typeCase_ == 3) {
          return (ubii.devices.ComponentOuterClass.Component) type_;
@@ -324,6 +292,7 @@ public final class TopicDataSourceOuterClass {
     /**
      * <code>.ubii.devices.Component component = 3;</code>
      */
+    @java.lang.Override
     public ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentOrBuilder() {
       if (typeCase_ == 3) {
          return (ubii.devices.ComponentOuterClass.Component) type_;
@@ -334,13 +303,17 @@ public final class TopicDataSourceOuterClass {
     public static final int STATIC_RECORD_FIELD_NUMBER = 4;
     /**
      * <code>.ubii.topicData.TopicDataRecord static_record = 4;</code>
+     * @return Whether the staticRecord field is set.
      */
+    @java.lang.Override
     public boolean hasStaticRecord() {
       return typeCase_ == 4;
     }
     /**
      * <code>.ubii.topicData.TopicDataRecord static_record = 4;</code>
+     * @return The staticRecord.
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord getStaticRecord() {
       if (typeCase_ == 4) {
          return (ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord) type_;
@@ -350,6 +323,7 @@ public final class TopicDataSourceOuterClass {
     /**
      * <code>.ubii.topicData.TopicDataRecord static_record = 4;</code>
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder getStaticRecordOrBuilder() {
       if (typeCase_ == 4) {
          return (ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord) type_;
@@ -383,7 +357,7 @@ public final class TopicDataSourceOuterClass {
       if (typeCase_ == 4) {
         output.writeMessage(4, (ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord) type_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -406,7 +380,7 @@ public final class TopicDataSourceOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, (ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord) type_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -421,32 +395,29 @@ public final class TopicDataSourceOuterClass {
       }
       ubii.topicData.TopicDataSourceOuterClass.TopicDataSource other = (ubii.topicData.TopicDataSourceOuterClass.TopicDataSource) obj;
 
-      boolean result = true;
-      result = result && getTypeCase().equals(
-          other.getTypeCase());
-      if (!result) return false;
+      if (!getTypeCase().equals(other.getTypeCase())) return false;
       switch (typeCase_) {
         case 1:
-          result = result && getTopic()
-              .equals(other.getTopic());
+          if (!getTopic()
+              .equals(other.getTopic())) return false;
           break;
         case 2:
-          result = result && getRegex()
-              .equals(other.getRegex());
+          if (!getRegex()
+              .equals(other.getRegex())) return false;
           break;
         case 3:
-          result = result && getComponent()
-              .equals(other.getComponent());
+          if (!getComponent()
+              .equals(other.getComponent())) return false;
           break;
         case 4:
-          result = result && getStaticRecord()
-              .equals(other.getStaticRecord());
+          if (!getStaticRecord()
+              .equals(other.getStaticRecord())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -476,7 +447,7 @@ public final class TopicDataSourceOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -593,22 +564,24 @@ public final class TopicDataSourceOuterClass {
 
       // Construct using ubii.topicData.TopicDataSourceOuterClass.TopicDataSource.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        if (componentBuilder_ != null) {
+          componentBuilder_.clear();
+        }
+        if (staticRecordBuilder_ != null) {
+          staticRecordBuilder_.clear();
+        }
         typeCase_ = 0;
         type_ = null;
         return this;
@@ -637,63 +610,29 @@ public final class TopicDataSourceOuterClass {
       @java.lang.Override
       public ubii.topicData.TopicDataSourceOuterClass.TopicDataSource buildPartial() {
         ubii.topicData.TopicDataSourceOuterClass.TopicDataSource result = new ubii.topicData.TopicDataSourceOuterClass.TopicDataSource(this);
-        if (typeCase_ == 1) {
-          result.type_ = type_;
-        }
-        if (typeCase_ == 2) {
-          result.type_ = type_;
-        }
-        if (typeCase_ == 3) {
-          if (componentBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = componentBuilder_.build();
-          }
-        }
-        if (typeCase_ == 4) {
-          if (staticRecordBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = staticRecordBuilder_.build();
-          }
-        }
-        result.typeCase_ = typeCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.topicData.TopicDataSourceOuterClass.TopicDataSource result) {
+        int from_bitField0_ = bitField0_;
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+
+      private void buildPartialOneofs(ubii.topicData.TopicDataSourceOuterClass.TopicDataSource result) {
+        result.typeCase_ = typeCase_;
+        result.type_ = this.type_;
+        if (typeCase_ == 3 &&
+            componentBuilder_ != null) {
+          result.type_ = componentBuilder_.build();
+        }
+        if (typeCase_ == 4 &&
+            staticRecordBuilder_ != null) {
+          result.type_ = staticRecordBuilder_.build();
+        }
       }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.topicData.TopicDataSourceOuterClass.TopicDataSource) {
@@ -731,7 +670,7 @@ public final class TopicDataSourceOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -746,17 +685,56 @@ public final class TopicDataSourceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.topicData.TopicDataSourceOuterClass.TopicDataSource parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+                typeCase_ = 1;
+                type_ = s;
+                break;
+              } // case 10
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+                typeCase_ = 2;
+                type_ = s;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getComponentFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 3;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getStaticRecordFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 4;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.topicData.TopicDataSourceOuterClass.TopicDataSource) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int typeCase_ = 0;
@@ -774,10 +752,21 @@ public final class TopicDataSourceOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       /**
        * <code>string topic = 1;</code>
+       * @return Whether the topic field is set.
        */
+      @java.lang.Override
+      public boolean hasTopic() {
+        return typeCase_ == 1;
+      }
+      /**
+       * <code>string topic = 1;</code>
+       * @return The topic.
+       */
+      @java.lang.Override
       public java.lang.String getTopic() {
         java.lang.Object ref = "";
         if (typeCase_ == 1) {
@@ -797,7 +786,9 @@ public final class TopicDataSourceOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
+       * @return The bytes for topic.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getTopicBytes() {
         java.lang.Object ref = "";
@@ -818,19 +809,20 @@ public final class TopicDataSourceOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
+       * @param value The topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopic(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  typeCase_ = 1;
+        if (value == null) { throw new NullPointerException(); }
+        typeCase_ = 1;
         type_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>string topic = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTopic() {
         if (typeCase_ == 1) {
@@ -842,13 +834,13 @@ public final class TopicDataSourceOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
+       * @param value The bytes for topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         typeCase_ = 1;
         type_ = value;
         onChanged();
@@ -857,7 +849,17 @@ public final class TopicDataSourceOuterClass {
 
       /**
        * <code>string regex = 2;</code>
+       * @return Whether the regex field is set.
        */
+      @java.lang.Override
+      public boolean hasRegex() {
+        return typeCase_ == 2;
+      }
+      /**
+       * <code>string regex = 2;</code>
+       * @return The regex.
+       */
+      @java.lang.Override
       public java.lang.String getRegex() {
         java.lang.Object ref = "";
         if (typeCase_ == 2) {
@@ -877,7 +879,9 @@ public final class TopicDataSourceOuterClass {
       }
       /**
        * <code>string regex = 2;</code>
+       * @return The bytes for regex.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getRegexBytes() {
         java.lang.Object ref = "";
@@ -898,19 +902,20 @@ public final class TopicDataSourceOuterClass {
       }
       /**
        * <code>string regex = 2;</code>
+       * @param value The regex to set.
+       * @return This builder for chaining.
        */
       public Builder setRegex(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  typeCase_ = 2;
+        if (value == null) { throw new NullPointerException(); }
+        typeCase_ = 2;
         type_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>string regex = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRegex() {
         if (typeCase_ == 2) {
@@ -922,13 +927,13 @@ public final class TopicDataSourceOuterClass {
       }
       /**
        * <code>string regex = 2;</code>
+       * @param value The bytes for regex to set.
+       * @return This builder for chaining.
        */
       public Builder setRegexBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         typeCase_ = 2;
         type_ = value;
         onChanged();
@@ -939,13 +944,17 @@ public final class TopicDataSourceOuterClass {
           ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder> componentBuilder_;
       /**
        * <code>.ubii.devices.Component component = 3;</code>
+       * @return Whether the component field is set.
        */
+      @java.lang.Override
       public boolean hasComponent() {
         return typeCase_ == 3;
       }
       /**
        * <code>.ubii.devices.Component component = 3;</code>
+       * @return The component.
        */
+      @java.lang.Override
       public ubii.devices.ComponentOuterClass.Component getComponent() {
         if (componentBuilder_ == null) {
           if (typeCase_ == 3) {
@@ -1005,8 +1014,9 @@ public final class TopicDataSourceOuterClass {
         } else {
           if (typeCase_ == 3) {
             componentBuilder_.mergeFrom(value);
+          } else {
+            componentBuilder_.setMessage(value);
           }
-          componentBuilder_.setMessage(value);
         }
         typeCase_ = 3;
         return this;
@@ -1039,6 +1049,7 @@ public final class TopicDataSourceOuterClass {
       /**
        * <code>.ubii.devices.Component component = 3;</code>
        */
+      @java.lang.Override
       public ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentOrBuilder() {
         if ((typeCase_ == 3) && (componentBuilder_ != null)) {
           return componentBuilder_.getMessageOrBuilder();
@@ -1067,7 +1078,7 @@ public final class TopicDataSourceOuterClass {
           type_ = null;
         }
         typeCase_ = 3;
-        onChanged();;
+        onChanged();
         return componentBuilder_;
       }
 
@@ -1075,13 +1086,17 @@ public final class TopicDataSourceOuterClass {
           ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord, ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.Builder, ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder> staticRecordBuilder_;
       /**
        * <code>.ubii.topicData.TopicDataRecord static_record = 4;</code>
+       * @return Whether the staticRecord field is set.
        */
+      @java.lang.Override
       public boolean hasStaticRecord() {
         return typeCase_ == 4;
       }
       /**
        * <code>.ubii.topicData.TopicDataRecord static_record = 4;</code>
+       * @return The staticRecord.
        */
+      @java.lang.Override
       public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord getStaticRecord() {
         if (staticRecordBuilder_ == null) {
           if (typeCase_ == 4) {
@@ -1141,8 +1156,9 @@ public final class TopicDataSourceOuterClass {
         } else {
           if (typeCase_ == 4) {
             staticRecordBuilder_.mergeFrom(value);
+          } else {
+            staticRecordBuilder_.setMessage(value);
           }
-          staticRecordBuilder_.setMessage(value);
         }
         typeCase_ = 4;
         return this;
@@ -1175,6 +1191,7 @@ public final class TopicDataSourceOuterClass {
       /**
        * <code>.ubii.topicData.TopicDataRecord static_record = 4;</code>
        */
+      @java.lang.Override
       public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder getStaticRecordOrBuilder() {
         if ((typeCase_ == 4) && (staticRecordBuilder_ != null)) {
           return staticRecordBuilder_.getMessageOrBuilder();
@@ -1203,13 +1220,13 @@ public final class TopicDataSourceOuterClass {
           type_ = null;
         }
         typeCase_ = 4;
-        onChanged();;
+        onChanged();
         return staticRecordBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1239,7 +1256,18 @@ public final class TopicDataSourceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TopicDataSource(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1290,7 +1318,7 @@ public final class TopicDataSourceOuterClass {
   /**
    * Protobuf type {@code ubii.topicData.TopicDataSourceList}
    */
-  public  static final class TopicDataSourceList extends
+  public static final class TopicDataSourceList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.topicData.TopicDataSourceList)
       TopicDataSourceListOrBuilder {
@@ -1304,60 +1332,12 @@ public final class TopicDataSourceOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TopicDataSourceList();
     }
-    private TopicDataSourceList(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                elements_ = new java.util.ArrayList<ubii.topicData.TopicDataSourceOuterClass.TopicDataSource>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              elements_.add(
-                  input.readMessage(ubii.topicData.TopicDataSourceOuterClass.TopicDataSource.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          elements_ = java.util.Collections.unmodifiableList(elements_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.topicData.TopicDataSourceOuterClass.internal_static_ubii_topicData_TopicDataSourceList_descriptor;
@@ -1372,16 +1352,19 @@ public final class TopicDataSourceOuterClass {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<ubii.topicData.TopicDataSourceOuterClass.TopicDataSource> elements_;
     /**
      * <code>repeated .ubii.topicData.TopicDataSource elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.topicData.TopicDataSourceOuterClass.TopicDataSource> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.topicData.TopicDataSource elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1389,18 +1372,21 @@ public final class TopicDataSourceOuterClass {
     /**
      * <code>repeated .ubii.topicData.TopicDataSource elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.topicData.TopicDataSource elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataSourceOuterClass.TopicDataSource getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.topicData.TopicDataSource elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
@@ -1423,7 +1409,7 @@ public final class TopicDataSourceOuterClass {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1436,7 +1422,7 @@ public final class TopicDataSourceOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1451,11 +1437,10 @@ public final class TopicDataSourceOuterClass {
       }
       ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceList other = (ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceList) obj;
 
-      boolean result = true;
-      result = result && getElementsList()
-          .equals(other.getElementsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getElementsList()
+          .equals(other.getElementsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1469,7 +1454,7 @@ public final class TopicDataSourceOuterClass {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1586,29 +1571,25 @@ public final class TopicDataSourceOuterClass {
 
       // Construct using ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceList.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getElementsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (elementsBuilder_ == null) {
           elements_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          elements_ = null;
           elementsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1635,9 +1616,15 @@ public final class TopicDataSourceOuterClass {
       @java.lang.Override
       public ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceList buildPartial() {
         ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceList result = new ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceList(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceList result) {
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -1645,42 +1632,12 @@ public final class TopicDataSourceOuterClass {
         } else {
           result.elements_ = elementsBuilder_.build();
         }
-        onBuilt();
-        return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceList result) {
+        int from_bitField0_ = bitField0_;
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceList) {
@@ -1719,7 +1676,7 @@ public final class TopicDataSourceOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1734,17 +1691,43 @@ public final class TopicDataSourceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceList parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                ubii.topicData.TopicDataSourceOuterClass.TopicDataSource m =
+                    input.readMessage(
+                        ubii.topicData.TopicDataSourceOuterClass.TopicDataSource.parser(),
+                        extensionRegistry);
+                if (elementsBuilder_ == null) {
+                  ensureElementsIsMutable();
+                  elements_.add(m);
+                } else {
+                  elementsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1752,7 +1735,7 @@ public final class TopicDataSourceOuterClass {
       private java.util.List<ubii.topicData.TopicDataSourceOuterClass.TopicDataSource> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           elements_ = new java.util.ArrayList<ubii.topicData.TopicDataSourceOuterClass.TopicDataSource>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -1981,7 +1964,7 @@ public final class TopicDataSourceOuterClass {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.topicData.TopicDataSourceOuterClass.TopicDataSource, ubii.topicData.TopicDataSourceOuterClass.TopicDataSource.Builder, ubii.topicData.TopicDataSourceOuterClass.TopicDataSourceOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
@@ -1991,7 +1974,7 @@ public final class TopicDataSourceOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2021,7 +2004,18 @@ public final class TopicDataSourceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TopicDataSourceList(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2071,20 +2065,12 @@ public final class TopicDataSourceOuterClass {
       "ements\030\001 \003(\0132\037.ubii.topicData.TopicDataS" +
       "ourceb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.devices.ComponentOuterClass.getDescriptor(),
           ubii.topicData.TopicDataRecordOuterClass.getDescriptor(),
-        }, assigner);
+        });
     internal_static_ubii_topicData_TopicDataSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_topicData_TopicDataSource_fieldAccessorTable = new

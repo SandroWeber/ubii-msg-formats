@@ -5,121 +5,89 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
-
-namespace protobuf_proto_2fclients_2fclient_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fclients_2fclient_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Client;
-}  // namespace protobuf_proto_2fclients_2fclient_2eproto
+#include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fclients_2fclient_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Client_proto_2fclients_2fclient_2eproto;
 namespace ubii {
 namespace conditions {
 class NotifyConditionDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<NotifyCondition>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<NotifyCondition> _instance;
 } _NotifyCondition_default_instance_;
 }  // namespace conditions
 }  // namespace ubii
-namespace protobuf_proto_2fconditions_2fnotifyCondition_2eproto {
-static void InitDefaultsNotifyCondition() {
+static void InitDefaultsscc_info_NotifyCondition_proto_2fconditions_2fnotifyCondition_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::ubii::conditions::_NotifyCondition_default_instance_;
     new (ptr) ::ubii::conditions::NotifyCondition();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ubii::conditions::NotifyCondition::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_NotifyCondition =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsNotifyCondition}, {
-      &protobuf_proto_2fclients_2fclient_2eproto::scc_info_Client.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_NotifyCondition_proto_2fconditions_2fnotifyCondition_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_NotifyCondition_proto_2fconditions_2fnotifyCondition_2eproto}, {
+      &scc_info_Client_proto_2fclients_2fclient_2eproto.base,}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_NotifyCondition.base);
-}
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fconditions_2fnotifyCondition_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2fconditions_2fnotifyCondition_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fconditions_2fnotifyCondition_2eproto = nullptr;
 
-::google::protobuf::Metadata file_level_metadata[1];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fconditions_2fnotifyCondition_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::conditions::NotifyCondition, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::ubii::conditions::NotifyCondition, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::conditions::NotifyCondition, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::conditions::NotifyCondition, name_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::conditions::NotifyCondition, evaluation_function_stringified_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::conditions::NotifyCondition, client_profile_pub_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::conditions::NotifyCondition, client_profile_sub_),
+  PROTOBUF_FIELD_OFFSET(::ubii::conditions::NotifyCondition, id_),
+  PROTOBUF_FIELD_OFFSET(::ubii::conditions::NotifyCondition, name_),
+  PROTOBUF_FIELD_OFFSET(::ubii::conditions::NotifyCondition, evaluation_function_stringified_),
+  PROTOBUF_FIELD_OFFSET(::ubii::conditions::NotifyCondition, client_profile_pub_),
+  PROTOBUF_FIELD_OFFSET(::ubii::conditions::NotifyCondition, client_profile_sub_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::conditions::NotifyCondition)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::conditions::_NotifyCondition_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::conditions::_NotifyCondition_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "proto/conditions/notifyCondition.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
-}
+const char descriptor_table_protodef_proto_2fconditions_2fnotifyCondition_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n&proto/conditions/notifyCondition.proto"
+  "\022\017ubii.conditions\032\032proto/clients/client."
+  "proto\"\270\001\n\017NotifyCondition\022\n\n\002id\030\001 \001(\t\022\014\n"
+  "\004name\030\002 \001(\t\022\'\n\037evaluation_function_strin"
+  "gified\030\003 \001(\t\0220\n\022client_profile_pub\030\004 \001(\013"
+  "2\024.ubii.clients.Client\0220\n\022client_profile"
+  "_sub\030\005 \001(\0132\024.ubii.clients.Clientb\006proto3"
+  ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fconditions_2fnotifyCondition_2eproto_deps[1] = {
+  &::descriptor_table_proto_2fclients_2fclient_2eproto,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2fconditions_2fnotifyCondition_2eproto_sccs[1] = {
+  &scc_info_NotifyCondition_proto_2fconditions_2fnotifyCondition_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fconditions_2fnotifyCondition_2eproto_once;
+static bool descriptor_table_proto_2fconditions_2fnotifyCondition_2eproto_initialized = false;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fconditions_2fnotifyCondition_2eproto = {
+  &descriptor_table_proto_2fconditions_2fnotifyCondition_2eproto_initialized, descriptor_table_protodef_proto_2fconditions_2fnotifyCondition_2eproto, "proto/conditions/notifyCondition.proto", 280,
+  &descriptor_table_proto_2fconditions_2fnotifyCondition_2eproto_once, descriptor_table_proto_2fconditions_2fnotifyCondition_2eproto_sccs, descriptor_table_proto_2fconditions_2fnotifyCondition_2eproto_deps, 1, 1,
+  schemas, file_default_instances, TableStruct_proto_2fconditions_2fnotifyCondition_2eproto::offsets,
+  file_level_metadata_proto_2fconditions_2fnotifyCondition_2eproto, 1, file_level_enum_descriptors_proto_2fconditions_2fnotifyCondition_2eproto, file_level_service_descriptors_proto_2fconditions_2fnotifyCondition_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n&proto/conditions/notifyCondition.proto"
-      "\022\017ubii.conditions\032\032proto/clients/client."
-      "proto\"\270\001\n\017NotifyCondition\022\n\n\002id\030\001 \001(\t\022\014\n"
-      "\004name\030\002 \001(\t\022\'\n\037evaluation_function_strin"
-      "gified\030\003 \001(\t\0220\n\022client_profile_pub\030\004 \001(\013"
-      "2\024.ubii.clients.Client\0220\n\022client_profile"
-      "_sub\030\005 \001(\0132\024.ubii.clients.Clientb\006proto3"
-  };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 280);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "proto/conditions/notifyCondition.proto", &protobuf_RegisterTypes);
-  ::protobuf_proto_2fclients_2fclient_2eproto::AddDescriptors();
-}
-
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_proto_2fconditions_2fnotifyCondition_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_proto_2fconditions_2fnotifyCondition_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fconditions_2fnotifyCondition_2eproto), true);
 namespace ubii {
 namespace conditions {
 
@@ -131,66 +99,71 @@ void NotifyCondition::InitAsDefaultInstance() {
   ::ubii::conditions::_NotifyCondition_default_instance_._instance.get_mutable()->client_profile_sub_ = const_cast< ::ubii::clients::Client*>(
       ::ubii::clients::Client::internal_default_instance());
 }
+class NotifyCondition::_Internal {
+ public:
+  static const ::ubii::clients::Client& client_profile_pub(const NotifyCondition* msg);
+  static const ::ubii::clients::Client& client_profile_sub(const NotifyCondition* msg);
+};
+
+const ::ubii::clients::Client&
+NotifyCondition::_Internal::client_profile_pub(const NotifyCondition* msg) {
+  return *msg->client_profile_pub_;
+}
+const ::ubii::clients::Client&
+NotifyCondition::_Internal::client_profile_sub(const NotifyCondition* msg) {
+  return *msg->client_profile_sub_;
+}
 void NotifyCondition::clear_client_profile_pub() {
-  if (GetArenaNoVirtual() == NULL && client_profile_pub_ != NULL) {
+  if (GetArenaNoVirtual() == nullptr && client_profile_pub_ != nullptr) {
     delete client_profile_pub_;
   }
-  client_profile_pub_ = NULL;
+  client_profile_pub_ = nullptr;
 }
 void NotifyCondition::clear_client_profile_sub() {
-  if (GetArenaNoVirtual() == NULL && client_profile_sub_ != NULL) {
+  if (GetArenaNoVirtual() == nullptr && client_profile_sub_ != nullptr) {
     delete client_profile_sub_;
   }
-  client_profile_sub_ = NULL;
+  client_profile_sub_ = nullptr;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int NotifyCondition::kIdFieldNumber;
-const int NotifyCondition::kNameFieldNumber;
-const int NotifyCondition::kEvaluationFunctionStringifiedFieldNumber;
-const int NotifyCondition::kClientProfilePubFieldNumber;
-const int NotifyCondition::kClientProfileSubFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 NotifyCondition::NotifyCondition()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_proto_2fconditions_2fnotifyCondition_2eproto::scc_info_NotifyCondition.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ubii.conditions.NotifyCondition)
 }
 NotifyCondition::NotifyCondition(const NotifyCondition& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.id().size() > 0) {
-    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.name().size() > 0) {
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  evaluation_function_stringified_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.evaluation_function_stringified().size() > 0) {
-    evaluation_function_stringified_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.evaluation_function_stringified_);
+  evaluation_function_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_evaluation_function_stringified().empty()) {
+    evaluation_function_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.evaluation_function_stringified_);
   }
-  if (from.has_client_profile_pub()) {
+  if (from._internal_has_client_profile_pub()) {
     client_profile_pub_ = new ::ubii::clients::Client(*from.client_profile_pub_);
   } else {
-    client_profile_pub_ = NULL;
+    client_profile_pub_ = nullptr;
   }
-  if (from.has_client_profile_sub()) {
+  if (from._internal_has_client_profile_sub()) {
     client_profile_sub_ = new ::ubii::clients::Client(*from.client_profile_sub_);
   } else {
-    client_profile_sub_ = NULL;
+    client_profile_sub_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:ubii.conditions.NotifyCondition)
 }
 
 void NotifyCondition::SharedCtor() {
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  evaluation_function_stringified_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_NotifyCondition_proto_2fconditions_2fnotifyCondition_2eproto.base);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  evaluation_function_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&client_profile_pub_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&client_profile_sub_) -
       reinterpret_cast<char*>(&client_profile_pub_)) + sizeof(client_profile_sub_));
@@ -202,9 +175,9 @@ NotifyCondition::~NotifyCondition() {
 }
 
 void NotifyCondition::SharedDtor() {
-  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  evaluation_function_stringified_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  evaluation_function_stringified_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete client_profile_pub_;
   if (this != internal_default_instance()) delete client_profile_sub_;
 }
@@ -212,251 +185,155 @@ void NotifyCondition::SharedDtor() {
 void NotifyCondition::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* NotifyCondition::descriptor() {
-  ::protobuf_proto_2fconditions_2fnotifyCondition_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2fconditions_2fnotifyCondition_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const NotifyCondition& NotifyCondition::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_proto_2fconditions_2fnotifyCondition_2eproto::scc_info_NotifyCondition.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_NotifyCondition_proto_2fconditions_2fnotifyCondition_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void NotifyCondition::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.conditions.NotifyCondition)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  evaluation_function_stringified_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == NULL && client_profile_pub_ != NULL) {
+  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  evaluation_function_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && client_profile_pub_ != nullptr) {
     delete client_profile_pub_;
   }
-  client_profile_pub_ = NULL;
-  if (GetArenaNoVirtual() == NULL && client_profile_sub_ != NULL) {
+  client_profile_pub_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && client_profile_sub_ != nullptr) {
     delete client_profile_sub_;
   }
-  client_profile_sub_ = NULL;
+  client_profile_sub_ = nullptr;
   _internal_metadata_.Clear();
 }
 
-bool NotifyCondition::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ubii.conditions.NotifyCondition)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* NotifyCondition::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // string id = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_id()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->id().data(), static_cast<int>(this->id().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ubii.conditions.NotifyCondition.id"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.conditions.NotifyCondition.id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string name = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_name()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->name().data(), static_cast<int>(this->name().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ubii.conditions.NotifyCondition.name"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.conditions.NotifyCondition.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string evaluation_function_stringified = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_evaluation_function_stringified()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->evaluation_function_stringified().data(), static_cast<int>(this->evaluation_function_stringified().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ubii.conditions.NotifyCondition.evaluation_function_stringified"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_evaluation_function_stringified();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.conditions.NotifyCondition.evaluation_function_stringified"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.clients.Client client_profile_pub = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_client_profile_pub()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_client_profile_pub(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.clients.Client client_profile_sub = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_client_profile_sub()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          ptr = ctx->ParseMessage(_internal_mutable_client_profile_sub(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:ubii.conditions.NotifyCondition)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:ubii.conditions.NotifyCondition)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void NotifyCondition::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ubii.conditions.NotifyCondition)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string id = 1;
-  if (this->id().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.conditions.NotifyCondition.id");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->id(), output);
-  }
-
-  // string name = 2;
-  if (this->name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.conditions.NotifyCondition.name");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->name(), output);
-  }
-
-  // string evaluation_function_stringified = 3;
-  if (this->evaluation_function_stringified().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->evaluation_function_stringified().data(), static_cast<int>(this->evaluation_function_stringified().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.conditions.NotifyCondition.evaluation_function_stringified");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->evaluation_function_stringified(), output);
-  }
-
-  // .ubii.clients.Client client_profile_pub = 4;
-  if (this->has_client_profile_pub()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->_internal_client_profile_pub(), output);
-  }
-
-  // .ubii.clients.Client client_profile_sub = 5;
-  if (this->has_client_profile_sub()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->_internal_client_profile_sub(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ubii.conditions.NotifyCondition)
-}
-
-::google::protobuf::uint8* NotifyCondition::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* NotifyCondition::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ubii.conditions.NotifyCondition)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string id = 1;
   if (this->id().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.conditions.NotifyCondition.id");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->id(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_id(), target);
   }
 
   // string name = 2;
   if (this->name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.conditions.NotifyCondition.name");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->name(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_name(), target);
   }
 
   // string evaluation_function_stringified = 3;
   if (this->evaluation_function_stringified().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->evaluation_function_stringified().data(), static_cast<int>(this->evaluation_function_stringified().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_evaluation_function_stringified().data(), static_cast<int>(this->_internal_evaluation_function_stringified().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.conditions.NotifyCondition.evaluation_function_stringified");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->evaluation_function_stringified(), target);
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_evaluation_function_stringified(), target);
   }
 
   // .ubii.clients.Client client_profile_pub = 4;
   if (this->has_client_profile_pub()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, this->_internal_client_profile_pub(), deterministic, target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::client_profile_pub(this), target, stream);
   }
 
   // .ubii.clients.Client client_profile_sub = 5;
   if (this->has_client_profile_sub()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, this->_internal_client_profile_sub(), deterministic, target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        5, _Internal::client_profile_sub(this), target, stream);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.conditions.NotifyCondition)
   return target;
@@ -466,60 +343,63 @@ size_t NotifyCondition::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ubii.conditions.NotifyCondition)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // string id = 1;
   if (this->id().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->id());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_id());
   }
 
   // string name = 2;
   if (this->name().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->name());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
   }
 
   // string evaluation_function_stringified = 3;
   if (this->evaluation_function_stringified().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->evaluation_function_stringified());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_evaluation_function_stringified());
   }
 
   // .ubii.clients.Client client_profile_pub = 4;
   if (this->has_client_profile_pub()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *client_profile_pub_);
   }
 
   // .ubii.clients.Client client_profile_sub = 5;
   if (this->has_client_profile_sub()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *client_profile_sub_);
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void NotifyCondition::MergeFrom(const ::google::protobuf::Message& from) {
+void NotifyCondition::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:ubii.conditions.NotifyCondition)
   GOOGLE_DCHECK_NE(&from, this);
   const NotifyCondition* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const NotifyCondition>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<NotifyCondition>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.conditions.NotifyCondition)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.conditions.NotifyCondition)
     MergeFrom(*source);
@@ -530,30 +410,30 @@ void NotifyCondition::MergeFrom(const NotifyCondition& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.conditions.NotifyCondition)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.id().size() > 0) {
 
-    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
   if (from.name().size() > 0) {
 
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   if (from.evaluation_function_stringified().size() > 0) {
 
-    evaluation_function_stringified_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.evaluation_function_stringified_);
+    evaluation_function_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.evaluation_function_stringified_);
   }
   if (from.has_client_profile_pub()) {
-    mutable_client_profile_pub()->::ubii::clients::Client::MergeFrom(from.client_profile_pub());
+    _internal_mutable_client_profile_pub()->::ubii::clients::Client::MergeFrom(from._internal_client_profile_pub());
   }
   if (from.has_client_profile_sub()) {
-    mutable_client_profile_sub()->::ubii::clients::Client::MergeFrom(from.client_profile_sub());
+    _internal_mutable_client_profile_sub()->::ubii::clients::Client::MergeFrom(from._internal_client_profile_sub());
   }
 }
 
-void NotifyCondition::CopyFrom(const ::google::protobuf::Message& from) {
+void NotifyCondition::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:ubii.conditions.NotifyCondition)
   if (&from == this) return;
   Clear();
@@ -571,38 +451,32 @@ bool NotifyCondition::IsInitialized() const {
   return true;
 }
 
-void NotifyCondition::Swap(NotifyCondition* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void NotifyCondition::InternalSwap(NotifyCondition* other) {
   using std::swap;
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  evaluation_function_stringified_.Swap(&other->evaluation_function_stringified_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  evaluation_function_stringified_.Swap(&other->evaluation_function_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(client_profile_pub_, other->client_profile_pub_);
   swap(client_profile_sub_, other->client_profile_sub_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata NotifyCondition::GetMetadata() const {
-  protobuf_proto_2fconditions_2fnotifyCondition_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2fconditions_2fnotifyCondition_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata NotifyCondition::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace conditions
 }  // namespace ubii
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::conditions::NotifyCondition* Arena::CreateMaybeMessage< ::ubii::conditions::NotifyCondition >(Arena* arena) {
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::ubii::conditions::NotifyCondition* Arena::CreateMaybeMessage< ::ubii::conditions::NotifyCondition >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::conditions::NotifyCondition >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>

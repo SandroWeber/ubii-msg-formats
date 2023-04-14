@@ -20,20 +20,24 @@ public final class Object2DOuterClass {
 
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     java.lang.String getId();
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
      * <code>.ubii.dataStructure.Pose2D pose = 2;</code>
+     * @return Whether the pose field is set.
      */
     boolean hasPose();
     /**
      * <code>.ubii.dataStructure.Pose2D pose = 2;</code>
+     * @return The pose.
      */
     ubii.dataStructure.Pose2DOuterClass.Pose2D getPose();
     /**
@@ -43,10 +47,12 @@ public final class Object2DOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Vector2 size = 3;</code>
+     * @return Whether the size field is set.
      */
     boolean hasSize();
     /**
      * <code>.ubii.dataStructure.Vector2 size = 3;</code>
+     * @return The size.
      */
     ubii.dataStructure.Vector2OuterClass.Vector2 getSize();
     /**
@@ -56,10 +62,12 @@ public final class Object2DOuterClass {
 
     /**
      * <code>string user_data_json = 4;</code>
+     * @return The userDataJson.
      */
     java.lang.String getUserDataJson();
     /**
      * <code>string user_data_json = 4;</code>
+     * @return The bytes for userDataJson.
      */
     com.google.protobuf.ByteString
         getUserDataJsonBytes();
@@ -67,7 +75,7 @@ public final class Object2DOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Object2D}
    */
-  public  static final class Object2D extends
+  public static final class Object2D extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Object2D)
       Object2DOrBuilder {
@@ -82,86 +90,12 @@ public final class Object2DOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Object2D();
     }
-    private Object2D(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
-              break;
-            }
-            case 18: {
-              ubii.dataStructure.Pose2DOuterClass.Pose2D.Builder subBuilder = null;
-              if (pose_ != null) {
-                subBuilder = pose_.toBuilder();
-              }
-              pose_ = input.readMessage(ubii.dataStructure.Pose2DOuterClass.Pose2D.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pose_);
-                pose_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              ubii.dataStructure.Vector2OuterClass.Vector2.Builder subBuilder = null;
-              if (size_ != null) {
-                subBuilder = size_.toBuilder();
-              }
-              size_ = input.readMessage(ubii.dataStructure.Vector2OuterClass.Vector2.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(size_);
-                size_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              userDataJson_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.dataStructure.Object2DOuterClass.internal_static_ubii_dataStructure_Object2D_descriptor;
@@ -176,10 +110,13 @@ public final class Object2DOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -194,7 +131,9 @@ public final class Object2DOuterClass {
     }
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -213,49 +152,62 @@ public final class Object2DOuterClass {
     private ubii.dataStructure.Pose2DOuterClass.Pose2D pose_;
     /**
      * <code>.ubii.dataStructure.Pose2D pose = 2;</code>
+     * @return Whether the pose field is set.
      */
+    @java.lang.Override
     public boolean hasPose() {
       return pose_ != null;
     }
     /**
      * <code>.ubii.dataStructure.Pose2D pose = 2;</code>
+     * @return The pose.
      */
+    @java.lang.Override
     public ubii.dataStructure.Pose2DOuterClass.Pose2D getPose() {
       return pose_ == null ? ubii.dataStructure.Pose2DOuterClass.Pose2D.getDefaultInstance() : pose_;
     }
     /**
      * <code>.ubii.dataStructure.Pose2D pose = 2;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Pose2DOuterClass.Pose2DOrBuilder getPoseOrBuilder() {
-      return getPose();
+      return pose_ == null ? ubii.dataStructure.Pose2DOuterClass.Pose2D.getDefaultInstance() : pose_;
     }
 
     public static final int SIZE_FIELD_NUMBER = 3;
     private ubii.dataStructure.Vector2OuterClass.Vector2 size_;
     /**
      * <code>.ubii.dataStructure.Vector2 size = 3;</code>
+     * @return Whether the size field is set.
      */
+    @java.lang.Override
     public boolean hasSize() {
       return size_ != null;
     }
     /**
      * <code>.ubii.dataStructure.Vector2 size = 3;</code>
+     * @return The size.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2 getSize() {
       return size_ == null ? ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance() : size_;
     }
     /**
      * <code>.ubii.dataStructure.Vector2 size = 3;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getSizeOrBuilder() {
-      return getSize();
+      return size_ == null ? ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance() : size_;
     }
 
     public static final int USER_DATA_JSON_FIELD_NUMBER = 4;
-    private volatile java.lang.Object userDataJson_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userDataJson_ = "";
     /**
      * <code>string user_data_json = 4;</code>
+     * @return The userDataJson.
      */
+    @java.lang.Override
     public java.lang.String getUserDataJson() {
       java.lang.Object ref = userDataJson_;
       if (ref instanceof java.lang.String) {
@@ -270,7 +222,9 @@ public final class Object2DOuterClass {
     }
     /**
      * <code>string user_data_json = 4;</code>
+     * @return The bytes for userDataJson.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getUserDataJsonBytes() {
       java.lang.Object ref = userDataJson_;
@@ -299,7 +253,7 @@ public final class Object2DOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (pose_ != null) {
@@ -308,10 +262,10 @@ public final class Object2DOuterClass {
       if (size_ != null) {
         output.writeMessage(3, getSize());
       }
-      if (!getUserDataJsonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userDataJson_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userDataJson_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -320,7 +274,7 @@ public final class Object2DOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (pose_ != null) {
@@ -331,10 +285,10 @@ public final class Object2DOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getSize());
       }
-      if (!getUserDataJsonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userDataJson_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userDataJson_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -349,23 +303,22 @@ public final class Object2DOuterClass {
       }
       ubii.dataStructure.Object2DOuterClass.Object2D other = (ubii.dataStructure.Object2DOuterClass.Object2D) obj;
 
-      boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && (hasPose() == other.hasPose());
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (hasPose() != other.hasPose()) return false;
       if (hasPose()) {
-        result = result && getPose()
-            .equals(other.getPose());
+        if (!getPose()
+            .equals(other.getPose())) return false;
       }
-      result = result && (hasSize() == other.hasSize());
+      if (hasSize() != other.hasSize()) return false;
       if (hasSize()) {
-        result = result && getSize()
-            .equals(other.getSize());
+        if (!getSize()
+            .equals(other.getSize())) return false;
       }
-      result = result && getUserDataJson()
-          .equals(other.getUserDataJson());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getUserDataJson()
+          .equals(other.getUserDataJson())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -387,7 +340,7 @@ public final class Object2DOuterClass {
       }
       hash = (37 * hash) + USER_DATA_JSON_FIELD_NUMBER;
       hash = (53 * hash) + getUserDataJson().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -504,38 +457,30 @@ public final class Object2DOuterClass {
 
       // Construct using ubii.dataStructure.Object2DOuterClass.Object2D.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
-        if (poseBuilder_ == null) {
-          pose_ = null;
-        } else {
-          pose_ = null;
+        pose_ = null;
+        if (poseBuilder_ != null) {
+          poseBuilder_.dispose();
           poseBuilder_ = null;
         }
-        if (sizeBuilder_ == null) {
-          size_ = null;
-        } else {
-          size_ = null;
+        size_ = null;
+        if (sizeBuilder_ != null) {
+          sizeBuilder_.dispose();
           sizeBuilder_ = null;
         }
         userDataJson_ = "";
-
         return this;
       }
 
@@ -562,54 +507,31 @@ public final class Object2DOuterClass {
       @java.lang.Override
       public ubii.dataStructure.Object2DOuterClass.Object2D buildPartial() {
         ubii.dataStructure.Object2DOuterClass.Object2D result = new ubii.dataStructure.Object2DOuterClass.Object2D(this);
-        result.id_ = id_;
-        if (poseBuilder_ == null) {
-          result.pose_ = pose_;
-        } else {
-          result.pose_ = poseBuilder_.build();
-        }
-        if (sizeBuilder_ == null) {
-          result.size_ = size_;
-        } else {
-          result.size_ = sizeBuilder_.build();
-        }
-        result.userDataJson_ = userDataJson_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.dataStructure.Object2DOuterClass.Object2D result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pose_ = poseBuilder_ == null
+              ? pose_
+              : poseBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.size_ = sizeBuilder_ == null
+              ? size_
+              : sizeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.userDataJson_ = userDataJson_;
+        }
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.Object2DOuterClass.Object2D) {
@@ -624,6 +546,7 @@ public final class Object2DOuterClass {
         if (other == ubii.dataStructure.Object2DOuterClass.Object2D.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasPose()) {
@@ -634,9 +557,10 @@ public final class Object2DOuterClass {
         }
         if (!other.getUserDataJson().isEmpty()) {
           userDataJson_ = other.userDataJson_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -651,23 +575,62 @@ public final class Object2DOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.dataStructure.Object2DOuterClass.Object2D parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getPoseFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getSizeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                userDataJson_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.dataStructure.Object2DOuterClass.Object2D) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
        * <code>string id = 1;</code>
+       * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -683,6 +646,7 @@ public final class Object2DOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -699,52 +663,55 @@ public final class Object2DOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>string id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
-        
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
        * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private ubii.dataStructure.Pose2DOuterClass.Pose2D pose_ = null;
+      private ubii.dataStructure.Pose2DOuterClass.Pose2D pose_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Pose2DOuterClass.Pose2D, ubii.dataStructure.Pose2DOuterClass.Pose2D.Builder, ubii.dataStructure.Pose2DOuterClass.Pose2DOrBuilder> poseBuilder_;
       /**
        * <code>.ubii.dataStructure.Pose2D pose = 2;</code>
+       * @return Whether the pose field is set.
        */
       public boolean hasPose() {
-        return poseBuilder_ != null || pose_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.ubii.dataStructure.Pose2D pose = 2;</code>
+       * @return The pose.
        */
       public ubii.dataStructure.Pose2DOuterClass.Pose2D getPose() {
         if (poseBuilder_ == null) {
@@ -762,11 +729,11 @@ public final class Object2DOuterClass {
             throw new NullPointerException();
           }
           pose_ = value;
-          onChanged();
         } else {
           poseBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -776,11 +743,11 @@ public final class Object2DOuterClass {
           ubii.dataStructure.Pose2DOuterClass.Pose2D.Builder builderForValue) {
         if (poseBuilder_ == null) {
           pose_ = builderForValue.build();
-          onChanged();
         } else {
           poseBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -788,38 +755,38 @@ public final class Object2DOuterClass {
        */
       public Builder mergePose(ubii.dataStructure.Pose2DOuterClass.Pose2D value) {
         if (poseBuilder_ == null) {
-          if (pose_ != null) {
-            pose_ =
-              ubii.dataStructure.Pose2DOuterClass.Pose2D.newBuilder(pose_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            pose_ != null &&
+            pose_ != ubii.dataStructure.Pose2DOuterClass.Pose2D.getDefaultInstance()) {
+            getPoseBuilder().mergeFrom(value);
           } else {
             pose_ = value;
           }
-          onChanged();
         } else {
           poseBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Pose2D pose = 2;</code>
        */
       public Builder clearPose() {
-        if (poseBuilder_ == null) {
-          pose_ = null;
-          onChanged();
-        } else {
-          pose_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        pose_ = null;
+        if (poseBuilder_ != null) {
+          poseBuilder_.dispose();
           poseBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Pose2D pose = 2;</code>
        */
       public ubii.dataStructure.Pose2DOuterClass.Pose2D.Builder getPoseBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getPoseFieldBuilder().getBuilder();
       }
@@ -851,17 +818,19 @@ public final class Object2DOuterClass {
         return poseBuilder_;
       }
 
-      private ubii.dataStructure.Vector2OuterClass.Vector2 size_ = null;
+      private ubii.dataStructure.Vector2OuterClass.Vector2 size_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder> sizeBuilder_;
       /**
        * <code>.ubii.dataStructure.Vector2 size = 3;</code>
+       * @return Whether the size field is set.
        */
       public boolean hasSize() {
-        return sizeBuilder_ != null || size_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.ubii.dataStructure.Vector2 size = 3;</code>
+       * @return The size.
        */
       public ubii.dataStructure.Vector2OuterClass.Vector2 getSize() {
         if (sizeBuilder_ == null) {
@@ -879,11 +848,11 @@ public final class Object2DOuterClass {
             throw new NullPointerException();
           }
           size_ = value;
-          onChanged();
         } else {
           sizeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -893,11 +862,11 @@ public final class Object2DOuterClass {
           ubii.dataStructure.Vector2OuterClass.Vector2.Builder builderForValue) {
         if (sizeBuilder_ == null) {
           size_ = builderForValue.build();
-          onChanged();
         } else {
           sizeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -905,38 +874,38 @@ public final class Object2DOuterClass {
        */
       public Builder mergeSize(ubii.dataStructure.Vector2OuterClass.Vector2 value) {
         if (sizeBuilder_ == null) {
-          if (size_ != null) {
-            size_ =
-              ubii.dataStructure.Vector2OuterClass.Vector2.newBuilder(size_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            size_ != null &&
+            size_ != ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance()) {
+            getSizeBuilder().mergeFrom(value);
           } else {
             size_ = value;
           }
-          onChanged();
         } else {
           sizeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Vector2 size = 3;</code>
        */
       public Builder clearSize() {
-        if (sizeBuilder_ == null) {
-          size_ = null;
-          onChanged();
-        } else {
-          size_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        size_ = null;
+        if (sizeBuilder_ != null) {
+          sizeBuilder_.dispose();
           sizeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Vector2 size = 3;</code>
        */
       public ubii.dataStructure.Vector2OuterClass.Vector2.Builder getSizeBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getSizeFieldBuilder().getBuilder();
       }
@@ -971,6 +940,7 @@ public final class Object2DOuterClass {
       private java.lang.Object userDataJson_ = "";
       /**
        * <code>string user_data_json = 4;</code>
+       * @return The userDataJson.
        */
       public java.lang.String getUserDataJson() {
         java.lang.Object ref = userDataJson_;
@@ -986,6 +956,7 @@ public final class Object2DOuterClass {
       }
       /**
        * <code>string user_data_json = 4;</code>
+       * @return The bytes for userDataJson.
        */
       public com.google.protobuf.ByteString
           getUserDataJsonBytes() {
@@ -1002,44 +973,45 @@ public final class Object2DOuterClass {
       }
       /**
        * <code>string user_data_json = 4;</code>
+       * @param value The userDataJson to set.
+       * @return This builder for chaining.
        */
       public Builder setUserDataJson(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         userDataJson_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
        * <code>string user_data_json = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUserDataJson() {
-        
         userDataJson_ = getDefaultInstance().getUserDataJson();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
       /**
        * <code>string user_data_json = 4;</code>
+       * @param value The bytes for userDataJson to set.
+       * @return This builder for chaining.
        */
       public Builder setUserDataJsonBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         userDataJson_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1069,7 +1041,18 @@ public final class Object2DOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Object2D(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1120,7 +1103,7 @@ public final class Object2DOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Object2DList}
    */
-  public  static final class Object2DList extends
+  public static final class Object2DList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Object2DList)
       Object2DListOrBuilder {
@@ -1134,60 +1117,12 @@ public final class Object2DOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Object2DList();
     }
-    private Object2DList(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                elements_ = new java.util.ArrayList<ubii.dataStructure.Object2DOuterClass.Object2D>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              elements_.add(
-                  input.readMessage(ubii.dataStructure.Object2DOuterClass.Object2D.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          elements_ = java.util.Collections.unmodifiableList(elements_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.dataStructure.Object2DOuterClass.internal_static_ubii_dataStructure_Object2DList_descriptor;
@@ -1202,16 +1137,19 @@ public final class Object2DOuterClass {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<ubii.dataStructure.Object2DOuterClass.Object2D> elements_;
     /**
      * <code>repeated .ubii.dataStructure.Object2D elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.dataStructure.Object2DOuterClass.Object2D> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.dataStructure.Object2D elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.dataStructure.Object2DOuterClass.Object2DOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1219,18 +1157,21 @@ public final class Object2DOuterClass {
     /**
      * <code>repeated .ubii.dataStructure.Object2D elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.dataStructure.Object2D elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Object2DOuterClass.Object2D getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.dataStructure.Object2D elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Object2DOuterClass.Object2DOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
@@ -1253,7 +1194,7 @@ public final class Object2DOuterClass {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1266,7 +1207,7 @@ public final class Object2DOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1281,11 +1222,10 @@ public final class Object2DOuterClass {
       }
       ubii.dataStructure.Object2DOuterClass.Object2DList other = (ubii.dataStructure.Object2DOuterClass.Object2DList) obj;
 
-      boolean result = true;
-      result = result && getElementsList()
-          .equals(other.getElementsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getElementsList()
+          .equals(other.getElementsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1299,7 +1239,7 @@ public final class Object2DOuterClass {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1416,29 +1356,25 @@ public final class Object2DOuterClass {
 
       // Construct using ubii.dataStructure.Object2DOuterClass.Object2DList.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getElementsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (elementsBuilder_ == null) {
           elements_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          elements_ = null;
           elementsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1465,9 +1401,15 @@ public final class Object2DOuterClass {
       @java.lang.Override
       public ubii.dataStructure.Object2DOuterClass.Object2DList buildPartial() {
         ubii.dataStructure.Object2DOuterClass.Object2DList result = new ubii.dataStructure.Object2DOuterClass.Object2DList(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(ubii.dataStructure.Object2DOuterClass.Object2DList result) {
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -1475,42 +1417,12 @@ public final class Object2DOuterClass {
         } else {
           result.elements_ = elementsBuilder_.build();
         }
-        onBuilt();
-        return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.dataStructure.Object2DOuterClass.Object2DList result) {
+        int from_bitField0_ = bitField0_;
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.Object2DOuterClass.Object2DList) {
@@ -1549,7 +1461,7 @@ public final class Object2DOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1564,17 +1476,43 @@ public final class Object2DOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.dataStructure.Object2DOuterClass.Object2DList parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                ubii.dataStructure.Object2DOuterClass.Object2D m =
+                    input.readMessage(
+                        ubii.dataStructure.Object2DOuterClass.Object2D.parser(),
+                        extensionRegistry);
+                if (elementsBuilder_ == null) {
+                  ensureElementsIsMutable();
+                  elements_.add(m);
+                } else {
+                  elementsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.dataStructure.Object2DOuterClass.Object2DList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1582,7 +1520,7 @@ public final class Object2DOuterClass {
       private java.util.List<ubii.dataStructure.Object2DOuterClass.Object2D> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           elements_ = new java.util.ArrayList<ubii.dataStructure.Object2DOuterClass.Object2D>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -1811,7 +1749,7 @@ public final class Object2DOuterClass {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.dataStructure.Object2DOuterClass.Object2D, ubii.dataStructure.Object2DOuterClass.Object2D.Builder, ubii.dataStructure.Object2DOuterClass.Object2DOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
@@ -1821,7 +1759,7 @@ public final class Object2DOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1851,7 +1789,18 @@ public final class Object2DOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Object2DList(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1900,20 +1849,12 @@ public final class Object2DOuterClass {
       "lements\030\001 \003(\0132\034.ubii.dataStructure.Objec" +
       "t2Db\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.dataStructure.Pose2DOuterClass.getDescriptor(),
           ubii.dataStructure.Vector2OuterClass.getDescriptor(),
-        }, assigner);
+        });
     internal_static_ubii_dataStructure_Object2D_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_Object2D_fieldAccessorTable = new

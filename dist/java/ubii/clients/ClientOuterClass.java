@@ -20,20 +20,24 @@ public final class ClientOuterClass {
 
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     java.lang.String getId();
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
      * <code>string name = 2;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -64,29 +68,37 @@ public final class ClientOuterClass {
 
     /**
      * <code>repeated string tags = 4;</code>
+     * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
      * <code>repeated string tags = 4;</code>
+     * @return The count of tags.
      */
     int getTagsCount();
     /**
      * <code>repeated string tags = 4;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
      * <code>repeated string tags = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
 
     /**
      * <code>string description = 5;</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 5;</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
@@ -117,47 +129,55 @@ public final class ClientOuterClass {
 
     /**
      * <code>bool is_dedicated_processing_node = 7;</code>
+     * @return The isDedicatedProcessingNode.
      */
     boolean getIsDedicatedProcessingNode();
 
     /**
      * <code>string host_ip = 8;</code>
+     * @return The hostIp.
      */
     java.lang.String getHostIp();
     /**
      * <code>string host_ip = 8;</code>
+     * @return The bytes for hostIp.
      */
     com.google.protobuf.ByteString
         getHostIpBytes();
 
     /**
      * <code>string metadata_json = 9;</code>
+     * @return The metadataJson.
      */
     java.lang.String getMetadataJson();
     /**
      * <code>string metadata_json = 9;</code>
+     * @return The bytes for metadataJson.
      */
     com.google.protobuf.ByteString
         getMetadataJsonBytes();
 
     /**
      * <code>.ubii.clients.Client.State state = 10;</code>
+     * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
     /**
      * <code>.ubii.clients.Client.State state = 10;</code>
+     * @return The state.
      */
     ubii.clients.ClientOuterClass.Client.State getState();
 
     /**
      * <code>float latency = 11;</code>
+     * @return The latency.
      */
     float getLatency();
   }
   /**
    * Protobuf type {@code ubii.clients.Client}
    */
-  public  static final class Client extends
+  public static final class Client extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.clients.Client)
       ClientOrBuilder {
@@ -170,141 +190,22 @@ public final class ClientOuterClass {
       id_ = "";
       name_ = "";
       devices_ = java.util.Collections.emptyList();
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       description_ = "";
       processingModules_ = java.util.Collections.emptyList();
-      isDedicatedProcessingNode_ = false;
       hostIp_ = "";
       metadataJson_ = "";
       state_ = 0;
-      latency_ = 0F;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Client();
     }
-    private Client(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                devices_ = new java.util.ArrayList<ubii.devices.DeviceOuterClass.Device>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              devices_.add(
-                  input.readMessage(ubii.devices.DeviceOuterClass.Device.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              tags_.add(s);
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              processingModules_.add(
-                  input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingModule.parser(), extensionRegistry));
-              break;
-            }
-            case 56: {
-
-              isDedicatedProcessingNode_ = input.readBool();
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              hostIp_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              metadataJson_ = s;
-              break;
-            }
-            case 80: {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-            case 93: {
-
-              latency_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          devices_ = java.util.Collections.unmodifiableList(devices_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          tags_ = tags_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-          processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.clients.ClientOuterClass.internal_static_ubii_clients_Client_descriptor;
@@ -361,6 +262,8 @@ public final class ClientOuterClass {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -368,6 +271,10 @@ public final class ClientOuterClass {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static State forNumber(int value) {
         switch (value) {
           case 0: return ACTIVE;
@@ -391,6 +298,10 @@ public final class ClientOuterClass {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -425,12 +336,14 @@ public final class ClientOuterClass {
       // @@protoc_insertion_point(enum_scope:ubii.clients.Client.State)
     }
 
-    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -445,7 +358,9 @@ public final class ClientOuterClass {
     }
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -461,10 +376,13 @@ public final class ClientOuterClass {
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      * <code>string name = 2;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -479,7 +397,9 @@ public final class ClientOuterClass {
     }
     /**
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -495,16 +415,19 @@ public final class ClientOuterClass {
     }
 
     public static final int DEVICES_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<ubii.devices.DeviceOuterClass.Device> devices_;
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.devices.DeviceOuterClass.Device> getDevicesList() {
       return devices_;
     }
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.devices.DeviceOuterClass.DeviceOrBuilder> 
         getDevicesOrBuilderList() {
       return devices_;
@@ -512,27 +435,33 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
+    @java.lang.Override
     public int getDevicesCount() {
       return devices_.size();
     }
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
+    @java.lang.Override
     public ubii.devices.DeviceOuterClass.Device getDevices(int index) {
       return devices_.get(index);
     }
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
+    @java.lang.Override
     public ubii.devices.DeviceOuterClass.DeviceOrBuilder getDevicesOrBuilder(
         int index) {
       return devices_.get(index);
     }
 
     public static final int TAGS_FIELD_NUMBER = 4;
-    private com.google.protobuf.LazyStringList tags_;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      * <code>repeated string tags = 4;</code>
+     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -540,18 +469,23 @@ public final class ClientOuterClass {
     }
     /**
      * <code>repeated string tags = 4;</code>
+     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
      * <code>repeated string tags = 4;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
     /**
      * <code>repeated string tags = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -559,10 +493,13 @@ public final class ClientOuterClass {
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 5;
-    private volatile java.lang.Object description_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      * <code>string description = 5;</code>
+     * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -577,7 +514,9 @@ public final class ClientOuterClass {
     }
     /**
      * <code>string description = 5;</code>
+     * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -593,16 +532,19 @@ public final class ClientOuterClass {
     }
 
     public static final int PROCESSING_MODULES_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_;
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
       return processingModules_;
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
         getProcessingModulesOrBuilderList() {
       return processingModules_;
@@ -610,37 +552,45 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
+    @java.lang.Override
     public int getProcessingModulesCount() {
       return processingModules_.size();
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
       return processingModules_.get(index);
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
         int index) {
       return processingModules_.get(index);
     }
 
     public static final int IS_DEDICATED_PROCESSING_NODE_FIELD_NUMBER = 7;
-    private boolean isDedicatedProcessingNode_;
+    private boolean isDedicatedProcessingNode_ = false;
     /**
      * <code>bool is_dedicated_processing_node = 7;</code>
+     * @return The isDedicatedProcessingNode.
      */
+    @java.lang.Override
     public boolean getIsDedicatedProcessingNode() {
       return isDedicatedProcessingNode_;
     }
 
     public static final int HOST_IP_FIELD_NUMBER = 8;
-    private volatile java.lang.Object hostIp_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object hostIp_ = "";
     /**
      * <code>string host_ip = 8;</code>
+     * @return The hostIp.
      */
+    @java.lang.Override
     public java.lang.String getHostIp() {
       java.lang.Object ref = hostIp_;
       if (ref instanceof java.lang.String) {
@@ -655,7 +605,9 @@ public final class ClientOuterClass {
     }
     /**
      * <code>string host_ip = 8;</code>
+     * @return The bytes for hostIp.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getHostIpBytes() {
       java.lang.Object ref = hostIp_;
@@ -671,10 +623,13 @@ public final class ClientOuterClass {
     }
 
     public static final int METADATA_JSON_FIELD_NUMBER = 9;
-    private volatile java.lang.Object metadataJson_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object metadataJson_ = "";
     /**
      * <code>string metadata_json = 9;</code>
+     * @return The metadataJson.
      */
+    @java.lang.Override
     public java.lang.String getMetadataJson() {
       java.lang.Object ref = metadataJson_;
       if (ref instanceof java.lang.String) {
@@ -689,7 +644,9 @@ public final class ClientOuterClass {
     }
     /**
      * <code>string metadata_json = 9;</code>
+     * @return The bytes for metadataJson.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMetadataJsonBytes() {
       java.lang.Object ref = metadataJson_;
@@ -705,27 +662,30 @@ public final class ClientOuterClass {
     }
 
     public static final int STATE_FIELD_NUMBER = 10;
-    private int state_;
+    private int state_ = 0;
     /**
      * <code>.ubii.clients.Client.State state = 10;</code>
+     * @return The enum numeric value on the wire for state.
      */
-    public int getStateValue() {
+    @java.lang.Override public int getStateValue() {
       return state_;
     }
     /**
      * <code>.ubii.clients.Client.State state = 10;</code>
+     * @return The state.
      */
-    public ubii.clients.ClientOuterClass.Client.State getState() {
-      @SuppressWarnings("deprecation")
-      ubii.clients.ClientOuterClass.Client.State result = ubii.clients.ClientOuterClass.Client.State.valueOf(state_);
+    @java.lang.Override public ubii.clients.ClientOuterClass.Client.State getState() {
+      ubii.clients.ClientOuterClass.Client.State result = ubii.clients.ClientOuterClass.Client.State.forNumber(state_);
       return result == null ? ubii.clients.ClientOuterClass.Client.State.UNRECOGNIZED : result;
     }
 
     public static final int LATENCY_FIELD_NUMBER = 11;
-    private float latency_;
+    private float latency_ = 0F;
     /**
      * <code>float latency = 11;</code>
+     * @return The latency.
      */
+    @java.lang.Override
     public float getLatency() {
       return latency_;
     }
@@ -744,10 +704,10 @@ public final class ClientOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
       for (int i = 0; i < devices_.size(); i++) {
@@ -756,7 +716,7 @@ public final class ClientOuterClass {
       for (int i = 0; i < tags_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
       for (int i = 0; i < processingModules_.size(); i++) {
@@ -765,19 +725,19 @@ public final class ClientOuterClass {
       if (isDedicatedProcessingNode_ != false) {
         output.writeBool(7, isDedicatedProcessingNode_);
       }
-      if (!getHostIpBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostIp_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, hostIp_);
       }
-      if (!getMetadataJsonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataJson_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, metadataJson_);
       }
       if (state_ != ubii.clients.ClientOuterClass.Client.State.ACTIVE.getNumber()) {
         output.writeEnum(10, state_);
       }
-      if (latency_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(latency_) != 0) {
         output.writeFloat(11, latency_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -786,10 +746,10 @@ public final class ClientOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
       for (int i = 0; i < devices_.size(); i++) {
@@ -804,7 +764,7 @@ public final class ClientOuterClass {
         size += dataSize;
         size += 1 * getTagsList().size();
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
       }
       for (int i = 0; i < processingModules_.size(); i++) {
@@ -815,21 +775,21 @@ public final class ClientOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, isDedicatedProcessingNode_);
       }
-      if (!getHostIpBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostIp_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, hostIp_);
       }
-      if (!getMetadataJsonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataJson_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, metadataJson_);
       }
       if (state_ != ubii.clients.ClientOuterClass.Client.State.ACTIVE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, state_);
       }
-      if (latency_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(latency_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(11, latency_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -844,32 +804,30 @@ public final class ClientOuterClass {
       }
       ubii.clients.ClientOuterClass.Client other = (ubii.clients.ClientOuterClass.Client) obj;
 
-      boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && getName()
-          .equals(other.getName());
-      result = result && getDevicesList()
-          .equals(other.getDevicesList());
-      result = result && getTagsList()
-          .equals(other.getTagsList());
-      result = result && getDescription()
-          .equals(other.getDescription());
-      result = result && getProcessingModulesList()
-          .equals(other.getProcessingModulesList());
-      result = result && (getIsDedicatedProcessingNode()
-          == other.getIsDedicatedProcessingNode());
-      result = result && getHostIp()
-          .equals(other.getHostIp());
-      result = result && getMetadataJson()
-          .equals(other.getMetadataJson());
-      result = result && state_ == other.state_;
-      result = result && (
-          java.lang.Float.floatToIntBits(getLatency())
-          == java.lang.Float.floatToIntBits(
-              other.getLatency()));
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getDevicesList()
+          .equals(other.getDevicesList())) return false;
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!getProcessingModulesList()
+          .equals(other.getProcessingModulesList())) return false;
+      if (getIsDedicatedProcessingNode()
+          != other.getIsDedicatedProcessingNode()) return false;
+      if (!getHostIp()
+          .equals(other.getHostIp())) return false;
+      if (!getMetadataJson()
+          .equals(other.getMetadataJson())) return false;
+      if (state_ != other.state_) return false;
+      if (java.lang.Float.floatToIntBits(getLatency())
+          != java.lang.Float.floatToIntBits(
+              other.getLatency())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -909,7 +867,7 @@ public final class ClientOuterClass {
       hash = (37 * hash) + LATENCY_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getLatency());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1026,54 +984,42 @@ public final class ClientOuterClass {
 
       // Construct using ubii.clients.ClientOuterClass.Client.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getDevicesFieldBuilder();
-          getProcessingModulesFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
         name_ = "";
-
         if (devicesBuilder_ == null) {
           devices_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          devices_ = null;
           devicesBuilder_.clear();
         }
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
+        tags_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         description_ = "";
-
         if (processingModulesBuilder_ == null) {
           processingModules_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
+          processingModules_ = null;
           processingModulesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         isDedicatedProcessingNode_ = false;
-
         hostIp_ = "";
-
         metadataJson_ = "";
-
         state_ = 0;
-
         latency_ = 0F;
-
         return this;
       }
 
@@ -1100,12 +1046,15 @@ public final class ClientOuterClass {
       @java.lang.Override
       public ubii.clients.ClientOuterClass.Client buildPartial() {
         ubii.clients.ClientOuterClass.Client result = new ubii.clients.ClientOuterClass.Client(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.id_ = id_;
-        result.name_ = name_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(ubii.clients.ClientOuterClass.Client result) {
         if (devicesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             devices_ = java.util.Collections.unmodifiableList(devices_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
@@ -1113,14 +1062,8 @@ public final class ClientOuterClass {
         } else {
           result.devices_ = devicesBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.tags_ = tags_;
-        result.description_ = description_;
         if (processingModulesBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
             bitField0_ = (bitField0_ & ~0x00000020);
           }
@@ -1128,48 +1071,40 @@ public final class ClientOuterClass {
         } else {
           result.processingModules_ = processingModulesBuilder_.build();
         }
-        result.isDedicatedProcessingNode_ = isDedicatedProcessingNode_;
-        result.hostIp_ = hostIp_;
-        result.metadataJson_ = metadataJson_;
-        result.state_ = state_;
-        result.latency_ = latency_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.clients.ClientOuterClass.Client result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          tags_.makeImmutable();
+          result.tags_ = tags_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.isDedicatedProcessingNode_ = isDedicatedProcessingNode_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.hostIp_ = hostIp_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.metadataJson_ = metadataJson_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.latency_ = latency_;
+        }
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.clients.ClientOuterClass.Client) {
@@ -1184,10 +1119,12 @@ public final class ClientOuterClass {
         if (other == ubii.clients.ClientOuterClass.Client.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (devicesBuilder_ == null) {
@@ -1219,7 +1156,7 @@ public final class ClientOuterClass {
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -1228,6 +1165,7 @@ public final class ClientOuterClass {
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (processingModulesBuilder_ == null) {
@@ -1261,10 +1199,12 @@ public final class ClientOuterClass {
         }
         if (!other.getHostIp().isEmpty()) {
           hostIp_ = other.hostIp_;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         if (!other.getMetadataJson().isEmpty()) {
           metadataJson_ = other.metadataJson_;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         if (other.state_ != 0) {
@@ -1273,7 +1213,7 @@ public final class ClientOuterClass {
         if (other.getLatency() != 0F) {
           setLatency(other.getLatency());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1288,17 +1228,102 @@ public final class ClientOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.clients.ClientOuterClass.Client parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                ubii.devices.DeviceOuterClass.Device m =
+                    input.readMessage(
+                        ubii.devices.DeviceOuterClass.Device.parser(),
+                        extensionRegistry);
+                if (devicesBuilder_ == null) {
+                  ensureDevicesIsMutable();
+                  devices_.add(m);
+                } else {
+                  devicesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTagsIsMutable();
+                tags_.add(s);
+                break;
+              } // case 34
+              case 42: {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 50: {
+                ubii.processing.ProcessingModuleOuterClass.ProcessingModule m =
+                    input.readMessage(
+                        ubii.processing.ProcessingModuleOuterClass.ProcessingModule.parser(),
+                        extensionRegistry);
+                if (processingModulesBuilder_ == null) {
+                  ensureProcessingModulesIsMutable();
+                  processingModules_.add(m);
+                } else {
+                  processingModulesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 56: {
+                isDedicatedProcessingNode_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+              case 66: {
+                hostIp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 74: {
+                metadataJson_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+              case 80: {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
+              case 93: {
+                latency_ = input.readFloat();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 93
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.clients.ClientOuterClass.Client) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1306,6 +1331,7 @@ public final class ClientOuterClass {
       private java.lang.Object id_ = "";
       /**
        * <code>string id = 1;</code>
+       * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -1321,6 +1347,7 @@ public final class ClientOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -1337,37 +1364,38 @@ public final class ClientOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>string id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
-        
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
        * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1375,6 +1403,7 @@ public final class ClientOuterClass {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 2;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1390,6 +1419,7 @@ public final class ClientOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1406,37 +1436,38 @@ public final class ClientOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
        * <code>string name = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
-        
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
        * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1444,7 +1475,7 @@ public final class ClientOuterClass {
       private java.util.List<ubii.devices.DeviceOuterClass.Device> devices_ =
         java.util.Collections.emptyList();
       private void ensureDevicesIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           devices_ = new java.util.ArrayList<ubii.devices.DeviceOuterClass.Device>(devices_);
           bitField0_ |= 0x00000004;
          }
@@ -1673,7 +1704,7 @@ public final class ClientOuterClass {
           devicesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.devices.DeviceOuterClass.Device, ubii.devices.DeviceOuterClass.Device.Builder, ubii.devices.DeviceOuterClass.DeviceOrBuilder>(
                   devices_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           devices_ = null;
@@ -1681,34 +1712,42 @@ public final class ClientOuterClass {
         return devicesBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!tags_.isModifiable()) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000008;
-         }
+        }
+        bitField0_ |= 0x00000008;
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
-        return tags_.getUnmodifiableView();
+        tags_.makeImmutable();
+        return tags_;
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -1716,61 +1755,70 @@ public final class ClientOuterClass {
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
        */
       public Builder setTags(
           int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureTagsIsMutable();
         tags_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTags(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureTagsIsMutable();
         tags_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
         ensureTagsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, tags_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTags() {
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         ensureTagsIsMutable();
         tags_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1778,6 +1826,7 @@ public final class ClientOuterClass {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 5;</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -1793,6 +1842,7 @@ public final class ClientOuterClass {
       }
       /**
        * <code>string description = 5;</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -1809,37 +1859,38 @@ public final class ClientOuterClass {
       }
       /**
        * <code>string description = 5;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         description_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
        * <code>string description = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
-        
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
       /**
        * <code>string description = 5;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         description_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1847,7 +1898,7 @@ public final class ClientOuterClass {
       private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_ =
         java.util.Collections.emptyList();
       private void ensureProcessingModulesIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>(processingModules_);
           bitField0_ |= 0x00000020;
          }
@@ -2076,7 +2127,7 @@ public final class ClientOuterClass {
           processingModulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder>(
                   processingModules_,
-                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           processingModules_ = null;
@@ -2087,24 +2138,30 @@ public final class ClientOuterClass {
       private boolean isDedicatedProcessingNode_ ;
       /**
        * <code>bool is_dedicated_processing_node = 7;</code>
+       * @return The isDedicatedProcessingNode.
        */
+      @java.lang.Override
       public boolean getIsDedicatedProcessingNode() {
         return isDedicatedProcessingNode_;
       }
       /**
        * <code>bool is_dedicated_processing_node = 7;</code>
+       * @param value The isDedicatedProcessingNode to set.
+       * @return This builder for chaining.
        */
       public Builder setIsDedicatedProcessingNode(boolean value) {
-        
+
         isDedicatedProcessingNode_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
       /**
        * <code>bool is_dedicated_processing_node = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIsDedicatedProcessingNode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         isDedicatedProcessingNode_ = false;
         onChanged();
         return this;
@@ -2113,6 +2170,7 @@ public final class ClientOuterClass {
       private java.lang.Object hostIp_ = "";
       /**
        * <code>string host_ip = 8;</code>
+       * @return The hostIp.
        */
       public java.lang.String getHostIp() {
         java.lang.Object ref = hostIp_;
@@ -2128,6 +2186,7 @@ public final class ClientOuterClass {
       }
       /**
        * <code>string host_ip = 8;</code>
+       * @return The bytes for hostIp.
        */
       public com.google.protobuf.ByteString
           getHostIpBytes() {
@@ -2144,37 +2203,38 @@ public final class ClientOuterClass {
       }
       /**
        * <code>string host_ip = 8;</code>
+       * @param value The hostIp to set.
+       * @return This builder for chaining.
        */
       public Builder setHostIp(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         hostIp_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
       /**
        * <code>string host_ip = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHostIp() {
-        
         hostIp_ = getDefaultInstance().getHostIp();
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
       /**
        * <code>string host_ip = 8;</code>
+       * @param value The bytes for hostIp to set.
+       * @return This builder for chaining.
        */
       public Builder setHostIpBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         hostIp_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2182,6 +2242,7 @@ public final class ClientOuterClass {
       private java.lang.Object metadataJson_ = "";
       /**
        * <code>string metadata_json = 9;</code>
+       * @return The metadataJson.
        */
       public java.lang.String getMetadataJson() {
         java.lang.Object ref = metadataJson_;
@@ -2197,6 +2258,7 @@ public final class ClientOuterClass {
       }
       /**
        * <code>string metadata_json = 9;</code>
+       * @return The bytes for metadataJson.
        */
       public com.google.protobuf.ByteString
           getMetadataJsonBytes() {
@@ -2213,37 +2275,38 @@ public final class ClientOuterClass {
       }
       /**
        * <code>string metadata_json = 9;</code>
+       * @param value The metadataJson to set.
+       * @return This builder for chaining.
        */
       public Builder setMetadataJson(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         metadataJson_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       /**
        * <code>string metadata_json = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMetadataJson() {
-        
         metadataJson_ = getDefaultInstance().getMetadataJson();
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }
       /**
        * <code>string metadata_json = 9;</code>
+       * @param value The bytes for metadataJson to set.
+       * @return This builder for chaining.
        */
       public Builder setMetadataJsonBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         metadataJson_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2251,43 +2314,51 @@ public final class ClientOuterClass {
       private int state_ = 0;
       /**
        * <code>.ubii.clients.Client.State state = 10;</code>
+       * @return The enum numeric value on the wire for state.
        */
-      public int getStateValue() {
+      @java.lang.Override public int getStateValue() {
         return state_;
       }
       /**
        * <code>.ubii.clients.Client.State state = 10;</code>
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
         state_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
       /**
        * <code>.ubii.clients.Client.State state = 10;</code>
+       * @return The state.
        */
+      @java.lang.Override
       public ubii.clients.ClientOuterClass.Client.State getState() {
-        @SuppressWarnings("deprecation")
-        ubii.clients.ClientOuterClass.Client.State result = ubii.clients.ClientOuterClass.Client.State.valueOf(state_);
+        ubii.clients.ClientOuterClass.Client.State result = ubii.clients.ClientOuterClass.Client.State.forNumber(state_);
         return result == null ? ubii.clients.ClientOuterClass.Client.State.UNRECOGNIZED : result;
       }
       /**
        * <code>.ubii.clients.Client.State state = 10;</code>
+       * @param value The state to set.
+       * @return This builder for chaining.
        */
       public Builder setState(ubii.clients.ClientOuterClass.Client.State value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000200;
         state_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <code>.ubii.clients.Client.State state = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearState() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         state_ = 0;
         onChanged();
         return this;
@@ -2296,24 +2367,30 @@ public final class ClientOuterClass {
       private float latency_ ;
       /**
        * <code>float latency = 11;</code>
+       * @return The latency.
        */
+      @java.lang.Override
       public float getLatency() {
         return latency_;
       }
       /**
        * <code>float latency = 11;</code>
+       * @param value The latency to set.
+       * @return This builder for chaining.
        */
       public Builder setLatency(float value) {
-        
+
         latency_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
       /**
        * <code>float latency = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLatency() {
-        
+        bitField0_ = (bitField0_ & ~0x00000400);
         latency_ = 0F;
         onChanged();
         return this;
@@ -2321,7 +2398,7 @@ public final class ClientOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2351,7 +2428,18 @@ public final class ClientOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Client(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2402,7 +2490,7 @@ public final class ClientOuterClass {
   /**
    * Protobuf type {@code ubii.clients.ClientList}
    */
-  public  static final class ClientList extends
+  public static final class ClientList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.clients.ClientList)
       ClientListOrBuilder {
@@ -2416,60 +2504,12 @@ public final class ClientOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ClientList();
     }
-    private ClientList(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                elements_ = new java.util.ArrayList<ubii.clients.ClientOuterClass.Client>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              elements_.add(
-                  input.readMessage(ubii.clients.ClientOuterClass.Client.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          elements_ = java.util.Collections.unmodifiableList(elements_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.clients.ClientOuterClass.internal_static_ubii_clients_ClientList_descriptor;
@@ -2484,16 +2524,19 @@ public final class ClientOuterClass {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<ubii.clients.ClientOuterClass.Client> elements_;
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.clients.ClientOuterClass.Client> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.clients.ClientOuterClass.ClientOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -2501,18 +2544,21 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.clients.ClientOuterClass.Client getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.clients.ClientOuterClass.ClientOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
@@ -2535,7 +2581,7 @@ public final class ClientOuterClass {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2548,7 +2594,7 @@ public final class ClientOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2563,11 +2609,10 @@ public final class ClientOuterClass {
       }
       ubii.clients.ClientOuterClass.ClientList other = (ubii.clients.ClientOuterClass.ClientList) obj;
 
-      boolean result = true;
-      result = result && getElementsList()
-          .equals(other.getElementsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getElementsList()
+          .equals(other.getElementsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2581,7 +2626,7 @@ public final class ClientOuterClass {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2698,29 +2743,25 @@ public final class ClientOuterClass {
 
       // Construct using ubii.clients.ClientOuterClass.ClientList.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getElementsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (elementsBuilder_ == null) {
           elements_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          elements_ = null;
           elementsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2747,9 +2788,15 @@ public final class ClientOuterClass {
       @java.lang.Override
       public ubii.clients.ClientOuterClass.ClientList buildPartial() {
         ubii.clients.ClientOuterClass.ClientList result = new ubii.clients.ClientOuterClass.ClientList(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(ubii.clients.ClientOuterClass.ClientList result) {
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -2757,42 +2804,12 @@ public final class ClientOuterClass {
         } else {
           result.elements_ = elementsBuilder_.build();
         }
-        onBuilt();
-        return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.clients.ClientOuterClass.ClientList result) {
+        int from_bitField0_ = bitField0_;
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.clients.ClientOuterClass.ClientList) {
@@ -2831,7 +2848,7 @@ public final class ClientOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2846,17 +2863,43 @@ public final class ClientOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.clients.ClientOuterClass.ClientList parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                ubii.clients.ClientOuterClass.Client m =
+                    input.readMessage(
+                        ubii.clients.ClientOuterClass.Client.parser(),
+                        extensionRegistry);
+                if (elementsBuilder_ == null) {
+                  ensureElementsIsMutable();
+                  elements_.add(m);
+                } else {
+                  elementsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.clients.ClientOuterClass.ClientList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2864,7 +2907,7 @@ public final class ClientOuterClass {
       private java.util.List<ubii.clients.ClientOuterClass.Client> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           elements_ = new java.util.ArrayList<ubii.clients.ClientOuterClass.Client>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -3093,7 +3136,7 @@ public final class ClientOuterClass {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.clients.ClientOuterClass.Client, ubii.clients.ClientOuterClass.Client.Builder, ubii.clients.ClientOuterClass.ClientOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
@@ -3103,7 +3146,7 @@ public final class ClientOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3133,7 +3176,18 @@ public final class ClientOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClientList(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -3187,20 +3241,12 @@ public final class ClientOuterClass {
       "lientList\022&\n\010elements\030\001 \003(\0132\024.ubii.clien" +
       "ts.Clientb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.devices.DeviceOuterClass.getDescriptor(),
           ubii.processing.ProcessingModuleOuterClass.getDescriptor(),
-        }, assigner);
+        });
     internal_static_ubii_clients_Client_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_clients_Client_fieldAccessorTable = new

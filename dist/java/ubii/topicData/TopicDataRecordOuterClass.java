@@ -20,20 +20,24 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>string topic = 1;</code>
+     * @return The topic.
      */
     java.lang.String getTopic();
     /**
      * <code>string topic = 1;</code>
+     * @return The bytes for topic.
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
      * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
+     * @return Whether the timestamp field is set.
      */
     boolean hasTimestamp();
     /**
      * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
+     * @return The timestamp.
      */
     ubii.topicData.TimestampOuterClass.Timestamp getTimestamp();
     /**
@@ -43,20 +47,24 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>string client_id = 33;</code>
+     * @return The clientId.
      */
     java.lang.String getClientId();
     /**
      * <code>string client_id = 33;</code>
+     * @return The bytes for clientId.
      */
     com.google.protobuf.ByteString
         getClientIdBytes();
 
     /**
      * <code>.ubii.general.Error error = 39;</code>
+     * @return Whether the error field is set.
      */
     boolean hasError();
     /**
      * <code>.ubii.general.Error error = 39;</code>
+     * @return The error.
      */
     ubii.general.ErrorOuterClass.Error getError();
     /**
@@ -66,40 +74,73 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>double double = 3;</code>
+     * @return Whether the double field is set.
+     */
+    boolean hasDouble();
+    /**
+     * <code>double double = 3;</code>
+     * @return The double.
      */
     double getDouble();
 
     /**
      * <code>bool bool = 4;</code>
+     * @return Whether the bool field is set.
+     */
+    boolean hasBool();
+    /**
+     * <code>bool bool = 4;</code>
+     * @return The bool.
      */
     boolean getBool();
 
     /**
      * <code>string string = 5;</code>
+     * @return Whether the string field is set.
+     */
+    boolean hasString();
+    /**
+     * <code>string string = 5;</code>
+     * @return The string.
      */
     java.lang.String getString();
     /**
      * <code>string string = 5;</code>
+     * @return The bytes for string.
      */
     com.google.protobuf.ByteString
         getStringBytes();
 
     /**
      * <code>int32 int32 = 23;</code>
+     * @return Whether the int32 field is set.
+     */
+    boolean hasInt32();
+    /**
+     * <code>int32 int32 = 23;</code>
+     * @return The int32.
      */
     int getInt32();
 
     /**
      * <code>float float = 24;</code>
+     * @return Whether the float field is set.
+     */
+    boolean hasFloat();
+    /**
+     * <code>float float = 24;</code>
+     * @return The float.
      */
     float getFloat();
 
     /**
      * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+     * @return Whether the vector2 field is set.
      */
     boolean hasVector2();
     /**
      * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+     * @return The vector2.
      */
     ubii.dataStructure.Vector2OuterClass.Vector2 getVector2();
     /**
@@ -109,10 +150,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Vector2List vector2_list = 35;</code>
+     * @return Whether the vector2List field is set.
      */
     boolean hasVector2List();
     /**
      * <code>.ubii.dataStructure.Vector2List vector2_list = 35;</code>
+     * @return The vector2List.
      */
     ubii.dataStructure.Vector2OuterClass.Vector2List getVector2List();
     /**
@@ -122,10 +165,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+     * @return Whether the vector3 field is set.
      */
     boolean hasVector3();
     /**
      * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+     * @return The vector3.
      */
     ubii.dataStructure.Vector3OuterClass.Vector3 getVector3();
     /**
@@ -135,10 +180,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Vector3List vector3_list = 36;</code>
+     * @return Whether the vector3List field is set.
      */
     boolean hasVector3List();
     /**
      * <code>.ubii.dataStructure.Vector3List vector3_list = 36;</code>
+     * @return The vector3List.
      */
     ubii.dataStructure.Vector3OuterClass.Vector3List getVector3List();
     /**
@@ -148,10 +195,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+     * @return Whether the vector4 field is set.
      */
     boolean hasVector4();
     /**
      * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+     * @return The vector4.
      */
     ubii.dataStructure.Vector4OuterClass.Vector4 getVector4();
     /**
@@ -161,10 +210,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Vector4List vector4_list = 37;</code>
+     * @return Whether the vector4List field is set.
      */
     boolean hasVector4List();
     /**
      * <code>.ubii.dataStructure.Vector4List vector4_list = 37;</code>
+     * @return The vector4List.
      */
     ubii.dataStructure.Vector4OuterClass.Vector4List getVector4List();
     /**
@@ -174,10 +225,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+     * @return Whether the quaternion field is set.
      */
     boolean hasQuaternion();
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+     * @return The quaternion.
      */
     ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion();
     /**
@@ -187,10 +240,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion_list = 38;</code>
+     * @return Whether the quaternionList field is set.
      */
     boolean hasQuaternionList();
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion_list = 38;</code>
+     * @return The quaternionList.
      */
     ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternionList();
     /**
@@ -200,10 +255,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+     * @return Whether the matrix3x2 field is set.
      */
     boolean hasMatrix3X2();
     /**
      * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+     * @return The matrix3x2.
      */
     ubii.dataStructure.Matrix3X2.Matrix3x2 getMatrix3X2();
     /**
@@ -213,10 +270,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+     * @return Whether the matrix4x4 field is set.
      */
     boolean hasMatrix4X4();
     /**
      * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+     * @return The matrix4x4.
      */
     ubii.dataStructure.Matrix4X4.Matrix4x4 getMatrix4X4();
     /**
@@ -226,10 +285,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Color color = 12;</code>
+     * @return Whether the color field is set.
      */
     boolean hasColor();
     /**
      * <code>.ubii.dataStructure.Color color = 12;</code>
+     * @return The color.
      */
     ubii.dataStructure.ColorOuterClass.Color getColor();
     /**
@@ -239,10 +300,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
+     * @return Whether the touchEvent field is set.
      */
     boolean hasTouchEvent();
     /**
      * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
+     * @return The touchEvent.
      */
     ubii.dataStructure.TouchEventOuterClass.TouchEvent getTouchEvent();
     /**
@@ -252,10 +315,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.TouchEventList touch_event_list = 34;</code>
+     * @return Whether the touchEventList field is set.
      */
     boolean hasTouchEventList();
     /**
      * <code>.ubii.dataStructure.TouchEventList touch_event_list = 34;</code>
+     * @return The touchEventList.
      */
     ubii.dataStructure.TouchEventOuterClass.TouchEventList getTouchEventList();
     /**
@@ -265,10 +330,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
+     * @return Whether the keyEvent field is set.
      */
     boolean hasKeyEvent();
     /**
      * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
+     * @return The keyEvent.
      */
     ubii.dataStructure.KeyEventOuterClass.KeyEvent getKeyEvent();
     /**
@@ -278,10 +345,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
+     * @return Whether the mouseEvent field is set.
      */
     boolean hasMouseEvent();
     /**
      * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
+     * @return The mouseEvent.
      */
     ubii.dataStructure.MouseEventOuterClass.MouseEvent getMouseEvent();
     /**
@@ -291,10 +360,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+     * @return Whether the myoEvent field is set.
      */
     boolean hasMyoEvent();
     /**
      * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+     * @return The myoEvent.
      */
     ubii.dataStructure.MyoEventOuterClass.MyoEvent getMyoEvent();
     /**
@@ -304,10 +375,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Pose2D pose2D = 17;</code>
+     * @return Whether the pose2D field is set.
      */
     boolean hasPose2D();
     /**
      * <code>.ubii.dataStructure.Pose2D pose2D = 17;</code>
+     * @return The pose2D.
      */
     ubii.dataStructure.Pose2DOuterClass.Pose2D getPose2D();
     /**
@@ -317,10 +390,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Pose3D pose3D = 18;</code>
+     * @return Whether the pose3D field is set.
      */
     boolean hasPose3D();
     /**
      * <code>.ubii.dataStructure.Pose3D pose3D = 18;</code>
+     * @return The pose3D.
      */
     ubii.dataStructure.Pose3DOuterClass.Pose3D getPose3D();
     /**
@@ -330,10 +405,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Object2D object2D = 19;</code>
+     * @return Whether the object2D field is set.
      */
     boolean hasObject2D();
     /**
      * <code>.ubii.dataStructure.Object2D object2D = 19;</code>
+     * @return The object2D.
      */
     ubii.dataStructure.Object2DOuterClass.Object2D getObject2D();
     /**
@@ -343,10 +420,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Object3D object3D = 20;</code>
+     * @return Whether the object3D field is set.
      */
     boolean hasObject3D();
     /**
      * <code>.ubii.dataStructure.Object3D object3D = 20;</code>
+     * @return The object3D.
      */
     ubii.dataStructure.Object3DOuterClass.Object3D getObject3D();
     /**
@@ -356,10 +435,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Object2DList object2D_list = 21;</code>
+     * @return Whether the object2DList field is set.
      */
     boolean hasObject2DList();
     /**
      * <code>.ubii.dataStructure.Object2DList object2D_list = 21;</code>
+     * @return The object2DList.
      */
     ubii.dataStructure.Object2DOuterClass.Object2DList getObject2DList();
     /**
@@ -369,10 +450,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Object3DList object3D_list = 22;</code>
+     * @return Whether the object3DList field is set.
      */
     boolean hasObject3DList();
     /**
      * <code>.ubii.dataStructure.Object3DList object3D_list = 22;</code>
+     * @return The object3DList.
      */
     ubii.dataStructure.Object3DOuterClass.Object3DList getObject3DList();
     /**
@@ -382,10 +465,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Int32List int32_list = 25;</code>
+     * @return Whether the int32List field is set.
      */
     boolean hasInt32List();
     /**
      * <code>.ubii.dataStructure.Int32List int32_list = 25;</code>
+     * @return The int32List.
      */
     ubii.dataStructure.Lists.Int32List getInt32List();
     /**
@@ -395,10 +480,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.FloatList float_list = 26;</code>
+     * @return Whether the floatList field is set.
      */
     boolean hasFloatList();
     /**
      * <code>.ubii.dataStructure.FloatList float_list = 26;</code>
+     * @return The floatList.
      */
     ubii.dataStructure.Lists.FloatList getFloatList();
     /**
@@ -408,10 +495,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.DoubleList double_list = 27;</code>
+     * @return Whether the doubleList field is set.
      */
     boolean hasDoubleList();
     /**
      * <code>.ubii.dataStructure.DoubleList double_list = 27;</code>
+     * @return The doubleList.
      */
     ubii.dataStructure.Lists.DoubleList getDoubleList();
     /**
@@ -421,10 +510,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.StringList string_list = 28;</code>
+     * @return Whether the stringList field is set.
      */
     boolean hasStringList();
     /**
      * <code>.ubii.dataStructure.StringList string_list = 28;</code>
+     * @return The stringList.
      */
     ubii.dataStructure.Lists.StringList getStringList();
     /**
@@ -434,10 +525,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.BoolList bool_list = 29;</code>
+     * @return Whether the boolList field is set.
      */
     boolean hasBoolList();
     /**
      * <code>.ubii.dataStructure.BoolList bool_list = 29;</code>
+     * @return The boolList.
      */
     ubii.dataStructure.Lists.BoolList getBoolList();
     /**
@@ -447,10 +540,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Image2D image2D = 30;</code>
+     * @return Whether the image2D field is set.
      */
     boolean hasImage2D();
     /**
      * <code>.ubii.dataStructure.Image2D image2D = 30;</code>
+     * @return The image2D.
      */
     ubii.dataStructure.Image.Image2D getImage2D();
     /**
@@ -460,10 +555,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Image2DList image2D_list = 31;</code>
+     * @return Whether the image2DList field is set.
      */
     boolean hasImage2DList();
     /**
      * <code>.ubii.dataStructure.Image2DList image2D_list = 31;</code>
+     * @return The image2DList.
      */
     ubii.dataStructure.Image.Image2DList getImage2DList();
     /**
@@ -473,10 +570,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.sessions.Session session = 32;</code>
+     * @return Whether the session field is set.
      */
     boolean hasSession();
     /**
      * <code>.ubii.sessions.Session session = 32;</code>
+     * @return The session.
      */
     ubii.sessions.SessionOuterClass.Session getSession();
     /**
@@ -486,10 +585,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.sessions.SessionList session_list = 44;</code>
+     * @return Whether the sessionList field is set.
      */
     boolean hasSessionList();
     /**
      * <code>.ubii.sessions.SessionList session_list = 44;</code>
+     * @return The sessionList.
      */
     ubii.sessions.SessionOuterClass.SessionList getSessionList();
     /**
@@ -499,10 +600,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.devices.Device device = 40;</code>
+     * @return Whether the device field is set.
      */
     boolean hasDevice();
     /**
      * <code>.ubii.devices.Device device = 40;</code>
+     * @return The device.
      */
     ubii.devices.DeviceOuterClass.Device getDevice();
     /**
@@ -512,10 +615,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.devices.DeviceList device_list = 41;</code>
+     * @return Whether the deviceList field is set.
      */
     boolean hasDeviceList();
     /**
      * <code>.ubii.devices.DeviceList device_list = 41;</code>
+     * @return The deviceList.
      */
     ubii.devices.DeviceOuterClass.DeviceList getDeviceList();
     /**
@@ -525,10 +630,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.devices.Component component = 42;</code>
+     * @return Whether the component field is set.
      */
     boolean hasComponent();
     /**
      * <code>.ubii.devices.Component component = 42;</code>
+     * @return The component.
      */
     ubii.devices.ComponentOuterClass.Component getComponent();
     /**
@@ -538,10 +645,12 @@ public final class TopicDataRecordOuterClass {
 
     /**
      * <code>.ubii.devices.ComponentList component_list = 43;</code>
+     * @return Whether the componentList field is set.
      */
     boolean hasComponentList();
     /**
      * <code>.ubii.devices.ComponentList component_list = 43;</code>
+     * @return The componentList.
      */
     ubii.devices.ComponentOuterClass.ComponentList getComponentList();
     /**
@@ -549,7 +658,7 @@ public final class TopicDataRecordOuterClass {
      */
     ubii.devices.ComponentOuterClass.ComponentListOrBuilder getComponentListOrBuilder();
 
-    public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.TypeCase getTypeCase();
+    ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.TypeCase getTypeCase();
   }
   /**
    * <pre>
@@ -558,7 +667,7 @@ public final class TopicDataRecordOuterClass {
    *
    * Protobuf type {@code ubii.topicData.TopicDataRecord}
    */
-  public  static final class TopicDataRecord extends
+  public static final class TopicDataRecord extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.topicData.TopicDataRecord)
       TopicDataRecordOrBuilder {
@@ -573,604 +682,12 @@ public final class TopicDataRecordOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TopicDataRecord();
     }
-    private TopicDataRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      int mutable_bitField1_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
 
-              topic_ = s;
-              break;
-            }
-            case 18: {
-              ubii.topicData.TimestampOuterClass.Timestamp.Builder subBuilder = null;
-              if (timestamp_ != null) {
-                subBuilder = timestamp_.toBuilder();
-              }
-              timestamp_ = input.readMessage(ubii.topicData.TimestampOuterClass.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(timestamp_);
-                timestamp_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 25: {
-              typeCase_ = 3;
-              type_ = input.readDouble();
-              break;
-            }
-            case 32: {
-              typeCase_ = 4;
-              type_ = input.readBool();
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-              typeCase_ = 5;
-              type_ = s;
-              break;
-            }
-            case 50: {
-              ubii.dataStructure.Vector2OuterClass.Vector2.Builder subBuilder = null;
-              if (typeCase_ == 6) {
-                subBuilder = ((ubii.dataStructure.Vector2OuterClass.Vector2) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Vector2OuterClass.Vector2.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Vector2OuterClass.Vector2) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 6;
-              break;
-            }
-            case 58: {
-              ubii.dataStructure.Vector3OuterClass.Vector3.Builder subBuilder = null;
-              if (typeCase_ == 7) {
-                subBuilder = ((ubii.dataStructure.Vector3OuterClass.Vector3) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Vector3OuterClass.Vector3.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Vector3OuterClass.Vector3) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 7;
-              break;
-            }
-            case 66: {
-              ubii.dataStructure.Vector4OuterClass.Vector4.Builder subBuilder = null;
-              if (typeCase_ == 8) {
-                subBuilder = ((ubii.dataStructure.Vector4OuterClass.Vector4) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Vector4OuterClass.Vector4.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Vector4OuterClass.Vector4) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 8;
-              break;
-            }
-            case 74: {
-              ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder subBuilder = null;
-              if (typeCase_ == 9) {
-                subBuilder = ((ubii.dataStructure.QuaternionOuterClass.Quaternion) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.QuaternionOuterClass.Quaternion.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.QuaternionOuterClass.Quaternion) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 9;
-              break;
-            }
-            case 82: {
-              ubii.dataStructure.Matrix3X2.Matrix3x2.Builder subBuilder = null;
-              if (typeCase_ == 10) {
-                subBuilder = ((ubii.dataStructure.Matrix3X2.Matrix3x2) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Matrix3X2.Matrix3x2.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Matrix3X2.Matrix3x2) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 10;
-              break;
-            }
-            case 90: {
-              ubii.dataStructure.Matrix4X4.Matrix4x4.Builder subBuilder = null;
-              if (typeCase_ == 11) {
-                subBuilder = ((ubii.dataStructure.Matrix4X4.Matrix4x4) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Matrix4X4.Matrix4x4.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Matrix4X4.Matrix4x4) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 11;
-              break;
-            }
-            case 98: {
-              ubii.dataStructure.ColorOuterClass.Color.Builder subBuilder = null;
-              if (typeCase_ == 12) {
-                subBuilder = ((ubii.dataStructure.ColorOuterClass.Color) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.ColorOuterClass.Color.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.ColorOuterClass.Color) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 12;
-              break;
-            }
-            case 106: {
-              ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder subBuilder = null;
-              if (typeCase_ == 13) {
-                subBuilder = ((ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.TouchEventOuterClass.TouchEvent.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 13;
-              break;
-            }
-            case 114: {
-              ubii.dataStructure.KeyEventOuterClass.KeyEvent.Builder subBuilder = null;
-              if (typeCase_ == 14) {
-                subBuilder = ((ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.KeyEventOuterClass.KeyEvent.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 14;
-              break;
-            }
-            case 122: {
-              ubii.dataStructure.MouseEventOuterClass.MouseEvent.Builder subBuilder = null;
-              if (typeCase_ == 15) {
-                subBuilder = ((ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.MouseEventOuterClass.MouseEvent.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 15;
-              break;
-            }
-            case 130: {
-              ubii.dataStructure.MyoEventOuterClass.MyoEvent.Builder subBuilder = null;
-              if (typeCase_ == 16) {
-                subBuilder = ((ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.MyoEventOuterClass.MyoEvent.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 16;
-              break;
-            }
-            case 138: {
-              ubii.dataStructure.Pose2DOuterClass.Pose2D.Builder subBuilder = null;
-              if (typeCase_ == 17) {
-                subBuilder = ((ubii.dataStructure.Pose2DOuterClass.Pose2D) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Pose2DOuterClass.Pose2D.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Pose2DOuterClass.Pose2D) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 17;
-              break;
-            }
-            case 146: {
-              ubii.dataStructure.Pose3DOuterClass.Pose3D.Builder subBuilder = null;
-              if (typeCase_ == 18) {
-                subBuilder = ((ubii.dataStructure.Pose3DOuterClass.Pose3D) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Pose3DOuterClass.Pose3D.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Pose3DOuterClass.Pose3D) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 18;
-              break;
-            }
-            case 154: {
-              ubii.dataStructure.Object2DOuterClass.Object2D.Builder subBuilder = null;
-              if (typeCase_ == 19) {
-                subBuilder = ((ubii.dataStructure.Object2DOuterClass.Object2D) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Object2DOuterClass.Object2D.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Object2DOuterClass.Object2D) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 19;
-              break;
-            }
-            case 162: {
-              ubii.dataStructure.Object3DOuterClass.Object3D.Builder subBuilder = null;
-              if (typeCase_ == 20) {
-                subBuilder = ((ubii.dataStructure.Object3DOuterClass.Object3D) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Object3DOuterClass.Object3D.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Object3DOuterClass.Object3D) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 20;
-              break;
-            }
-            case 170: {
-              ubii.dataStructure.Object2DOuterClass.Object2DList.Builder subBuilder = null;
-              if (typeCase_ == 21) {
-                subBuilder = ((ubii.dataStructure.Object2DOuterClass.Object2DList) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Object2DOuterClass.Object2DList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Object2DOuterClass.Object2DList) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 21;
-              break;
-            }
-            case 178: {
-              ubii.dataStructure.Object3DOuterClass.Object3DList.Builder subBuilder = null;
-              if (typeCase_ == 22) {
-                subBuilder = ((ubii.dataStructure.Object3DOuterClass.Object3DList) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Object3DOuterClass.Object3DList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Object3DOuterClass.Object3DList) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 22;
-              break;
-            }
-            case 184: {
-              typeCase_ = 23;
-              type_ = input.readInt32();
-              break;
-            }
-            case 197: {
-              typeCase_ = 24;
-              type_ = input.readFloat();
-              break;
-            }
-            case 202: {
-              ubii.dataStructure.Lists.Int32List.Builder subBuilder = null;
-              if (typeCase_ == 25) {
-                subBuilder = ((ubii.dataStructure.Lists.Int32List) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Lists.Int32List.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Lists.Int32List) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 25;
-              break;
-            }
-            case 210: {
-              ubii.dataStructure.Lists.FloatList.Builder subBuilder = null;
-              if (typeCase_ == 26) {
-                subBuilder = ((ubii.dataStructure.Lists.FloatList) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Lists.FloatList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Lists.FloatList) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 26;
-              break;
-            }
-            case 218: {
-              ubii.dataStructure.Lists.DoubleList.Builder subBuilder = null;
-              if (typeCase_ == 27) {
-                subBuilder = ((ubii.dataStructure.Lists.DoubleList) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Lists.DoubleList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Lists.DoubleList) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 27;
-              break;
-            }
-            case 226: {
-              ubii.dataStructure.Lists.StringList.Builder subBuilder = null;
-              if (typeCase_ == 28) {
-                subBuilder = ((ubii.dataStructure.Lists.StringList) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Lists.StringList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Lists.StringList) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 28;
-              break;
-            }
-            case 234: {
-              ubii.dataStructure.Lists.BoolList.Builder subBuilder = null;
-              if (typeCase_ == 29) {
-                subBuilder = ((ubii.dataStructure.Lists.BoolList) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Lists.BoolList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Lists.BoolList) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 29;
-              break;
-            }
-            case 242: {
-              ubii.dataStructure.Image.Image2D.Builder subBuilder = null;
-              if (typeCase_ == 30) {
-                subBuilder = ((ubii.dataStructure.Image.Image2D) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Image.Image2D.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Image.Image2D) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 30;
-              break;
-            }
-            case 250: {
-              ubii.dataStructure.Image.Image2DList.Builder subBuilder = null;
-              if (typeCase_ == 31) {
-                subBuilder = ((ubii.dataStructure.Image.Image2DList) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Image.Image2DList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Image.Image2DList) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 31;
-              break;
-            }
-            case 258: {
-              ubii.sessions.SessionOuterClass.Session.Builder subBuilder = null;
-              if (typeCase_ == 32) {
-                subBuilder = ((ubii.sessions.SessionOuterClass.Session) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.sessions.SessionOuterClass.Session.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.sessions.SessionOuterClass.Session) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 32;
-              break;
-            }
-            case 266: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientId_ = s;
-              break;
-            }
-            case 274: {
-              ubii.dataStructure.TouchEventOuterClass.TouchEventList.Builder subBuilder = null;
-              if (typeCase_ == 34) {
-                subBuilder = ((ubii.dataStructure.TouchEventOuterClass.TouchEventList) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.TouchEventOuterClass.TouchEventList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.TouchEventOuterClass.TouchEventList) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 34;
-              break;
-            }
-            case 282: {
-              ubii.dataStructure.Vector2OuterClass.Vector2List.Builder subBuilder = null;
-              if (typeCase_ == 35) {
-                subBuilder = ((ubii.dataStructure.Vector2OuterClass.Vector2List) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Vector2OuterClass.Vector2List.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Vector2OuterClass.Vector2List) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 35;
-              break;
-            }
-            case 290: {
-              ubii.dataStructure.Vector3OuterClass.Vector3List.Builder subBuilder = null;
-              if (typeCase_ == 36) {
-                subBuilder = ((ubii.dataStructure.Vector3OuterClass.Vector3List) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Vector3OuterClass.Vector3List.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Vector3OuterClass.Vector3List) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 36;
-              break;
-            }
-            case 298: {
-              ubii.dataStructure.Vector4OuterClass.Vector4List.Builder subBuilder = null;
-              if (typeCase_ == 37) {
-                subBuilder = ((ubii.dataStructure.Vector4OuterClass.Vector4List) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Vector4OuterClass.Vector4List.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Vector4OuterClass.Vector4List) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 37;
-              break;
-            }
-            case 306: {
-              ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder subBuilder = null;
-              if (typeCase_ == 38) {
-                subBuilder = ((ubii.dataStructure.QuaternionOuterClass.Quaternion) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.QuaternionOuterClass.Quaternion.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.QuaternionOuterClass.Quaternion) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 38;
-              break;
-            }
-            case 314: {
-              ubii.general.ErrorOuterClass.Error.Builder subBuilder = null;
-              if (typeCase_ == 39) {
-                subBuilder = ((ubii.general.ErrorOuterClass.Error) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.general.ErrorOuterClass.Error.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.general.ErrorOuterClass.Error) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 39;
-              break;
-            }
-            case 322: {
-              ubii.devices.DeviceOuterClass.Device.Builder subBuilder = null;
-              if (typeCase_ == 40) {
-                subBuilder = ((ubii.devices.DeviceOuterClass.Device) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.devices.DeviceOuterClass.Device.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.devices.DeviceOuterClass.Device) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 40;
-              break;
-            }
-            case 330: {
-              ubii.devices.DeviceOuterClass.DeviceList.Builder subBuilder = null;
-              if (typeCase_ == 41) {
-                subBuilder = ((ubii.devices.DeviceOuterClass.DeviceList) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.devices.DeviceOuterClass.DeviceList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.devices.DeviceOuterClass.DeviceList) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 41;
-              break;
-            }
-            case 338: {
-              ubii.devices.ComponentOuterClass.Component.Builder subBuilder = null;
-              if (typeCase_ == 42) {
-                subBuilder = ((ubii.devices.ComponentOuterClass.Component) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.devices.ComponentOuterClass.Component.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.devices.ComponentOuterClass.Component) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 42;
-              break;
-            }
-            case 346: {
-              ubii.devices.ComponentOuterClass.ComponentList.Builder subBuilder = null;
-              if (typeCase_ == 43) {
-                subBuilder = ((ubii.devices.ComponentOuterClass.ComponentList) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.devices.ComponentOuterClass.ComponentList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.devices.ComponentOuterClass.ComponentList) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 43;
-              break;
-            }
-            case 354: {
-              ubii.sessions.SessionOuterClass.SessionList.Builder subBuilder = null;
-              if (typeCase_ == 44) {
-                subBuilder = ((ubii.sessions.SessionOuterClass.SessionList) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.sessions.SessionOuterClass.SessionList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.sessions.SessionOuterClass.SessionList) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 44;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.topicData.TopicDataRecordOuterClass.internal_static_ubii_topicData_TopicDataRecord_descriptor;
@@ -1185,9 +702,11 @@ public final class TopicDataRecordOuterClass {
     }
 
     private int typeCase_ = 0;
+    @SuppressWarnings("serial")
     private java.lang.Object type_;
     public enum TypeCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       ERROR(39),
       DOUBLE(3),
       BOOL(4),
@@ -1235,6 +754,8 @@ public final class TopicDataRecordOuterClass {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -1301,10 +822,13 @@ public final class TopicDataRecordOuterClass {
     }
 
     public static final int TOPIC_FIELD_NUMBER = 1;
-    private volatile java.lang.Object topic_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object topic_ = "";
     /**
      * <code>string topic = 1;</code>
+     * @return The topic.
      */
+    @java.lang.Override
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
       if (ref instanceof java.lang.String) {
@@ -1319,7 +843,9 @@ public final class TopicDataRecordOuterClass {
     }
     /**
      * <code>string topic = 1;</code>
+     * @return The bytes for topic.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTopicBytes() {
       java.lang.Object ref = topic_;
@@ -1338,28 +864,36 @@ public final class TopicDataRecordOuterClass {
     private ubii.topicData.TimestampOuterClass.Timestamp timestamp_;
     /**
      * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
+     * @return Whether the timestamp field is set.
      */
+    @java.lang.Override
     public boolean hasTimestamp() {
       return timestamp_ != null;
     }
     /**
      * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
+     * @return The timestamp.
      */
+    @java.lang.Override
     public ubii.topicData.TimestampOuterClass.Timestamp getTimestamp() {
       return timestamp_ == null ? ubii.topicData.TimestampOuterClass.Timestamp.getDefaultInstance() : timestamp_;
     }
     /**
      * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
      */
+    @java.lang.Override
     public ubii.topicData.TimestampOuterClass.TimestampOrBuilder getTimestampOrBuilder() {
-      return getTimestamp();
+      return timestamp_ == null ? ubii.topicData.TimestampOuterClass.Timestamp.getDefaultInstance() : timestamp_;
     }
 
     public static final int CLIENT_ID_FIELD_NUMBER = 33;
-    private volatile java.lang.Object clientId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientId_ = "";
     /**
      * <code>string client_id = 33;</code>
+     * @return The clientId.
      */
+    @java.lang.Override
     public java.lang.String getClientId() {
       java.lang.Object ref = clientId_;
       if (ref instanceof java.lang.String) {
@@ -1374,7 +908,9 @@ public final class TopicDataRecordOuterClass {
     }
     /**
      * <code>string client_id = 33;</code>
+     * @return The bytes for clientId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getClientIdBytes() {
       java.lang.Object ref = clientId_;
@@ -1392,13 +928,17 @@ public final class TopicDataRecordOuterClass {
     public static final int ERROR_FIELD_NUMBER = 39;
     /**
      * <code>.ubii.general.Error error = 39;</code>
+     * @return Whether the error field is set.
      */
+    @java.lang.Override
     public boolean hasError() {
       return typeCase_ == 39;
     }
     /**
      * <code>.ubii.general.Error error = 39;</code>
+     * @return The error.
      */
+    @java.lang.Override
     public ubii.general.ErrorOuterClass.Error getError() {
       if (typeCase_ == 39) {
          return (ubii.general.ErrorOuterClass.Error) type_;
@@ -1408,6 +948,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.general.Error error = 39;</code>
      */
+    @java.lang.Override
     public ubii.general.ErrorOuterClass.ErrorOrBuilder getErrorOrBuilder() {
       if (typeCase_ == 39) {
          return (ubii.general.ErrorOuterClass.Error) type_;
@@ -1418,7 +959,17 @@ public final class TopicDataRecordOuterClass {
     public static final int DOUBLE_FIELD_NUMBER = 3;
     /**
      * <code>double double = 3;</code>
+     * @return Whether the double field is set.
      */
+    @java.lang.Override
+    public boolean hasDouble() {
+      return typeCase_ == 3;
+    }
+    /**
+     * <code>double double = 3;</code>
+     * @return The double.
+     */
+    @java.lang.Override
     public double getDouble() {
       if (typeCase_ == 3) {
         return (java.lang.Double) type_;
@@ -1429,7 +980,17 @@ public final class TopicDataRecordOuterClass {
     public static final int BOOL_FIELD_NUMBER = 4;
     /**
      * <code>bool bool = 4;</code>
+     * @return Whether the bool field is set.
      */
+    @java.lang.Override
+    public boolean hasBool() {
+      return typeCase_ == 4;
+    }
+    /**
+     * <code>bool bool = 4;</code>
+     * @return The bool.
+     */
+    @java.lang.Override
     public boolean getBool() {
       if (typeCase_ == 4) {
         return (java.lang.Boolean) type_;
@@ -1440,6 +1001,14 @@ public final class TopicDataRecordOuterClass {
     public static final int STRING_FIELD_NUMBER = 5;
     /**
      * <code>string string = 5;</code>
+     * @return Whether the string field is set.
+     */
+    public boolean hasString() {
+      return typeCase_ == 5;
+    }
+    /**
+     * <code>string string = 5;</code>
+     * @return The string.
      */
     public java.lang.String getString() {
       java.lang.Object ref = "";
@@ -1460,6 +1029,7 @@ public final class TopicDataRecordOuterClass {
     }
     /**
      * <code>string string = 5;</code>
+     * @return The bytes for string.
      */
     public com.google.protobuf.ByteString
         getStringBytes() {
@@ -1483,7 +1053,17 @@ public final class TopicDataRecordOuterClass {
     public static final int INT32_FIELD_NUMBER = 23;
     /**
      * <code>int32 int32 = 23;</code>
+     * @return Whether the int32 field is set.
      */
+    @java.lang.Override
+    public boolean hasInt32() {
+      return typeCase_ == 23;
+    }
+    /**
+     * <code>int32 int32 = 23;</code>
+     * @return The int32.
+     */
+    @java.lang.Override
     public int getInt32() {
       if (typeCase_ == 23) {
         return (java.lang.Integer) type_;
@@ -1494,7 +1074,17 @@ public final class TopicDataRecordOuterClass {
     public static final int FLOAT_FIELD_NUMBER = 24;
     /**
      * <code>float float = 24;</code>
+     * @return Whether the float field is set.
      */
+    @java.lang.Override
+    public boolean hasFloat() {
+      return typeCase_ == 24;
+    }
+    /**
+     * <code>float float = 24;</code>
+     * @return The float.
+     */
+    @java.lang.Override
     public float getFloat() {
       if (typeCase_ == 24) {
         return (java.lang.Float) type_;
@@ -1505,13 +1095,17 @@ public final class TopicDataRecordOuterClass {
     public static final int VECTOR2_FIELD_NUMBER = 6;
     /**
      * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+     * @return Whether the vector2 field is set.
      */
+    @java.lang.Override
     public boolean hasVector2() {
       return typeCase_ == 6;
     }
     /**
      * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+     * @return The vector2.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2 getVector2() {
       if (typeCase_ == 6) {
          return (ubii.dataStructure.Vector2OuterClass.Vector2) type_;
@@ -1521,6 +1115,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getVector2OrBuilder() {
       if (typeCase_ == 6) {
          return (ubii.dataStructure.Vector2OuterClass.Vector2) type_;
@@ -1531,13 +1126,17 @@ public final class TopicDataRecordOuterClass {
     public static final int VECTOR2_LIST_FIELD_NUMBER = 35;
     /**
      * <code>.ubii.dataStructure.Vector2List vector2_list = 35;</code>
+     * @return Whether the vector2List field is set.
      */
+    @java.lang.Override
     public boolean hasVector2List() {
       return typeCase_ == 35;
     }
     /**
      * <code>.ubii.dataStructure.Vector2List vector2_list = 35;</code>
+     * @return The vector2List.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2List getVector2List() {
       if (typeCase_ == 35) {
          return (ubii.dataStructure.Vector2OuterClass.Vector2List) type_;
@@ -1547,6 +1146,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Vector2List vector2_list = 35;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2ListOrBuilder getVector2ListOrBuilder() {
       if (typeCase_ == 35) {
          return (ubii.dataStructure.Vector2OuterClass.Vector2List) type_;
@@ -1557,13 +1157,17 @@ public final class TopicDataRecordOuterClass {
     public static final int VECTOR3_FIELD_NUMBER = 7;
     /**
      * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+     * @return Whether the vector3 field is set.
      */
+    @java.lang.Override
     public boolean hasVector3() {
       return typeCase_ == 7;
     }
     /**
      * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+     * @return The vector3.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3 getVector3() {
       if (typeCase_ == 7) {
          return (ubii.dataStructure.Vector3OuterClass.Vector3) type_;
@@ -1573,6 +1177,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getVector3OrBuilder() {
       if (typeCase_ == 7) {
          return (ubii.dataStructure.Vector3OuterClass.Vector3) type_;
@@ -1583,13 +1188,17 @@ public final class TopicDataRecordOuterClass {
     public static final int VECTOR3_LIST_FIELD_NUMBER = 36;
     /**
      * <code>.ubii.dataStructure.Vector3List vector3_list = 36;</code>
+     * @return Whether the vector3List field is set.
      */
+    @java.lang.Override
     public boolean hasVector3List() {
       return typeCase_ == 36;
     }
     /**
      * <code>.ubii.dataStructure.Vector3List vector3_list = 36;</code>
+     * @return The vector3List.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3List getVector3List() {
       if (typeCase_ == 36) {
          return (ubii.dataStructure.Vector3OuterClass.Vector3List) type_;
@@ -1599,6 +1208,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Vector3List vector3_list = 36;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3ListOrBuilder getVector3ListOrBuilder() {
       if (typeCase_ == 36) {
          return (ubii.dataStructure.Vector3OuterClass.Vector3List) type_;
@@ -1609,13 +1219,17 @@ public final class TopicDataRecordOuterClass {
     public static final int VECTOR4_FIELD_NUMBER = 8;
     /**
      * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+     * @return Whether the vector4 field is set.
      */
+    @java.lang.Override
     public boolean hasVector4() {
       return typeCase_ == 8;
     }
     /**
      * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+     * @return The vector4.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector4OuterClass.Vector4 getVector4() {
       if (typeCase_ == 8) {
          return (ubii.dataStructure.Vector4OuterClass.Vector4) type_;
@@ -1625,6 +1239,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder getVector4OrBuilder() {
       if (typeCase_ == 8) {
          return (ubii.dataStructure.Vector4OuterClass.Vector4) type_;
@@ -1635,13 +1250,17 @@ public final class TopicDataRecordOuterClass {
     public static final int VECTOR4_LIST_FIELD_NUMBER = 37;
     /**
      * <code>.ubii.dataStructure.Vector4List vector4_list = 37;</code>
+     * @return Whether the vector4List field is set.
      */
+    @java.lang.Override
     public boolean hasVector4List() {
       return typeCase_ == 37;
     }
     /**
      * <code>.ubii.dataStructure.Vector4List vector4_list = 37;</code>
+     * @return The vector4List.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector4OuterClass.Vector4List getVector4List() {
       if (typeCase_ == 37) {
          return (ubii.dataStructure.Vector4OuterClass.Vector4List) type_;
@@ -1651,6 +1270,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Vector4List vector4_list = 37;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector4OuterClass.Vector4ListOrBuilder getVector4ListOrBuilder() {
       if (typeCase_ == 37) {
          return (ubii.dataStructure.Vector4OuterClass.Vector4List) type_;
@@ -1661,13 +1281,17 @@ public final class TopicDataRecordOuterClass {
     public static final int QUATERNION_FIELD_NUMBER = 9;
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+     * @return Whether the quaternion field is set.
      */
+    @java.lang.Override
     public boolean hasQuaternion() {
       return typeCase_ == 9;
     }
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+     * @return The quaternion.
      */
+    @java.lang.Override
     public ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion() {
       if (typeCase_ == 9) {
          return (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_;
@@ -1677,6 +1301,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getQuaternionOrBuilder() {
       if (typeCase_ == 9) {
          return (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_;
@@ -1687,13 +1312,17 @@ public final class TopicDataRecordOuterClass {
     public static final int QUATERNION_LIST_FIELD_NUMBER = 38;
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion_list = 38;</code>
+     * @return Whether the quaternionList field is set.
      */
+    @java.lang.Override
     public boolean hasQuaternionList() {
       return typeCase_ == 38;
     }
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion_list = 38;</code>
+     * @return The quaternionList.
      */
+    @java.lang.Override
     public ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternionList() {
       if (typeCase_ == 38) {
          return (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_;
@@ -1703,6 +1332,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion_list = 38;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getQuaternionListOrBuilder() {
       if (typeCase_ == 38) {
          return (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_;
@@ -1713,13 +1343,17 @@ public final class TopicDataRecordOuterClass {
     public static final int MATRIX3X2_FIELD_NUMBER = 10;
     /**
      * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+     * @return Whether the matrix3x2 field is set.
      */
+    @java.lang.Override
     public boolean hasMatrix3X2() {
       return typeCase_ == 10;
     }
     /**
      * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+     * @return The matrix3x2.
      */
+    @java.lang.Override
     public ubii.dataStructure.Matrix3X2.Matrix3x2 getMatrix3X2() {
       if (typeCase_ == 10) {
          return (ubii.dataStructure.Matrix3X2.Matrix3x2) type_;
@@ -1729,6 +1363,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder getMatrix3X2OrBuilder() {
       if (typeCase_ == 10) {
          return (ubii.dataStructure.Matrix3X2.Matrix3x2) type_;
@@ -1739,13 +1374,17 @@ public final class TopicDataRecordOuterClass {
     public static final int MATRIX4X4_FIELD_NUMBER = 11;
     /**
      * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+     * @return Whether the matrix4x4 field is set.
      */
+    @java.lang.Override
     public boolean hasMatrix4X4() {
       return typeCase_ == 11;
     }
     /**
      * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+     * @return The matrix4x4.
      */
+    @java.lang.Override
     public ubii.dataStructure.Matrix4X4.Matrix4x4 getMatrix4X4() {
       if (typeCase_ == 11) {
          return (ubii.dataStructure.Matrix4X4.Matrix4x4) type_;
@@ -1755,6 +1394,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder getMatrix4X4OrBuilder() {
       if (typeCase_ == 11) {
          return (ubii.dataStructure.Matrix4X4.Matrix4x4) type_;
@@ -1765,13 +1405,17 @@ public final class TopicDataRecordOuterClass {
     public static final int COLOR_FIELD_NUMBER = 12;
     /**
      * <code>.ubii.dataStructure.Color color = 12;</code>
+     * @return Whether the color field is set.
      */
+    @java.lang.Override
     public boolean hasColor() {
       return typeCase_ == 12;
     }
     /**
      * <code>.ubii.dataStructure.Color color = 12;</code>
+     * @return The color.
      */
+    @java.lang.Override
     public ubii.dataStructure.ColorOuterClass.Color getColor() {
       if (typeCase_ == 12) {
          return (ubii.dataStructure.ColorOuterClass.Color) type_;
@@ -1781,6 +1425,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Color color = 12;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.ColorOuterClass.ColorOrBuilder getColorOrBuilder() {
       if (typeCase_ == 12) {
          return (ubii.dataStructure.ColorOuterClass.Color) type_;
@@ -1791,13 +1436,17 @@ public final class TopicDataRecordOuterClass {
     public static final int TOUCH_EVENT_FIELD_NUMBER = 13;
     /**
      * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
+     * @return Whether the touchEvent field is set.
      */
+    @java.lang.Override
     public boolean hasTouchEvent() {
       return typeCase_ == 13;
     }
     /**
      * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
+     * @return The touchEvent.
      */
+    @java.lang.Override
     public ubii.dataStructure.TouchEventOuterClass.TouchEvent getTouchEvent() {
       if (typeCase_ == 13) {
          return (ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_;
@@ -1807,6 +1456,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder getTouchEventOrBuilder() {
       if (typeCase_ == 13) {
          return (ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_;
@@ -1817,13 +1467,17 @@ public final class TopicDataRecordOuterClass {
     public static final int TOUCH_EVENT_LIST_FIELD_NUMBER = 34;
     /**
      * <code>.ubii.dataStructure.TouchEventList touch_event_list = 34;</code>
+     * @return Whether the touchEventList field is set.
      */
+    @java.lang.Override
     public boolean hasTouchEventList() {
       return typeCase_ == 34;
     }
     /**
      * <code>.ubii.dataStructure.TouchEventList touch_event_list = 34;</code>
+     * @return The touchEventList.
      */
+    @java.lang.Override
     public ubii.dataStructure.TouchEventOuterClass.TouchEventList getTouchEventList() {
       if (typeCase_ == 34) {
          return (ubii.dataStructure.TouchEventOuterClass.TouchEventList) type_;
@@ -1833,6 +1487,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.TouchEventList touch_event_list = 34;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.TouchEventOuterClass.TouchEventListOrBuilder getTouchEventListOrBuilder() {
       if (typeCase_ == 34) {
          return (ubii.dataStructure.TouchEventOuterClass.TouchEventList) type_;
@@ -1843,13 +1498,17 @@ public final class TopicDataRecordOuterClass {
     public static final int KEY_EVENT_FIELD_NUMBER = 14;
     /**
      * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
+     * @return Whether the keyEvent field is set.
      */
+    @java.lang.Override
     public boolean hasKeyEvent() {
       return typeCase_ == 14;
     }
     /**
      * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
+     * @return The keyEvent.
      */
+    @java.lang.Override
     public ubii.dataStructure.KeyEventOuterClass.KeyEvent getKeyEvent() {
       if (typeCase_ == 14) {
          return (ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_;
@@ -1859,6 +1518,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder getKeyEventOrBuilder() {
       if (typeCase_ == 14) {
          return (ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_;
@@ -1869,13 +1529,17 @@ public final class TopicDataRecordOuterClass {
     public static final int MOUSE_EVENT_FIELD_NUMBER = 15;
     /**
      * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
+     * @return Whether the mouseEvent field is set.
      */
+    @java.lang.Override
     public boolean hasMouseEvent() {
       return typeCase_ == 15;
     }
     /**
      * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
+     * @return The mouseEvent.
      */
+    @java.lang.Override
     public ubii.dataStructure.MouseEventOuterClass.MouseEvent getMouseEvent() {
       if (typeCase_ == 15) {
          return (ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_;
@@ -1885,6 +1549,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder getMouseEventOrBuilder() {
       if (typeCase_ == 15) {
          return (ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_;
@@ -1895,13 +1560,17 @@ public final class TopicDataRecordOuterClass {
     public static final int MYO_EVENT_FIELD_NUMBER = 16;
     /**
      * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+     * @return Whether the myoEvent field is set.
      */
+    @java.lang.Override
     public boolean hasMyoEvent() {
       return typeCase_ == 16;
     }
     /**
      * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+     * @return The myoEvent.
      */
+    @java.lang.Override
     public ubii.dataStructure.MyoEventOuterClass.MyoEvent getMyoEvent() {
       if (typeCase_ == 16) {
          return (ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_;
@@ -1911,6 +1580,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.MyoEventOuterClass.MyoEventOrBuilder getMyoEventOrBuilder() {
       if (typeCase_ == 16) {
          return (ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_;
@@ -1921,13 +1591,17 @@ public final class TopicDataRecordOuterClass {
     public static final int POSE2D_FIELD_NUMBER = 17;
     /**
      * <code>.ubii.dataStructure.Pose2D pose2D = 17;</code>
+     * @return Whether the pose2D field is set.
      */
+    @java.lang.Override
     public boolean hasPose2D() {
       return typeCase_ == 17;
     }
     /**
      * <code>.ubii.dataStructure.Pose2D pose2D = 17;</code>
+     * @return The pose2D.
      */
+    @java.lang.Override
     public ubii.dataStructure.Pose2DOuterClass.Pose2D getPose2D() {
       if (typeCase_ == 17) {
          return (ubii.dataStructure.Pose2DOuterClass.Pose2D) type_;
@@ -1937,6 +1611,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Pose2D pose2D = 17;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Pose2DOuterClass.Pose2DOrBuilder getPose2DOrBuilder() {
       if (typeCase_ == 17) {
          return (ubii.dataStructure.Pose2DOuterClass.Pose2D) type_;
@@ -1947,13 +1622,17 @@ public final class TopicDataRecordOuterClass {
     public static final int POSE3D_FIELD_NUMBER = 18;
     /**
      * <code>.ubii.dataStructure.Pose3D pose3D = 18;</code>
+     * @return Whether the pose3D field is set.
      */
+    @java.lang.Override
     public boolean hasPose3D() {
       return typeCase_ == 18;
     }
     /**
      * <code>.ubii.dataStructure.Pose3D pose3D = 18;</code>
+     * @return The pose3D.
      */
+    @java.lang.Override
     public ubii.dataStructure.Pose3DOuterClass.Pose3D getPose3D() {
       if (typeCase_ == 18) {
          return (ubii.dataStructure.Pose3DOuterClass.Pose3D) type_;
@@ -1963,6 +1642,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Pose3D pose3D = 18;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Pose3DOuterClass.Pose3DOrBuilder getPose3DOrBuilder() {
       if (typeCase_ == 18) {
          return (ubii.dataStructure.Pose3DOuterClass.Pose3D) type_;
@@ -1973,13 +1653,17 @@ public final class TopicDataRecordOuterClass {
     public static final int OBJECT2D_FIELD_NUMBER = 19;
     /**
      * <code>.ubii.dataStructure.Object2D object2D = 19;</code>
+     * @return Whether the object2D field is set.
      */
+    @java.lang.Override
     public boolean hasObject2D() {
       return typeCase_ == 19;
     }
     /**
      * <code>.ubii.dataStructure.Object2D object2D = 19;</code>
+     * @return The object2D.
      */
+    @java.lang.Override
     public ubii.dataStructure.Object2DOuterClass.Object2D getObject2D() {
       if (typeCase_ == 19) {
          return (ubii.dataStructure.Object2DOuterClass.Object2D) type_;
@@ -1989,6 +1673,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Object2D object2D = 19;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Object2DOuterClass.Object2DOrBuilder getObject2DOrBuilder() {
       if (typeCase_ == 19) {
          return (ubii.dataStructure.Object2DOuterClass.Object2D) type_;
@@ -1999,13 +1684,17 @@ public final class TopicDataRecordOuterClass {
     public static final int OBJECT3D_FIELD_NUMBER = 20;
     /**
      * <code>.ubii.dataStructure.Object3D object3D = 20;</code>
+     * @return Whether the object3D field is set.
      */
+    @java.lang.Override
     public boolean hasObject3D() {
       return typeCase_ == 20;
     }
     /**
      * <code>.ubii.dataStructure.Object3D object3D = 20;</code>
+     * @return The object3D.
      */
+    @java.lang.Override
     public ubii.dataStructure.Object3DOuterClass.Object3D getObject3D() {
       if (typeCase_ == 20) {
          return (ubii.dataStructure.Object3DOuterClass.Object3D) type_;
@@ -2015,6 +1704,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Object3D object3D = 20;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Object3DOuterClass.Object3DOrBuilder getObject3DOrBuilder() {
       if (typeCase_ == 20) {
          return (ubii.dataStructure.Object3DOuterClass.Object3D) type_;
@@ -2025,13 +1715,17 @@ public final class TopicDataRecordOuterClass {
     public static final int OBJECT2D_LIST_FIELD_NUMBER = 21;
     /**
      * <code>.ubii.dataStructure.Object2DList object2D_list = 21;</code>
+     * @return Whether the object2DList field is set.
      */
+    @java.lang.Override
     public boolean hasObject2DList() {
       return typeCase_ == 21;
     }
     /**
      * <code>.ubii.dataStructure.Object2DList object2D_list = 21;</code>
+     * @return The object2DList.
      */
+    @java.lang.Override
     public ubii.dataStructure.Object2DOuterClass.Object2DList getObject2DList() {
       if (typeCase_ == 21) {
          return (ubii.dataStructure.Object2DOuterClass.Object2DList) type_;
@@ -2041,6 +1735,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Object2DList object2D_list = 21;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Object2DOuterClass.Object2DListOrBuilder getObject2DListOrBuilder() {
       if (typeCase_ == 21) {
          return (ubii.dataStructure.Object2DOuterClass.Object2DList) type_;
@@ -2051,13 +1746,17 @@ public final class TopicDataRecordOuterClass {
     public static final int OBJECT3D_LIST_FIELD_NUMBER = 22;
     /**
      * <code>.ubii.dataStructure.Object3DList object3D_list = 22;</code>
+     * @return Whether the object3DList field is set.
      */
+    @java.lang.Override
     public boolean hasObject3DList() {
       return typeCase_ == 22;
     }
     /**
      * <code>.ubii.dataStructure.Object3DList object3D_list = 22;</code>
+     * @return The object3DList.
      */
+    @java.lang.Override
     public ubii.dataStructure.Object3DOuterClass.Object3DList getObject3DList() {
       if (typeCase_ == 22) {
          return (ubii.dataStructure.Object3DOuterClass.Object3DList) type_;
@@ -2067,6 +1766,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Object3DList object3D_list = 22;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Object3DOuterClass.Object3DListOrBuilder getObject3DListOrBuilder() {
       if (typeCase_ == 22) {
          return (ubii.dataStructure.Object3DOuterClass.Object3DList) type_;
@@ -2077,13 +1777,17 @@ public final class TopicDataRecordOuterClass {
     public static final int INT32_LIST_FIELD_NUMBER = 25;
     /**
      * <code>.ubii.dataStructure.Int32List int32_list = 25;</code>
+     * @return Whether the int32List field is set.
      */
+    @java.lang.Override
     public boolean hasInt32List() {
       return typeCase_ == 25;
     }
     /**
      * <code>.ubii.dataStructure.Int32List int32_list = 25;</code>
+     * @return The int32List.
      */
+    @java.lang.Override
     public ubii.dataStructure.Lists.Int32List getInt32List() {
       if (typeCase_ == 25) {
          return (ubii.dataStructure.Lists.Int32List) type_;
@@ -2093,6 +1797,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Int32List int32_list = 25;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Lists.Int32ListOrBuilder getInt32ListOrBuilder() {
       if (typeCase_ == 25) {
          return (ubii.dataStructure.Lists.Int32List) type_;
@@ -2103,13 +1808,17 @@ public final class TopicDataRecordOuterClass {
     public static final int FLOAT_LIST_FIELD_NUMBER = 26;
     /**
      * <code>.ubii.dataStructure.FloatList float_list = 26;</code>
+     * @return Whether the floatList field is set.
      */
+    @java.lang.Override
     public boolean hasFloatList() {
       return typeCase_ == 26;
     }
     /**
      * <code>.ubii.dataStructure.FloatList float_list = 26;</code>
+     * @return The floatList.
      */
+    @java.lang.Override
     public ubii.dataStructure.Lists.FloatList getFloatList() {
       if (typeCase_ == 26) {
          return (ubii.dataStructure.Lists.FloatList) type_;
@@ -2119,6 +1828,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.FloatList float_list = 26;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Lists.FloatListOrBuilder getFloatListOrBuilder() {
       if (typeCase_ == 26) {
          return (ubii.dataStructure.Lists.FloatList) type_;
@@ -2129,13 +1839,17 @@ public final class TopicDataRecordOuterClass {
     public static final int DOUBLE_LIST_FIELD_NUMBER = 27;
     /**
      * <code>.ubii.dataStructure.DoubleList double_list = 27;</code>
+     * @return Whether the doubleList field is set.
      */
+    @java.lang.Override
     public boolean hasDoubleList() {
       return typeCase_ == 27;
     }
     /**
      * <code>.ubii.dataStructure.DoubleList double_list = 27;</code>
+     * @return The doubleList.
      */
+    @java.lang.Override
     public ubii.dataStructure.Lists.DoubleList getDoubleList() {
       if (typeCase_ == 27) {
          return (ubii.dataStructure.Lists.DoubleList) type_;
@@ -2145,6 +1859,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.DoubleList double_list = 27;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Lists.DoubleListOrBuilder getDoubleListOrBuilder() {
       if (typeCase_ == 27) {
          return (ubii.dataStructure.Lists.DoubleList) type_;
@@ -2155,13 +1870,17 @@ public final class TopicDataRecordOuterClass {
     public static final int STRING_LIST_FIELD_NUMBER = 28;
     /**
      * <code>.ubii.dataStructure.StringList string_list = 28;</code>
+     * @return Whether the stringList field is set.
      */
+    @java.lang.Override
     public boolean hasStringList() {
       return typeCase_ == 28;
     }
     /**
      * <code>.ubii.dataStructure.StringList string_list = 28;</code>
+     * @return The stringList.
      */
+    @java.lang.Override
     public ubii.dataStructure.Lists.StringList getStringList() {
       if (typeCase_ == 28) {
          return (ubii.dataStructure.Lists.StringList) type_;
@@ -2171,6 +1890,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.StringList string_list = 28;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Lists.StringListOrBuilder getStringListOrBuilder() {
       if (typeCase_ == 28) {
          return (ubii.dataStructure.Lists.StringList) type_;
@@ -2181,13 +1901,17 @@ public final class TopicDataRecordOuterClass {
     public static final int BOOL_LIST_FIELD_NUMBER = 29;
     /**
      * <code>.ubii.dataStructure.BoolList bool_list = 29;</code>
+     * @return Whether the boolList field is set.
      */
+    @java.lang.Override
     public boolean hasBoolList() {
       return typeCase_ == 29;
     }
     /**
      * <code>.ubii.dataStructure.BoolList bool_list = 29;</code>
+     * @return The boolList.
      */
+    @java.lang.Override
     public ubii.dataStructure.Lists.BoolList getBoolList() {
       if (typeCase_ == 29) {
          return (ubii.dataStructure.Lists.BoolList) type_;
@@ -2197,6 +1921,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.BoolList bool_list = 29;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Lists.BoolListOrBuilder getBoolListOrBuilder() {
       if (typeCase_ == 29) {
          return (ubii.dataStructure.Lists.BoolList) type_;
@@ -2207,13 +1932,17 @@ public final class TopicDataRecordOuterClass {
     public static final int IMAGE2D_FIELD_NUMBER = 30;
     /**
      * <code>.ubii.dataStructure.Image2D image2D = 30;</code>
+     * @return Whether the image2D field is set.
      */
+    @java.lang.Override
     public boolean hasImage2D() {
       return typeCase_ == 30;
     }
     /**
      * <code>.ubii.dataStructure.Image2D image2D = 30;</code>
+     * @return The image2D.
      */
+    @java.lang.Override
     public ubii.dataStructure.Image.Image2D getImage2D() {
       if (typeCase_ == 30) {
          return (ubii.dataStructure.Image.Image2D) type_;
@@ -2223,6 +1952,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Image2D image2D = 30;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Image.Image2DOrBuilder getImage2DOrBuilder() {
       if (typeCase_ == 30) {
          return (ubii.dataStructure.Image.Image2D) type_;
@@ -2233,13 +1963,17 @@ public final class TopicDataRecordOuterClass {
     public static final int IMAGE2D_LIST_FIELD_NUMBER = 31;
     /**
      * <code>.ubii.dataStructure.Image2DList image2D_list = 31;</code>
+     * @return Whether the image2DList field is set.
      */
+    @java.lang.Override
     public boolean hasImage2DList() {
       return typeCase_ == 31;
     }
     /**
      * <code>.ubii.dataStructure.Image2DList image2D_list = 31;</code>
+     * @return The image2DList.
      */
+    @java.lang.Override
     public ubii.dataStructure.Image.Image2DList getImage2DList() {
       if (typeCase_ == 31) {
          return (ubii.dataStructure.Image.Image2DList) type_;
@@ -2249,6 +1983,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.dataStructure.Image2DList image2D_list = 31;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Image.Image2DListOrBuilder getImage2DListOrBuilder() {
       if (typeCase_ == 31) {
          return (ubii.dataStructure.Image.Image2DList) type_;
@@ -2259,13 +1994,17 @@ public final class TopicDataRecordOuterClass {
     public static final int SESSION_FIELD_NUMBER = 32;
     /**
      * <code>.ubii.sessions.Session session = 32;</code>
+     * @return Whether the session field is set.
      */
+    @java.lang.Override
     public boolean hasSession() {
       return typeCase_ == 32;
     }
     /**
      * <code>.ubii.sessions.Session session = 32;</code>
+     * @return The session.
      */
+    @java.lang.Override
     public ubii.sessions.SessionOuterClass.Session getSession() {
       if (typeCase_ == 32) {
          return (ubii.sessions.SessionOuterClass.Session) type_;
@@ -2275,6 +2014,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.sessions.Session session = 32;</code>
      */
+    @java.lang.Override
     public ubii.sessions.SessionOuterClass.SessionOrBuilder getSessionOrBuilder() {
       if (typeCase_ == 32) {
          return (ubii.sessions.SessionOuterClass.Session) type_;
@@ -2285,13 +2025,17 @@ public final class TopicDataRecordOuterClass {
     public static final int SESSION_LIST_FIELD_NUMBER = 44;
     /**
      * <code>.ubii.sessions.SessionList session_list = 44;</code>
+     * @return Whether the sessionList field is set.
      */
+    @java.lang.Override
     public boolean hasSessionList() {
       return typeCase_ == 44;
     }
     /**
      * <code>.ubii.sessions.SessionList session_list = 44;</code>
+     * @return The sessionList.
      */
+    @java.lang.Override
     public ubii.sessions.SessionOuterClass.SessionList getSessionList() {
       if (typeCase_ == 44) {
          return (ubii.sessions.SessionOuterClass.SessionList) type_;
@@ -2301,6 +2045,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.sessions.SessionList session_list = 44;</code>
      */
+    @java.lang.Override
     public ubii.sessions.SessionOuterClass.SessionListOrBuilder getSessionListOrBuilder() {
       if (typeCase_ == 44) {
          return (ubii.sessions.SessionOuterClass.SessionList) type_;
@@ -2311,13 +2056,17 @@ public final class TopicDataRecordOuterClass {
     public static final int DEVICE_FIELD_NUMBER = 40;
     /**
      * <code>.ubii.devices.Device device = 40;</code>
+     * @return Whether the device field is set.
      */
+    @java.lang.Override
     public boolean hasDevice() {
       return typeCase_ == 40;
     }
     /**
      * <code>.ubii.devices.Device device = 40;</code>
+     * @return The device.
      */
+    @java.lang.Override
     public ubii.devices.DeviceOuterClass.Device getDevice() {
       if (typeCase_ == 40) {
          return (ubii.devices.DeviceOuterClass.Device) type_;
@@ -2327,6 +2076,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.devices.Device device = 40;</code>
      */
+    @java.lang.Override
     public ubii.devices.DeviceOuterClass.DeviceOrBuilder getDeviceOrBuilder() {
       if (typeCase_ == 40) {
          return (ubii.devices.DeviceOuterClass.Device) type_;
@@ -2337,13 +2087,17 @@ public final class TopicDataRecordOuterClass {
     public static final int DEVICE_LIST_FIELD_NUMBER = 41;
     /**
      * <code>.ubii.devices.DeviceList device_list = 41;</code>
+     * @return Whether the deviceList field is set.
      */
+    @java.lang.Override
     public boolean hasDeviceList() {
       return typeCase_ == 41;
     }
     /**
      * <code>.ubii.devices.DeviceList device_list = 41;</code>
+     * @return The deviceList.
      */
+    @java.lang.Override
     public ubii.devices.DeviceOuterClass.DeviceList getDeviceList() {
       if (typeCase_ == 41) {
          return (ubii.devices.DeviceOuterClass.DeviceList) type_;
@@ -2353,6 +2107,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.devices.DeviceList device_list = 41;</code>
      */
+    @java.lang.Override
     public ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder() {
       if (typeCase_ == 41) {
          return (ubii.devices.DeviceOuterClass.DeviceList) type_;
@@ -2363,13 +2118,17 @@ public final class TopicDataRecordOuterClass {
     public static final int COMPONENT_FIELD_NUMBER = 42;
     /**
      * <code>.ubii.devices.Component component = 42;</code>
+     * @return Whether the component field is set.
      */
+    @java.lang.Override
     public boolean hasComponent() {
       return typeCase_ == 42;
     }
     /**
      * <code>.ubii.devices.Component component = 42;</code>
+     * @return The component.
      */
+    @java.lang.Override
     public ubii.devices.ComponentOuterClass.Component getComponent() {
       if (typeCase_ == 42) {
          return (ubii.devices.ComponentOuterClass.Component) type_;
@@ -2379,6 +2138,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.devices.Component component = 42;</code>
      */
+    @java.lang.Override
     public ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentOrBuilder() {
       if (typeCase_ == 42) {
          return (ubii.devices.ComponentOuterClass.Component) type_;
@@ -2389,13 +2149,17 @@ public final class TopicDataRecordOuterClass {
     public static final int COMPONENT_LIST_FIELD_NUMBER = 43;
     /**
      * <code>.ubii.devices.ComponentList component_list = 43;</code>
+     * @return Whether the componentList field is set.
      */
+    @java.lang.Override
     public boolean hasComponentList() {
       return typeCase_ == 43;
     }
     /**
      * <code>.ubii.devices.ComponentList component_list = 43;</code>
+     * @return The componentList.
      */
+    @java.lang.Override
     public ubii.devices.ComponentOuterClass.ComponentList getComponentList() {
       if (typeCase_ == 43) {
          return (ubii.devices.ComponentOuterClass.ComponentList) type_;
@@ -2405,6 +2169,7 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>.ubii.devices.ComponentList component_list = 43;</code>
      */
+    @java.lang.Override
     public ubii.devices.ComponentOuterClass.ComponentListOrBuilder getComponentListOrBuilder() {
       if (typeCase_ == 43) {
          return (ubii.devices.ComponentOuterClass.ComponentList) type_;
@@ -2426,7 +2191,7 @@ public final class TopicDataRecordOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTopicBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
       }
       if (timestamp_ != null) {
@@ -2526,7 +2291,7 @@ public final class TopicDataRecordOuterClass {
       if (typeCase_ == 32) {
         output.writeMessage(32, (ubii.sessions.SessionOuterClass.Session) type_);
       }
-      if (!getClientIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 33, clientId_);
       }
       if (typeCase_ == 34) {
@@ -2562,7 +2327,7 @@ public final class TopicDataRecordOuterClass {
       if (typeCase_ == 44) {
         output.writeMessage(44, (ubii.sessions.SessionOuterClass.SessionList) type_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2571,7 +2336,7 @@ public final class TopicDataRecordOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTopicBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
       }
       if (timestamp_ != null) {
@@ -2701,7 +2466,7 @@ public final class TopicDataRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(32, (ubii.sessions.SessionOuterClass.Session) type_);
       }
-      if (!getClientIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(33, clientId_);
       }
       if (typeCase_ == 34) {
@@ -2748,7 +2513,7 @@ public final class TopicDataRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(44, (ubii.sessions.SessionOuterClass.SessionList) type_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2763,193 +2528,188 @@ public final class TopicDataRecordOuterClass {
       }
       ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord other = (ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord) obj;
 
-      boolean result = true;
-      result = result && getTopic()
-          .equals(other.getTopic());
-      result = result && (hasTimestamp() == other.hasTimestamp());
+      if (!getTopic()
+          .equals(other.getTopic())) return false;
+      if (hasTimestamp() != other.hasTimestamp()) return false;
       if (hasTimestamp()) {
-        result = result && getTimestamp()
-            .equals(other.getTimestamp());
+        if (!getTimestamp()
+            .equals(other.getTimestamp())) return false;
       }
-      result = result && getClientId()
-          .equals(other.getClientId());
-      result = result && getTypeCase().equals(
-          other.getTypeCase());
-      if (!result) return false;
+      if (!getClientId()
+          .equals(other.getClientId())) return false;
+      if (!getTypeCase().equals(other.getTypeCase())) return false;
       switch (typeCase_) {
         case 39:
-          result = result && getError()
-              .equals(other.getError());
+          if (!getError()
+              .equals(other.getError())) return false;
           break;
         case 3:
-          result = result && (
-              java.lang.Double.doubleToLongBits(getDouble())
-              == java.lang.Double.doubleToLongBits(
-                  other.getDouble()));
+          if (java.lang.Double.doubleToLongBits(getDouble())
+              != java.lang.Double.doubleToLongBits(
+                  other.getDouble())) return false;
           break;
         case 4:
-          result = result && (getBool()
-              == other.getBool());
+          if (getBool()
+              != other.getBool()) return false;
           break;
         case 5:
-          result = result && getString()
-              .equals(other.getString());
+          if (!getString()
+              .equals(other.getString())) return false;
           break;
         case 23:
-          result = result && (getInt32()
-              == other.getInt32());
+          if (getInt32()
+              != other.getInt32()) return false;
           break;
         case 24:
-          result = result && (
-              java.lang.Float.floatToIntBits(getFloat())
-              == java.lang.Float.floatToIntBits(
-                  other.getFloat()));
+          if (java.lang.Float.floatToIntBits(getFloat())
+              != java.lang.Float.floatToIntBits(
+                  other.getFloat())) return false;
           break;
         case 6:
-          result = result && getVector2()
-              .equals(other.getVector2());
+          if (!getVector2()
+              .equals(other.getVector2())) return false;
           break;
         case 35:
-          result = result && getVector2List()
-              .equals(other.getVector2List());
+          if (!getVector2List()
+              .equals(other.getVector2List())) return false;
           break;
         case 7:
-          result = result && getVector3()
-              .equals(other.getVector3());
+          if (!getVector3()
+              .equals(other.getVector3())) return false;
           break;
         case 36:
-          result = result && getVector3List()
-              .equals(other.getVector3List());
+          if (!getVector3List()
+              .equals(other.getVector3List())) return false;
           break;
         case 8:
-          result = result && getVector4()
-              .equals(other.getVector4());
+          if (!getVector4()
+              .equals(other.getVector4())) return false;
           break;
         case 37:
-          result = result && getVector4List()
-              .equals(other.getVector4List());
+          if (!getVector4List()
+              .equals(other.getVector4List())) return false;
           break;
         case 9:
-          result = result && getQuaternion()
-              .equals(other.getQuaternion());
+          if (!getQuaternion()
+              .equals(other.getQuaternion())) return false;
           break;
         case 38:
-          result = result && getQuaternionList()
-              .equals(other.getQuaternionList());
+          if (!getQuaternionList()
+              .equals(other.getQuaternionList())) return false;
           break;
         case 10:
-          result = result && getMatrix3X2()
-              .equals(other.getMatrix3X2());
+          if (!getMatrix3X2()
+              .equals(other.getMatrix3X2())) return false;
           break;
         case 11:
-          result = result && getMatrix4X4()
-              .equals(other.getMatrix4X4());
+          if (!getMatrix4X4()
+              .equals(other.getMatrix4X4())) return false;
           break;
         case 12:
-          result = result && getColor()
-              .equals(other.getColor());
+          if (!getColor()
+              .equals(other.getColor())) return false;
           break;
         case 13:
-          result = result && getTouchEvent()
-              .equals(other.getTouchEvent());
+          if (!getTouchEvent()
+              .equals(other.getTouchEvent())) return false;
           break;
         case 34:
-          result = result && getTouchEventList()
-              .equals(other.getTouchEventList());
+          if (!getTouchEventList()
+              .equals(other.getTouchEventList())) return false;
           break;
         case 14:
-          result = result && getKeyEvent()
-              .equals(other.getKeyEvent());
+          if (!getKeyEvent()
+              .equals(other.getKeyEvent())) return false;
           break;
         case 15:
-          result = result && getMouseEvent()
-              .equals(other.getMouseEvent());
+          if (!getMouseEvent()
+              .equals(other.getMouseEvent())) return false;
           break;
         case 16:
-          result = result && getMyoEvent()
-              .equals(other.getMyoEvent());
+          if (!getMyoEvent()
+              .equals(other.getMyoEvent())) return false;
           break;
         case 17:
-          result = result && getPose2D()
-              .equals(other.getPose2D());
+          if (!getPose2D()
+              .equals(other.getPose2D())) return false;
           break;
         case 18:
-          result = result && getPose3D()
-              .equals(other.getPose3D());
+          if (!getPose3D()
+              .equals(other.getPose3D())) return false;
           break;
         case 19:
-          result = result && getObject2D()
-              .equals(other.getObject2D());
+          if (!getObject2D()
+              .equals(other.getObject2D())) return false;
           break;
         case 20:
-          result = result && getObject3D()
-              .equals(other.getObject3D());
+          if (!getObject3D()
+              .equals(other.getObject3D())) return false;
           break;
         case 21:
-          result = result && getObject2DList()
-              .equals(other.getObject2DList());
+          if (!getObject2DList()
+              .equals(other.getObject2DList())) return false;
           break;
         case 22:
-          result = result && getObject3DList()
-              .equals(other.getObject3DList());
+          if (!getObject3DList()
+              .equals(other.getObject3DList())) return false;
           break;
         case 25:
-          result = result && getInt32List()
-              .equals(other.getInt32List());
+          if (!getInt32List()
+              .equals(other.getInt32List())) return false;
           break;
         case 26:
-          result = result && getFloatList()
-              .equals(other.getFloatList());
+          if (!getFloatList()
+              .equals(other.getFloatList())) return false;
           break;
         case 27:
-          result = result && getDoubleList()
-              .equals(other.getDoubleList());
+          if (!getDoubleList()
+              .equals(other.getDoubleList())) return false;
           break;
         case 28:
-          result = result && getStringList()
-              .equals(other.getStringList());
+          if (!getStringList()
+              .equals(other.getStringList())) return false;
           break;
         case 29:
-          result = result && getBoolList()
-              .equals(other.getBoolList());
+          if (!getBoolList()
+              .equals(other.getBoolList())) return false;
           break;
         case 30:
-          result = result && getImage2D()
-              .equals(other.getImage2D());
+          if (!getImage2D()
+              .equals(other.getImage2D())) return false;
           break;
         case 31:
-          result = result && getImage2DList()
-              .equals(other.getImage2DList());
+          if (!getImage2DList()
+              .equals(other.getImage2DList())) return false;
           break;
         case 32:
-          result = result && getSession()
-              .equals(other.getSession());
+          if (!getSession()
+              .equals(other.getSession())) return false;
           break;
         case 44:
-          result = result && getSessionList()
-              .equals(other.getSessionList());
+          if (!getSessionList()
+              .equals(other.getSessionList())) return false;
           break;
         case 40:
-          result = result && getDevice()
-              .equals(other.getDevice());
+          if (!getDevice()
+              .equals(other.getDevice())) return false;
           break;
         case 41:
-          result = result && getDeviceList()
-              .equals(other.getDeviceList());
+          if (!getDeviceList()
+              .equals(other.getDeviceList())) return false;
           break;
         case 42:
-          result = result && getComponent()
-              .equals(other.getComponent());
+          if (!getComponent()
+              .equals(other.getComponent())) return false;
           break;
         case 43:
-          result = result && getComponentList()
-              .equals(other.getComponentList());
+          if (!getComponentList()
+              .equals(other.getComponentList())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3138,7 +2898,7 @@ public final class TopicDataRecordOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3259,32 +3019,134 @@ public final class TopicDataRecordOuterClass {
 
       // Construct using ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        bitField1_ = 0;
         topic_ = "";
-
-        if (timestampBuilder_ == null) {
-          timestamp_ = null;
-        } else {
-          timestamp_ = null;
+        timestamp_ = null;
+        if (timestampBuilder_ != null) {
+          timestampBuilder_.dispose();
           timestampBuilder_ = null;
         }
         clientId_ = "";
-
+        if (errorBuilder_ != null) {
+          errorBuilder_.clear();
+        }
+        if (vector2Builder_ != null) {
+          vector2Builder_.clear();
+        }
+        if (vector2ListBuilder_ != null) {
+          vector2ListBuilder_.clear();
+        }
+        if (vector3Builder_ != null) {
+          vector3Builder_.clear();
+        }
+        if (vector3ListBuilder_ != null) {
+          vector3ListBuilder_.clear();
+        }
+        if (vector4Builder_ != null) {
+          vector4Builder_.clear();
+        }
+        if (vector4ListBuilder_ != null) {
+          vector4ListBuilder_.clear();
+        }
+        if (quaternionBuilder_ != null) {
+          quaternionBuilder_.clear();
+        }
+        if (quaternionListBuilder_ != null) {
+          quaternionListBuilder_.clear();
+        }
+        if (matrix3X2Builder_ != null) {
+          matrix3X2Builder_.clear();
+        }
+        if (matrix4X4Builder_ != null) {
+          matrix4X4Builder_.clear();
+        }
+        if (colorBuilder_ != null) {
+          colorBuilder_.clear();
+        }
+        if (touchEventBuilder_ != null) {
+          touchEventBuilder_.clear();
+        }
+        if (touchEventListBuilder_ != null) {
+          touchEventListBuilder_.clear();
+        }
+        if (keyEventBuilder_ != null) {
+          keyEventBuilder_.clear();
+        }
+        if (mouseEventBuilder_ != null) {
+          mouseEventBuilder_.clear();
+        }
+        if (myoEventBuilder_ != null) {
+          myoEventBuilder_.clear();
+        }
+        if (pose2DBuilder_ != null) {
+          pose2DBuilder_.clear();
+        }
+        if (pose3DBuilder_ != null) {
+          pose3DBuilder_.clear();
+        }
+        if (object2DBuilder_ != null) {
+          object2DBuilder_.clear();
+        }
+        if (object3DBuilder_ != null) {
+          object3DBuilder_.clear();
+        }
+        if (object2DListBuilder_ != null) {
+          object2DListBuilder_.clear();
+        }
+        if (object3DListBuilder_ != null) {
+          object3DListBuilder_.clear();
+        }
+        if (int32ListBuilder_ != null) {
+          int32ListBuilder_.clear();
+        }
+        if (floatListBuilder_ != null) {
+          floatListBuilder_.clear();
+        }
+        if (doubleListBuilder_ != null) {
+          doubleListBuilder_.clear();
+        }
+        if (stringListBuilder_ != null) {
+          stringListBuilder_.clear();
+        }
+        if (boolListBuilder_ != null) {
+          boolListBuilder_.clear();
+        }
+        if (image2DBuilder_ != null) {
+          image2DBuilder_.clear();
+        }
+        if (image2DListBuilder_ != null) {
+          image2DListBuilder_.clear();
+        }
+        if (sessionBuilder_ != null) {
+          sessionBuilder_.clear();
+        }
+        if (sessionListBuilder_ != null) {
+          sessionListBuilder_.clear();
+        }
+        if (deviceBuilder_ != null) {
+          deviceBuilder_.clear();
+        }
+        if (deviceListBuilder_ != null) {
+          deviceListBuilder_.clear();
+        }
+        if (componentBuilder_ != null) {
+          componentBuilder_.clear();
+        }
+        if (componentListBuilder_ != null) {
+          componentListBuilder_.clear();
+        }
         typeCase_ = 0;
         type_ = null;
         return this;
@@ -3313,317 +3175,181 @@ public final class TopicDataRecordOuterClass {
       @java.lang.Override
       public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord buildPartial() {
         ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord result = new ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord(this);
-        result.topic_ = topic_;
-        if (timestampBuilder_ == null) {
-          result.timestamp_ = timestamp_;
-        } else {
-          result.timestamp_ = timestampBuilder_.build();
-        }
-        result.clientId_ = clientId_;
-        if (typeCase_ == 39) {
-          if (errorBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = errorBuilder_.build();
-          }
-        }
-        if (typeCase_ == 3) {
-          result.type_ = type_;
-        }
-        if (typeCase_ == 4) {
-          result.type_ = type_;
-        }
-        if (typeCase_ == 5) {
-          result.type_ = type_;
-        }
-        if (typeCase_ == 23) {
-          result.type_ = type_;
-        }
-        if (typeCase_ == 24) {
-          result.type_ = type_;
-        }
-        if (typeCase_ == 6) {
-          if (vector2Builder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = vector2Builder_.build();
-          }
-        }
-        if (typeCase_ == 35) {
-          if (vector2ListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = vector2ListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 7) {
-          if (vector3Builder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = vector3Builder_.build();
-          }
-        }
-        if (typeCase_ == 36) {
-          if (vector3ListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = vector3ListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 8) {
-          if (vector4Builder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = vector4Builder_.build();
-          }
-        }
-        if (typeCase_ == 37) {
-          if (vector4ListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = vector4ListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 9) {
-          if (quaternionBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = quaternionBuilder_.build();
-          }
-        }
-        if (typeCase_ == 38) {
-          if (quaternionListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = quaternionListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 10) {
-          if (matrix3X2Builder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = matrix3X2Builder_.build();
-          }
-        }
-        if (typeCase_ == 11) {
-          if (matrix4X4Builder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = matrix4X4Builder_.build();
-          }
-        }
-        if (typeCase_ == 12) {
-          if (colorBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = colorBuilder_.build();
-          }
-        }
-        if (typeCase_ == 13) {
-          if (touchEventBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = touchEventBuilder_.build();
-          }
-        }
-        if (typeCase_ == 34) {
-          if (touchEventListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = touchEventListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 14) {
-          if (keyEventBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = keyEventBuilder_.build();
-          }
-        }
-        if (typeCase_ == 15) {
-          if (mouseEventBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = mouseEventBuilder_.build();
-          }
-        }
-        if (typeCase_ == 16) {
-          if (myoEventBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = myoEventBuilder_.build();
-          }
-        }
-        if (typeCase_ == 17) {
-          if (pose2DBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = pose2DBuilder_.build();
-          }
-        }
-        if (typeCase_ == 18) {
-          if (pose3DBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = pose3DBuilder_.build();
-          }
-        }
-        if (typeCase_ == 19) {
-          if (object2DBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = object2DBuilder_.build();
-          }
-        }
-        if (typeCase_ == 20) {
-          if (object3DBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = object3DBuilder_.build();
-          }
-        }
-        if (typeCase_ == 21) {
-          if (object2DListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = object2DListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 22) {
-          if (object3DListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = object3DListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 25) {
-          if (int32ListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = int32ListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 26) {
-          if (floatListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = floatListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 27) {
-          if (doubleListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = doubleListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 28) {
-          if (stringListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = stringListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 29) {
-          if (boolListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = boolListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 30) {
-          if (image2DBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = image2DBuilder_.build();
-          }
-        }
-        if (typeCase_ == 31) {
-          if (image2DListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = image2DListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 32) {
-          if (sessionBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = sessionBuilder_.build();
-          }
-        }
-        if (typeCase_ == 44) {
-          if (sessionListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = sessionListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 40) {
-          if (deviceBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = deviceBuilder_.build();
-          }
-        }
-        if (typeCase_ == 41) {
-          if (deviceListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = deviceListBuilder_.build();
-          }
-        }
-        if (typeCase_ == 42) {
-          if (componentBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = componentBuilder_.build();
-          }
-        }
-        if (typeCase_ == 43) {
-          if (componentListBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = componentListBuilder_.build();
-          }
-        }
-        result.typeCase_ = typeCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        if (bitField1_ != 0) { buildPartial1(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.topic_ = topic_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.timestamp_ = timestampBuilder_ == null
+              ? timestamp_
+              : timestampBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.clientId_ = clientId_;
+        }
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+
+      private void buildPartial1(ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord result) {
+        int from_bitField1_ = bitField1_;
       }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+
+      private void buildPartialOneofs(ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord result) {
+        result.typeCase_ = typeCase_;
+        result.type_ = this.type_;
+        if (typeCase_ == 39 &&
+            errorBuilder_ != null) {
+          result.type_ = errorBuilder_.build();
+        }
+        if (typeCase_ == 6 &&
+            vector2Builder_ != null) {
+          result.type_ = vector2Builder_.build();
+        }
+        if (typeCase_ == 35 &&
+            vector2ListBuilder_ != null) {
+          result.type_ = vector2ListBuilder_.build();
+        }
+        if (typeCase_ == 7 &&
+            vector3Builder_ != null) {
+          result.type_ = vector3Builder_.build();
+        }
+        if (typeCase_ == 36 &&
+            vector3ListBuilder_ != null) {
+          result.type_ = vector3ListBuilder_.build();
+        }
+        if (typeCase_ == 8 &&
+            vector4Builder_ != null) {
+          result.type_ = vector4Builder_.build();
+        }
+        if (typeCase_ == 37 &&
+            vector4ListBuilder_ != null) {
+          result.type_ = vector4ListBuilder_.build();
+        }
+        if (typeCase_ == 9 &&
+            quaternionBuilder_ != null) {
+          result.type_ = quaternionBuilder_.build();
+        }
+        if (typeCase_ == 38 &&
+            quaternionListBuilder_ != null) {
+          result.type_ = quaternionListBuilder_.build();
+        }
+        if (typeCase_ == 10 &&
+            matrix3X2Builder_ != null) {
+          result.type_ = matrix3X2Builder_.build();
+        }
+        if (typeCase_ == 11 &&
+            matrix4X4Builder_ != null) {
+          result.type_ = matrix4X4Builder_.build();
+        }
+        if (typeCase_ == 12 &&
+            colorBuilder_ != null) {
+          result.type_ = colorBuilder_.build();
+        }
+        if (typeCase_ == 13 &&
+            touchEventBuilder_ != null) {
+          result.type_ = touchEventBuilder_.build();
+        }
+        if (typeCase_ == 34 &&
+            touchEventListBuilder_ != null) {
+          result.type_ = touchEventListBuilder_.build();
+        }
+        if (typeCase_ == 14 &&
+            keyEventBuilder_ != null) {
+          result.type_ = keyEventBuilder_.build();
+        }
+        if (typeCase_ == 15 &&
+            mouseEventBuilder_ != null) {
+          result.type_ = mouseEventBuilder_.build();
+        }
+        if (typeCase_ == 16 &&
+            myoEventBuilder_ != null) {
+          result.type_ = myoEventBuilder_.build();
+        }
+        if (typeCase_ == 17 &&
+            pose2DBuilder_ != null) {
+          result.type_ = pose2DBuilder_.build();
+        }
+        if (typeCase_ == 18 &&
+            pose3DBuilder_ != null) {
+          result.type_ = pose3DBuilder_.build();
+        }
+        if (typeCase_ == 19 &&
+            object2DBuilder_ != null) {
+          result.type_ = object2DBuilder_.build();
+        }
+        if (typeCase_ == 20 &&
+            object3DBuilder_ != null) {
+          result.type_ = object3DBuilder_.build();
+        }
+        if (typeCase_ == 21 &&
+            object2DListBuilder_ != null) {
+          result.type_ = object2DListBuilder_.build();
+        }
+        if (typeCase_ == 22 &&
+            object3DListBuilder_ != null) {
+          result.type_ = object3DListBuilder_.build();
+        }
+        if (typeCase_ == 25 &&
+            int32ListBuilder_ != null) {
+          result.type_ = int32ListBuilder_.build();
+        }
+        if (typeCase_ == 26 &&
+            floatListBuilder_ != null) {
+          result.type_ = floatListBuilder_.build();
+        }
+        if (typeCase_ == 27 &&
+            doubleListBuilder_ != null) {
+          result.type_ = doubleListBuilder_.build();
+        }
+        if (typeCase_ == 28 &&
+            stringListBuilder_ != null) {
+          result.type_ = stringListBuilder_.build();
+        }
+        if (typeCase_ == 29 &&
+            boolListBuilder_ != null) {
+          result.type_ = boolListBuilder_.build();
+        }
+        if (typeCase_ == 30 &&
+            image2DBuilder_ != null) {
+          result.type_ = image2DBuilder_.build();
+        }
+        if (typeCase_ == 31 &&
+            image2DListBuilder_ != null) {
+          result.type_ = image2DListBuilder_.build();
+        }
+        if (typeCase_ == 32 &&
+            sessionBuilder_ != null) {
+          result.type_ = sessionBuilder_.build();
+        }
+        if (typeCase_ == 44 &&
+            sessionListBuilder_ != null) {
+          result.type_ = sessionListBuilder_.build();
+        }
+        if (typeCase_ == 40 &&
+            deviceBuilder_ != null) {
+          result.type_ = deviceBuilder_.build();
+        }
+        if (typeCase_ == 41 &&
+            deviceListBuilder_ != null) {
+          result.type_ = deviceListBuilder_.build();
+        }
+        if (typeCase_ == 42 &&
+            componentBuilder_ != null) {
+          result.type_ = componentBuilder_.build();
+        }
+        if (typeCase_ == 43 &&
+            componentListBuilder_ != null) {
+          result.type_ = componentListBuilder_.build();
+        }
       }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord) {
@@ -3638,6 +3364,7 @@ public final class TopicDataRecordOuterClass {
         if (other == ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.getDefaultInstance()) return this;
         if (!other.getTopic().isEmpty()) {
           topic_ = other.topic_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasTimestamp()) {
@@ -3645,6 +3372,7 @@ public final class TopicDataRecordOuterClass {
         }
         if (!other.getClientId().isEmpty()) {
           clientId_ = other.clientId_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         switch (other.getTypeCase()) {
@@ -3818,7 +3546,7 @@ public final class TopicDataRecordOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3833,17 +3561,325 @@ public final class TopicDataRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                topic_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getTimestampFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 25: {
+                type_ = input.readDouble();
+                typeCase_ = 3;
+                break;
+              } // case 25
+              case 32: {
+                type_ = input.readBool();
+                typeCase_ = 4;
+                break;
+              } // case 32
+              case 42: {
+                java.lang.String s = input.readStringRequireUtf8();
+                typeCase_ = 5;
+                type_ = s;
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getVector2FieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 6;
+                break;
+              } // case 50
+              case 58: {
+                input.readMessage(
+                    getVector3FieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 7;
+                break;
+              } // case 58
+              case 66: {
+                input.readMessage(
+                    getVector4FieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 8;
+                break;
+              } // case 66
+              case 74: {
+                input.readMessage(
+                    getQuaternionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 9;
+                break;
+              } // case 74
+              case 82: {
+                input.readMessage(
+                    getMatrix3X2FieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 10;
+                break;
+              } // case 82
+              case 90: {
+                input.readMessage(
+                    getMatrix4X4FieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 11;
+                break;
+              } // case 90
+              case 98: {
+                input.readMessage(
+                    getColorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 12;
+                break;
+              } // case 98
+              case 106: {
+                input.readMessage(
+                    getTouchEventFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 13;
+                break;
+              } // case 106
+              case 114: {
+                input.readMessage(
+                    getKeyEventFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 14;
+                break;
+              } // case 114
+              case 122: {
+                input.readMessage(
+                    getMouseEventFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 15;
+                break;
+              } // case 122
+              case 130: {
+                input.readMessage(
+                    getMyoEventFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 16;
+                break;
+              } // case 130
+              case 138: {
+                input.readMessage(
+                    getPose2DFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 17;
+                break;
+              } // case 138
+              case 146: {
+                input.readMessage(
+                    getPose3DFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 18;
+                break;
+              } // case 146
+              case 154: {
+                input.readMessage(
+                    getObject2DFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 19;
+                break;
+              } // case 154
+              case 162: {
+                input.readMessage(
+                    getObject3DFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 20;
+                break;
+              } // case 162
+              case 170: {
+                input.readMessage(
+                    getObject2DListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 21;
+                break;
+              } // case 170
+              case 178: {
+                input.readMessage(
+                    getObject3DListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 22;
+                break;
+              } // case 178
+              case 184: {
+                type_ = input.readInt32();
+                typeCase_ = 23;
+                break;
+              } // case 184
+              case 197: {
+                type_ = input.readFloat();
+                typeCase_ = 24;
+                break;
+              } // case 197
+              case 202: {
+                input.readMessage(
+                    getInt32ListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 25;
+                break;
+              } // case 202
+              case 210: {
+                input.readMessage(
+                    getFloatListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 26;
+                break;
+              } // case 210
+              case 218: {
+                input.readMessage(
+                    getDoubleListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 27;
+                break;
+              } // case 218
+              case 226: {
+                input.readMessage(
+                    getStringListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 28;
+                break;
+              } // case 226
+              case 234: {
+                input.readMessage(
+                    getBoolListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 29;
+                break;
+              } // case 234
+              case 242: {
+                input.readMessage(
+                    getImage2DFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 30;
+                break;
+              } // case 242
+              case 250: {
+                input.readMessage(
+                    getImage2DListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 31;
+                break;
+              } // case 250
+              case 258: {
+                input.readMessage(
+                    getSessionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 32;
+                break;
+              } // case 258
+              case 266: {
+                clientId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 266
+              case 274: {
+                input.readMessage(
+                    getTouchEventListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 34;
+                break;
+              } // case 274
+              case 282: {
+                input.readMessage(
+                    getVector2ListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 35;
+                break;
+              } // case 282
+              case 290: {
+                input.readMessage(
+                    getVector3ListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 36;
+                break;
+              } // case 290
+              case 298: {
+                input.readMessage(
+                    getVector4ListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 37;
+                break;
+              } // case 298
+              case 306: {
+                input.readMessage(
+                    getQuaternionListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 38;
+                break;
+              } // case 306
+              case 314: {
+                input.readMessage(
+                    getErrorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 39;
+                break;
+              } // case 314
+              case 322: {
+                input.readMessage(
+                    getDeviceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 40;
+                break;
+              } // case 322
+              case 330: {
+                input.readMessage(
+                    getDeviceListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 41;
+                break;
+              } // case 330
+              case 338: {
+                input.readMessage(
+                    getComponentFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 42;
+                break;
+              } // case 338
+              case 346: {
+                input.readMessage(
+                    getComponentListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 43;
+                break;
+              } // case 346
+              case 354: {
+                input.readMessage(
+                    getSessionListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 44;
+                break;
+              } // case 354
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int typeCase_ = 0;
@@ -3861,10 +3897,13 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
 
+      private int bitField0_;
+      private int bitField1_;
 
       private java.lang.Object topic_ = "";
       /**
        * <code>string topic = 1;</code>
+       * @return The topic.
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = topic_;
@@ -3880,6 +3919,7 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
+       * @return The bytes for topic.
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -3896,52 +3936,55 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
+       * @param value The topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopic(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         topic_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>string topic = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTopic() {
-        
         topic_ = getDefaultInstance().getTopic();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
        * <code>string topic = 1;</code>
+       * @param value The bytes for topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         topic_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private ubii.topicData.TimestampOuterClass.Timestamp timestamp_ = null;
+      private ubii.topicData.TimestampOuterClass.Timestamp timestamp_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.topicData.TimestampOuterClass.Timestamp, ubii.topicData.TimestampOuterClass.Timestamp.Builder, ubii.topicData.TimestampOuterClass.TimestampOrBuilder> timestampBuilder_;
       /**
        * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
+       * @return Whether the timestamp field is set.
        */
       public boolean hasTimestamp() {
-        return timestampBuilder_ != null || timestamp_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
+       * @return The timestamp.
        */
       public ubii.topicData.TimestampOuterClass.Timestamp getTimestamp() {
         if (timestampBuilder_ == null) {
@@ -3959,11 +4002,11 @@ public final class TopicDataRecordOuterClass {
             throw new NullPointerException();
           }
           timestamp_ = value;
-          onChanged();
         } else {
           timestampBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3973,11 +4016,11 @@ public final class TopicDataRecordOuterClass {
           ubii.topicData.TimestampOuterClass.Timestamp.Builder builderForValue) {
         if (timestampBuilder_ == null) {
           timestamp_ = builderForValue.build();
-          onChanged();
         } else {
           timestampBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3985,38 +4028,38 @@ public final class TopicDataRecordOuterClass {
        */
       public Builder mergeTimestamp(ubii.topicData.TimestampOuterClass.Timestamp value) {
         if (timestampBuilder_ == null) {
-          if (timestamp_ != null) {
-            timestamp_ =
-              ubii.topicData.TimestampOuterClass.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            timestamp_ != null &&
+            timestamp_ != ubii.topicData.TimestampOuterClass.Timestamp.getDefaultInstance()) {
+            getTimestampBuilder().mergeFrom(value);
           } else {
             timestamp_ = value;
           }
-          onChanged();
         } else {
           timestampBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
        */
       public Builder clearTimestamp() {
-        if (timestampBuilder_ == null) {
-          timestamp_ = null;
-          onChanged();
-        } else {
-          timestamp_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        timestamp_ = null;
+        if (timestampBuilder_ != null) {
+          timestampBuilder_.dispose();
           timestampBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
        */
       public ubii.topicData.TimestampOuterClass.Timestamp.Builder getTimestampBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getTimestampFieldBuilder().getBuilder();
       }
@@ -4051,6 +4094,7 @@ public final class TopicDataRecordOuterClass {
       private java.lang.Object clientId_ = "";
       /**
        * <code>string client_id = 33;</code>
+       * @return The clientId.
        */
       public java.lang.String getClientId() {
         java.lang.Object ref = clientId_;
@@ -4066,6 +4110,7 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>string client_id = 33;</code>
+       * @return The bytes for clientId.
        */
       public com.google.protobuf.ByteString
           getClientIdBytes() {
@@ -4082,37 +4127,38 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>string client_id = 33;</code>
+       * @param value The clientId to set.
+       * @return This builder for chaining.
        */
       public Builder setClientId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         clientId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
        * <code>string client_id = 33;</code>
+       * @return This builder for chaining.
        */
       public Builder clearClientId() {
-        
         clientId_ = getDefaultInstance().getClientId();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
        * <code>string client_id = 33;</code>
+       * @param value The bytes for clientId to set.
+       * @return This builder for chaining.
        */
       public Builder setClientIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         clientId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4121,13 +4167,17 @@ public final class TopicDataRecordOuterClass {
           ubii.general.ErrorOuterClass.Error, ubii.general.ErrorOuterClass.Error.Builder, ubii.general.ErrorOuterClass.ErrorOrBuilder> errorBuilder_;
       /**
        * <code>.ubii.general.Error error = 39;</code>
+       * @return Whether the error field is set.
        */
+      @java.lang.Override
       public boolean hasError() {
         return typeCase_ == 39;
       }
       /**
        * <code>.ubii.general.Error error = 39;</code>
+       * @return The error.
        */
+      @java.lang.Override
       public ubii.general.ErrorOuterClass.Error getError() {
         if (errorBuilder_ == null) {
           if (typeCase_ == 39) {
@@ -4187,8 +4237,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 39) {
             errorBuilder_.mergeFrom(value);
+          } else {
+            errorBuilder_.setMessage(value);
           }
-          errorBuilder_.setMessage(value);
         }
         typeCase_ = 39;
         return this;
@@ -4221,6 +4272,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.general.Error error = 39;</code>
        */
+      @java.lang.Override
       public ubii.general.ErrorOuterClass.ErrorOrBuilder getErrorOrBuilder() {
         if ((typeCase_ == 39) && (errorBuilder_ != null)) {
           return errorBuilder_.getMessageOrBuilder();
@@ -4249,12 +4301,20 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 39;
-        onChanged();;
+        onChanged();
         return errorBuilder_;
       }
 
       /**
        * <code>double double = 3;</code>
+       * @return Whether the double field is set.
+       */
+      public boolean hasDouble() {
+        return typeCase_ == 3;
+      }
+      /**
+       * <code>double double = 3;</code>
+       * @return The double.
        */
       public double getDouble() {
         if (typeCase_ == 3) {
@@ -4264,8 +4324,11 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>double double = 3;</code>
+       * @param value The double to set.
+       * @return This builder for chaining.
        */
       public Builder setDouble(double value) {
+
         typeCase_ = 3;
         type_ = value;
         onChanged();
@@ -4273,6 +4336,7 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>double double = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDouble() {
         if (typeCase_ == 3) {
@@ -4285,6 +4349,14 @@ public final class TopicDataRecordOuterClass {
 
       /**
        * <code>bool bool = 4;</code>
+       * @return Whether the bool field is set.
+       */
+      public boolean hasBool() {
+        return typeCase_ == 4;
+      }
+      /**
+       * <code>bool bool = 4;</code>
+       * @return The bool.
        */
       public boolean getBool() {
         if (typeCase_ == 4) {
@@ -4294,8 +4366,11 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>bool bool = 4;</code>
+       * @param value The bool to set.
+       * @return This builder for chaining.
        */
       public Builder setBool(boolean value) {
+
         typeCase_ = 4;
         type_ = value;
         onChanged();
@@ -4303,6 +4378,7 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>bool bool = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBool() {
         if (typeCase_ == 4) {
@@ -4315,7 +4391,17 @@ public final class TopicDataRecordOuterClass {
 
       /**
        * <code>string string = 5;</code>
+       * @return Whether the string field is set.
        */
+      @java.lang.Override
+      public boolean hasString() {
+        return typeCase_ == 5;
+      }
+      /**
+       * <code>string string = 5;</code>
+       * @return The string.
+       */
+      @java.lang.Override
       public java.lang.String getString() {
         java.lang.Object ref = "";
         if (typeCase_ == 5) {
@@ -4335,7 +4421,9 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>string string = 5;</code>
+       * @return The bytes for string.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getStringBytes() {
         java.lang.Object ref = "";
@@ -4356,19 +4444,20 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>string string = 5;</code>
+       * @param value The string to set.
+       * @return This builder for chaining.
        */
       public Builder setString(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  typeCase_ = 5;
+        if (value == null) { throw new NullPointerException(); }
+        typeCase_ = 5;
         type_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>string string = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearString() {
         if (typeCase_ == 5) {
@@ -4380,13 +4469,13 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>string string = 5;</code>
+       * @param value The bytes for string to set.
+       * @return This builder for chaining.
        */
       public Builder setStringBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         typeCase_ = 5;
         type_ = value;
         onChanged();
@@ -4395,6 +4484,14 @@ public final class TopicDataRecordOuterClass {
 
       /**
        * <code>int32 int32 = 23;</code>
+       * @return Whether the int32 field is set.
+       */
+      public boolean hasInt32() {
+        return typeCase_ == 23;
+      }
+      /**
+       * <code>int32 int32 = 23;</code>
+       * @return The int32.
        */
       public int getInt32() {
         if (typeCase_ == 23) {
@@ -4404,8 +4501,11 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>int32 int32 = 23;</code>
+       * @param value The int32 to set.
+       * @return This builder for chaining.
        */
       public Builder setInt32(int value) {
+
         typeCase_ = 23;
         type_ = value;
         onChanged();
@@ -4413,6 +4513,7 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>int32 int32 = 23;</code>
+       * @return This builder for chaining.
        */
       public Builder clearInt32() {
         if (typeCase_ == 23) {
@@ -4425,6 +4526,14 @@ public final class TopicDataRecordOuterClass {
 
       /**
        * <code>float float = 24;</code>
+       * @return Whether the float field is set.
+       */
+      public boolean hasFloat() {
+        return typeCase_ == 24;
+      }
+      /**
+       * <code>float float = 24;</code>
+       * @return The float.
        */
       public float getFloat() {
         if (typeCase_ == 24) {
@@ -4434,8 +4543,11 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>float float = 24;</code>
+       * @param value The float to set.
+       * @return This builder for chaining.
        */
       public Builder setFloat(float value) {
+
         typeCase_ = 24;
         type_ = value;
         onChanged();
@@ -4443,6 +4555,7 @@ public final class TopicDataRecordOuterClass {
       }
       /**
        * <code>float float = 24;</code>
+       * @return This builder for chaining.
        */
       public Builder clearFloat() {
         if (typeCase_ == 24) {
@@ -4457,13 +4570,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder> vector2Builder_;
       /**
        * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+       * @return Whether the vector2 field is set.
        */
+      @java.lang.Override
       public boolean hasVector2() {
         return typeCase_ == 6;
       }
       /**
        * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+       * @return The vector2.
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector2OuterClass.Vector2 getVector2() {
         if (vector2Builder_ == null) {
           if (typeCase_ == 6) {
@@ -4523,8 +4640,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 6) {
             vector2Builder_.mergeFrom(value);
+          } else {
+            vector2Builder_.setMessage(value);
           }
-          vector2Builder_.setMessage(value);
         }
         typeCase_ = 6;
         return this;
@@ -4557,6 +4675,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getVector2OrBuilder() {
         if ((typeCase_ == 6) && (vector2Builder_ != null)) {
           return vector2Builder_.getMessageOrBuilder();
@@ -4585,7 +4704,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 6;
-        onChanged();;
+        onChanged();
         return vector2Builder_;
       }
 
@@ -4593,13 +4712,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Vector2OuterClass.Vector2List, ubii.dataStructure.Vector2OuterClass.Vector2List.Builder, ubii.dataStructure.Vector2OuterClass.Vector2ListOrBuilder> vector2ListBuilder_;
       /**
        * <code>.ubii.dataStructure.Vector2List vector2_list = 35;</code>
+       * @return Whether the vector2List field is set.
        */
+      @java.lang.Override
       public boolean hasVector2List() {
         return typeCase_ == 35;
       }
       /**
        * <code>.ubii.dataStructure.Vector2List vector2_list = 35;</code>
+       * @return The vector2List.
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector2OuterClass.Vector2List getVector2List() {
         if (vector2ListBuilder_ == null) {
           if (typeCase_ == 35) {
@@ -4659,8 +4782,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 35) {
             vector2ListBuilder_.mergeFrom(value);
+          } else {
+            vector2ListBuilder_.setMessage(value);
           }
-          vector2ListBuilder_.setMessage(value);
         }
         typeCase_ = 35;
         return this;
@@ -4693,6 +4817,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Vector2List vector2_list = 35;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector2OuterClass.Vector2ListOrBuilder getVector2ListOrBuilder() {
         if ((typeCase_ == 35) && (vector2ListBuilder_ != null)) {
           return vector2ListBuilder_.getMessageOrBuilder();
@@ -4721,7 +4846,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 35;
-        onChanged();;
+        onChanged();
         return vector2ListBuilder_;
       }
 
@@ -4729,13 +4854,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder> vector3Builder_;
       /**
        * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+       * @return Whether the vector3 field is set.
        */
+      @java.lang.Override
       public boolean hasVector3() {
         return typeCase_ == 7;
       }
       /**
        * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+       * @return The vector3.
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector3OuterClass.Vector3 getVector3() {
         if (vector3Builder_ == null) {
           if (typeCase_ == 7) {
@@ -4795,8 +4924,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 7) {
             vector3Builder_.mergeFrom(value);
+          } else {
+            vector3Builder_.setMessage(value);
           }
-          vector3Builder_.setMessage(value);
         }
         typeCase_ = 7;
         return this;
@@ -4829,6 +4959,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getVector3OrBuilder() {
         if ((typeCase_ == 7) && (vector3Builder_ != null)) {
           return vector3Builder_.getMessageOrBuilder();
@@ -4857,7 +4988,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 7;
-        onChanged();;
+        onChanged();
         return vector3Builder_;
       }
 
@@ -4865,13 +4996,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Vector3OuterClass.Vector3List, ubii.dataStructure.Vector3OuterClass.Vector3List.Builder, ubii.dataStructure.Vector3OuterClass.Vector3ListOrBuilder> vector3ListBuilder_;
       /**
        * <code>.ubii.dataStructure.Vector3List vector3_list = 36;</code>
+       * @return Whether the vector3List field is set.
        */
+      @java.lang.Override
       public boolean hasVector3List() {
         return typeCase_ == 36;
       }
       /**
        * <code>.ubii.dataStructure.Vector3List vector3_list = 36;</code>
+       * @return The vector3List.
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector3OuterClass.Vector3List getVector3List() {
         if (vector3ListBuilder_ == null) {
           if (typeCase_ == 36) {
@@ -4931,8 +5066,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 36) {
             vector3ListBuilder_.mergeFrom(value);
+          } else {
+            vector3ListBuilder_.setMessage(value);
           }
-          vector3ListBuilder_.setMessage(value);
         }
         typeCase_ = 36;
         return this;
@@ -4965,6 +5101,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Vector3List vector3_list = 36;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector3OuterClass.Vector3ListOrBuilder getVector3ListOrBuilder() {
         if ((typeCase_ == 36) && (vector3ListBuilder_ != null)) {
           return vector3ListBuilder_.getMessageOrBuilder();
@@ -4993,7 +5130,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 36;
-        onChanged();;
+        onChanged();
         return vector3ListBuilder_;
       }
 
@@ -5001,13 +5138,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Vector4OuterClass.Vector4, ubii.dataStructure.Vector4OuterClass.Vector4.Builder, ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder> vector4Builder_;
       /**
        * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+       * @return Whether the vector4 field is set.
        */
+      @java.lang.Override
       public boolean hasVector4() {
         return typeCase_ == 8;
       }
       /**
        * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+       * @return The vector4.
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector4OuterClass.Vector4 getVector4() {
         if (vector4Builder_ == null) {
           if (typeCase_ == 8) {
@@ -5067,8 +5208,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 8) {
             vector4Builder_.mergeFrom(value);
+          } else {
+            vector4Builder_.setMessage(value);
           }
-          vector4Builder_.setMessage(value);
         }
         typeCase_ = 8;
         return this;
@@ -5101,6 +5243,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder getVector4OrBuilder() {
         if ((typeCase_ == 8) && (vector4Builder_ != null)) {
           return vector4Builder_.getMessageOrBuilder();
@@ -5129,7 +5272,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 8;
-        onChanged();;
+        onChanged();
         return vector4Builder_;
       }
 
@@ -5137,13 +5280,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Vector4OuterClass.Vector4List, ubii.dataStructure.Vector4OuterClass.Vector4List.Builder, ubii.dataStructure.Vector4OuterClass.Vector4ListOrBuilder> vector4ListBuilder_;
       /**
        * <code>.ubii.dataStructure.Vector4List vector4_list = 37;</code>
+       * @return Whether the vector4List field is set.
        */
+      @java.lang.Override
       public boolean hasVector4List() {
         return typeCase_ == 37;
       }
       /**
        * <code>.ubii.dataStructure.Vector4List vector4_list = 37;</code>
+       * @return The vector4List.
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector4OuterClass.Vector4List getVector4List() {
         if (vector4ListBuilder_ == null) {
           if (typeCase_ == 37) {
@@ -5203,8 +5350,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 37) {
             vector4ListBuilder_.mergeFrom(value);
+          } else {
+            vector4ListBuilder_.setMessage(value);
           }
-          vector4ListBuilder_.setMessage(value);
         }
         typeCase_ = 37;
         return this;
@@ -5237,6 +5385,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Vector4List vector4_list = 37;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector4OuterClass.Vector4ListOrBuilder getVector4ListOrBuilder() {
         if ((typeCase_ == 37) && (vector4ListBuilder_ != null)) {
           return vector4ListBuilder_.getMessageOrBuilder();
@@ -5265,7 +5414,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 37;
-        onChanged();;
+        onChanged();
         return vector4ListBuilder_;
       }
 
@@ -5273,13 +5422,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.QuaternionOuterClass.Quaternion, ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder, ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder> quaternionBuilder_;
       /**
        * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+       * @return Whether the quaternion field is set.
        */
+      @java.lang.Override
       public boolean hasQuaternion() {
         return typeCase_ == 9;
       }
       /**
        * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+       * @return The quaternion.
        */
+      @java.lang.Override
       public ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion() {
         if (quaternionBuilder_ == null) {
           if (typeCase_ == 9) {
@@ -5339,8 +5492,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 9) {
             quaternionBuilder_.mergeFrom(value);
+          } else {
+            quaternionBuilder_.setMessage(value);
           }
-          quaternionBuilder_.setMessage(value);
         }
         typeCase_ = 9;
         return this;
@@ -5373,6 +5527,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getQuaternionOrBuilder() {
         if ((typeCase_ == 9) && (quaternionBuilder_ != null)) {
           return quaternionBuilder_.getMessageOrBuilder();
@@ -5401,7 +5556,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 9;
-        onChanged();;
+        onChanged();
         return quaternionBuilder_;
       }
 
@@ -5409,13 +5564,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.QuaternionOuterClass.Quaternion, ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder, ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder> quaternionListBuilder_;
       /**
        * <code>.ubii.dataStructure.Quaternion quaternion_list = 38;</code>
+       * @return Whether the quaternionList field is set.
        */
+      @java.lang.Override
       public boolean hasQuaternionList() {
         return typeCase_ == 38;
       }
       /**
        * <code>.ubii.dataStructure.Quaternion quaternion_list = 38;</code>
+       * @return The quaternionList.
        */
+      @java.lang.Override
       public ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternionList() {
         if (quaternionListBuilder_ == null) {
           if (typeCase_ == 38) {
@@ -5475,8 +5634,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 38) {
             quaternionListBuilder_.mergeFrom(value);
+          } else {
+            quaternionListBuilder_.setMessage(value);
           }
-          quaternionListBuilder_.setMessage(value);
         }
         typeCase_ = 38;
         return this;
@@ -5509,6 +5669,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Quaternion quaternion_list = 38;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getQuaternionListOrBuilder() {
         if ((typeCase_ == 38) && (quaternionListBuilder_ != null)) {
           return quaternionListBuilder_.getMessageOrBuilder();
@@ -5537,7 +5698,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 38;
-        onChanged();;
+        onChanged();
         return quaternionListBuilder_;
       }
 
@@ -5545,13 +5706,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Matrix3X2.Matrix3x2, ubii.dataStructure.Matrix3X2.Matrix3x2.Builder, ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder> matrix3X2Builder_;
       /**
        * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+       * @return Whether the matrix3x2 field is set.
        */
+      @java.lang.Override
       public boolean hasMatrix3X2() {
         return typeCase_ == 10;
       }
       /**
        * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+       * @return The matrix3x2.
        */
+      @java.lang.Override
       public ubii.dataStructure.Matrix3X2.Matrix3x2 getMatrix3X2() {
         if (matrix3X2Builder_ == null) {
           if (typeCase_ == 10) {
@@ -5611,8 +5776,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 10) {
             matrix3X2Builder_.mergeFrom(value);
+          } else {
+            matrix3X2Builder_.setMessage(value);
           }
-          matrix3X2Builder_.setMessage(value);
         }
         typeCase_ = 10;
         return this;
@@ -5645,6 +5811,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder getMatrix3X2OrBuilder() {
         if ((typeCase_ == 10) && (matrix3X2Builder_ != null)) {
           return matrix3X2Builder_.getMessageOrBuilder();
@@ -5673,7 +5840,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 10;
-        onChanged();;
+        onChanged();
         return matrix3X2Builder_;
       }
 
@@ -5681,13 +5848,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Matrix4X4.Matrix4x4, ubii.dataStructure.Matrix4X4.Matrix4x4.Builder, ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder> matrix4X4Builder_;
       /**
        * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+       * @return Whether the matrix4x4 field is set.
        */
+      @java.lang.Override
       public boolean hasMatrix4X4() {
         return typeCase_ == 11;
       }
       /**
        * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+       * @return The matrix4x4.
        */
+      @java.lang.Override
       public ubii.dataStructure.Matrix4X4.Matrix4x4 getMatrix4X4() {
         if (matrix4X4Builder_ == null) {
           if (typeCase_ == 11) {
@@ -5747,8 +5918,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 11) {
             matrix4X4Builder_.mergeFrom(value);
+          } else {
+            matrix4X4Builder_.setMessage(value);
           }
-          matrix4X4Builder_.setMessage(value);
         }
         typeCase_ = 11;
         return this;
@@ -5781,6 +5953,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder getMatrix4X4OrBuilder() {
         if ((typeCase_ == 11) && (matrix4X4Builder_ != null)) {
           return matrix4X4Builder_.getMessageOrBuilder();
@@ -5809,7 +5982,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 11;
-        onChanged();;
+        onChanged();
         return matrix4X4Builder_;
       }
 
@@ -5817,13 +5990,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.ColorOuterClass.Color, ubii.dataStructure.ColorOuterClass.Color.Builder, ubii.dataStructure.ColorOuterClass.ColorOrBuilder> colorBuilder_;
       /**
        * <code>.ubii.dataStructure.Color color = 12;</code>
+       * @return Whether the color field is set.
        */
+      @java.lang.Override
       public boolean hasColor() {
         return typeCase_ == 12;
       }
       /**
        * <code>.ubii.dataStructure.Color color = 12;</code>
+       * @return The color.
        */
+      @java.lang.Override
       public ubii.dataStructure.ColorOuterClass.Color getColor() {
         if (colorBuilder_ == null) {
           if (typeCase_ == 12) {
@@ -5883,8 +6060,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 12) {
             colorBuilder_.mergeFrom(value);
+          } else {
+            colorBuilder_.setMessage(value);
           }
-          colorBuilder_.setMessage(value);
         }
         typeCase_ = 12;
         return this;
@@ -5917,6 +6095,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Color color = 12;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.ColorOuterClass.ColorOrBuilder getColorOrBuilder() {
         if ((typeCase_ == 12) && (colorBuilder_ != null)) {
           return colorBuilder_.getMessageOrBuilder();
@@ -5945,7 +6124,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 12;
-        onChanged();;
+        onChanged();
         return colorBuilder_;
       }
 
@@ -5953,13 +6132,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.TouchEventOuterClass.TouchEvent, ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder, ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder> touchEventBuilder_;
       /**
        * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
+       * @return Whether the touchEvent field is set.
        */
+      @java.lang.Override
       public boolean hasTouchEvent() {
         return typeCase_ == 13;
       }
       /**
        * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
+       * @return The touchEvent.
        */
+      @java.lang.Override
       public ubii.dataStructure.TouchEventOuterClass.TouchEvent getTouchEvent() {
         if (touchEventBuilder_ == null) {
           if (typeCase_ == 13) {
@@ -6019,8 +6202,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 13) {
             touchEventBuilder_.mergeFrom(value);
+          } else {
+            touchEventBuilder_.setMessage(value);
           }
-          touchEventBuilder_.setMessage(value);
         }
         typeCase_ = 13;
         return this;
@@ -6053,6 +6237,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder getTouchEventOrBuilder() {
         if ((typeCase_ == 13) && (touchEventBuilder_ != null)) {
           return touchEventBuilder_.getMessageOrBuilder();
@@ -6081,7 +6266,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 13;
-        onChanged();;
+        onChanged();
         return touchEventBuilder_;
       }
 
@@ -6089,13 +6274,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.TouchEventOuterClass.TouchEventList, ubii.dataStructure.TouchEventOuterClass.TouchEventList.Builder, ubii.dataStructure.TouchEventOuterClass.TouchEventListOrBuilder> touchEventListBuilder_;
       /**
        * <code>.ubii.dataStructure.TouchEventList touch_event_list = 34;</code>
+       * @return Whether the touchEventList field is set.
        */
+      @java.lang.Override
       public boolean hasTouchEventList() {
         return typeCase_ == 34;
       }
       /**
        * <code>.ubii.dataStructure.TouchEventList touch_event_list = 34;</code>
+       * @return The touchEventList.
        */
+      @java.lang.Override
       public ubii.dataStructure.TouchEventOuterClass.TouchEventList getTouchEventList() {
         if (touchEventListBuilder_ == null) {
           if (typeCase_ == 34) {
@@ -6155,8 +6344,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 34) {
             touchEventListBuilder_.mergeFrom(value);
+          } else {
+            touchEventListBuilder_.setMessage(value);
           }
-          touchEventListBuilder_.setMessage(value);
         }
         typeCase_ = 34;
         return this;
@@ -6189,6 +6379,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.TouchEventList touch_event_list = 34;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.TouchEventOuterClass.TouchEventListOrBuilder getTouchEventListOrBuilder() {
         if ((typeCase_ == 34) && (touchEventListBuilder_ != null)) {
           return touchEventListBuilder_.getMessageOrBuilder();
@@ -6217,7 +6408,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 34;
-        onChanged();;
+        onChanged();
         return touchEventListBuilder_;
       }
 
@@ -6225,13 +6416,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.KeyEventOuterClass.KeyEvent, ubii.dataStructure.KeyEventOuterClass.KeyEvent.Builder, ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder> keyEventBuilder_;
       /**
        * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
+       * @return Whether the keyEvent field is set.
        */
+      @java.lang.Override
       public boolean hasKeyEvent() {
         return typeCase_ == 14;
       }
       /**
        * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
+       * @return The keyEvent.
        */
+      @java.lang.Override
       public ubii.dataStructure.KeyEventOuterClass.KeyEvent getKeyEvent() {
         if (keyEventBuilder_ == null) {
           if (typeCase_ == 14) {
@@ -6291,8 +6486,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 14) {
             keyEventBuilder_.mergeFrom(value);
+          } else {
+            keyEventBuilder_.setMessage(value);
           }
-          keyEventBuilder_.setMessage(value);
         }
         typeCase_ = 14;
         return this;
@@ -6325,6 +6521,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder getKeyEventOrBuilder() {
         if ((typeCase_ == 14) && (keyEventBuilder_ != null)) {
           return keyEventBuilder_.getMessageOrBuilder();
@@ -6353,7 +6550,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 14;
-        onChanged();;
+        onChanged();
         return keyEventBuilder_;
       }
 
@@ -6361,13 +6558,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.MouseEventOuterClass.MouseEvent, ubii.dataStructure.MouseEventOuterClass.MouseEvent.Builder, ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder> mouseEventBuilder_;
       /**
        * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
+       * @return Whether the mouseEvent field is set.
        */
+      @java.lang.Override
       public boolean hasMouseEvent() {
         return typeCase_ == 15;
       }
       /**
        * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
+       * @return The mouseEvent.
        */
+      @java.lang.Override
       public ubii.dataStructure.MouseEventOuterClass.MouseEvent getMouseEvent() {
         if (mouseEventBuilder_ == null) {
           if (typeCase_ == 15) {
@@ -6427,8 +6628,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 15) {
             mouseEventBuilder_.mergeFrom(value);
+          } else {
+            mouseEventBuilder_.setMessage(value);
           }
-          mouseEventBuilder_.setMessage(value);
         }
         typeCase_ = 15;
         return this;
@@ -6461,6 +6663,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder getMouseEventOrBuilder() {
         if ((typeCase_ == 15) && (mouseEventBuilder_ != null)) {
           return mouseEventBuilder_.getMessageOrBuilder();
@@ -6489,7 +6692,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 15;
-        onChanged();;
+        onChanged();
         return mouseEventBuilder_;
       }
 
@@ -6497,13 +6700,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.MyoEventOuterClass.MyoEvent, ubii.dataStructure.MyoEventOuterClass.MyoEvent.Builder, ubii.dataStructure.MyoEventOuterClass.MyoEventOrBuilder> myoEventBuilder_;
       /**
        * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+       * @return Whether the myoEvent field is set.
        */
+      @java.lang.Override
       public boolean hasMyoEvent() {
         return typeCase_ == 16;
       }
       /**
        * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+       * @return The myoEvent.
        */
+      @java.lang.Override
       public ubii.dataStructure.MyoEventOuterClass.MyoEvent getMyoEvent() {
         if (myoEventBuilder_ == null) {
           if (typeCase_ == 16) {
@@ -6563,8 +6770,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 16) {
             myoEventBuilder_.mergeFrom(value);
+          } else {
+            myoEventBuilder_.setMessage(value);
           }
-          myoEventBuilder_.setMessage(value);
         }
         typeCase_ = 16;
         return this;
@@ -6597,6 +6805,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.MyoEventOuterClass.MyoEventOrBuilder getMyoEventOrBuilder() {
         if ((typeCase_ == 16) && (myoEventBuilder_ != null)) {
           return myoEventBuilder_.getMessageOrBuilder();
@@ -6625,7 +6834,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 16;
-        onChanged();;
+        onChanged();
         return myoEventBuilder_;
       }
 
@@ -6633,13 +6842,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Pose2DOuterClass.Pose2D, ubii.dataStructure.Pose2DOuterClass.Pose2D.Builder, ubii.dataStructure.Pose2DOuterClass.Pose2DOrBuilder> pose2DBuilder_;
       /**
        * <code>.ubii.dataStructure.Pose2D pose2D = 17;</code>
+       * @return Whether the pose2D field is set.
        */
+      @java.lang.Override
       public boolean hasPose2D() {
         return typeCase_ == 17;
       }
       /**
        * <code>.ubii.dataStructure.Pose2D pose2D = 17;</code>
+       * @return The pose2D.
        */
+      @java.lang.Override
       public ubii.dataStructure.Pose2DOuterClass.Pose2D getPose2D() {
         if (pose2DBuilder_ == null) {
           if (typeCase_ == 17) {
@@ -6699,8 +6912,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 17) {
             pose2DBuilder_.mergeFrom(value);
+          } else {
+            pose2DBuilder_.setMessage(value);
           }
-          pose2DBuilder_.setMessage(value);
         }
         typeCase_ = 17;
         return this;
@@ -6733,6 +6947,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Pose2D pose2D = 17;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Pose2DOuterClass.Pose2DOrBuilder getPose2DOrBuilder() {
         if ((typeCase_ == 17) && (pose2DBuilder_ != null)) {
           return pose2DBuilder_.getMessageOrBuilder();
@@ -6761,7 +6976,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 17;
-        onChanged();;
+        onChanged();
         return pose2DBuilder_;
       }
 
@@ -6769,13 +6984,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Pose3DOuterClass.Pose3D, ubii.dataStructure.Pose3DOuterClass.Pose3D.Builder, ubii.dataStructure.Pose3DOuterClass.Pose3DOrBuilder> pose3DBuilder_;
       /**
        * <code>.ubii.dataStructure.Pose3D pose3D = 18;</code>
+       * @return Whether the pose3D field is set.
        */
+      @java.lang.Override
       public boolean hasPose3D() {
         return typeCase_ == 18;
       }
       /**
        * <code>.ubii.dataStructure.Pose3D pose3D = 18;</code>
+       * @return The pose3D.
        */
+      @java.lang.Override
       public ubii.dataStructure.Pose3DOuterClass.Pose3D getPose3D() {
         if (pose3DBuilder_ == null) {
           if (typeCase_ == 18) {
@@ -6835,8 +7054,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 18) {
             pose3DBuilder_.mergeFrom(value);
+          } else {
+            pose3DBuilder_.setMessage(value);
           }
-          pose3DBuilder_.setMessage(value);
         }
         typeCase_ = 18;
         return this;
@@ -6869,6 +7089,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Pose3D pose3D = 18;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Pose3DOuterClass.Pose3DOrBuilder getPose3DOrBuilder() {
         if ((typeCase_ == 18) && (pose3DBuilder_ != null)) {
           return pose3DBuilder_.getMessageOrBuilder();
@@ -6897,7 +7118,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 18;
-        onChanged();;
+        onChanged();
         return pose3DBuilder_;
       }
 
@@ -6905,13 +7126,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Object2DOuterClass.Object2D, ubii.dataStructure.Object2DOuterClass.Object2D.Builder, ubii.dataStructure.Object2DOuterClass.Object2DOrBuilder> object2DBuilder_;
       /**
        * <code>.ubii.dataStructure.Object2D object2D = 19;</code>
+       * @return Whether the object2D field is set.
        */
+      @java.lang.Override
       public boolean hasObject2D() {
         return typeCase_ == 19;
       }
       /**
        * <code>.ubii.dataStructure.Object2D object2D = 19;</code>
+       * @return The object2D.
        */
+      @java.lang.Override
       public ubii.dataStructure.Object2DOuterClass.Object2D getObject2D() {
         if (object2DBuilder_ == null) {
           if (typeCase_ == 19) {
@@ -6971,8 +7196,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 19) {
             object2DBuilder_.mergeFrom(value);
+          } else {
+            object2DBuilder_.setMessage(value);
           }
-          object2DBuilder_.setMessage(value);
         }
         typeCase_ = 19;
         return this;
@@ -7005,6 +7231,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Object2D object2D = 19;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Object2DOuterClass.Object2DOrBuilder getObject2DOrBuilder() {
         if ((typeCase_ == 19) && (object2DBuilder_ != null)) {
           return object2DBuilder_.getMessageOrBuilder();
@@ -7033,7 +7260,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 19;
-        onChanged();;
+        onChanged();
         return object2DBuilder_;
       }
 
@@ -7041,13 +7268,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Object3DOuterClass.Object3D, ubii.dataStructure.Object3DOuterClass.Object3D.Builder, ubii.dataStructure.Object3DOuterClass.Object3DOrBuilder> object3DBuilder_;
       /**
        * <code>.ubii.dataStructure.Object3D object3D = 20;</code>
+       * @return Whether the object3D field is set.
        */
+      @java.lang.Override
       public boolean hasObject3D() {
         return typeCase_ == 20;
       }
       /**
        * <code>.ubii.dataStructure.Object3D object3D = 20;</code>
+       * @return The object3D.
        */
+      @java.lang.Override
       public ubii.dataStructure.Object3DOuterClass.Object3D getObject3D() {
         if (object3DBuilder_ == null) {
           if (typeCase_ == 20) {
@@ -7107,8 +7338,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 20) {
             object3DBuilder_.mergeFrom(value);
+          } else {
+            object3DBuilder_.setMessage(value);
           }
-          object3DBuilder_.setMessage(value);
         }
         typeCase_ = 20;
         return this;
@@ -7141,6 +7373,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Object3D object3D = 20;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Object3DOuterClass.Object3DOrBuilder getObject3DOrBuilder() {
         if ((typeCase_ == 20) && (object3DBuilder_ != null)) {
           return object3DBuilder_.getMessageOrBuilder();
@@ -7169,7 +7402,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 20;
-        onChanged();;
+        onChanged();
         return object3DBuilder_;
       }
 
@@ -7177,13 +7410,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Object2DOuterClass.Object2DList, ubii.dataStructure.Object2DOuterClass.Object2DList.Builder, ubii.dataStructure.Object2DOuterClass.Object2DListOrBuilder> object2DListBuilder_;
       /**
        * <code>.ubii.dataStructure.Object2DList object2D_list = 21;</code>
+       * @return Whether the object2DList field is set.
        */
+      @java.lang.Override
       public boolean hasObject2DList() {
         return typeCase_ == 21;
       }
       /**
        * <code>.ubii.dataStructure.Object2DList object2D_list = 21;</code>
+       * @return The object2DList.
        */
+      @java.lang.Override
       public ubii.dataStructure.Object2DOuterClass.Object2DList getObject2DList() {
         if (object2DListBuilder_ == null) {
           if (typeCase_ == 21) {
@@ -7243,8 +7480,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 21) {
             object2DListBuilder_.mergeFrom(value);
+          } else {
+            object2DListBuilder_.setMessage(value);
           }
-          object2DListBuilder_.setMessage(value);
         }
         typeCase_ = 21;
         return this;
@@ -7277,6 +7515,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Object2DList object2D_list = 21;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Object2DOuterClass.Object2DListOrBuilder getObject2DListOrBuilder() {
         if ((typeCase_ == 21) && (object2DListBuilder_ != null)) {
           return object2DListBuilder_.getMessageOrBuilder();
@@ -7305,7 +7544,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 21;
-        onChanged();;
+        onChanged();
         return object2DListBuilder_;
       }
 
@@ -7313,13 +7552,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Object3DOuterClass.Object3DList, ubii.dataStructure.Object3DOuterClass.Object3DList.Builder, ubii.dataStructure.Object3DOuterClass.Object3DListOrBuilder> object3DListBuilder_;
       /**
        * <code>.ubii.dataStructure.Object3DList object3D_list = 22;</code>
+       * @return Whether the object3DList field is set.
        */
+      @java.lang.Override
       public boolean hasObject3DList() {
         return typeCase_ == 22;
       }
       /**
        * <code>.ubii.dataStructure.Object3DList object3D_list = 22;</code>
+       * @return The object3DList.
        */
+      @java.lang.Override
       public ubii.dataStructure.Object3DOuterClass.Object3DList getObject3DList() {
         if (object3DListBuilder_ == null) {
           if (typeCase_ == 22) {
@@ -7379,8 +7622,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 22) {
             object3DListBuilder_.mergeFrom(value);
+          } else {
+            object3DListBuilder_.setMessage(value);
           }
-          object3DListBuilder_.setMessage(value);
         }
         typeCase_ = 22;
         return this;
@@ -7413,6 +7657,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Object3DList object3D_list = 22;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Object3DOuterClass.Object3DListOrBuilder getObject3DListOrBuilder() {
         if ((typeCase_ == 22) && (object3DListBuilder_ != null)) {
           return object3DListBuilder_.getMessageOrBuilder();
@@ -7441,7 +7686,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 22;
-        onChanged();;
+        onChanged();
         return object3DListBuilder_;
       }
 
@@ -7449,13 +7694,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Lists.Int32List, ubii.dataStructure.Lists.Int32List.Builder, ubii.dataStructure.Lists.Int32ListOrBuilder> int32ListBuilder_;
       /**
        * <code>.ubii.dataStructure.Int32List int32_list = 25;</code>
+       * @return Whether the int32List field is set.
        */
+      @java.lang.Override
       public boolean hasInt32List() {
         return typeCase_ == 25;
       }
       /**
        * <code>.ubii.dataStructure.Int32List int32_list = 25;</code>
+       * @return The int32List.
        */
+      @java.lang.Override
       public ubii.dataStructure.Lists.Int32List getInt32List() {
         if (int32ListBuilder_ == null) {
           if (typeCase_ == 25) {
@@ -7515,8 +7764,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 25) {
             int32ListBuilder_.mergeFrom(value);
+          } else {
+            int32ListBuilder_.setMessage(value);
           }
-          int32ListBuilder_.setMessage(value);
         }
         typeCase_ = 25;
         return this;
@@ -7549,6 +7799,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Int32List int32_list = 25;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Lists.Int32ListOrBuilder getInt32ListOrBuilder() {
         if ((typeCase_ == 25) && (int32ListBuilder_ != null)) {
           return int32ListBuilder_.getMessageOrBuilder();
@@ -7577,7 +7828,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 25;
-        onChanged();;
+        onChanged();
         return int32ListBuilder_;
       }
 
@@ -7585,13 +7836,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Lists.FloatList, ubii.dataStructure.Lists.FloatList.Builder, ubii.dataStructure.Lists.FloatListOrBuilder> floatListBuilder_;
       /**
        * <code>.ubii.dataStructure.FloatList float_list = 26;</code>
+       * @return Whether the floatList field is set.
        */
+      @java.lang.Override
       public boolean hasFloatList() {
         return typeCase_ == 26;
       }
       /**
        * <code>.ubii.dataStructure.FloatList float_list = 26;</code>
+       * @return The floatList.
        */
+      @java.lang.Override
       public ubii.dataStructure.Lists.FloatList getFloatList() {
         if (floatListBuilder_ == null) {
           if (typeCase_ == 26) {
@@ -7651,8 +7906,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 26) {
             floatListBuilder_.mergeFrom(value);
+          } else {
+            floatListBuilder_.setMessage(value);
           }
-          floatListBuilder_.setMessage(value);
         }
         typeCase_ = 26;
         return this;
@@ -7685,6 +7941,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.FloatList float_list = 26;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Lists.FloatListOrBuilder getFloatListOrBuilder() {
         if ((typeCase_ == 26) && (floatListBuilder_ != null)) {
           return floatListBuilder_.getMessageOrBuilder();
@@ -7713,7 +7970,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 26;
-        onChanged();;
+        onChanged();
         return floatListBuilder_;
       }
 
@@ -7721,13 +7978,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Lists.DoubleList, ubii.dataStructure.Lists.DoubleList.Builder, ubii.dataStructure.Lists.DoubleListOrBuilder> doubleListBuilder_;
       /**
        * <code>.ubii.dataStructure.DoubleList double_list = 27;</code>
+       * @return Whether the doubleList field is set.
        */
+      @java.lang.Override
       public boolean hasDoubleList() {
         return typeCase_ == 27;
       }
       /**
        * <code>.ubii.dataStructure.DoubleList double_list = 27;</code>
+       * @return The doubleList.
        */
+      @java.lang.Override
       public ubii.dataStructure.Lists.DoubleList getDoubleList() {
         if (doubleListBuilder_ == null) {
           if (typeCase_ == 27) {
@@ -7787,8 +8048,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 27) {
             doubleListBuilder_.mergeFrom(value);
+          } else {
+            doubleListBuilder_.setMessage(value);
           }
-          doubleListBuilder_.setMessage(value);
         }
         typeCase_ = 27;
         return this;
@@ -7821,6 +8083,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.DoubleList double_list = 27;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Lists.DoubleListOrBuilder getDoubleListOrBuilder() {
         if ((typeCase_ == 27) && (doubleListBuilder_ != null)) {
           return doubleListBuilder_.getMessageOrBuilder();
@@ -7849,7 +8112,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 27;
-        onChanged();;
+        onChanged();
         return doubleListBuilder_;
       }
 
@@ -7857,13 +8120,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Lists.StringList, ubii.dataStructure.Lists.StringList.Builder, ubii.dataStructure.Lists.StringListOrBuilder> stringListBuilder_;
       /**
        * <code>.ubii.dataStructure.StringList string_list = 28;</code>
+       * @return Whether the stringList field is set.
        */
+      @java.lang.Override
       public boolean hasStringList() {
         return typeCase_ == 28;
       }
       /**
        * <code>.ubii.dataStructure.StringList string_list = 28;</code>
+       * @return The stringList.
        */
+      @java.lang.Override
       public ubii.dataStructure.Lists.StringList getStringList() {
         if (stringListBuilder_ == null) {
           if (typeCase_ == 28) {
@@ -7923,8 +8190,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 28) {
             stringListBuilder_.mergeFrom(value);
+          } else {
+            stringListBuilder_.setMessage(value);
           }
-          stringListBuilder_.setMessage(value);
         }
         typeCase_ = 28;
         return this;
@@ -7957,6 +8225,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.StringList string_list = 28;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Lists.StringListOrBuilder getStringListOrBuilder() {
         if ((typeCase_ == 28) && (stringListBuilder_ != null)) {
           return stringListBuilder_.getMessageOrBuilder();
@@ -7985,7 +8254,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 28;
-        onChanged();;
+        onChanged();
         return stringListBuilder_;
       }
 
@@ -7993,13 +8262,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Lists.BoolList, ubii.dataStructure.Lists.BoolList.Builder, ubii.dataStructure.Lists.BoolListOrBuilder> boolListBuilder_;
       /**
        * <code>.ubii.dataStructure.BoolList bool_list = 29;</code>
+       * @return Whether the boolList field is set.
        */
+      @java.lang.Override
       public boolean hasBoolList() {
         return typeCase_ == 29;
       }
       /**
        * <code>.ubii.dataStructure.BoolList bool_list = 29;</code>
+       * @return The boolList.
        */
+      @java.lang.Override
       public ubii.dataStructure.Lists.BoolList getBoolList() {
         if (boolListBuilder_ == null) {
           if (typeCase_ == 29) {
@@ -8059,8 +8332,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 29) {
             boolListBuilder_.mergeFrom(value);
+          } else {
+            boolListBuilder_.setMessage(value);
           }
-          boolListBuilder_.setMessage(value);
         }
         typeCase_ = 29;
         return this;
@@ -8093,6 +8367,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.BoolList bool_list = 29;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Lists.BoolListOrBuilder getBoolListOrBuilder() {
         if ((typeCase_ == 29) && (boolListBuilder_ != null)) {
           return boolListBuilder_.getMessageOrBuilder();
@@ -8121,7 +8396,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 29;
-        onChanged();;
+        onChanged();
         return boolListBuilder_;
       }
 
@@ -8129,13 +8404,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Image.Image2D, ubii.dataStructure.Image.Image2D.Builder, ubii.dataStructure.Image.Image2DOrBuilder> image2DBuilder_;
       /**
        * <code>.ubii.dataStructure.Image2D image2D = 30;</code>
+       * @return Whether the image2D field is set.
        */
+      @java.lang.Override
       public boolean hasImage2D() {
         return typeCase_ == 30;
       }
       /**
        * <code>.ubii.dataStructure.Image2D image2D = 30;</code>
+       * @return The image2D.
        */
+      @java.lang.Override
       public ubii.dataStructure.Image.Image2D getImage2D() {
         if (image2DBuilder_ == null) {
           if (typeCase_ == 30) {
@@ -8195,8 +8474,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 30) {
             image2DBuilder_.mergeFrom(value);
+          } else {
+            image2DBuilder_.setMessage(value);
           }
-          image2DBuilder_.setMessage(value);
         }
         typeCase_ = 30;
         return this;
@@ -8229,6 +8509,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Image2D image2D = 30;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Image.Image2DOrBuilder getImage2DOrBuilder() {
         if ((typeCase_ == 30) && (image2DBuilder_ != null)) {
           return image2DBuilder_.getMessageOrBuilder();
@@ -8257,7 +8538,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 30;
-        onChanged();;
+        onChanged();
         return image2DBuilder_;
       }
 
@@ -8265,13 +8546,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Image.Image2DList, ubii.dataStructure.Image.Image2DList.Builder, ubii.dataStructure.Image.Image2DListOrBuilder> image2DListBuilder_;
       /**
        * <code>.ubii.dataStructure.Image2DList image2D_list = 31;</code>
+       * @return Whether the image2DList field is set.
        */
+      @java.lang.Override
       public boolean hasImage2DList() {
         return typeCase_ == 31;
       }
       /**
        * <code>.ubii.dataStructure.Image2DList image2D_list = 31;</code>
+       * @return The image2DList.
        */
+      @java.lang.Override
       public ubii.dataStructure.Image.Image2DList getImage2DList() {
         if (image2DListBuilder_ == null) {
           if (typeCase_ == 31) {
@@ -8331,8 +8616,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 31) {
             image2DListBuilder_.mergeFrom(value);
+          } else {
+            image2DListBuilder_.setMessage(value);
           }
-          image2DListBuilder_.setMessage(value);
         }
         typeCase_ = 31;
         return this;
@@ -8365,6 +8651,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.dataStructure.Image2DList image2D_list = 31;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Image.Image2DListOrBuilder getImage2DListOrBuilder() {
         if ((typeCase_ == 31) && (image2DListBuilder_ != null)) {
           return image2DListBuilder_.getMessageOrBuilder();
@@ -8393,7 +8680,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 31;
-        onChanged();;
+        onChanged();
         return image2DListBuilder_;
       }
 
@@ -8401,13 +8688,17 @@ public final class TopicDataRecordOuterClass {
           ubii.sessions.SessionOuterClass.Session, ubii.sessions.SessionOuterClass.Session.Builder, ubii.sessions.SessionOuterClass.SessionOrBuilder> sessionBuilder_;
       /**
        * <code>.ubii.sessions.Session session = 32;</code>
+       * @return Whether the session field is set.
        */
+      @java.lang.Override
       public boolean hasSession() {
         return typeCase_ == 32;
       }
       /**
        * <code>.ubii.sessions.Session session = 32;</code>
+       * @return The session.
        */
+      @java.lang.Override
       public ubii.sessions.SessionOuterClass.Session getSession() {
         if (sessionBuilder_ == null) {
           if (typeCase_ == 32) {
@@ -8467,8 +8758,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 32) {
             sessionBuilder_.mergeFrom(value);
+          } else {
+            sessionBuilder_.setMessage(value);
           }
-          sessionBuilder_.setMessage(value);
         }
         typeCase_ = 32;
         return this;
@@ -8501,6 +8793,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.sessions.Session session = 32;</code>
        */
+      @java.lang.Override
       public ubii.sessions.SessionOuterClass.SessionOrBuilder getSessionOrBuilder() {
         if ((typeCase_ == 32) && (sessionBuilder_ != null)) {
           return sessionBuilder_.getMessageOrBuilder();
@@ -8529,7 +8822,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 32;
-        onChanged();;
+        onChanged();
         return sessionBuilder_;
       }
 
@@ -8537,13 +8830,17 @@ public final class TopicDataRecordOuterClass {
           ubii.sessions.SessionOuterClass.SessionList, ubii.sessions.SessionOuterClass.SessionList.Builder, ubii.sessions.SessionOuterClass.SessionListOrBuilder> sessionListBuilder_;
       /**
        * <code>.ubii.sessions.SessionList session_list = 44;</code>
+       * @return Whether the sessionList field is set.
        */
+      @java.lang.Override
       public boolean hasSessionList() {
         return typeCase_ == 44;
       }
       /**
        * <code>.ubii.sessions.SessionList session_list = 44;</code>
+       * @return The sessionList.
        */
+      @java.lang.Override
       public ubii.sessions.SessionOuterClass.SessionList getSessionList() {
         if (sessionListBuilder_ == null) {
           if (typeCase_ == 44) {
@@ -8603,8 +8900,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 44) {
             sessionListBuilder_.mergeFrom(value);
+          } else {
+            sessionListBuilder_.setMessage(value);
           }
-          sessionListBuilder_.setMessage(value);
         }
         typeCase_ = 44;
         return this;
@@ -8637,6 +8935,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.sessions.SessionList session_list = 44;</code>
        */
+      @java.lang.Override
       public ubii.sessions.SessionOuterClass.SessionListOrBuilder getSessionListOrBuilder() {
         if ((typeCase_ == 44) && (sessionListBuilder_ != null)) {
           return sessionListBuilder_.getMessageOrBuilder();
@@ -8665,7 +8964,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 44;
-        onChanged();;
+        onChanged();
         return sessionListBuilder_;
       }
 
@@ -8673,13 +8972,17 @@ public final class TopicDataRecordOuterClass {
           ubii.devices.DeviceOuterClass.Device, ubii.devices.DeviceOuterClass.Device.Builder, ubii.devices.DeviceOuterClass.DeviceOrBuilder> deviceBuilder_;
       /**
        * <code>.ubii.devices.Device device = 40;</code>
+       * @return Whether the device field is set.
        */
+      @java.lang.Override
       public boolean hasDevice() {
         return typeCase_ == 40;
       }
       /**
        * <code>.ubii.devices.Device device = 40;</code>
+       * @return The device.
        */
+      @java.lang.Override
       public ubii.devices.DeviceOuterClass.Device getDevice() {
         if (deviceBuilder_ == null) {
           if (typeCase_ == 40) {
@@ -8739,8 +9042,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 40) {
             deviceBuilder_.mergeFrom(value);
+          } else {
+            deviceBuilder_.setMessage(value);
           }
-          deviceBuilder_.setMessage(value);
         }
         typeCase_ = 40;
         return this;
@@ -8773,6 +9077,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.devices.Device device = 40;</code>
        */
+      @java.lang.Override
       public ubii.devices.DeviceOuterClass.DeviceOrBuilder getDeviceOrBuilder() {
         if ((typeCase_ == 40) && (deviceBuilder_ != null)) {
           return deviceBuilder_.getMessageOrBuilder();
@@ -8801,7 +9106,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 40;
-        onChanged();;
+        onChanged();
         return deviceBuilder_;
       }
 
@@ -8809,13 +9114,17 @@ public final class TopicDataRecordOuterClass {
           ubii.devices.DeviceOuterClass.DeviceList, ubii.devices.DeviceOuterClass.DeviceList.Builder, ubii.devices.DeviceOuterClass.DeviceListOrBuilder> deviceListBuilder_;
       /**
        * <code>.ubii.devices.DeviceList device_list = 41;</code>
+       * @return Whether the deviceList field is set.
        */
+      @java.lang.Override
       public boolean hasDeviceList() {
         return typeCase_ == 41;
       }
       /**
        * <code>.ubii.devices.DeviceList device_list = 41;</code>
+       * @return The deviceList.
        */
+      @java.lang.Override
       public ubii.devices.DeviceOuterClass.DeviceList getDeviceList() {
         if (deviceListBuilder_ == null) {
           if (typeCase_ == 41) {
@@ -8875,8 +9184,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 41) {
             deviceListBuilder_.mergeFrom(value);
+          } else {
+            deviceListBuilder_.setMessage(value);
           }
-          deviceListBuilder_.setMessage(value);
         }
         typeCase_ = 41;
         return this;
@@ -8909,6 +9219,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.devices.DeviceList device_list = 41;</code>
        */
+      @java.lang.Override
       public ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder() {
         if ((typeCase_ == 41) && (deviceListBuilder_ != null)) {
           return deviceListBuilder_.getMessageOrBuilder();
@@ -8937,7 +9248,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 41;
-        onChanged();;
+        onChanged();
         return deviceListBuilder_;
       }
 
@@ -8945,13 +9256,17 @@ public final class TopicDataRecordOuterClass {
           ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder> componentBuilder_;
       /**
        * <code>.ubii.devices.Component component = 42;</code>
+       * @return Whether the component field is set.
        */
+      @java.lang.Override
       public boolean hasComponent() {
         return typeCase_ == 42;
       }
       /**
        * <code>.ubii.devices.Component component = 42;</code>
+       * @return The component.
        */
+      @java.lang.Override
       public ubii.devices.ComponentOuterClass.Component getComponent() {
         if (componentBuilder_ == null) {
           if (typeCase_ == 42) {
@@ -9011,8 +9326,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 42) {
             componentBuilder_.mergeFrom(value);
+          } else {
+            componentBuilder_.setMessage(value);
           }
-          componentBuilder_.setMessage(value);
         }
         typeCase_ = 42;
         return this;
@@ -9045,6 +9361,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.devices.Component component = 42;</code>
        */
+      @java.lang.Override
       public ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentOrBuilder() {
         if ((typeCase_ == 42) && (componentBuilder_ != null)) {
           return componentBuilder_.getMessageOrBuilder();
@@ -9073,7 +9390,7 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 42;
-        onChanged();;
+        onChanged();
         return componentBuilder_;
       }
 
@@ -9081,13 +9398,17 @@ public final class TopicDataRecordOuterClass {
           ubii.devices.ComponentOuterClass.ComponentList, ubii.devices.ComponentOuterClass.ComponentList.Builder, ubii.devices.ComponentOuterClass.ComponentListOrBuilder> componentListBuilder_;
       /**
        * <code>.ubii.devices.ComponentList component_list = 43;</code>
+       * @return Whether the componentList field is set.
        */
+      @java.lang.Override
       public boolean hasComponentList() {
         return typeCase_ == 43;
       }
       /**
        * <code>.ubii.devices.ComponentList component_list = 43;</code>
+       * @return The componentList.
        */
+      @java.lang.Override
       public ubii.devices.ComponentOuterClass.ComponentList getComponentList() {
         if (componentListBuilder_ == null) {
           if (typeCase_ == 43) {
@@ -9147,8 +9468,9 @@ public final class TopicDataRecordOuterClass {
         } else {
           if (typeCase_ == 43) {
             componentListBuilder_.mergeFrom(value);
+          } else {
+            componentListBuilder_.setMessage(value);
           }
-          componentListBuilder_.setMessage(value);
         }
         typeCase_ = 43;
         return this;
@@ -9181,6 +9503,7 @@ public final class TopicDataRecordOuterClass {
       /**
        * <code>.ubii.devices.ComponentList component_list = 43;</code>
        */
+      @java.lang.Override
       public ubii.devices.ComponentOuterClass.ComponentListOrBuilder getComponentListOrBuilder() {
         if ((typeCase_ == 43) && (componentListBuilder_ != null)) {
           return componentListBuilder_.getMessageOrBuilder();
@@ -9209,13 +9532,13 @@ public final class TopicDataRecordOuterClass {
           type_ = null;
         }
         typeCase_ = 43;
-        onChanged();;
+        onChanged();
         return componentListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -9245,7 +9568,18 @@ public final class TopicDataRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TopicDataRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -9296,7 +9630,7 @@ public final class TopicDataRecordOuterClass {
   /**
    * Protobuf type {@code ubii.topicData.TopicDataRecordList}
    */
-  public  static final class TopicDataRecordList extends
+  public static final class TopicDataRecordList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.topicData.TopicDataRecordList)
       TopicDataRecordListOrBuilder {
@@ -9310,60 +9644,12 @@ public final class TopicDataRecordOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TopicDataRecordList();
     }
-    private TopicDataRecordList(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                elements_ = new java.util.ArrayList<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              elements_.add(
-                  input.readMessage(ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          elements_ = java.util.Collections.unmodifiableList(elements_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.topicData.TopicDataRecordOuterClass.internal_static_ubii_topicData_TopicDataRecordList_descriptor;
@@ -9378,16 +9664,19 @@ public final class TopicDataRecordOuterClass {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord> elements_;
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -9395,18 +9684,21 @@ public final class TopicDataRecordOuterClass {
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
@@ -9429,7 +9721,7 @@ public final class TopicDataRecordOuterClass {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9442,7 +9734,7 @@ public final class TopicDataRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9457,11 +9749,10 @@ public final class TopicDataRecordOuterClass {
       }
       ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList other = (ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList) obj;
 
-      boolean result = true;
-      result = result && getElementsList()
-          .equals(other.getElementsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getElementsList()
+          .equals(other.getElementsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -9475,7 +9766,7 @@ public final class TopicDataRecordOuterClass {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9592,29 +9883,25 @@ public final class TopicDataRecordOuterClass {
 
       // Construct using ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getElementsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (elementsBuilder_ == null) {
           elements_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          elements_ = null;
           elementsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -9641,9 +9928,15 @@ public final class TopicDataRecordOuterClass {
       @java.lang.Override
       public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList buildPartial() {
         ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList result = new ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList result) {
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -9651,42 +9944,12 @@ public final class TopicDataRecordOuterClass {
         } else {
           result.elements_ = elementsBuilder_.build();
         }
-        onBuilt();
-        return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList result) {
+        int from_bitField0_ = bitField0_;
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList) {
@@ -9725,7 +9988,7 @@ public final class TopicDataRecordOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9740,17 +10003,43 @@ public final class TopicDataRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord m =
+                    input.readMessage(
+                        ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.parser(),
+                        extensionRegistry);
+                if (elementsBuilder_ == null) {
+                  ensureElementsIsMutable();
+                  elements_.add(m);
+                } else {
+                  elementsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -9758,7 +10047,7 @@ public final class TopicDataRecordOuterClass {
       private java.util.List<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           elements_ = new java.util.ArrayList<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -9987,7 +10276,7 @@ public final class TopicDataRecordOuterClass {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord, ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.Builder, ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
@@ -9997,7 +10286,7 @@ public final class TopicDataRecordOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -10027,7 +10316,18 @@ public final class TopicDataRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TopicDataRecordList(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -10142,15 +10442,7 @@ public final class TopicDataRecordOuterClass {
       "ist\0221\n\010elements\030\001 \003(\0132\037.ubii.topicData.T" +
       "opicDataRecordb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.topicData.TimestampOuterClass.getDescriptor(),
@@ -10176,7 +10468,7 @@ public final class TopicDataRecordOuterClass {
           ubii.devices.ComponentOuterClass.getDescriptor(),
           ubii.processing.ProcessingModuleOuterClass.getDescriptor(),
           ubii.general.ErrorOuterClass.getDescriptor(),
-        }, assigner);
+        });
     internal_static_ubii_topicData_TopicDataRecord_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_topicData_TopicDataRecord_fieldAccessorTable = new

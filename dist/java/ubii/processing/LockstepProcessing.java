@@ -20,19 +20,25 @@ public final class LockstepProcessing {
 
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @return A list containing the processingModuleIds.
      */
     java.util.List<java.lang.String>
         getProcessingModuleIdsList();
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @return The count of processingModuleIds.
      */
     int getProcessingModuleIdsCount();
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @param index The index of the element to return.
+     * @return The processingModuleIds at the given index.
      */
     java.lang.String getProcessingModuleIds(int index);
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the processingModuleIds at the given index.
      */
     com.google.protobuf.ByteString
         getProcessingModuleIdsBytes(int index);
@@ -63,13 +69,14 @@ public final class LockstepProcessing {
 
     /**
      * <code>int32 delta_time_ms = 3;</code>
+     * @return The deltaTimeMs.
      */
     int getDeltaTimeMs();
   }
   /**
    * Protobuf type {@code ubii.processing.LockstepProcessingRequest}
    */
-  public  static final class LockstepProcessingRequest extends
+  public static final class LockstepProcessingRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.processing.LockstepProcessingRequest)
       LockstepProcessingRequestOrBuilder {
@@ -79,83 +86,18 @@ public final class LockstepProcessing {
       super(builder);
     }
     private LockstepProcessingRequest() {
-      processingModuleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      processingModuleIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       records_ = java.util.Collections.emptyList();
-      deltaTimeMs_ = 0;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LockstepProcessingRequest();
     }
-    private LockstepProcessingRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                processingModuleIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              processingModuleIds_.add(s);
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                records_ = new java.util.ArrayList<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              records_.add(
-                  input.readMessage(ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.parser(), extensionRegistry));
-              break;
-            }
-            case 24: {
 
-              deltaTimeMs_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          processingModuleIds_ = processingModuleIds_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          records_ = java.util.Collections.unmodifiableList(records_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.processing.LockstepProcessing.internal_static_ubii_processing_LockstepProcessingRequest_descriptor;
@@ -169,11 +111,13 @@ public final class LockstepProcessing {
               ubii.processing.LockstepProcessing.LockstepProcessingRequest.class, ubii.processing.LockstepProcessing.LockstepProcessingRequest.Builder.class);
     }
 
-    private int bitField0_;
     public static final int PROCESSING_MODULE_IDS_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList processingModuleIds_;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList processingModuleIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @return A list containing the processingModuleIds.
      */
     public com.google.protobuf.ProtocolStringList
         getProcessingModuleIdsList() {
@@ -181,18 +125,23 @@ public final class LockstepProcessing {
     }
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @return The count of processingModuleIds.
      */
     public int getProcessingModuleIdsCount() {
       return processingModuleIds_.size();
     }
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @param index The index of the element to return.
+     * @return The processingModuleIds at the given index.
      */
     public java.lang.String getProcessingModuleIds(int index) {
       return processingModuleIds_.get(index);
     }
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the processingModuleIds at the given index.
      */
     public com.google.protobuf.ByteString
         getProcessingModuleIdsBytes(int index) {
@@ -200,16 +149,19 @@ public final class LockstepProcessing {
     }
 
     public static final int RECORDS_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord> records_;
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord records = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord> getRecordsList() {
       return records_;
     }
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord records = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder> 
         getRecordsOrBuilderList() {
       return records_;
@@ -217,28 +169,33 @@ public final class LockstepProcessing {
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord records = 2;</code>
      */
+    @java.lang.Override
     public int getRecordsCount() {
       return records_.size();
     }
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord records = 2;</code>
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord getRecords(int index) {
       return records_.get(index);
     }
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord records = 2;</code>
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder getRecordsOrBuilder(
         int index) {
       return records_.get(index);
     }
 
     public static final int DELTA_TIME_MS_FIELD_NUMBER = 3;
-    private int deltaTimeMs_;
+    private int deltaTimeMs_ = 0;
     /**
      * <code>int32 delta_time_ms = 3;</code>
+     * @return The deltaTimeMs.
      */
+    @java.lang.Override
     public int getDeltaTimeMs() {
       return deltaTimeMs_;
     }
@@ -266,7 +223,7 @@ public final class LockstepProcessing {
       if (deltaTimeMs_ != 0) {
         output.writeInt32(3, deltaTimeMs_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -291,7 +248,7 @@ public final class LockstepProcessing {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, deltaTimeMs_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -306,15 +263,14 @@ public final class LockstepProcessing {
       }
       ubii.processing.LockstepProcessing.LockstepProcessingRequest other = (ubii.processing.LockstepProcessing.LockstepProcessingRequest) obj;
 
-      boolean result = true;
-      result = result && getProcessingModuleIdsList()
-          .equals(other.getProcessingModuleIdsList());
-      result = result && getRecordsList()
-          .equals(other.getRecordsList());
-      result = result && (getDeltaTimeMs()
-          == other.getDeltaTimeMs());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getProcessingModuleIdsList()
+          .equals(other.getProcessingModuleIdsList())) return false;
+      if (!getRecordsList()
+          .equals(other.getRecordsList())) return false;
+      if (getDeltaTimeMs()
+          != other.getDeltaTimeMs()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -334,7 +290,7 @@ public final class LockstepProcessing {
       }
       hash = (37 * hash) + DELTA_TIME_MS_FIELD_NUMBER;
       hash = (53 * hash) + getDeltaTimeMs();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -451,33 +407,28 @@ public final class LockstepProcessing {
 
       // Construct using ubii.processing.LockstepProcessing.LockstepProcessingRequest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRecordsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        processingModuleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = 0;
+        processingModuleIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         if (recordsBuilder_ == null) {
           records_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          records_ = null;
           recordsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         deltaTimeMs_ = 0;
-
         return this;
       }
 
@@ -504,15 +455,15 @@ public final class LockstepProcessing {
       @java.lang.Override
       public ubii.processing.LockstepProcessing.LockstepProcessingRequest buildPartial() {
         ubii.processing.LockstepProcessing.LockstepProcessingRequest result = new ubii.processing.LockstepProcessing.LockstepProcessingRequest(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          processingModuleIds_ = processingModuleIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.processingModuleIds_ = processingModuleIds_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(ubii.processing.LockstepProcessing.LockstepProcessingRequest result) {
         if (recordsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             records_ = java.util.Collections.unmodifiableList(records_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -520,44 +471,19 @@ public final class LockstepProcessing {
         } else {
           result.records_ = recordsBuilder_.build();
         }
-        result.deltaTimeMs_ = deltaTimeMs_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.processing.LockstepProcessing.LockstepProcessingRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          processingModuleIds_.makeImmutable();
+          result.processingModuleIds_ = processingModuleIds_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.deltaTimeMs_ = deltaTimeMs_;
+        }
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.processing.LockstepProcessing.LockstepProcessingRequest) {
@@ -573,7 +499,7 @@ public final class LockstepProcessing {
         if (!other.processingModuleIds_.isEmpty()) {
           if (processingModuleIds_.isEmpty()) {
             processingModuleIds_ = other.processingModuleIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureProcessingModuleIdsIsMutable();
             processingModuleIds_.addAll(other.processingModuleIds_);
@@ -609,7 +535,7 @@ public final class LockstepProcessing {
         if (other.getDeltaTimeMs() != 0) {
           setDeltaTimeMs(other.getDeltaTimeMs());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -624,49 +550,94 @@ public final class LockstepProcessing {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.processing.LockstepProcessing.LockstepProcessingRequest parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureProcessingModuleIdsIsMutable();
+                processingModuleIds_.add(s);
+                break;
+              } // case 10
+              case 18: {
+                ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord m =
+                    input.readMessage(
+                        ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.parser(),
+                        extensionRegistry);
+                if (recordsBuilder_ == null) {
+                  ensureRecordsIsMutable();
+                  records_.add(m);
+                } else {
+                  recordsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 24: {
+                deltaTimeMs_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.processing.LockstepProcessing.LockstepProcessingRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList processingModuleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList processingModuleIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       private void ensureProcessingModuleIdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!processingModuleIds_.isModifiable()) {
           processingModuleIds_ = new com.google.protobuf.LazyStringArrayList(processingModuleIds_);
-          bitField0_ |= 0x00000001;
-         }
+        }
+        bitField0_ |= 0x00000001;
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @return A list containing the processingModuleIds.
        */
       public com.google.protobuf.ProtocolStringList
           getProcessingModuleIdsList() {
-        return processingModuleIds_.getUnmodifiableView();
+        processingModuleIds_.makeImmutable();
+        return processingModuleIds_;
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @return The count of processingModuleIds.
        */
       public int getProcessingModuleIdsCount() {
         return processingModuleIds_.size();
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @param index The index of the element to return.
+       * @return The processingModuleIds at the given index.
        */
       public java.lang.String getProcessingModuleIds(int index) {
         return processingModuleIds_.get(index);
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the processingModuleIds at the given index.
        */
       public com.google.protobuf.ByteString
           getProcessingModuleIdsBytes(int index) {
@@ -674,61 +645,70 @@ public final class LockstepProcessing {
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The processingModuleIds to set.
+       * @return This builder for chaining.
        */
       public Builder setProcessingModuleIds(
           int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureProcessingModuleIdsIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureProcessingModuleIdsIsMutable();
         processingModuleIds_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @param value The processingModuleIds to add.
+       * @return This builder for chaining.
        */
       public Builder addProcessingModuleIds(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureProcessingModuleIdsIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureProcessingModuleIdsIsMutable();
         processingModuleIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @param values The processingModuleIds to add.
+       * @return This builder for chaining.
        */
       public Builder addAllProcessingModuleIds(
           java.lang.Iterable<java.lang.String> values) {
         ensureProcessingModuleIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, processingModuleIds_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearProcessingModuleIds() {
-        processingModuleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        processingModuleIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @param value The bytes of the processingModuleIds to add.
+       * @return This builder for chaining.
        */
       public Builder addProcessingModuleIdsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         ensureProcessingModuleIdsIsMutable();
         processingModuleIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -736,7 +716,7 @@ public final class LockstepProcessing {
       private java.util.List<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord> records_ =
         java.util.Collections.emptyList();
       private void ensureRecordsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           records_ = new java.util.ArrayList<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord>(records_);
           bitField0_ |= 0x00000002;
          }
@@ -965,7 +945,7 @@ public final class LockstepProcessing {
           recordsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord, ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.Builder, ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder>(
                   records_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           records_ = null;
@@ -976,24 +956,30 @@ public final class LockstepProcessing {
       private int deltaTimeMs_ ;
       /**
        * <code>int32 delta_time_ms = 3;</code>
+       * @return The deltaTimeMs.
        */
+      @java.lang.Override
       public int getDeltaTimeMs() {
         return deltaTimeMs_;
       }
       /**
        * <code>int32 delta_time_ms = 3;</code>
+       * @param value The deltaTimeMs to set.
+       * @return This builder for chaining.
        */
       public Builder setDeltaTimeMs(int value) {
-        
+
         deltaTimeMs_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
        * <code>int32 delta_time_ms = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDeltaTimeMs() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         deltaTimeMs_ = 0;
         onChanged();
         return this;
@@ -1001,7 +987,7 @@ public final class LockstepProcessing {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1031,7 +1017,18 @@ public final class LockstepProcessing {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LockstepProcessingRequest(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1057,19 +1054,25 @@ public final class LockstepProcessing {
 
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @return A list containing the processingModuleIds.
      */
     java.util.List<java.lang.String>
         getProcessingModuleIdsList();
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @return The count of processingModuleIds.
      */
     int getProcessingModuleIdsCount();
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @param index The index of the element to return.
+     * @return The processingModuleIds at the given index.
      */
     java.lang.String getProcessingModuleIds(int index);
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the processingModuleIds at the given index.
      */
     com.google.protobuf.ByteString
         getProcessingModuleIdsBytes(int index);
@@ -1101,7 +1104,7 @@ public final class LockstepProcessing {
   /**
    * Protobuf type {@code ubii.processing.LockstepProcessingReply}
    */
-  public  static final class LockstepProcessingReply extends
+  public static final class LockstepProcessingReply extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.processing.LockstepProcessingReply)
       LockstepProcessingReplyOrBuilder {
@@ -1111,77 +1114,18 @@ public final class LockstepProcessing {
       super(builder);
     }
     private LockstepProcessingReply() {
-      processingModuleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      processingModuleIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       records_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LockstepProcessingReply();
     }
-    private LockstepProcessingReply(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                processingModuleIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              processingModuleIds_.add(s);
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                records_ = new java.util.ArrayList<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              records_.add(
-                  input.readMessage(ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          processingModuleIds_ = processingModuleIds_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          records_ = java.util.Collections.unmodifiableList(records_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.processing.LockstepProcessing.internal_static_ubii_processing_LockstepProcessingReply_descriptor;
@@ -1196,9 +1140,12 @@ public final class LockstepProcessing {
     }
 
     public static final int PROCESSING_MODULE_IDS_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList processingModuleIds_;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList processingModuleIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @return A list containing the processingModuleIds.
      */
     public com.google.protobuf.ProtocolStringList
         getProcessingModuleIdsList() {
@@ -1206,18 +1153,23 @@ public final class LockstepProcessing {
     }
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @return The count of processingModuleIds.
      */
     public int getProcessingModuleIdsCount() {
       return processingModuleIds_.size();
     }
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @param index The index of the element to return.
+     * @return The processingModuleIds at the given index.
      */
     public java.lang.String getProcessingModuleIds(int index) {
       return processingModuleIds_.get(index);
     }
     /**
      * <code>repeated string processing_module_ids = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the processingModuleIds at the given index.
      */
     public com.google.protobuf.ByteString
         getProcessingModuleIdsBytes(int index) {
@@ -1225,16 +1177,19 @@ public final class LockstepProcessing {
     }
 
     public static final int RECORDS_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord> records_;
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord records = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord> getRecordsList() {
       return records_;
     }
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord records = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder> 
         getRecordsOrBuilderList() {
       return records_;
@@ -1242,18 +1197,21 @@ public final class LockstepProcessing {
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord records = 2;</code>
      */
+    @java.lang.Override
     public int getRecordsCount() {
       return records_.size();
     }
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord records = 2;</code>
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord getRecords(int index) {
       return records_.get(index);
     }
     /**
      * <code>repeated .ubii.topicData.TopicDataRecord records = 2;</code>
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder getRecordsOrBuilder(
         int index) {
       return records_.get(index);
@@ -1279,7 +1237,7 @@ public final class LockstepProcessing {
       for (int i = 0; i < records_.size(); i++) {
         output.writeMessage(2, records_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1300,7 +1258,7 @@ public final class LockstepProcessing {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, records_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1315,13 +1273,12 @@ public final class LockstepProcessing {
       }
       ubii.processing.LockstepProcessing.LockstepProcessingReply other = (ubii.processing.LockstepProcessing.LockstepProcessingReply) obj;
 
-      boolean result = true;
-      result = result && getProcessingModuleIdsList()
-          .equals(other.getProcessingModuleIdsList());
-      result = result && getRecordsList()
-          .equals(other.getRecordsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getProcessingModuleIdsList()
+          .equals(other.getProcessingModuleIdsList())) return false;
+      if (!getRecordsList()
+          .equals(other.getRecordsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1339,7 +1296,7 @@ public final class LockstepProcessing {
         hash = (37 * hash) + RECORDS_FIELD_NUMBER;
         hash = (53 * hash) + getRecordsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1456,31 +1413,27 @@ public final class LockstepProcessing {
 
       // Construct using ubii.processing.LockstepProcessing.LockstepProcessingReply.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRecordsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        processingModuleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = 0;
+        processingModuleIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         if (recordsBuilder_ == null) {
           records_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          records_ = null;
           recordsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1507,14 +1460,15 @@ public final class LockstepProcessing {
       @java.lang.Override
       public ubii.processing.LockstepProcessing.LockstepProcessingReply buildPartial() {
         ubii.processing.LockstepProcessing.LockstepProcessingReply result = new ubii.processing.LockstepProcessing.LockstepProcessingReply(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          processingModuleIds_ = processingModuleIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.processingModuleIds_ = processingModuleIds_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(ubii.processing.LockstepProcessing.LockstepProcessingReply result) {
         if (recordsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             records_ = java.util.Collections.unmodifiableList(records_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -1522,42 +1476,16 @@ public final class LockstepProcessing {
         } else {
           result.records_ = recordsBuilder_.build();
         }
-        onBuilt();
-        return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.processing.LockstepProcessing.LockstepProcessingReply result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          processingModuleIds_.makeImmutable();
+          result.processingModuleIds_ = processingModuleIds_;
+        }
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.processing.LockstepProcessing.LockstepProcessingReply) {
@@ -1573,7 +1501,7 @@ public final class LockstepProcessing {
         if (!other.processingModuleIds_.isEmpty()) {
           if (processingModuleIds_.isEmpty()) {
             processingModuleIds_ = other.processingModuleIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureProcessingModuleIdsIsMutable();
             processingModuleIds_.addAll(other.processingModuleIds_);
@@ -1606,7 +1534,7 @@ public final class LockstepProcessing {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1621,49 +1549,89 @@ public final class LockstepProcessing {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.processing.LockstepProcessing.LockstepProcessingReply parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureProcessingModuleIdsIsMutable();
+                processingModuleIds_.add(s);
+                break;
+              } // case 10
+              case 18: {
+                ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord m =
+                    input.readMessage(
+                        ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.parser(),
+                        extensionRegistry);
+                if (recordsBuilder_ == null) {
+                  ensureRecordsIsMutable();
+                  records_.add(m);
+                } else {
+                  recordsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.processing.LockstepProcessing.LockstepProcessingReply) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList processingModuleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList processingModuleIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       private void ensureProcessingModuleIdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!processingModuleIds_.isModifiable()) {
           processingModuleIds_ = new com.google.protobuf.LazyStringArrayList(processingModuleIds_);
-          bitField0_ |= 0x00000001;
-         }
+        }
+        bitField0_ |= 0x00000001;
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @return A list containing the processingModuleIds.
        */
       public com.google.protobuf.ProtocolStringList
           getProcessingModuleIdsList() {
-        return processingModuleIds_.getUnmodifiableView();
+        processingModuleIds_.makeImmutable();
+        return processingModuleIds_;
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @return The count of processingModuleIds.
        */
       public int getProcessingModuleIdsCount() {
         return processingModuleIds_.size();
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @param index The index of the element to return.
+       * @return The processingModuleIds at the given index.
        */
       public java.lang.String getProcessingModuleIds(int index) {
         return processingModuleIds_.get(index);
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the processingModuleIds at the given index.
        */
       public com.google.protobuf.ByteString
           getProcessingModuleIdsBytes(int index) {
@@ -1671,61 +1639,70 @@ public final class LockstepProcessing {
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The processingModuleIds to set.
+       * @return This builder for chaining.
        */
       public Builder setProcessingModuleIds(
           int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureProcessingModuleIdsIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureProcessingModuleIdsIsMutable();
         processingModuleIds_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @param value The processingModuleIds to add.
+       * @return This builder for chaining.
        */
       public Builder addProcessingModuleIds(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureProcessingModuleIdsIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureProcessingModuleIdsIsMutable();
         processingModuleIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @param values The processingModuleIds to add.
+       * @return This builder for chaining.
        */
       public Builder addAllProcessingModuleIds(
           java.lang.Iterable<java.lang.String> values) {
         ensureProcessingModuleIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, processingModuleIds_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearProcessingModuleIds() {
-        processingModuleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        processingModuleIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);;
         onChanged();
         return this;
       }
       /**
        * <code>repeated string processing_module_ids = 1;</code>
+       * @param value The bytes of the processingModuleIds to add.
+       * @return This builder for chaining.
        */
       public Builder addProcessingModuleIdsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         ensureProcessingModuleIdsIsMutable();
         processingModuleIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1733,7 +1710,7 @@ public final class LockstepProcessing {
       private java.util.List<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord> records_ =
         java.util.Collections.emptyList();
       private void ensureRecordsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           records_ = new java.util.ArrayList<ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord>(records_);
           bitField0_ |= 0x00000002;
          }
@@ -1962,7 +1939,7 @@ public final class LockstepProcessing {
           recordsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord, ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.Builder, ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder>(
                   records_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           records_ = null;
@@ -1972,7 +1949,7 @@ public final class LockstepProcessing {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2002,7 +1979,18 @@ public final class LockstepProcessing {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LockstepProcessingReply(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2051,19 +2039,11 @@ public final class LockstepProcessing {
       "e_ids\030\001 \003(\t\0220\n\007records\030\002 \003(\0132\037.ubii.topi" +
       "cData.TopicDataRecordb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.topicData.TopicDataRecordOuterClass.getDescriptor(),
-        }, assigner);
+        });
     internal_static_ubii_processing_LockstepProcessingRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_processing_LockstepProcessingRequest_fieldAccessorTable = new

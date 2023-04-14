@@ -20,23 +20,26 @@ public final class TimestampOuterClass {
 
     /**
      * <code>int64 seconds = 1;</code>
+     * @return The seconds.
      */
     long getSeconds();
 
     /**
      * <code>int32 nanos = 2;</code>
+     * @return The nanos.
      */
     int getNanos();
 
     /**
      * <code>int64 millis = 3;</code>
+     * @return The millis.
      */
     long getMillis();
   }
   /**
    * Protobuf type {@code ubii.topicData.Timestamp}
    */
-  public  static final class Timestamp extends
+  public static final class Timestamp extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.topicData.Timestamp)
       TimestampOrBuilder {
@@ -46,69 +49,15 @@ public final class TimestampOuterClass {
       super(builder);
     }
     private Timestamp() {
-      seconds_ = 0L;
-      nanos_ = 0;
-      millis_ = 0L;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Timestamp();
     }
-    private Timestamp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
 
-              seconds_ = input.readInt64();
-              break;
-            }
-            case 16: {
-
-              nanos_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              millis_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.topicData.TimestampOuterClass.internal_static_ubii_topicData_Timestamp_descriptor;
@@ -123,28 +72,34 @@ public final class TimestampOuterClass {
     }
 
     public static final int SECONDS_FIELD_NUMBER = 1;
-    private long seconds_;
+    private long seconds_ = 0L;
     /**
      * <code>int64 seconds = 1;</code>
+     * @return The seconds.
      */
+    @java.lang.Override
     public long getSeconds() {
       return seconds_;
     }
 
     public static final int NANOS_FIELD_NUMBER = 2;
-    private int nanos_;
+    private int nanos_ = 0;
     /**
      * <code>int32 nanos = 2;</code>
+     * @return The nanos.
      */
+    @java.lang.Override
     public int getNanos() {
       return nanos_;
     }
 
     public static final int MILLIS_FIELD_NUMBER = 3;
-    private long millis_;
+    private long millis_ = 0L;
     /**
      * <code>int64 millis = 3;</code>
+     * @return The millis.
      */
+    @java.lang.Override
     public long getMillis() {
       return millis_;
     }
@@ -172,7 +127,7 @@ public final class TimestampOuterClass {
       if (millis_ != 0L) {
         output.writeInt64(3, millis_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -193,7 +148,7 @@ public final class TimestampOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, millis_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -208,15 +163,14 @@ public final class TimestampOuterClass {
       }
       ubii.topicData.TimestampOuterClass.Timestamp other = (ubii.topicData.TimestampOuterClass.Timestamp) obj;
 
-      boolean result = true;
-      result = result && (getSeconds()
-          == other.getSeconds());
-      result = result && (getNanos()
-          == other.getNanos());
-      result = result && (getMillis()
-          == other.getMillis());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getSeconds()
+          != other.getSeconds()) return false;
+      if (getNanos()
+          != other.getNanos()) return false;
+      if (getMillis()
+          != other.getMillis()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -234,7 +188,7 @@ public final class TimestampOuterClass {
       hash = (37 * hash) + MILLIS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMillis());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,28 +305,21 @@ public final class TimestampOuterClass {
 
       // Construct using ubii.topicData.TimestampOuterClass.Timestamp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         seconds_ = 0L;
-
         nanos_ = 0;
-
         millis_ = 0L;
-
         return this;
       }
 
@@ -399,45 +346,24 @@ public final class TimestampOuterClass {
       @java.lang.Override
       public ubii.topicData.TimestampOuterClass.Timestamp buildPartial() {
         ubii.topicData.TimestampOuterClass.Timestamp result = new ubii.topicData.TimestampOuterClass.Timestamp(this);
-        result.seconds_ = seconds_;
-        result.nanos_ = nanos_;
-        result.millis_ = millis_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.topicData.TimestampOuterClass.Timestamp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.seconds_ = seconds_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.nanos_ = nanos_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.millis_ = millis_;
+        }
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.topicData.TimestampOuterClass.Timestamp) {
@@ -459,7 +385,7 @@ public final class TimestampOuterClass {
         if (other.getMillis() != 0L) {
           setMillis(other.getMillis());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -474,41 +400,76 @@ public final class TimestampOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.topicData.TimestampOuterClass.Timestamp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                seconds_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                nanos_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                millis_ = input.readInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.topicData.TimestampOuterClass.Timestamp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private long seconds_ ;
       /**
        * <code>int64 seconds = 1;</code>
+       * @return The seconds.
        */
+      @java.lang.Override
       public long getSeconds() {
         return seconds_;
       }
       /**
        * <code>int64 seconds = 1;</code>
+       * @param value The seconds to set.
+       * @return This builder for chaining.
        */
       public Builder setSeconds(long value) {
-        
+
         seconds_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>int64 seconds = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSeconds() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         seconds_ = 0L;
         onChanged();
         return this;
@@ -517,24 +478,30 @@ public final class TimestampOuterClass {
       private int nanos_ ;
       /**
        * <code>int32 nanos = 2;</code>
+       * @return The nanos.
        */
+      @java.lang.Override
       public int getNanos() {
         return nanos_;
       }
       /**
        * <code>int32 nanos = 2;</code>
+       * @param value The nanos to set.
+       * @return This builder for chaining.
        */
       public Builder setNanos(int value) {
-        
+
         nanos_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
        * <code>int32 nanos = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearNanos() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         nanos_ = 0;
         onChanged();
         return this;
@@ -543,24 +510,30 @@ public final class TimestampOuterClass {
       private long millis_ ;
       /**
        * <code>int64 millis = 3;</code>
+       * @return The millis.
        */
+      @java.lang.Override
       public long getMillis() {
         return millis_;
       }
       /**
        * <code>int64 millis = 3;</code>
+       * @param value The millis to set.
+       * @return This builder for chaining.
        */
       public Builder setMillis(long value) {
-        
+
         millis_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
        * <code>int64 millis = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMillis() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         millis_ = 0L;
         onChanged();
         return this;
@@ -568,7 +541,7 @@ public final class TimestampOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -598,7 +571,18 @@ public final class TimestampOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Timestamp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -636,18 +620,10 @@ public final class TimestampOuterClass {
       "topicData\";\n\tTimestamp\022\017\n\007seconds\030\001 \001(\003\022" +
       "\r\n\005nanos\030\002 \001(\005\022\016\n\006millis\030\003 \001(\003b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_topicData_Timestamp_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_topicData_Timestamp_fieldAccessorTable = new

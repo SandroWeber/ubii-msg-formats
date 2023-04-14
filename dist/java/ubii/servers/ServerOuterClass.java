@@ -20,140 +20,168 @@ public final class ServerOuterClass {
 
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     java.lang.String getId();
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
      * <code>string name = 2;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>string ip_ethernet = 3;</code>
+     * @return The ipEthernet.
      */
     java.lang.String getIpEthernet();
     /**
      * <code>string ip_ethernet = 3;</code>
+     * @return The bytes for ipEthernet.
      */
     com.google.protobuf.ByteString
         getIpEthernetBytes();
 
     /**
      * <code>string ip_wlan = 4;</code>
+     * @return The ipWlan.
      */
     java.lang.String getIpWlan();
     /**
      * <code>string ip_wlan = 4;</code>
+     * @return The bytes for ipWlan.
      */
     com.google.protobuf.ByteString
         getIpWlanBytes();
 
     /**
      * <code>string port_service_zmq = 5;</code>
+     * @return The portServiceZmq.
      */
     java.lang.String getPortServiceZmq();
     /**
      * <code>string port_service_zmq = 5;</code>
+     * @return The bytes for portServiceZmq.
      */
     com.google.protobuf.ByteString
         getPortServiceZmqBytes();
 
     /**
      * <code>string port_service_rest = 6;</code>
+     * @return The portServiceRest.
      */
     java.lang.String getPortServiceRest();
     /**
      * <code>string port_service_rest = 6;</code>
+     * @return The bytes for portServiceRest.
      */
     com.google.protobuf.ByteString
         getPortServiceRestBytes();
 
     /**
      * <code>string port_topic_data_zmq = 7;</code>
+     * @return The portTopicDataZmq.
      */
     java.lang.String getPortTopicDataZmq();
     /**
      * <code>string port_topic_data_zmq = 7;</code>
+     * @return The bytes for portTopicDataZmq.
      */
     com.google.protobuf.ByteString
         getPortTopicDataZmqBytes();
 
     /**
      * <code>string port_topic_data_ws = 8;</code>
+     * @return The portTopicDataWs.
      */
     java.lang.String getPortTopicDataWs();
     /**
      * <code>string port_topic_data_ws = 8;</code>
+     * @return The bytes for portTopicDataWs.
      */
     com.google.protobuf.ByteString
         getPortTopicDataWsBytes();
 
     /**
      * <code>string constants_json = 9;</code>
+     * @return The constantsJson.
      */
     java.lang.String getConstantsJson();
     /**
      * <code>string constants_json = 9;</code>
+     * @return The bytes for constantsJson.
      */
     com.google.protobuf.ByteString
         getConstantsJsonBytes();
 
     /**
      * <code>string external_address_service_zmq = 10;</code>
+     * @return The externalAddressServiceZmq.
      */
     java.lang.String getExternalAddressServiceZmq();
     /**
      * <code>string external_address_service_zmq = 10;</code>
+     * @return The bytes for externalAddressServiceZmq.
      */
     com.google.protobuf.ByteString
         getExternalAddressServiceZmqBytes();
 
     /**
      * <code>string external_address_service_http_json = 11;</code>
+     * @return The externalAddressServiceHttpJson.
      */
     java.lang.String getExternalAddressServiceHttpJson();
     /**
      * <code>string external_address_service_http_json = 11;</code>
+     * @return The bytes for externalAddressServiceHttpJson.
      */
     com.google.protobuf.ByteString
         getExternalAddressServiceHttpJsonBytes();
 
     /**
      * <code>string external_address_service_http_binary = 12;</code>
+     * @return The externalAddressServiceHttpBinary.
      */
     java.lang.String getExternalAddressServiceHttpBinary();
     /**
      * <code>string external_address_service_http_binary = 12;</code>
+     * @return The bytes for externalAddressServiceHttpBinary.
      */
     com.google.protobuf.ByteString
         getExternalAddressServiceHttpBinaryBytes();
 
     /**
      * <code>string external_address_topic_data_zmq = 13;</code>
+     * @return The externalAddressTopicDataZmq.
      */
     java.lang.String getExternalAddressTopicDataZmq();
     /**
      * <code>string external_address_topic_data_zmq = 13;</code>
+     * @return The bytes for externalAddressTopicDataZmq.
      */
     com.google.protobuf.ByteString
         getExternalAddressTopicDataZmqBytes();
 
     /**
      * <code>string external_address_topic_data_ws = 14;</code>
+     * @return The externalAddressTopicDataWs.
      */
     java.lang.String getExternalAddressTopicDataWs();
     /**
      * <code>string external_address_topic_data_ws = 14;</code>
+     * @return The bytes for externalAddressTopicDataWs.
      */
     com.google.protobuf.ByteString
         getExternalAddressTopicDataWsBytes();
@@ -161,7 +189,7 @@ public final class ServerOuterClass {
   /**
    * Protobuf type {@code ubii.servers.Server}
    */
-  public  static final class Server extends
+  public static final class Server extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.servers.Server)
       ServerOrBuilder {
@@ -188,132 +216,12 @@ public final class ServerOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Server();
     }
-    private Server(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ipEthernet_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ipWlan_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              portServiceZmq_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              portServiceRest_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              portTopicDataZmq_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              portTopicDataWs_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              constantsJson_ = s;
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              externalAddressServiceZmq_ = s;
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              externalAddressServiceHttpJson_ = s;
-              break;
-            }
-            case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              externalAddressServiceHttpBinary_ = s;
-              break;
-            }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              externalAddressTopicDataZmq_ = s;
-              break;
-            }
-            case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              externalAddressTopicDataWs_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.servers.ServerOuterClass.internal_static_ubii_servers_Server_descriptor;
@@ -328,10 +236,13 @@ public final class ServerOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -346,7 +257,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -362,10 +275,13 @@ public final class ServerOuterClass {
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      * <code>string name = 2;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -380,7 +296,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -396,10 +314,13 @@ public final class ServerOuterClass {
     }
 
     public static final int IP_ETHERNET_FIELD_NUMBER = 3;
-    private volatile java.lang.Object ipEthernet_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ipEthernet_ = "";
     /**
      * <code>string ip_ethernet = 3;</code>
+     * @return The ipEthernet.
      */
+    @java.lang.Override
     public java.lang.String getIpEthernet() {
       java.lang.Object ref = ipEthernet_;
       if (ref instanceof java.lang.String) {
@@ -414,7 +335,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string ip_ethernet = 3;</code>
+     * @return The bytes for ipEthernet.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIpEthernetBytes() {
       java.lang.Object ref = ipEthernet_;
@@ -430,10 +353,13 @@ public final class ServerOuterClass {
     }
 
     public static final int IP_WLAN_FIELD_NUMBER = 4;
-    private volatile java.lang.Object ipWlan_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ipWlan_ = "";
     /**
      * <code>string ip_wlan = 4;</code>
+     * @return The ipWlan.
      */
+    @java.lang.Override
     public java.lang.String getIpWlan() {
       java.lang.Object ref = ipWlan_;
       if (ref instanceof java.lang.String) {
@@ -448,7 +374,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string ip_wlan = 4;</code>
+     * @return The bytes for ipWlan.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIpWlanBytes() {
       java.lang.Object ref = ipWlan_;
@@ -464,10 +392,13 @@ public final class ServerOuterClass {
     }
 
     public static final int PORT_SERVICE_ZMQ_FIELD_NUMBER = 5;
-    private volatile java.lang.Object portServiceZmq_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object portServiceZmq_ = "";
     /**
      * <code>string port_service_zmq = 5;</code>
+     * @return The portServiceZmq.
      */
+    @java.lang.Override
     public java.lang.String getPortServiceZmq() {
       java.lang.Object ref = portServiceZmq_;
       if (ref instanceof java.lang.String) {
@@ -482,7 +413,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string port_service_zmq = 5;</code>
+     * @return The bytes for portServiceZmq.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPortServiceZmqBytes() {
       java.lang.Object ref = portServiceZmq_;
@@ -498,10 +431,13 @@ public final class ServerOuterClass {
     }
 
     public static final int PORT_SERVICE_REST_FIELD_NUMBER = 6;
-    private volatile java.lang.Object portServiceRest_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object portServiceRest_ = "";
     /**
      * <code>string port_service_rest = 6;</code>
+     * @return The portServiceRest.
      */
+    @java.lang.Override
     public java.lang.String getPortServiceRest() {
       java.lang.Object ref = portServiceRest_;
       if (ref instanceof java.lang.String) {
@@ -516,7 +452,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string port_service_rest = 6;</code>
+     * @return The bytes for portServiceRest.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPortServiceRestBytes() {
       java.lang.Object ref = portServiceRest_;
@@ -532,10 +470,13 @@ public final class ServerOuterClass {
     }
 
     public static final int PORT_TOPIC_DATA_ZMQ_FIELD_NUMBER = 7;
-    private volatile java.lang.Object portTopicDataZmq_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object portTopicDataZmq_ = "";
     /**
      * <code>string port_topic_data_zmq = 7;</code>
+     * @return The portTopicDataZmq.
      */
+    @java.lang.Override
     public java.lang.String getPortTopicDataZmq() {
       java.lang.Object ref = portTopicDataZmq_;
       if (ref instanceof java.lang.String) {
@@ -550,7 +491,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string port_topic_data_zmq = 7;</code>
+     * @return The bytes for portTopicDataZmq.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPortTopicDataZmqBytes() {
       java.lang.Object ref = portTopicDataZmq_;
@@ -566,10 +509,13 @@ public final class ServerOuterClass {
     }
 
     public static final int PORT_TOPIC_DATA_WS_FIELD_NUMBER = 8;
-    private volatile java.lang.Object portTopicDataWs_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object portTopicDataWs_ = "";
     /**
      * <code>string port_topic_data_ws = 8;</code>
+     * @return The portTopicDataWs.
      */
+    @java.lang.Override
     public java.lang.String getPortTopicDataWs() {
       java.lang.Object ref = portTopicDataWs_;
       if (ref instanceof java.lang.String) {
@@ -584,7 +530,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string port_topic_data_ws = 8;</code>
+     * @return The bytes for portTopicDataWs.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPortTopicDataWsBytes() {
       java.lang.Object ref = portTopicDataWs_;
@@ -600,10 +548,13 @@ public final class ServerOuterClass {
     }
 
     public static final int CONSTANTS_JSON_FIELD_NUMBER = 9;
-    private volatile java.lang.Object constantsJson_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object constantsJson_ = "";
     /**
      * <code>string constants_json = 9;</code>
+     * @return The constantsJson.
      */
+    @java.lang.Override
     public java.lang.String getConstantsJson() {
       java.lang.Object ref = constantsJson_;
       if (ref instanceof java.lang.String) {
@@ -618,7 +569,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string constants_json = 9;</code>
+     * @return The bytes for constantsJson.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getConstantsJsonBytes() {
       java.lang.Object ref = constantsJson_;
@@ -634,10 +587,13 @@ public final class ServerOuterClass {
     }
 
     public static final int EXTERNAL_ADDRESS_SERVICE_ZMQ_FIELD_NUMBER = 10;
-    private volatile java.lang.Object externalAddressServiceZmq_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object externalAddressServiceZmq_ = "";
     /**
      * <code>string external_address_service_zmq = 10;</code>
+     * @return The externalAddressServiceZmq.
      */
+    @java.lang.Override
     public java.lang.String getExternalAddressServiceZmq() {
       java.lang.Object ref = externalAddressServiceZmq_;
       if (ref instanceof java.lang.String) {
@@ -652,7 +608,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string external_address_service_zmq = 10;</code>
+     * @return The bytes for externalAddressServiceZmq.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getExternalAddressServiceZmqBytes() {
       java.lang.Object ref = externalAddressServiceZmq_;
@@ -668,10 +626,13 @@ public final class ServerOuterClass {
     }
 
     public static final int EXTERNAL_ADDRESS_SERVICE_HTTP_JSON_FIELD_NUMBER = 11;
-    private volatile java.lang.Object externalAddressServiceHttpJson_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object externalAddressServiceHttpJson_ = "";
     /**
      * <code>string external_address_service_http_json = 11;</code>
+     * @return The externalAddressServiceHttpJson.
      */
+    @java.lang.Override
     public java.lang.String getExternalAddressServiceHttpJson() {
       java.lang.Object ref = externalAddressServiceHttpJson_;
       if (ref instanceof java.lang.String) {
@@ -686,7 +647,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string external_address_service_http_json = 11;</code>
+     * @return The bytes for externalAddressServiceHttpJson.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getExternalAddressServiceHttpJsonBytes() {
       java.lang.Object ref = externalAddressServiceHttpJson_;
@@ -702,10 +665,13 @@ public final class ServerOuterClass {
     }
 
     public static final int EXTERNAL_ADDRESS_SERVICE_HTTP_BINARY_FIELD_NUMBER = 12;
-    private volatile java.lang.Object externalAddressServiceHttpBinary_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object externalAddressServiceHttpBinary_ = "";
     /**
      * <code>string external_address_service_http_binary = 12;</code>
+     * @return The externalAddressServiceHttpBinary.
      */
+    @java.lang.Override
     public java.lang.String getExternalAddressServiceHttpBinary() {
       java.lang.Object ref = externalAddressServiceHttpBinary_;
       if (ref instanceof java.lang.String) {
@@ -720,7 +686,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string external_address_service_http_binary = 12;</code>
+     * @return The bytes for externalAddressServiceHttpBinary.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getExternalAddressServiceHttpBinaryBytes() {
       java.lang.Object ref = externalAddressServiceHttpBinary_;
@@ -736,10 +704,13 @@ public final class ServerOuterClass {
     }
 
     public static final int EXTERNAL_ADDRESS_TOPIC_DATA_ZMQ_FIELD_NUMBER = 13;
-    private volatile java.lang.Object externalAddressTopicDataZmq_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object externalAddressTopicDataZmq_ = "";
     /**
      * <code>string external_address_topic_data_zmq = 13;</code>
+     * @return The externalAddressTopicDataZmq.
      */
+    @java.lang.Override
     public java.lang.String getExternalAddressTopicDataZmq() {
       java.lang.Object ref = externalAddressTopicDataZmq_;
       if (ref instanceof java.lang.String) {
@@ -754,7 +725,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string external_address_topic_data_zmq = 13;</code>
+     * @return The bytes for externalAddressTopicDataZmq.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getExternalAddressTopicDataZmqBytes() {
       java.lang.Object ref = externalAddressTopicDataZmq_;
@@ -770,10 +743,13 @@ public final class ServerOuterClass {
     }
 
     public static final int EXTERNAL_ADDRESS_TOPIC_DATA_WS_FIELD_NUMBER = 14;
-    private volatile java.lang.Object externalAddressTopicDataWs_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object externalAddressTopicDataWs_ = "";
     /**
      * <code>string external_address_topic_data_ws = 14;</code>
+     * @return The externalAddressTopicDataWs.
      */
+    @java.lang.Override
     public java.lang.String getExternalAddressTopicDataWs() {
       java.lang.Object ref = externalAddressTopicDataWs_;
       if (ref instanceof java.lang.String) {
@@ -788,7 +764,9 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string external_address_topic_data_ws = 14;</code>
+     * @return The bytes for externalAddressTopicDataWs.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getExternalAddressTopicDataWsBytes() {
       java.lang.Object ref = externalAddressTopicDataWs_;
@@ -817,49 +795,49 @@ public final class ServerOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
-      if (!getIpEthernetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipEthernet_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ipEthernet_);
       }
-      if (!getIpWlanBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipWlan_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ipWlan_);
       }
-      if (!getPortServiceZmqBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portServiceZmq_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, portServiceZmq_);
       }
-      if (!getPortServiceRestBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portServiceRest_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, portServiceRest_);
       }
-      if (!getPortTopicDataZmqBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portTopicDataZmq_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, portTopicDataZmq_);
       }
-      if (!getPortTopicDataWsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portTopicDataWs_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, portTopicDataWs_);
       }
-      if (!getConstantsJsonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(constantsJson_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, constantsJson_);
       }
-      if (!getExternalAddressServiceZmqBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalAddressServiceZmq_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, externalAddressServiceZmq_);
       }
-      if (!getExternalAddressServiceHttpJsonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalAddressServiceHttpJson_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, externalAddressServiceHttpJson_);
       }
-      if (!getExternalAddressServiceHttpBinaryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalAddressServiceHttpBinary_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, externalAddressServiceHttpBinary_);
       }
-      if (!getExternalAddressTopicDataZmqBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalAddressTopicDataZmq_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, externalAddressTopicDataZmq_);
       }
-      if (!getExternalAddressTopicDataWsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalAddressTopicDataWs_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 14, externalAddressTopicDataWs_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -868,49 +846,49 @@ public final class ServerOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
-      if (!getIpEthernetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipEthernet_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ipEthernet_);
       }
-      if (!getIpWlanBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipWlan_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, ipWlan_);
       }
-      if (!getPortServiceZmqBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portServiceZmq_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, portServiceZmq_);
       }
-      if (!getPortServiceRestBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portServiceRest_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, portServiceRest_);
       }
-      if (!getPortTopicDataZmqBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portTopicDataZmq_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, portTopicDataZmq_);
       }
-      if (!getPortTopicDataWsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portTopicDataWs_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, portTopicDataWs_);
       }
-      if (!getConstantsJsonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(constantsJson_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, constantsJson_);
       }
-      if (!getExternalAddressServiceZmqBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalAddressServiceZmq_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, externalAddressServiceZmq_);
       }
-      if (!getExternalAddressServiceHttpJsonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalAddressServiceHttpJson_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, externalAddressServiceHttpJson_);
       }
-      if (!getExternalAddressServiceHttpBinaryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalAddressServiceHttpBinary_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, externalAddressServiceHttpBinary_);
       }
-      if (!getExternalAddressTopicDataZmqBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalAddressTopicDataZmq_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, externalAddressTopicDataZmq_);
       }
-      if (!getExternalAddressTopicDataWsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalAddressTopicDataWs_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, externalAddressTopicDataWs_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -925,37 +903,36 @@ public final class ServerOuterClass {
       }
       ubii.servers.ServerOuterClass.Server other = (ubii.servers.ServerOuterClass.Server) obj;
 
-      boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && getName()
-          .equals(other.getName());
-      result = result && getIpEthernet()
-          .equals(other.getIpEthernet());
-      result = result && getIpWlan()
-          .equals(other.getIpWlan());
-      result = result && getPortServiceZmq()
-          .equals(other.getPortServiceZmq());
-      result = result && getPortServiceRest()
-          .equals(other.getPortServiceRest());
-      result = result && getPortTopicDataZmq()
-          .equals(other.getPortTopicDataZmq());
-      result = result && getPortTopicDataWs()
-          .equals(other.getPortTopicDataWs());
-      result = result && getConstantsJson()
-          .equals(other.getConstantsJson());
-      result = result && getExternalAddressServiceZmq()
-          .equals(other.getExternalAddressServiceZmq());
-      result = result && getExternalAddressServiceHttpJson()
-          .equals(other.getExternalAddressServiceHttpJson());
-      result = result && getExternalAddressServiceHttpBinary()
-          .equals(other.getExternalAddressServiceHttpBinary());
-      result = result && getExternalAddressTopicDataZmq()
-          .equals(other.getExternalAddressTopicDataZmq());
-      result = result && getExternalAddressTopicDataWs()
-          .equals(other.getExternalAddressTopicDataWs());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getIpEthernet()
+          .equals(other.getIpEthernet())) return false;
+      if (!getIpWlan()
+          .equals(other.getIpWlan())) return false;
+      if (!getPortServiceZmq()
+          .equals(other.getPortServiceZmq())) return false;
+      if (!getPortServiceRest()
+          .equals(other.getPortServiceRest())) return false;
+      if (!getPortTopicDataZmq()
+          .equals(other.getPortTopicDataZmq())) return false;
+      if (!getPortTopicDataWs()
+          .equals(other.getPortTopicDataWs())) return false;
+      if (!getConstantsJson()
+          .equals(other.getConstantsJson())) return false;
+      if (!getExternalAddressServiceZmq()
+          .equals(other.getExternalAddressServiceZmq())) return false;
+      if (!getExternalAddressServiceHttpJson()
+          .equals(other.getExternalAddressServiceHttpJson())) return false;
+      if (!getExternalAddressServiceHttpBinary()
+          .equals(other.getExternalAddressServiceHttpBinary())) return false;
+      if (!getExternalAddressTopicDataZmq()
+          .equals(other.getExternalAddressTopicDataZmq())) return false;
+      if (!getExternalAddressTopicDataWs()
+          .equals(other.getExternalAddressTopicDataWs())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -993,7 +970,7 @@ public final class ServerOuterClass {
       hash = (53 * hash) + getExternalAddressTopicDataZmq().hashCode();
       hash = (37 * hash) + EXTERNAL_ADDRESS_TOPIC_DATA_WS_FIELD_NUMBER;
       hash = (53 * hash) + getExternalAddressTopicDataWs().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1110,50 +1087,32 @@ public final class ServerOuterClass {
 
       // Construct using ubii.servers.ServerOuterClass.Server.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
         name_ = "";
-
         ipEthernet_ = "";
-
         ipWlan_ = "";
-
         portServiceZmq_ = "";
-
         portServiceRest_ = "";
-
         portTopicDataZmq_ = "";
-
         portTopicDataWs_ = "";
-
         constantsJson_ = "";
-
         externalAddressServiceZmq_ = "";
-
         externalAddressServiceHttpJson_ = "";
-
         externalAddressServiceHttpBinary_ = "";
-
         externalAddressTopicDataZmq_ = "";
-
         externalAddressTopicDataWs_ = "";
-
         return this;
       }
 
@@ -1180,56 +1139,57 @@ public final class ServerOuterClass {
       @java.lang.Override
       public ubii.servers.ServerOuterClass.Server buildPartial() {
         ubii.servers.ServerOuterClass.Server result = new ubii.servers.ServerOuterClass.Server(this);
-        result.id_ = id_;
-        result.name_ = name_;
-        result.ipEthernet_ = ipEthernet_;
-        result.ipWlan_ = ipWlan_;
-        result.portServiceZmq_ = portServiceZmq_;
-        result.portServiceRest_ = portServiceRest_;
-        result.portTopicDataZmq_ = portTopicDataZmq_;
-        result.portTopicDataWs_ = portTopicDataWs_;
-        result.constantsJson_ = constantsJson_;
-        result.externalAddressServiceZmq_ = externalAddressServiceZmq_;
-        result.externalAddressServiceHttpJson_ = externalAddressServiceHttpJson_;
-        result.externalAddressServiceHttpBinary_ = externalAddressServiceHttpBinary_;
-        result.externalAddressTopicDataZmq_ = externalAddressTopicDataZmq_;
-        result.externalAddressTopicDataWs_ = externalAddressTopicDataWs_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.servers.ServerOuterClass.Server result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.ipEthernet_ = ipEthernet_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.ipWlan_ = ipWlan_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.portServiceZmq_ = portServiceZmq_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.portServiceRest_ = portServiceRest_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.portTopicDataZmq_ = portTopicDataZmq_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.portTopicDataWs_ = portTopicDataWs_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.constantsJson_ = constantsJson_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.externalAddressServiceZmq_ = externalAddressServiceZmq_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.externalAddressServiceHttpJson_ = externalAddressServiceHttpJson_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.externalAddressServiceHttpBinary_ = externalAddressServiceHttpBinary_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.externalAddressTopicDataZmq_ = externalAddressTopicDataZmq_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.externalAddressTopicDataWs_ = externalAddressTopicDataWs_;
+        }
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.servers.ServerOuterClass.Server) {
@@ -1244,61 +1204,75 @@ public final class ServerOuterClass {
         if (other == ubii.servers.ServerOuterClass.Server.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getIpEthernet().isEmpty()) {
           ipEthernet_ = other.ipEthernet_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getIpWlan().isEmpty()) {
           ipWlan_ = other.ipWlan_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getPortServiceZmq().isEmpty()) {
           portServiceZmq_ = other.portServiceZmq_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (!other.getPortServiceRest().isEmpty()) {
           portServiceRest_ = other.portServiceRest_;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getPortTopicDataZmq().isEmpty()) {
           portTopicDataZmq_ = other.portTopicDataZmq_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (!other.getPortTopicDataWs().isEmpty()) {
           portTopicDataWs_ = other.portTopicDataWs_;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         if (!other.getConstantsJson().isEmpty()) {
           constantsJson_ = other.constantsJson_;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         if (!other.getExternalAddressServiceZmq().isEmpty()) {
           externalAddressServiceZmq_ = other.externalAddressServiceZmq_;
+          bitField0_ |= 0x00000200;
           onChanged();
         }
         if (!other.getExternalAddressServiceHttpJson().isEmpty()) {
           externalAddressServiceHttpJson_ = other.externalAddressServiceHttpJson_;
+          bitField0_ |= 0x00000400;
           onChanged();
         }
         if (!other.getExternalAddressServiceHttpBinary().isEmpty()) {
           externalAddressServiceHttpBinary_ = other.externalAddressServiceHttpBinary_;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
         if (!other.getExternalAddressTopicDataZmq().isEmpty()) {
           externalAddressTopicDataZmq_ = other.externalAddressTopicDataZmq_;
+          bitField0_ |= 0x00001000;
           onChanged();
         }
         if (!other.getExternalAddressTopicDataWs().isEmpty()) {
           externalAddressTopicDataWs_ = other.externalAddressTopicDataWs_;
+          bitField0_ |= 0x00002000;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1313,23 +1287,108 @@ public final class ServerOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.servers.ServerOuterClass.Server parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                ipEthernet_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                ipWlan_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                portServiceZmq_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 50: {
+                portServiceRest_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 58: {
+                portTopicDataZmq_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              case 66: {
+                portTopicDataWs_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 74: {
+                constantsJson_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+              case 82: {
+                externalAddressServiceZmq_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+              case 90: {
+                externalAddressServiceHttpJson_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+              case 98: {
+                externalAddressServiceHttpBinary_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              case 106: {
+                externalAddressTopicDataZmq_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
+              case 114: {
+                externalAddressTopicDataWs_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.servers.ServerOuterClass.Server) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
        * <code>string id = 1;</code>
+       * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -1345,6 +1404,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -1361,37 +1421,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>string id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
-        
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
        * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1399,6 +1460,7 @@ public final class ServerOuterClass {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 2;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1414,6 +1476,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1430,37 +1493,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
        * <code>string name = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
-        
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
        * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1468,6 +1532,7 @@ public final class ServerOuterClass {
       private java.lang.Object ipEthernet_ = "";
       /**
        * <code>string ip_ethernet = 3;</code>
+       * @return The ipEthernet.
        */
       public java.lang.String getIpEthernet() {
         java.lang.Object ref = ipEthernet_;
@@ -1483,6 +1548,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string ip_ethernet = 3;</code>
+       * @return The bytes for ipEthernet.
        */
       public com.google.protobuf.ByteString
           getIpEthernetBytes() {
@@ -1499,37 +1565,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string ip_ethernet = 3;</code>
+       * @param value The ipEthernet to set.
+       * @return This builder for chaining.
        */
       public Builder setIpEthernet(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         ipEthernet_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
        * <code>string ip_ethernet = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIpEthernet() {
-        
         ipEthernet_ = getDefaultInstance().getIpEthernet();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
        * <code>string ip_ethernet = 3;</code>
+       * @param value The bytes for ipEthernet to set.
+       * @return This builder for chaining.
        */
       public Builder setIpEthernetBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         ipEthernet_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1537,6 +1604,7 @@ public final class ServerOuterClass {
       private java.lang.Object ipWlan_ = "";
       /**
        * <code>string ip_wlan = 4;</code>
+       * @return The ipWlan.
        */
       public java.lang.String getIpWlan() {
         java.lang.Object ref = ipWlan_;
@@ -1552,6 +1620,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string ip_wlan = 4;</code>
+       * @return The bytes for ipWlan.
        */
       public com.google.protobuf.ByteString
           getIpWlanBytes() {
@@ -1568,37 +1637,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string ip_wlan = 4;</code>
+       * @param value The ipWlan to set.
+       * @return This builder for chaining.
        */
       public Builder setIpWlan(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         ipWlan_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
        * <code>string ip_wlan = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIpWlan() {
-        
         ipWlan_ = getDefaultInstance().getIpWlan();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
       /**
        * <code>string ip_wlan = 4;</code>
+       * @param value The bytes for ipWlan to set.
+       * @return This builder for chaining.
        */
       public Builder setIpWlanBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         ipWlan_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1606,6 +1676,7 @@ public final class ServerOuterClass {
       private java.lang.Object portServiceZmq_ = "";
       /**
        * <code>string port_service_zmq = 5;</code>
+       * @return The portServiceZmq.
        */
       public java.lang.String getPortServiceZmq() {
         java.lang.Object ref = portServiceZmq_;
@@ -1621,6 +1692,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_service_zmq = 5;</code>
+       * @return The bytes for portServiceZmq.
        */
       public com.google.protobuf.ByteString
           getPortServiceZmqBytes() {
@@ -1637,37 +1709,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_service_zmq = 5;</code>
+       * @param value The portServiceZmq to set.
+       * @return This builder for chaining.
        */
       public Builder setPortServiceZmq(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         portServiceZmq_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
        * <code>string port_service_zmq = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPortServiceZmq() {
-        
         portServiceZmq_ = getDefaultInstance().getPortServiceZmq();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
       /**
        * <code>string port_service_zmq = 5;</code>
+       * @param value The bytes for portServiceZmq to set.
+       * @return This builder for chaining.
        */
       public Builder setPortServiceZmqBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         portServiceZmq_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1675,6 +1748,7 @@ public final class ServerOuterClass {
       private java.lang.Object portServiceRest_ = "";
       /**
        * <code>string port_service_rest = 6;</code>
+       * @return The portServiceRest.
        */
       public java.lang.String getPortServiceRest() {
         java.lang.Object ref = portServiceRest_;
@@ -1690,6 +1764,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_service_rest = 6;</code>
+       * @return The bytes for portServiceRest.
        */
       public com.google.protobuf.ByteString
           getPortServiceRestBytes() {
@@ -1706,37 +1781,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_service_rest = 6;</code>
+       * @param value The portServiceRest to set.
+       * @return This builder for chaining.
        */
       public Builder setPortServiceRest(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         portServiceRest_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
        * <code>string port_service_rest = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPortServiceRest() {
-        
         portServiceRest_ = getDefaultInstance().getPortServiceRest();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
       /**
        * <code>string port_service_rest = 6;</code>
+       * @param value The bytes for portServiceRest to set.
+       * @return This builder for chaining.
        */
       public Builder setPortServiceRestBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         portServiceRest_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1744,6 +1820,7 @@ public final class ServerOuterClass {
       private java.lang.Object portTopicDataZmq_ = "";
       /**
        * <code>string port_topic_data_zmq = 7;</code>
+       * @return The portTopicDataZmq.
        */
       public java.lang.String getPortTopicDataZmq() {
         java.lang.Object ref = portTopicDataZmq_;
@@ -1759,6 +1836,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_topic_data_zmq = 7;</code>
+       * @return The bytes for portTopicDataZmq.
        */
       public com.google.protobuf.ByteString
           getPortTopicDataZmqBytes() {
@@ -1775,37 +1853,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_topic_data_zmq = 7;</code>
+       * @param value The portTopicDataZmq to set.
+       * @return This builder for chaining.
        */
       public Builder setPortTopicDataZmq(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         portTopicDataZmq_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
       /**
        * <code>string port_topic_data_zmq = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPortTopicDataZmq() {
-        
         portTopicDataZmq_ = getDefaultInstance().getPortTopicDataZmq();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
       /**
        * <code>string port_topic_data_zmq = 7;</code>
+       * @param value The bytes for portTopicDataZmq to set.
+       * @return This builder for chaining.
        */
       public Builder setPortTopicDataZmqBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         portTopicDataZmq_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1813,6 +1892,7 @@ public final class ServerOuterClass {
       private java.lang.Object portTopicDataWs_ = "";
       /**
        * <code>string port_topic_data_ws = 8;</code>
+       * @return The portTopicDataWs.
        */
       public java.lang.String getPortTopicDataWs() {
         java.lang.Object ref = portTopicDataWs_;
@@ -1828,6 +1908,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_topic_data_ws = 8;</code>
+       * @return The bytes for portTopicDataWs.
        */
       public com.google.protobuf.ByteString
           getPortTopicDataWsBytes() {
@@ -1844,37 +1925,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_topic_data_ws = 8;</code>
+       * @param value The portTopicDataWs to set.
+       * @return This builder for chaining.
        */
       public Builder setPortTopicDataWs(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         portTopicDataWs_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
       /**
        * <code>string port_topic_data_ws = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPortTopicDataWs() {
-        
         portTopicDataWs_ = getDefaultInstance().getPortTopicDataWs();
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
       /**
        * <code>string port_topic_data_ws = 8;</code>
+       * @param value The bytes for portTopicDataWs to set.
+       * @return This builder for chaining.
        */
       public Builder setPortTopicDataWsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         portTopicDataWs_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1882,6 +1964,7 @@ public final class ServerOuterClass {
       private java.lang.Object constantsJson_ = "";
       /**
        * <code>string constants_json = 9;</code>
+       * @return The constantsJson.
        */
       public java.lang.String getConstantsJson() {
         java.lang.Object ref = constantsJson_;
@@ -1897,6 +1980,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string constants_json = 9;</code>
+       * @return The bytes for constantsJson.
        */
       public com.google.protobuf.ByteString
           getConstantsJsonBytes() {
@@ -1913,37 +1997,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string constants_json = 9;</code>
+       * @param value The constantsJson to set.
+       * @return This builder for chaining.
        */
       public Builder setConstantsJson(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         constantsJson_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       /**
        * <code>string constants_json = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearConstantsJson() {
-        
         constantsJson_ = getDefaultInstance().getConstantsJson();
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }
       /**
        * <code>string constants_json = 9;</code>
+       * @param value The bytes for constantsJson to set.
+       * @return This builder for chaining.
        */
       public Builder setConstantsJsonBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         constantsJson_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1951,6 +2036,7 @@ public final class ServerOuterClass {
       private java.lang.Object externalAddressServiceZmq_ = "";
       /**
        * <code>string external_address_service_zmq = 10;</code>
+       * @return The externalAddressServiceZmq.
        */
       public java.lang.String getExternalAddressServiceZmq() {
         java.lang.Object ref = externalAddressServiceZmq_;
@@ -1966,6 +2052,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string external_address_service_zmq = 10;</code>
+       * @return The bytes for externalAddressServiceZmq.
        */
       public com.google.protobuf.ByteString
           getExternalAddressServiceZmqBytes() {
@@ -1982,37 +2069,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string external_address_service_zmq = 10;</code>
+       * @param value The externalAddressServiceZmq to set.
+       * @return This builder for chaining.
        */
       public Builder setExternalAddressServiceZmq(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         externalAddressServiceZmq_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
       /**
        * <code>string external_address_service_zmq = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearExternalAddressServiceZmq() {
-        
         externalAddressServiceZmq_ = getDefaultInstance().getExternalAddressServiceZmq();
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
       /**
        * <code>string external_address_service_zmq = 10;</code>
+       * @param value The bytes for externalAddressServiceZmq to set.
+       * @return This builder for chaining.
        */
       public Builder setExternalAddressServiceZmqBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         externalAddressServiceZmq_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2020,6 +2108,7 @@ public final class ServerOuterClass {
       private java.lang.Object externalAddressServiceHttpJson_ = "";
       /**
        * <code>string external_address_service_http_json = 11;</code>
+       * @return The externalAddressServiceHttpJson.
        */
       public java.lang.String getExternalAddressServiceHttpJson() {
         java.lang.Object ref = externalAddressServiceHttpJson_;
@@ -2035,6 +2124,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string external_address_service_http_json = 11;</code>
+       * @return The bytes for externalAddressServiceHttpJson.
        */
       public com.google.protobuf.ByteString
           getExternalAddressServiceHttpJsonBytes() {
@@ -2051,37 +2141,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string external_address_service_http_json = 11;</code>
+       * @param value The externalAddressServiceHttpJson to set.
+       * @return This builder for chaining.
        */
       public Builder setExternalAddressServiceHttpJson(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         externalAddressServiceHttpJson_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
       /**
        * <code>string external_address_service_http_json = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearExternalAddressServiceHttpJson() {
-        
         externalAddressServiceHttpJson_ = getDefaultInstance().getExternalAddressServiceHttpJson();
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
       /**
        * <code>string external_address_service_http_json = 11;</code>
+       * @param value The bytes for externalAddressServiceHttpJson to set.
+       * @return This builder for chaining.
        */
       public Builder setExternalAddressServiceHttpJsonBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         externalAddressServiceHttpJson_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -2089,6 +2180,7 @@ public final class ServerOuterClass {
       private java.lang.Object externalAddressServiceHttpBinary_ = "";
       /**
        * <code>string external_address_service_http_binary = 12;</code>
+       * @return The externalAddressServiceHttpBinary.
        */
       public java.lang.String getExternalAddressServiceHttpBinary() {
         java.lang.Object ref = externalAddressServiceHttpBinary_;
@@ -2104,6 +2196,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string external_address_service_http_binary = 12;</code>
+       * @return The bytes for externalAddressServiceHttpBinary.
        */
       public com.google.protobuf.ByteString
           getExternalAddressServiceHttpBinaryBytes() {
@@ -2120,37 +2213,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string external_address_service_http_binary = 12;</code>
+       * @param value The externalAddressServiceHttpBinary to set.
+       * @return This builder for chaining.
        */
       public Builder setExternalAddressServiceHttpBinary(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         externalAddressServiceHttpBinary_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
       /**
        * <code>string external_address_service_http_binary = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearExternalAddressServiceHttpBinary() {
-        
         externalAddressServiceHttpBinary_ = getDefaultInstance().getExternalAddressServiceHttpBinary();
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
         return this;
       }
       /**
        * <code>string external_address_service_http_binary = 12;</code>
+       * @param value The bytes for externalAddressServiceHttpBinary to set.
+       * @return This builder for chaining.
        */
       public Builder setExternalAddressServiceHttpBinaryBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         externalAddressServiceHttpBinary_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2158,6 +2252,7 @@ public final class ServerOuterClass {
       private java.lang.Object externalAddressTopicDataZmq_ = "";
       /**
        * <code>string external_address_topic_data_zmq = 13;</code>
+       * @return The externalAddressTopicDataZmq.
        */
       public java.lang.String getExternalAddressTopicDataZmq() {
         java.lang.Object ref = externalAddressTopicDataZmq_;
@@ -2173,6 +2268,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string external_address_topic_data_zmq = 13;</code>
+       * @return The bytes for externalAddressTopicDataZmq.
        */
       public com.google.protobuf.ByteString
           getExternalAddressTopicDataZmqBytes() {
@@ -2189,37 +2285,38 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string external_address_topic_data_zmq = 13;</code>
+       * @param value The externalAddressTopicDataZmq to set.
+       * @return This builder for chaining.
        */
       public Builder setExternalAddressTopicDataZmq(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         externalAddressTopicDataZmq_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
       /**
        * <code>string external_address_topic_data_zmq = 13;</code>
+       * @return This builder for chaining.
        */
       public Builder clearExternalAddressTopicDataZmq() {
-        
         externalAddressTopicDataZmq_ = getDefaultInstance().getExternalAddressTopicDataZmq();
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
         return this;
       }
       /**
        * <code>string external_address_topic_data_zmq = 13;</code>
+       * @param value The bytes for externalAddressTopicDataZmq to set.
+       * @return This builder for chaining.
        */
       public Builder setExternalAddressTopicDataZmqBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         externalAddressTopicDataZmq_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2227,6 +2324,7 @@ public final class ServerOuterClass {
       private java.lang.Object externalAddressTopicDataWs_ = "";
       /**
        * <code>string external_address_topic_data_ws = 14;</code>
+       * @return The externalAddressTopicDataWs.
        */
       public java.lang.String getExternalAddressTopicDataWs() {
         java.lang.Object ref = externalAddressTopicDataWs_;
@@ -2242,6 +2340,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string external_address_topic_data_ws = 14;</code>
+       * @return The bytes for externalAddressTopicDataWs.
        */
       public com.google.protobuf.ByteString
           getExternalAddressTopicDataWsBytes() {
@@ -2258,44 +2357,45 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string external_address_topic_data_ws = 14;</code>
+       * @param value The externalAddressTopicDataWs to set.
+       * @return This builder for chaining.
        */
       public Builder setExternalAddressTopicDataWs(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         externalAddressTopicDataWs_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
       /**
        * <code>string external_address_topic_data_ws = 14;</code>
+       * @return This builder for chaining.
        */
       public Builder clearExternalAddressTopicDataWs() {
-        
         externalAddressTopicDataWs_ = getDefaultInstance().getExternalAddressTopicDataWs();
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
         return this;
       }
       /**
        * <code>string external_address_topic_data_ws = 14;</code>
+       * @param value The bytes for externalAddressTopicDataWs to set.
+       * @return This builder for chaining.
        */
       public Builder setExternalAddressTopicDataWsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         externalAddressTopicDataWs_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2325,7 +2425,18 @@ public final class ServerOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Server(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2372,18 +2483,10 @@ public final class ServerOuterClass {
       "topic_data_zmq\030\r \001(\t\022&\n\036external_address" +
       "_topic_data_ws\030\016 \001(\tb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_servers_Server_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_servers_Server_fieldAccessorTable = new
