@@ -65,7 +65,7 @@ public final class TouchEventOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.TouchEvent}
    */
-  public static final class TouchEvent extends
+  public  static final class TouchEvent extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.TouchEvent)
       TouchEventOrBuilder {
@@ -86,6 +86,78 @@ public final class TouchEventOuterClass {
       return new TouchEvent();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TouchEvent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 18: {
+              ubii.dataStructure.Vector2OuterClass.Vector2.Builder subBuilder = null;
+              if (position_ != null) {
+                subBuilder = position_.toBuilder();
+              }
+              position_ = input.readMessage(ubii.dataStructure.Vector2OuterClass.Vector2.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(position_);
+                position_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 37: {
+
+              force_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.dataStructure.TouchEventOuterClass.internal_static_ubii_dataStructure_TouchEvent_descriptor;
@@ -178,10 +250,6 @@ public final class TouchEventOuterClass {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -217,20 +285,21 @@ public final class TouchEventOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_ = 0;
+    private int type_;
     /**
      * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override public int getTypeValue() {
+    public int getTypeValue() {
       return type_;
     }
     /**
      * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
      * @return The type.
      */
-    @java.lang.Override public ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType getType() {
-      ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType result = ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.forNumber(type_);
+    public ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType getType() {
+      @SuppressWarnings("deprecation")
+      ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType result = ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.valueOf(type_);
       return result == null ? ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.UNRECOGNIZED : result;
     }
 
@@ -240,7 +309,6 @@ public final class TouchEventOuterClass {
      * <code>.ubii.dataStructure.Vector2 position = 2;</code>
      * @return Whether the position field is set.
      */
-    @java.lang.Override
     public boolean hasPosition() {
       return position_ != null;
     }
@@ -248,26 +316,22 @@ public final class TouchEventOuterClass {
      * <code>.ubii.dataStructure.Vector2 position = 2;</code>
      * @return The position.
      */
-    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2 getPosition() {
       return position_ == null ? ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance() : position_;
     }
     /**
      * <code>.ubii.dataStructure.Vector2 position = 2;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getPositionOrBuilder() {
-      return position_ == null ? ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance() : position_;
+      return getPosition();
     }
 
     public static final int ID_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <code>string id = 3;</code>
      * @return The id.
      */
-    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -284,7 +348,6 @@ public final class TouchEventOuterClass {
      * <code>string id = 3;</code>
      * @return The bytes for id.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -300,12 +363,11 @@ public final class TouchEventOuterClass {
     }
 
     public static final int FORCE_FIELD_NUMBER = 4;
-    private float force_ = 0F;
+    private float force_;
     /**
      * <code>float force = 4;</code>
      * @return The force.
      */
-    @java.lang.Override
     public float getForce() {
       return force_;
     }
@@ -330,13 +392,13 @@ public final class TouchEventOuterClass {
       if (position_ != null) {
         output.writeMessage(2, getPosition());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
-      if (java.lang.Float.floatToRawIntBits(force_) != 0) {
+      if (force_ != 0F) {
         output.writeFloat(4, force_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -353,14 +415,14 @@ public final class TouchEventOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPosition());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
-      if (java.lang.Float.floatToRawIntBits(force_) != 0) {
+      if (force_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, force_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -386,7 +448,7 @@ public final class TouchEventOuterClass {
       if (java.lang.Float.floatToIntBits(getForce())
           != java.lang.Float.floatToIntBits(
               other.getForce())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -408,7 +470,7 @@ public final class TouchEventOuterClass {
       hash = (37 * hash) + FORCE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getForce());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -525,26 +587,34 @@ public final class TouchEventOuterClass {
 
       // Construct using ubii.dataStructure.TouchEventOuterClass.TouchEvent.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         type_ = 0;
-        position_ = null;
-        if (positionBuilder_ != null) {
-          positionBuilder_.dispose();
+
+        if (positionBuilder_ == null) {
+          position_ = null;
+        } else {
+          position_ = null;
           positionBuilder_ = null;
         }
         id_ = "";
+
         force_ = 0F;
+
         return this;
       }
 
@@ -571,29 +641,50 @@ public final class TouchEventOuterClass {
       @java.lang.Override
       public ubii.dataStructure.TouchEventOuterClass.TouchEvent buildPartial() {
         ubii.dataStructure.TouchEventOuterClass.TouchEvent result = new ubii.dataStructure.TouchEventOuterClass.TouchEvent(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.type_ = type_;
+        if (positionBuilder_ == null) {
+          result.position_ = position_;
+        } else {
+          result.position_ = positionBuilder_.build();
+        }
+        result.id_ = id_;
+        result.force_ = force_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(ubii.dataStructure.TouchEventOuterClass.TouchEvent result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.type_ = type_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.position_ = positionBuilder_ == null
-              ? position_
-              : positionBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.force_ = force_;
-        }
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.TouchEventOuterClass.TouchEvent) {
@@ -614,13 +705,12 @@ public final class TouchEventOuterClass {
         }
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
-          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getForce() != 0F) {
           setForce(other.getForce());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -635,62 +725,26 @@ public final class TouchEventOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.dataStructure.TouchEventOuterClass.TouchEvent parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                type_ = input.readEnum();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getPositionFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 37: {
-                force_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 37
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.dataStructure.TouchEventOuterClass.TouchEvent) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int type_ = 0;
       /**
        * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
        * @return The enum numeric value on the wire for type.
        */
-      @java.lang.Override public int getTypeValue() {
+      public int getTypeValue() {
         return type_;
       }
       /**
@@ -700,7 +754,6 @@ public final class TouchEventOuterClass {
        */
       public Builder setTypeValue(int value) {
         type_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -708,9 +761,9 @@ public final class TouchEventOuterClass {
        * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
        * @return The type.
        */
-      @java.lang.Override
       public ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType getType() {
-        ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType result = ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.forNumber(type_);
+        @SuppressWarnings("deprecation")
+        ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType result = ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.valueOf(type_);
         return result == null ? ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.UNRECOGNIZED : result;
       }
       /**
@@ -722,7 +775,7 @@ public final class TouchEventOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -732,7 +785,7 @@ public final class TouchEventOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         type_ = 0;
         onChanged();
         return this;
@@ -746,7 +799,7 @@ public final class TouchEventOuterClass {
        * @return Whether the position field is set.
        */
       public boolean hasPosition() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return positionBuilder_ != null || position_ != null;
       }
       /**
        * <code>.ubii.dataStructure.Vector2 position = 2;</code>
@@ -768,11 +821,11 @@ public final class TouchEventOuterClass {
             throw new NullPointerException();
           }
           position_ = value;
+          onChanged();
         } else {
           positionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -782,11 +835,11 @@ public final class TouchEventOuterClass {
           ubii.dataStructure.Vector2OuterClass.Vector2.Builder builderForValue) {
         if (positionBuilder_ == null) {
           position_ = builderForValue.build();
+          onChanged();
         } else {
           positionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -794,38 +847,38 @@ public final class TouchEventOuterClass {
        */
       public Builder mergePosition(ubii.dataStructure.Vector2OuterClass.Vector2 value) {
         if (positionBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            position_ != null &&
-            position_ != ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance()) {
-            getPositionBuilder().mergeFrom(value);
+          if (position_ != null) {
+            position_ =
+              ubii.dataStructure.Vector2OuterClass.Vector2.newBuilder(position_).mergeFrom(value).buildPartial();
           } else {
             position_ = value;
           }
+          onChanged();
         } else {
           positionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Vector2 position = 2;</code>
        */
       public Builder clearPosition() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        position_ = null;
-        if (positionBuilder_ != null) {
-          positionBuilder_.dispose();
+        if (positionBuilder_ == null) {
+          position_ = null;
+          onChanged();
+        } else {
+          position_ = null;
           positionBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Vector2 position = 2;</code>
        */
       public ubii.dataStructure.Vector2OuterClass.Vector2.Builder getPositionBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getPositionFieldBuilder().getBuilder();
       }
@@ -898,9 +951,11 @@ public final class TouchEventOuterClass {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -909,8 +964,8 @@ public final class TouchEventOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
+        
         id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -921,10 +976,12 @@ public final class TouchEventOuterClass {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         id_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -934,7 +991,6 @@ public final class TouchEventOuterClass {
        * <code>float force = 4;</code>
        * @return The force.
        */
-      @java.lang.Override
       public float getForce() {
         return force_;
       }
@@ -944,9 +1000,8 @@ public final class TouchEventOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForce(float value) {
-
+        
         force_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -955,7 +1010,7 @@ public final class TouchEventOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForce() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         force_ = 0F;
         onChanged();
         return this;
@@ -993,18 +1048,7 @@ public final class TouchEventOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TouchEvent(input, extensionRegistry);
       }
     };
 
@@ -1055,7 +1099,7 @@ public final class TouchEventOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.TouchEventList}
    */
-  public static final class TouchEventList extends
+  public  static final class TouchEventList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.TouchEventList)
       TouchEventListOrBuilder {
@@ -1075,6 +1119,61 @@ public final class TouchEventOuterClass {
       return new TouchEventList();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TouchEventList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                elements_ = new java.util.ArrayList<ubii.dataStructure.TouchEventOuterClass.TouchEvent>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              elements_.add(
+                  input.readMessage(ubii.dataStructure.TouchEventOuterClass.TouchEvent.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.dataStructure.TouchEventOuterClass.internal_static_ubii_dataStructure_TouchEventList_descriptor;
@@ -1089,19 +1188,16 @@ public final class TouchEventOuterClass {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<ubii.dataStructure.TouchEventOuterClass.TouchEvent> elements_;
     /**
      * <code>repeated .ubii.dataStructure.TouchEvent elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.dataStructure.TouchEventOuterClass.TouchEvent> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.dataStructure.TouchEvent elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1109,21 +1205,18 @@ public final class TouchEventOuterClass {
     /**
      * <code>repeated .ubii.dataStructure.TouchEvent elements = 1;</code>
      */
-    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.dataStructure.TouchEvent elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.TouchEventOuterClass.TouchEvent getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.dataStructure.TouchEvent elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
@@ -1146,7 +1239,7 @@ public final class TouchEventOuterClass {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1159,7 +1252,7 @@ public final class TouchEventOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1176,7 +1269,7 @@ public final class TouchEventOuterClass {
 
       if (!getElementsList()
           .equals(other.getElementsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1191,7 +1284,7 @@ public final class TouchEventOuterClass {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1308,25 +1401,29 @@ public final class TouchEventOuterClass {
 
       // Construct using ubii.dataStructure.TouchEventOuterClass.TouchEventList.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getElementsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (elementsBuilder_ == null) {
           elements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          elements_ = null;
           elementsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1353,13 +1450,7 @@ public final class TouchEventOuterClass {
       @java.lang.Override
       public ubii.dataStructure.TouchEventOuterClass.TouchEventList buildPartial() {
         ubii.dataStructure.TouchEventOuterClass.TouchEventList result = new ubii.dataStructure.TouchEventOuterClass.TouchEventList(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(ubii.dataStructure.TouchEventOuterClass.TouchEventList result) {
+        int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
@@ -1369,12 +1460,42 @@ public final class TouchEventOuterClass {
         } else {
           result.elements_ = elementsBuilder_.build();
         }
+        onBuilt();
+        return result;
       }
 
-      private void buildPartial0(ubii.dataStructure.TouchEventOuterClass.TouchEventList result) {
-        int from_bitField0_ = bitField0_;
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.TouchEventOuterClass.TouchEventList) {
@@ -1413,7 +1534,7 @@ public final class TouchEventOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1428,43 +1549,17 @@ public final class TouchEventOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.dataStructure.TouchEventOuterClass.TouchEventList parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                ubii.dataStructure.TouchEventOuterClass.TouchEvent m =
-                    input.readMessage(
-                        ubii.dataStructure.TouchEventOuterClass.TouchEvent.parser(),
-                        extensionRegistry);
-                if (elementsBuilder_ == null) {
-                  ensureElementsIsMutable();
-                  elements_.add(m);
-                } else {
-                  elementsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.dataStructure.TouchEventOuterClass.TouchEventList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1741,18 +1836,7 @@ public final class TouchEventOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TouchEventList(input, extensionRegistry);
       }
     };
 

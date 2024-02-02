@@ -35,9 +35,9 @@ namespace Ubii.TopicData {
             "b3VyY2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Devices.ComponentReflection.Descriptor, global::Ubii.TopicData.TopicDataRecordReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataSource), global::Ubii.TopicData.TopicDataSource.Parser, new[]{ "Topic", "Regex", "Component", "StaticRecord" }, new[]{ "Type" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataSourceList), global::Ubii.TopicData.TopicDataSourceList.Parser, new[]{ "Elements" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataSource), global::Ubii.TopicData.TopicDataSource.Parser, new[]{ "Topic", "Regex", "Component", "StaticRecord" }, new[]{ "Type" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataSourceList), global::Ubii.TopicData.TopicDataSourceList.Parser, new[]{ "Elements" }, null, null, null, null)
           }));
     }
     #endregion

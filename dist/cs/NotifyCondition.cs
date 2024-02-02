@@ -33,8 +33,8 @@ namespace Ubii.Conditions {
             "bnRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Clients.ClientReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Conditions.NotifyCondition), global::Ubii.Conditions.NotifyCondition.Parser, new[]{ "Id", "Name", "EvaluationFunctionStringified", "ClientProfilePub", "ClientProfileSub" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Conditions.NotifyCondition), global::Ubii.Conditions.NotifyCondition.Parser, new[]{ "Id", "Name", "EvaluationFunctionStringified", "ClientProfilePub", "ClientProfileSub" }, null, null, null, null)
           }));
     }
     #endregion
@@ -241,13 +241,13 @@ namespace Ubii.Conditions {
       }
       if (other.clientProfilePub_ != null) {
         if (clientProfilePub_ == null) {
-          clientProfilePub_ = new global::Ubii.Clients.Client();
+          ClientProfilePub = new global::Ubii.Clients.Client();
         }
         ClientProfilePub.MergeFrom(other.ClientProfilePub);
       }
       if (other.clientProfileSub_ != null) {
         if (clientProfileSub_ == null) {
-          clientProfileSub_ = new global::Ubii.Clients.Client();
+          ClientProfileSub = new global::Ubii.Clients.Client();
         }
         ClientProfileSub.MergeFrom(other.ClientProfileSub);
       }
@@ -276,16 +276,16 @@ namespace Ubii.Conditions {
           }
           case 34: {
             if (clientProfilePub_ == null) {
-              clientProfilePub_ = new global::Ubii.Clients.Client();
+              ClientProfilePub = new global::Ubii.Clients.Client();
             }
-            input.ReadMessage(clientProfilePub_);
+            input.ReadMessage(ClientProfilePub);
             break;
           }
           case 42: {
             if (clientProfileSub_ == null) {
-              clientProfileSub_ = new global::Ubii.Clients.Client();
+              ClientProfileSub = new global::Ubii.Clients.Client();
             }
-            input.ReadMessage(clientProfileSub_);
+            input.ReadMessage(ClientProfileSub);
             break;
           }
         }

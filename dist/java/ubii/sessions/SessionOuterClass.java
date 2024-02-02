@@ -102,10 +102,6 @@ public final class SessionOuterClass {
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -298,7 +294,7 @@ public final class SessionOuterClass {
   /**
    * Protobuf type {@code ubii.sessions.Session}
    */
-  public static final class Session extends
+  public  static final class Session extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.sessions.Session)
       SessionOrBuilder {
@@ -312,11 +308,9 @@ public final class SessionOuterClass {
       name_ = "";
       processingModules_ = java.util.Collections.emptyList();
       ioMappings_ = java.util.Collections.emptyList();
-      tags_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
-      authors_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       status_ = 0;
     }
 
@@ -327,6 +321,126 @@ public final class SessionOuterClass {
       return new Session();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Session(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              processingModules_.add(
+                  input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingModule.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                ioMappings_ = new java.util.ArrayList<ubii.sessions.IoMappings.IOMapping>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              ioMappings_.add(
+                  input.readMessage(ubii.sessions.IoMappings.IOMapping.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                authors_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              authors_.add(s);
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 72: {
+
+              editable_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          ioMappings_ = java.util.Collections.unmodifiableList(ioMappings_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          authors_ = authors_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.sessions.SessionOuterClass.internal_static_ubii_sessions_Session_descriptor;
@@ -341,13 +455,11 @@ public final class SessionOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <code>string id = 1;</code>
      * @return The id.
      */
-    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -364,7 +476,6 @@ public final class SessionOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -380,13 +491,11 @@ public final class SessionOuterClass {
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object name_ = "";
+    private volatile java.lang.Object name_;
     /**
      * <code>string name = 2;</code>
      * @return The name.
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -403,7 +512,6 @@ public final class SessionOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -419,19 +527,16 @@ public final class SessionOuterClass {
     }
 
     public static final int PROCESSING_MODULES_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_;
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
       return processingModules_;
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
         getProcessingModulesOrBuilderList() {
       return processingModules_;
@@ -439,40 +544,34 @@ public final class SessionOuterClass {
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    @java.lang.Override
     public int getProcessingModulesCount() {
       return processingModules_.size();
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
       return processingModules_.get(index);
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
         int index) {
       return processingModules_.get(index);
     }
 
     public static final int IO_MAPPINGS_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<ubii.sessions.IoMappings.IOMapping> ioMappings_;
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.sessions.IoMappings.IOMapping> getIoMappingsList() {
       return ioMappings_;
     }
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.sessions.IoMappings.IOMappingOrBuilder> 
         getIoMappingsOrBuilderList() {
       return ioMappings_;
@@ -480,30 +579,25 @@ public final class SessionOuterClass {
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    @java.lang.Override
     public int getIoMappingsCount() {
       return ioMappings_.size();
     }
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    @java.lang.Override
     public ubii.sessions.IoMappings.IOMapping getIoMappings(int index) {
       return ioMappings_.get(index);
     }
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    @java.lang.Override
     public ubii.sessions.IoMappings.IOMappingOrBuilder getIoMappingsOrBuilder(
         int index) {
       return ioMappings_.get(index);
     }
 
     public static final int TAGS_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList tags_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList tags_;
     /**
      * <code>repeated string tags = 5;</code>
      * @return A list containing the tags.
@@ -538,13 +632,11 @@ public final class SessionOuterClass {
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object description_ = "";
+    private volatile java.lang.Object description_;
     /**
      * <code>string description = 6;</code>
      * @return The description.
      */
-    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -561,7 +653,6 @@ public final class SessionOuterClass {
      * <code>string description = 6;</code>
      * @return The bytes for description.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -577,9 +668,7 @@ public final class SessionOuterClass {
     }
 
     public static final int AUTHORS_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList authors_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList authors_;
     /**
      * <code>repeated string authors = 7;</code>
      * @return A list containing the authors.
@@ -614,30 +703,30 @@ public final class SessionOuterClass {
     }
 
     public static final int STATUS_FIELD_NUMBER = 8;
-    private int status_ = 0;
+    private int status_;
     /**
      * <code>.ubii.sessions.SessionStatus status = 8;</code>
      * @return The enum numeric value on the wire for status.
      */
-    @java.lang.Override public int getStatusValue() {
+    public int getStatusValue() {
       return status_;
     }
     /**
      * <code>.ubii.sessions.SessionStatus status = 8;</code>
      * @return The status.
      */
-    @java.lang.Override public ubii.sessions.SessionOuterClass.SessionStatus getStatus() {
-      ubii.sessions.SessionOuterClass.SessionStatus result = ubii.sessions.SessionOuterClass.SessionStatus.forNumber(status_);
+    public ubii.sessions.SessionOuterClass.SessionStatus getStatus() {
+      @SuppressWarnings("deprecation")
+      ubii.sessions.SessionOuterClass.SessionStatus result = ubii.sessions.SessionOuterClass.SessionStatus.valueOf(status_);
       return result == null ? ubii.sessions.SessionOuterClass.SessionStatus.UNRECOGNIZED : result;
     }
 
     public static final int EDITABLE_FIELD_NUMBER = 9;
-    private boolean editable_ = false;
+    private boolean editable_;
     /**
      * <code>bool editable = 9;</code>
      * @return The editable.
      */
-    @java.lang.Override
     public boolean getEditable() {
       return editable_;
     }
@@ -656,10 +745,10 @@ public final class SessionOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
       for (int i = 0; i < processingModules_.size(); i++) {
@@ -671,7 +760,7 @@ public final class SessionOuterClass {
       for (int i = 0; i < tags_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tags_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
       }
       for (int i = 0; i < authors_.size(); i++) {
@@ -683,7 +772,7 @@ public final class SessionOuterClass {
       if (editable_ != false) {
         output.writeBool(9, editable_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -692,10 +781,10 @@ public final class SessionOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
       for (int i = 0; i < processingModules_.size(); i++) {
@@ -714,7 +803,7 @@ public final class SessionOuterClass {
         size += dataSize;
         size += 1 * getTagsList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
       }
       {
@@ -733,7 +822,7 @@ public final class SessionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(9, editable_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -765,7 +854,7 @@ public final class SessionOuterClass {
       if (status_ != other.status_) return false;
       if (getEditable()
           != other.getEditable()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -803,7 +892,7 @@ public final class SessionOuterClass {
       hash = (37 * hash) + EDITABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getEditable());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -920,41 +1009,50 @@ public final class SessionOuterClass {
 
       // Construct using ubii.sessions.SessionOuterClass.Session.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getProcessingModulesFieldBuilder();
+          getIoMappingsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = "";
+
         name_ = "";
+
         if (processingModulesBuilder_ == null) {
           processingModules_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          processingModules_ = null;
           processingModulesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (ioMappingsBuilder_ == null) {
           ioMappings_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          ioMappings_ = null;
           ioMappingsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
-        tags_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         description_ = "";
-        authors_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
         status_ = 0;
+
         editable_ = false;
+
         return this;
       }
 
@@ -981,60 +1079,76 @@ public final class SessionOuterClass {
       @java.lang.Override
       public ubii.sessions.SessionOuterClass.Session buildPartial() {
         ubii.sessions.SessionOuterClass.Session result = new ubii.sessions.SessionOuterClass.Session(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(ubii.sessions.SessionOuterClass.Session result) {
+        int from_bitField0_ = bitField0_;
+        result.id_ = id_;
+        result.name_ = name_;
         if (processingModulesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.processingModules_ = processingModules_;
         } else {
           result.processingModules_ = processingModulesBuilder_.build();
         }
         if (ioMappingsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             ioMappings_ = java.util.Collections.unmodifiableList(ioMappings_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.ioMappings_ = ioMappings_;
         } else {
           result.ioMappings_ = ioMappingsBuilder_.build();
         }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.tags_ = tags_;
+        result.description_ = description_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          authors_ = authors_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.authors_ = authors_;
+        result.status_ = status_;
+        result.editable_ = editable_;
+        onBuilt();
+        return result;
       }
 
-      private void buildPartial0(ubii.sessions.SessionOuterClass.Session result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.name_ = name_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          tags_.makeImmutable();
-          result.tags_ = tags_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.description_ = description_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          authors_.makeImmutable();
-          result.authors_ = authors_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.status_ = status_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.editable_ = editable_;
-        }
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.sessions.SessionOuterClass.Session) {
@@ -1049,19 +1163,17 @@ public final class SessionOuterClass {
         if (other == ubii.sessions.SessionOuterClass.Session.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (processingModulesBuilder_ == null) {
           if (!other.processingModules_.isEmpty()) {
             if (processingModules_.isEmpty()) {
               processingModules_ = other.processingModules_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureProcessingModulesIsMutable();
               processingModules_.addAll(other.processingModules_);
@@ -1074,7 +1186,7 @@ public final class SessionOuterClass {
               processingModulesBuilder_.dispose();
               processingModulesBuilder_ = null;
               processingModules_ = other.processingModules_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               processingModulesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getProcessingModulesFieldBuilder() : null;
@@ -1087,7 +1199,7 @@ public final class SessionOuterClass {
           if (!other.ioMappings_.isEmpty()) {
             if (ioMappings_.isEmpty()) {
               ioMappings_ = other.ioMappings_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureIoMappingsIsMutable();
               ioMappings_.addAll(other.ioMappings_);
@@ -1100,7 +1212,7 @@ public final class SessionOuterClass {
               ioMappingsBuilder_.dispose();
               ioMappingsBuilder_ = null;
               ioMappings_ = other.ioMappings_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
               ioMappingsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getIoMappingsFieldBuilder() : null;
@@ -1112,7 +1224,7 @@ public final class SessionOuterClass {
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ |= 0x00000010;
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -1121,13 +1233,12 @@ public final class SessionOuterClass {
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
-          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.authors_.isEmpty()) {
           if (authors_.isEmpty()) {
             authors_ = other.authors_;
-            bitField0_ |= 0x00000040;
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureAuthorsIsMutable();
             authors_.addAll(other.authors_);
@@ -1140,7 +1251,7 @@ public final class SessionOuterClass {
         if (other.getEditable() != false) {
           setEditable(other.getEditable());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1155,93 +1266,17 @@ public final class SessionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.sessions.SessionOuterClass.Session parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                ubii.processing.ProcessingModuleOuterClass.ProcessingModule m =
-                    input.readMessage(
-                        ubii.processing.ProcessingModuleOuterClass.ProcessingModule.parser(),
-                        extensionRegistry);
-                if (processingModulesBuilder_ == null) {
-                  ensureProcessingModulesIsMutable();
-                  processingModules_.add(m);
-                } else {
-                  processingModulesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                ubii.sessions.IoMappings.IOMapping m =
-                    input.readMessage(
-                        ubii.sessions.IoMappings.IOMapping.parser(),
-                        extensionRegistry);
-                if (ioMappingsBuilder_ == null) {
-                  ensureIoMappingsIsMutable();
-                  ioMappings_.add(m);
-                } else {
-                  ioMappingsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureTagsIsMutable();
-                tags_.add(s);
-                break;
-              } // case 42
-              case 50: {
-                description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 50
-              case 58: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureAuthorsIsMutable();
-                authors_.add(s);
-                break;
-              } // case 58
-              case 64: {
-                status_ = input.readEnum();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 64
-              case 72: {
-                editable_ = input.readBool();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.sessions.SessionOuterClass.Session) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1287,9 +1322,11 @@ public final class SessionOuterClass {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1298,8 +1335,8 @@ public final class SessionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
+        
         id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1310,10 +1347,12 @@ public final class SessionOuterClass {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1359,9 +1398,11 @@ public final class SessionOuterClass {
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         name_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1370,8 +1411,8 @@ public final class SessionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearName() {
+        
         name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1382,10 +1423,12 @@ public final class SessionOuterClass {
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         name_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1393,9 +1436,9 @@ public final class SessionOuterClass {
       private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_ =
         java.util.Collections.emptyList();
       private void ensureProcessingModulesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>(processingModules_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1545,7 +1588,7 @@ public final class SessionOuterClass {
       public Builder clearProcessingModules() {
         if (processingModulesBuilder_ == null) {
           processingModules_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           processingModulesBuilder_.clear();
@@ -1622,7 +1665,7 @@ public final class SessionOuterClass {
           processingModulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder>(
                   processingModules_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           processingModules_ = null;
@@ -1633,9 +1676,9 @@ public final class SessionOuterClass {
       private java.util.List<ubii.sessions.IoMappings.IOMapping> ioMappings_ =
         java.util.Collections.emptyList();
       private void ensureIoMappingsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           ioMappings_ = new java.util.ArrayList<ubii.sessions.IoMappings.IOMapping>(ioMappings_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1785,7 +1828,7 @@ public final class SessionOuterClass {
       public Builder clearIoMappings() {
         if (ioMappingsBuilder_ == null) {
           ioMappings_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           ioMappingsBuilder_.clear();
@@ -1862,7 +1905,7 @@ public final class SessionOuterClass {
           ioMappingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.sessions.IoMappings.IOMapping, ubii.sessions.IoMappings.IOMapping.Builder, ubii.sessions.IoMappings.IOMappingOrBuilder>(
                   ioMappings_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           ioMappings_ = null;
@@ -1870,13 +1913,12 @@ public final class SessionOuterClass {
         return ioMappingsBuilder_;
       }
 
-      private com.google.protobuf.LazyStringArrayList tags_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
-        if (!tags_.isModifiable()) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        }
-        bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <code>repeated string tags = 5;</code>
@@ -1884,8 +1926,7 @@ public final class SessionOuterClass {
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
-        tags_.makeImmutable();
-        return tags_;
+        return tags_.getUnmodifiableView();
       }
       /**
        * <code>repeated string tags = 5;</code>
@@ -1919,10 +1960,11 @@ public final class SessionOuterClass {
        */
       public Builder setTags(
           int index, java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTagsIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
         tags_.set(index, value);
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1933,10 +1975,11 @@ public final class SessionOuterClass {
        */
       public Builder addTags(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTagsIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
         tags_.add(value);
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1950,7 +1993,6 @@ public final class SessionOuterClass {
         ensureTagsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, tags_);
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1959,9 +2001,8 @@ public final class SessionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTags() {
-        tags_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);;
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1972,11 +2013,12 @@ public final class SessionOuterClass {
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         ensureTagsIsMutable();
         tags_.add(value);
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2022,9 +2064,11 @@ public final class SessionOuterClass {
        */
       public Builder setDescription(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         description_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2033,8 +2077,8 @@ public final class SessionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
+        
         description_ = getDefaultInstance().getDescription();
-        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -2045,21 +2089,22 @@ public final class SessionOuterClass {
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         description_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList authors_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureAuthorsIsMutable() {
-        if (!authors_.isModifiable()) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           authors_ = new com.google.protobuf.LazyStringArrayList(authors_);
-        }
-        bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000008;
+         }
       }
       /**
        * <code>repeated string authors = 7;</code>
@@ -2067,8 +2112,7 @@ public final class SessionOuterClass {
        */
       public com.google.protobuf.ProtocolStringList
           getAuthorsList() {
-        authors_.makeImmutable();
-        return authors_;
+        return authors_.getUnmodifiableView();
       }
       /**
        * <code>repeated string authors = 7;</code>
@@ -2102,10 +2146,11 @@ public final class SessionOuterClass {
        */
       public Builder setAuthors(
           int index, java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureAuthorsIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAuthorsIsMutable();
         authors_.set(index, value);
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2116,10 +2161,11 @@ public final class SessionOuterClass {
        */
       public Builder addAuthors(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureAuthorsIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAuthorsIsMutable();
         authors_.add(value);
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2133,7 +2179,6 @@ public final class SessionOuterClass {
         ensureAuthorsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, authors_);
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2142,9 +2187,8 @@ public final class SessionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAuthors() {
-        authors_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);;
+        authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2155,11 +2199,12 @@ public final class SessionOuterClass {
        */
       public Builder addAuthorsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         ensureAuthorsIsMutable();
         authors_.add(value);
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2169,7 +2214,7 @@ public final class SessionOuterClass {
        * <code>.ubii.sessions.SessionStatus status = 8;</code>
        * @return The enum numeric value on the wire for status.
        */
-      @java.lang.Override public int getStatusValue() {
+      public int getStatusValue() {
         return status_;
       }
       /**
@@ -2179,7 +2224,6 @@ public final class SessionOuterClass {
        */
       public Builder setStatusValue(int value) {
         status_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2187,9 +2231,9 @@ public final class SessionOuterClass {
        * <code>.ubii.sessions.SessionStatus status = 8;</code>
        * @return The status.
        */
-      @java.lang.Override
       public ubii.sessions.SessionOuterClass.SessionStatus getStatus() {
-        ubii.sessions.SessionOuterClass.SessionStatus result = ubii.sessions.SessionOuterClass.SessionStatus.forNumber(status_);
+        @SuppressWarnings("deprecation")
+        ubii.sessions.SessionOuterClass.SessionStatus result = ubii.sessions.SessionOuterClass.SessionStatus.valueOf(status_);
         return result == null ? ubii.sessions.SessionOuterClass.SessionStatus.UNRECOGNIZED : result;
       }
       /**
@@ -2201,7 +2245,7 @@ public final class SessionOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000080;
+        
         status_ = value.getNumber();
         onChanged();
         return this;
@@ -2211,7 +2255,7 @@ public final class SessionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         status_ = 0;
         onChanged();
         return this;
@@ -2222,7 +2266,6 @@ public final class SessionOuterClass {
        * <code>bool editable = 9;</code>
        * @return The editable.
        */
-      @java.lang.Override
       public boolean getEditable() {
         return editable_;
       }
@@ -2232,9 +2275,8 @@ public final class SessionOuterClass {
        * @return This builder for chaining.
        */
       public Builder setEditable(boolean value) {
-
+        
         editable_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2243,7 +2285,7 @@ public final class SessionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEditable() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         editable_ = false;
         onChanged();
         return this;
@@ -2281,18 +2323,7 @@ public final class SessionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Session(input, extensionRegistry);
       }
     };
 
@@ -2343,7 +2374,7 @@ public final class SessionOuterClass {
   /**
    * Protobuf type {@code ubii.sessions.SessionList}
    */
-  public static final class SessionList extends
+  public  static final class SessionList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.sessions.SessionList)
       SessionListOrBuilder {
@@ -2363,6 +2394,61 @@ public final class SessionOuterClass {
       return new SessionList();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SessionList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                elements_ = new java.util.ArrayList<ubii.sessions.SessionOuterClass.Session>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              elements_.add(
+                  input.readMessage(ubii.sessions.SessionOuterClass.Session.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.sessions.SessionOuterClass.internal_static_ubii_sessions_SessionList_descriptor;
@@ -2377,19 +2463,16 @@ public final class SessionOuterClass {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<ubii.sessions.SessionOuterClass.Session> elements_;
     /**
      * <code>repeated .ubii.sessions.Session elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.sessions.SessionOuterClass.Session> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.sessions.Session elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.sessions.SessionOuterClass.SessionOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -2397,21 +2480,18 @@ public final class SessionOuterClass {
     /**
      * <code>repeated .ubii.sessions.Session elements = 1;</code>
      */
-    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.sessions.Session elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.sessions.SessionOuterClass.Session getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.sessions.Session elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.sessions.SessionOuterClass.SessionOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
@@ -2434,7 +2514,7 @@ public final class SessionOuterClass {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2447,7 +2527,7 @@ public final class SessionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2464,7 +2544,7 @@ public final class SessionOuterClass {
 
       if (!getElementsList()
           .equals(other.getElementsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2479,7 +2559,7 @@ public final class SessionOuterClass {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2596,25 +2676,29 @@ public final class SessionOuterClass {
 
       // Construct using ubii.sessions.SessionOuterClass.SessionList.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getElementsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (elementsBuilder_ == null) {
           elements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          elements_ = null;
           elementsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2641,13 +2725,7 @@ public final class SessionOuterClass {
       @java.lang.Override
       public ubii.sessions.SessionOuterClass.SessionList buildPartial() {
         ubii.sessions.SessionOuterClass.SessionList result = new ubii.sessions.SessionOuterClass.SessionList(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(ubii.sessions.SessionOuterClass.SessionList result) {
+        int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
@@ -2657,12 +2735,42 @@ public final class SessionOuterClass {
         } else {
           result.elements_ = elementsBuilder_.build();
         }
+        onBuilt();
+        return result;
       }
 
-      private void buildPartial0(ubii.sessions.SessionOuterClass.SessionList result) {
-        int from_bitField0_ = bitField0_;
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.sessions.SessionOuterClass.SessionList) {
@@ -2701,7 +2809,7 @@ public final class SessionOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2716,43 +2824,17 @@ public final class SessionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.sessions.SessionOuterClass.SessionList parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                ubii.sessions.SessionOuterClass.Session m =
-                    input.readMessage(
-                        ubii.sessions.SessionOuterClass.Session.parser(),
-                        extensionRegistry);
-                if (elementsBuilder_ == null) {
-                  ensureElementsIsMutable();
-                  elements_.add(m);
-                } else {
-                  elementsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.sessions.SessionOuterClass.SessionList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -3029,18 +3111,7 @@ public final class SessionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SessionList(input, extensionRegistry);
       }
     };
 

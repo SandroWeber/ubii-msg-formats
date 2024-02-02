@@ -7,7 +7,7 @@ let compileProtoPython = () => {
   return new Promise((resolve, reject) => {
     // compile .proto via python
     let pathProtoCompile = path.join(__dirname, 'proto-compile.py');
-    console.info(pathProtoCompile);
+    //console.info(pathProtoCompile);
     let processPythonProtoCompile = childProcess.spawn(pythonExecutable, [pathProtoCompile]);
 
     // Takes stdout data from script which executed

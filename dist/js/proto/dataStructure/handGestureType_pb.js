@@ -1,3 +1,4 @@
+// source: proto/dataStructure/handGestureType.proto
 /**
  * @fileoverview
  * @enhanceable

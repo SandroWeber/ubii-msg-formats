@@ -69,7 +69,7 @@ public final class TopicDemuxOuterClass {
   /**
    * Protobuf type {@code ubii.devices.TopicDemux}
    */
-  public static final class TopicDemux extends
+  public  static final class TopicDemux extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.TopicDemux)
       TopicDemuxOrBuilder {
@@ -92,6 +92,72 @@ public final class TopicDemuxOuterClass {
       return new TopicDemux();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TopicDemux(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              dataType_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              outputTopicFormat_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.devices.TopicDemuxOuterClass.internal_static_ubii_devices_TopicDemux_descriptor;
@@ -106,13 +172,11 @@ public final class TopicDemuxOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <code>string id = 1;</code>
      * @return The id.
      */
-    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -129,7 +193,6 @@ public final class TopicDemuxOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -145,13 +208,11 @@ public final class TopicDemuxOuterClass {
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object name_ = "";
+    private volatile java.lang.Object name_;
     /**
      * <code>string name = 2;</code>
      * @return The name.
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -168,7 +229,6 @@ public final class TopicDemuxOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -184,13 +244,11 @@ public final class TopicDemuxOuterClass {
     }
 
     public static final int DATA_TYPE_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object dataType_ = "";
+    private volatile java.lang.Object dataType_;
     /**
      * <code>string data_type = 3;</code>
      * @return The dataType.
      */
-    @java.lang.Override
     public java.lang.String getDataType() {
       java.lang.Object ref = dataType_;
       if (ref instanceof java.lang.String) {
@@ -207,7 +265,6 @@ public final class TopicDemuxOuterClass {
      * <code>string data_type = 3;</code>
      * @return The bytes for dataType.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDataTypeBytes() {
       java.lang.Object ref = dataType_;
@@ -223,13 +280,11 @@ public final class TopicDemuxOuterClass {
     }
 
     public static final int OUTPUT_TOPIC_FORMAT_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object outputTopicFormat_ = "";
+    private volatile java.lang.Object outputTopicFormat_;
     /**
      * <code>string output_topic_format = 4;</code>
      * @return The outputTopicFormat.
      */
-    @java.lang.Override
     public java.lang.String getOutputTopicFormat() {
       java.lang.Object ref = outputTopicFormat_;
       if (ref instanceof java.lang.String) {
@@ -246,7 +301,6 @@ public final class TopicDemuxOuterClass {
      * <code>string output_topic_format = 4;</code>
      * @return The bytes for outputTopicFormat.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getOutputTopicFormatBytes() {
       java.lang.Object ref = outputTopicFormat_;
@@ -275,19 +329,19 @@ public final class TopicDemuxOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataType_)) {
+      if (!getDataTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dataType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputTopicFormat_)) {
+      if (!getOutputTopicFormatBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, outputTopicFormat_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -296,19 +350,19 @@ public final class TopicDemuxOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataType_)) {
+      if (!getDataTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dataType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputTopicFormat_)) {
+      if (!getOutputTopicFormatBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, outputTopicFormat_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -331,7 +385,7 @@ public final class TopicDemuxOuterClass {
           .equals(other.getDataType())) return false;
       if (!getOutputTopicFormat()
           .equals(other.getOutputTopicFormat())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -350,7 +404,7 @@ public final class TopicDemuxOuterClass {
       hash = (53 * hash) + getDataType().hashCode();
       hash = (37 * hash) + OUTPUT_TOPIC_FORMAT_FIELD_NUMBER;
       hash = (53 * hash) + getOutputTopicFormat().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -467,22 +521,30 @@ public final class TopicDemuxOuterClass {
 
       // Construct using ubii.devices.TopicDemuxOuterClass.TopicDemux.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = "";
+
         name_ = "";
+
         dataType_ = "";
+
         outputTopicFormat_ = "";
+
         return this;
       }
 
@@ -509,27 +571,46 @@ public final class TopicDemuxOuterClass {
       @java.lang.Override
       public ubii.devices.TopicDemuxOuterClass.TopicDemux buildPartial() {
         ubii.devices.TopicDemuxOuterClass.TopicDemux result = new ubii.devices.TopicDemuxOuterClass.TopicDemux(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.id_ = id_;
+        result.name_ = name_;
+        result.dataType_ = dataType_;
+        result.outputTopicFormat_ = outputTopicFormat_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(ubii.devices.TopicDemuxOuterClass.TopicDemux result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.name_ = name_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.dataType_ = dataType_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.outputTopicFormat_ = outputTopicFormat_;
-        }
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.devices.TopicDemuxOuterClass.TopicDemux) {
@@ -544,25 +625,21 @@ public final class TopicDemuxOuterClass {
         if (other == ubii.devices.TopicDemuxOuterClass.TopicDemux.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getDataType().isEmpty()) {
           dataType_ = other.dataType_;
-          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getOutputTopicFormat().isEmpty()) {
           outputTopicFormat_ = other.outputTopicFormat_;
-          bitField0_ |= 0x00000008;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -577,53 +654,19 @@ public final class TopicDemuxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.devices.TopicDemuxOuterClass.TopicDemux parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                dataType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                outputTopicFormat_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.devices.TopicDemuxOuterClass.TopicDemux) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -666,9 +709,11 @@ public final class TopicDemuxOuterClass {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -677,8 +722,8 @@ public final class TopicDemuxOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
+        
         id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -689,10 +734,12 @@ public final class TopicDemuxOuterClass {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -738,9 +785,11 @@ public final class TopicDemuxOuterClass {
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         name_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -749,8 +798,8 @@ public final class TopicDemuxOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearName() {
+        
         name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -761,10 +810,12 @@ public final class TopicDemuxOuterClass {
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         name_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -810,9 +861,11 @@ public final class TopicDemuxOuterClass {
        */
       public Builder setDataType(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         dataType_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -821,8 +874,8 @@ public final class TopicDemuxOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDataType() {
+        
         dataType_ = getDefaultInstance().getDataType();
-        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -833,10 +886,12 @@ public final class TopicDemuxOuterClass {
        */
       public Builder setDataTypeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         dataType_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -882,9 +937,11 @@ public final class TopicDemuxOuterClass {
        */
       public Builder setOutputTopicFormat(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         outputTopicFormat_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -893,8 +950,8 @@ public final class TopicDemuxOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOutputTopicFormat() {
+        
         outputTopicFormat_ = getDefaultInstance().getOutputTopicFormat();
-        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -905,10 +962,12 @@ public final class TopicDemuxOuterClass {
        */
       public Builder setOutputTopicFormatBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         outputTopicFormat_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -945,18 +1004,7 @@ public final class TopicDemuxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TopicDemux(input, extensionRegistry);
       }
     };
 
@@ -1007,7 +1055,7 @@ public final class TopicDemuxOuterClass {
   /**
    * Protobuf type {@code ubii.devices.TopicDemuxList}
    */
-  public static final class TopicDemuxList extends
+  public  static final class TopicDemuxList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.TopicDemuxList)
       TopicDemuxListOrBuilder {
@@ -1027,6 +1075,61 @@ public final class TopicDemuxOuterClass {
       return new TopicDemuxList();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TopicDemuxList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                elements_ = new java.util.ArrayList<ubii.devices.TopicDemuxOuterClass.TopicDemux>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              elements_.add(
+                  input.readMessage(ubii.devices.TopicDemuxOuterClass.TopicDemux.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.devices.TopicDemuxOuterClass.internal_static_ubii_devices_TopicDemuxList_descriptor;
@@ -1041,19 +1144,16 @@ public final class TopicDemuxOuterClass {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<ubii.devices.TopicDemuxOuterClass.TopicDemux> elements_;
     /**
      * <code>repeated .ubii.devices.TopicDemux elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.devices.TopicDemuxOuterClass.TopicDemux> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.devices.TopicDemux elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1061,21 +1161,18 @@ public final class TopicDemuxOuterClass {
     /**
      * <code>repeated .ubii.devices.TopicDemux elements = 1;</code>
      */
-    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.devices.TopicDemux elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.devices.TopicDemuxOuterClass.TopicDemux getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.devices.TopicDemux elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
@@ -1098,7 +1195,7 @@ public final class TopicDemuxOuterClass {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1111,7 +1208,7 @@ public final class TopicDemuxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1128,7 +1225,7 @@ public final class TopicDemuxOuterClass {
 
       if (!getElementsList()
           .equals(other.getElementsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1143,7 +1240,7 @@ public final class TopicDemuxOuterClass {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1260,25 +1357,29 @@ public final class TopicDemuxOuterClass {
 
       // Construct using ubii.devices.TopicDemuxOuterClass.TopicDemuxList.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getElementsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (elementsBuilder_ == null) {
           elements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          elements_ = null;
           elementsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1305,13 +1406,7 @@ public final class TopicDemuxOuterClass {
       @java.lang.Override
       public ubii.devices.TopicDemuxOuterClass.TopicDemuxList buildPartial() {
         ubii.devices.TopicDemuxOuterClass.TopicDemuxList result = new ubii.devices.TopicDemuxOuterClass.TopicDemuxList(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(ubii.devices.TopicDemuxOuterClass.TopicDemuxList result) {
+        int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
@@ -1321,12 +1416,42 @@ public final class TopicDemuxOuterClass {
         } else {
           result.elements_ = elementsBuilder_.build();
         }
+        onBuilt();
+        return result;
       }
 
-      private void buildPartial0(ubii.devices.TopicDemuxOuterClass.TopicDemuxList result) {
-        int from_bitField0_ = bitField0_;
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.devices.TopicDemuxOuterClass.TopicDemuxList) {
@@ -1365,7 +1490,7 @@ public final class TopicDemuxOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1380,43 +1505,17 @@ public final class TopicDemuxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.devices.TopicDemuxOuterClass.TopicDemuxList parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                ubii.devices.TopicDemuxOuterClass.TopicDemux m =
-                    input.readMessage(
-                        ubii.devices.TopicDemuxOuterClass.TopicDemux.parser(),
-                        extensionRegistry);
-                if (elementsBuilder_ == null) {
-                  ensureElementsIsMutable();
-                  elements_.add(m);
-                } else {
-                  elementsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.devices.TopicDemuxOuterClass.TopicDemuxList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1693,18 +1792,7 @@ public final class TopicDemuxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TopicDemuxList(input, extensionRegistry);
       }
     };
 

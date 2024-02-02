@@ -8,8 +8,9 @@ import subprocess
 from distutils.spawn import find_executable
 
 # Find the Protocol Compiler.
-protoc_local = os.path.join(os.path.dirname(__file__), '../external/bin/protoc')
-protoc_local_windows = os.path.join(os.path.dirname(__file__), '../external/bin/protoc.exe')
+protoc_relpath = '../external/bin/protoc_3-11-1/protoc'  #'../external/bin/protoc'
+protoc_local = os.path.join(os.path.dirname(__file__), protoc_relpath)
+protoc_local_windows = os.path.join(os.path.dirname(__file__), protoc_relpath + '.exe')
 if os.path.isfile(protoc_local):
     protoc = protoc_local
 elif os.path.isfile(protoc_local_windows):
@@ -18,6 +19,9 @@ elif 'PROTOC' in os.environ and os.path.exists(os.environ['PROTOC']):
     protoc = os.environ['PROTOC']
 else:
     protoc = find_executable("protoc")
+print("path to protoc: ", protoc)
+
+DEBUG = False
 
 
 def generateInits(pathToOutput):
@@ -84,7 +88,8 @@ def generate_proto(source, pathToOutput, pathToProtos, includePath ,protocArg,re
         sys.exit(-1)
 
     protoc_command = [ protoc, "-I"+includePath, "-I.", "--"+protocArg+"_out="+pathToOutput, source ]
-    print(protoc_command)
+    if DEBUG == True:
+        print(protoc_command)
     if subprocess.call(protoc_command) != 0:
         sys.exit(-1)
 

@@ -45,7 +45,7 @@ public final class Vector4OuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Vector4}
    */
-  public static final class Vector4 extends
+  public  static final class Vector4 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Vector4)
       Vector4OrBuilder {
@@ -64,6 +64,68 @@ public final class Vector4OuterClass {
       return new Vector4();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Vector4(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+
+              x_ = input.readDouble();
+              break;
+            }
+            case 17: {
+
+              y_ = input.readDouble();
+              break;
+            }
+            case 25: {
+
+              z_ = input.readDouble();
+              break;
+            }
+            case 33: {
+
+              w_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.dataStructure.Vector4OuterClass.internal_static_ubii_dataStructure_Vector4_descriptor;
@@ -78,45 +140,41 @@ public final class Vector4OuterClass {
     }
 
     public static final int X_FIELD_NUMBER = 1;
-    private double x_ = 0D;
+    private double x_;
     /**
      * <code>double x = 1;</code>
      * @return The x.
      */
-    @java.lang.Override
     public double getX() {
       return x_;
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private double y_ = 0D;
+    private double y_;
     /**
      * <code>double y = 2;</code>
      * @return The y.
      */
-    @java.lang.Override
     public double getY() {
       return y_;
     }
 
     public static final int Z_FIELD_NUMBER = 3;
-    private double z_ = 0D;
+    private double z_;
     /**
      * <code>double z = 3;</code>
      * @return The z.
      */
-    @java.lang.Override
     public double getZ() {
       return z_;
     }
 
     public static final int W_FIELD_NUMBER = 4;
-    private double w_ = 0D;
+    private double w_;
     /**
      * <code>double w = 4;</code>
      * @return The w.
      */
-    @java.lang.Override
     public double getW() {
       return w_;
     }
@@ -135,19 +193,19 @@ public final class Vector4OuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Double.doubleToRawLongBits(x_) != 0) {
+      if (x_ != 0D) {
         output.writeDouble(1, x_);
       }
-      if (java.lang.Double.doubleToRawLongBits(y_) != 0) {
+      if (y_ != 0D) {
         output.writeDouble(2, y_);
       }
-      if (java.lang.Double.doubleToRawLongBits(z_) != 0) {
+      if (z_ != 0D) {
         output.writeDouble(3, z_);
       }
-      if (java.lang.Double.doubleToRawLongBits(w_) != 0) {
+      if (w_ != 0D) {
         output.writeDouble(4, w_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -156,23 +214,23 @@ public final class Vector4OuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Double.doubleToRawLongBits(x_) != 0) {
+      if (x_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(1, x_);
       }
-      if (java.lang.Double.doubleToRawLongBits(y_) != 0) {
+      if (y_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, y_);
       }
-      if (java.lang.Double.doubleToRawLongBits(z_) != 0) {
+      if (z_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, z_);
       }
-      if (java.lang.Double.doubleToRawLongBits(w_) != 0) {
+      if (w_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, w_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -199,7 +257,7 @@ public final class Vector4OuterClass {
       if (java.lang.Double.doubleToLongBits(getW())
           != java.lang.Double.doubleToLongBits(
               other.getW())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -222,7 +280,7 @@ public final class Vector4OuterClass {
       hash = (37 * hash) + W_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getW()));
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -339,22 +397,30 @@ public final class Vector4OuterClass {
 
       // Construct using ubii.dataStructure.Vector4OuterClass.Vector4.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         x_ = 0D;
+
         y_ = 0D;
+
         z_ = 0D;
+
         w_ = 0D;
+
         return this;
       }
 
@@ -381,27 +447,46 @@ public final class Vector4OuterClass {
       @java.lang.Override
       public ubii.dataStructure.Vector4OuterClass.Vector4 buildPartial() {
         ubii.dataStructure.Vector4OuterClass.Vector4 result = new ubii.dataStructure.Vector4OuterClass.Vector4(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.x_ = x_;
+        result.y_ = y_;
+        result.z_ = z_;
+        result.w_ = w_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(ubii.dataStructure.Vector4OuterClass.Vector4 result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.x_ = x_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.y_ = y_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.z_ = z_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.w_ = w_;
-        }
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.Vector4OuterClass.Vector4) {
@@ -426,7 +511,7 @@ public final class Vector4OuterClass {
         if (other.getW() != 0D) {
           setW(other.getW());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -441,60 +526,25 @@ public final class Vector4OuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.dataStructure.Vector4OuterClass.Vector4 parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 9: {
-                x_ = input.readDouble();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 9
-              case 17: {
-                y_ = input.readDouble();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 17
-              case 25: {
-                z_ = input.readDouble();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 25
-              case 33: {
-                w_ = input.readDouble();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 33
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.dataStructure.Vector4OuterClass.Vector4) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private double x_ ;
       /**
        * <code>double x = 1;</code>
        * @return The x.
        */
-      @java.lang.Override
       public double getX() {
         return x_;
       }
@@ -504,9 +554,8 @@ public final class Vector4OuterClass {
        * @return This builder for chaining.
        */
       public Builder setX(double value) {
-
+        
         x_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -515,7 +564,7 @@ public final class Vector4OuterClass {
        * @return This builder for chaining.
        */
       public Builder clearX() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         x_ = 0D;
         onChanged();
         return this;
@@ -526,7 +575,6 @@ public final class Vector4OuterClass {
        * <code>double y = 2;</code>
        * @return The y.
        */
-      @java.lang.Override
       public double getY() {
         return y_;
       }
@@ -536,9 +584,8 @@ public final class Vector4OuterClass {
        * @return This builder for chaining.
        */
       public Builder setY(double value) {
-
+        
         y_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -547,7 +594,7 @@ public final class Vector4OuterClass {
        * @return This builder for chaining.
        */
       public Builder clearY() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         y_ = 0D;
         onChanged();
         return this;
@@ -558,7 +605,6 @@ public final class Vector4OuterClass {
        * <code>double z = 3;</code>
        * @return The z.
        */
-      @java.lang.Override
       public double getZ() {
         return z_;
       }
@@ -568,9 +614,8 @@ public final class Vector4OuterClass {
        * @return This builder for chaining.
        */
       public Builder setZ(double value) {
-
+        
         z_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -579,7 +624,7 @@ public final class Vector4OuterClass {
        * @return This builder for chaining.
        */
       public Builder clearZ() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         z_ = 0D;
         onChanged();
         return this;
@@ -590,7 +635,6 @@ public final class Vector4OuterClass {
        * <code>double w = 4;</code>
        * @return The w.
        */
-      @java.lang.Override
       public double getW() {
         return w_;
       }
@@ -600,9 +644,8 @@ public final class Vector4OuterClass {
        * @return This builder for chaining.
        */
       public Builder setW(double value) {
-
+        
         w_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -611,7 +654,7 @@ public final class Vector4OuterClass {
        * @return This builder for chaining.
        */
       public Builder clearW() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         w_ = 0D;
         onChanged();
         return this;
@@ -649,18 +692,7 @@ public final class Vector4OuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Vector4(input, extensionRegistry);
       }
     };
 
@@ -711,7 +743,7 @@ public final class Vector4OuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Vector4List}
    */
-  public static final class Vector4List extends
+  public  static final class Vector4List extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Vector4List)
       Vector4ListOrBuilder {
@@ -731,6 +763,61 @@ public final class Vector4OuterClass {
       return new Vector4List();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Vector4List(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                elements_ = new java.util.ArrayList<ubii.dataStructure.Vector4OuterClass.Vector4>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              elements_.add(
+                  input.readMessage(ubii.dataStructure.Vector4OuterClass.Vector4.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.dataStructure.Vector4OuterClass.internal_static_ubii_dataStructure_Vector4List_descriptor;
@@ -745,19 +832,16 @@ public final class Vector4OuterClass {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<ubii.dataStructure.Vector4OuterClass.Vector4> elements_;
     /**
      * <code>repeated .ubii.dataStructure.Vector4 elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.dataStructure.Vector4OuterClass.Vector4> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.dataStructure.Vector4 elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -765,21 +849,18 @@ public final class Vector4OuterClass {
     /**
      * <code>repeated .ubii.dataStructure.Vector4 elements = 1;</code>
      */
-    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.dataStructure.Vector4 elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Vector4OuterClass.Vector4 getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.dataStructure.Vector4 elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
@@ -802,7 +883,7 @@ public final class Vector4OuterClass {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -815,7 +896,7 @@ public final class Vector4OuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -832,7 +913,7 @@ public final class Vector4OuterClass {
 
       if (!getElementsList()
           .equals(other.getElementsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -847,7 +928,7 @@ public final class Vector4OuterClass {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -964,25 +1045,29 @@ public final class Vector4OuterClass {
 
       // Construct using ubii.dataStructure.Vector4OuterClass.Vector4List.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getElementsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (elementsBuilder_ == null) {
           elements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          elements_ = null;
           elementsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1009,13 +1094,7 @@ public final class Vector4OuterClass {
       @java.lang.Override
       public ubii.dataStructure.Vector4OuterClass.Vector4List buildPartial() {
         ubii.dataStructure.Vector4OuterClass.Vector4List result = new ubii.dataStructure.Vector4OuterClass.Vector4List(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(ubii.dataStructure.Vector4OuterClass.Vector4List result) {
+        int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
@@ -1025,12 +1104,42 @@ public final class Vector4OuterClass {
         } else {
           result.elements_ = elementsBuilder_.build();
         }
+        onBuilt();
+        return result;
       }
 
-      private void buildPartial0(ubii.dataStructure.Vector4OuterClass.Vector4List result) {
-        int from_bitField0_ = bitField0_;
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.Vector4OuterClass.Vector4List) {
@@ -1069,7 +1178,7 @@ public final class Vector4OuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1084,43 +1193,17 @@ public final class Vector4OuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.dataStructure.Vector4OuterClass.Vector4List parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                ubii.dataStructure.Vector4OuterClass.Vector4 m =
-                    input.readMessage(
-                        ubii.dataStructure.Vector4OuterClass.Vector4.parser(),
-                        extensionRegistry);
-                if (elementsBuilder_ == null) {
-                  ensureElementsIsMutable();
-                  elements_.add(m);
-                } else {
-                  elementsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.dataStructure.Vector4OuterClass.Vector4List) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1397,18 +1480,7 @@ public final class Vector4OuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Vector4List(input, extensionRegistry);
       }
     };
 

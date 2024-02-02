@@ -45,7 +45,7 @@ public final class ColorOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Color}
    */
-  public static final class Color extends
+  public  static final class Color extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Color)
       ColorOrBuilder {
@@ -64,6 +64,68 @@ public final class ColorOuterClass {
       return new Color();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Color(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+
+              r_ = input.readDouble();
+              break;
+            }
+            case 17: {
+
+              g_ = input.readDouble();
+              break;
+            }
+            case 25: {
+
+              b_ = input.readDouble();
+              break;
+            }
+            case 33: {
+
+              a_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.dataStructure.ColorOuterClass.internal_static_ubii_dataStructure_Color_descriptor;
@@ -78,45 +140,41 @@ public final class ColorOuterClass {
     }
 
     public static final int R_FIELD_NUMBER = 1;
-    private double r_ = 0D;
+    private double r_;
     /**
      * <code>double r = 1;</code>
      * @return The r.
      */
-    @java.lang.Override
     public double getR() {
       return r_;
     }
 
     public static final int G_FIELD_NUMBER = 2;
-    private double g_ = 0D;
+    private double g_;
     /**
      * <code>double g = 2;</code>
      * @return The g.
      */
-    @java.lang.Override
     public double getG() {
       return g_;
     }
 
     public static final int B_FIELD_NUMBER = 3;
-    private double b_ = 0D;
+    private double b_;
     /**
      * <code>double b = 3;</code>
      * @return The b.
      */
-    @java.lang.Override
     public double getB() {
       return b_;
     }
 
     public static final int A_FIELD_NUMBER = 4;
-    private double a_ = 0D;
+    private double a_;
     /**
      * <code>double a = 4;</code>
      * @return The a.
      */
-    @java.lang.Override
     public double getA() {
       return a_;
     }
@@ -135,19 +193,19 @@ public final class ColorOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Double.doubleToRawLongBits(r_) != 0) {
+      if (r_ != 0D) {
         output.writeDouble(1, r_);
       }
-      if (java.lang.Double.doubleToRawLongBits(g_) != 0) {
+      if (g_ != 0D) {
         output.writeDouble(2, g_);
       }
-      if (java.lang.Double.doubleToRawLongBits(b_) != 0) {
+      if (b_ != 0D) {
         output.writeDouble(3, b_);
       }
-      if (java.lang.Double.doubleToRawLongBits(a_) != 0) {
+      if (a_ != 0D) {
         output.writeDouble(4, a_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -156,23 +214,23 @@ public final class ColorOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Double.doubleToRawLongBits(r_) != 0) {
+      if (r_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(1, r_);
       }
-      if (java.lang.Double.doubleToRawLongBits(g_) != 0) {
+      if (g_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, g_);
       }
-      if (java.lang.Double.doubleToRawLongBits(b_) != 0) {
+      if (b_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, b_);
       }
-      if (java.lang.Double.doubleToRawLongBits(a_) != 0) {
+      if (a_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, a_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -199,7 +257,7 @@ public final class ColorOuterClass {
       if (java.lang.Double.doubleToLongBits(getA())
           != java.lang.Double.doubleToLongBits(
               other.getA())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -222,7 +280,7 @@ public final class ColorOuterClass {
       hash = (37 * hash) + A_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getA()));
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -339,22 +397,30 @@ public final class ColorOuterClass {
 
       // Construct using ubii.dataStructure.ColorOuterClass.Color.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         r_ = 0D;
+
         g_ = 0D;
+
         b_ = 0D;
+
         a_ = 0D;
+
         return this;
       }
 
@@ -381,27 +447,46 @@ public final class ColorOuterClass {
       @java.lang.Override
       public ubii.dataStructure.ColorOuterClass.Color buildPartial() {
         ubii.dataStructure.ColorOuterClass.Color result = new ubii.dataStructure.ColorOuterClass.Color(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.r_ = r_;
+        result.g_ = g_;
+        result.b_ = b_;
+        result.a_ = a_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(ubii.dataStructure.ColorOuterClass.Color result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.r_ = r_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.g_ = g_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.b_ = b_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.a_ = a_;
-        }
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.ColorOuterClass.Color) {
@@ -426,7 +511,7 @@ public final class ColorOuterClass {
         if (other.getA() != 0D) {
           setA(other.getA());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -441,60 +526,25 @@ public final class ColorOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.dataStructure.ColorOuterClass.Color parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 9: {
-                r_ = input.readDouble();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 9
-              case 17: {
-                g_ = input.readDouble();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 17
-              case 25: {
-                b_ = input.readDouble();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 25
-              case 33: {
-                a_ = input.readDouble();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 33
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.dataStructure.ColorOuterClass.Color) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private double r_ ;
       /**
        * <code>double r = 1;</code>
        * @return The r.
        */
-      @java.lang.Override
       public double getR() {
         return r_;
       }
@@ -504,9 +554,8 @@ public final class ColorOuterClass {
        * @return This builder for chaining.
        */
       public Builder setR(double value) {
-
+        
         r_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -515,7 +564,7 @@ public final class ColorOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearR() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         r_ = 0D;
         onChanged();
         return this;
@@ -526,7 +575,6 @@ public final class ColorOuterClass {
        * <code>double g = 2;</code>
        * @return The g.
        */
-      @java.lang.Override
       public double getG() {
         return g_;
       }
@@ -536,9 +584,8 @@ public final class ColorOuterClass {
        * @return This builder for chaining.
        */
       public Builder setG(double value) {
-
+        
         g_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -547,7 +594,7 @@ public final class ColorOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearG() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         g_ = 0D;
         onChanged();
         return this;
@@ -558,7 +605,6 @@ public final class ColorOuterClass {
        * <code>double b = 3;</code>
        * @return The b.
        */
-      @java.lang.Override
       public double getB() {
         return b_;
       }
@@ -568,9 +614,8 @@ public final class ColorOuterClass {
        * @return This builder for chaining.
        */
       public Builder setB(double value) {
-
+        
         b_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -579,7 +624,7 @@ public final class ColorOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearB() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         b_ = 0D;
         onChanged();
         return this;
@@ -590,7 +635,6 @@ public final class ColorOuterClass {
        * <code>double a = 4;</code>
        * @return The a.
        */
-      @java.lang.Override
       public double getA() {
         return a_;
       }
@@ -600,9 +644,8 @@ public final class ColorOuterClass {
        * @return This builder for chaining.
        */
       public Builder setA(double value) {
-
+        
         a_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -611,7 +654,7 @@ public final class ColorOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearA() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         a_ = 0D;
         onChanged();
         return this;
@@ -649,18 +692,7 @@ public final class ColorOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Color(input, extensionRegistry);
       }
     };
 

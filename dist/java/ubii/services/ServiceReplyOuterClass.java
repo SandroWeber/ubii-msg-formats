@@ -348,12 +348,12 @@ public final class ServiceReplyOuterClass {
      */
     ubii.conditions.NotifyConditionOuterClass.NotifyConditionOrBuilder getNotifyConditionOrBuilder();
 
-    ubii.services.ServiceReplyOuterClass.ServiceReply.TypeCase getTypeCase();
+    public ubii.services.ServiceReplyOuterClass.ServiceReply.TypeCase getTypeCase();
   }
   /**
    * Protobuf type {@code ubii.services.ServiceReply}
    */
-  public static final class ServiceReply extends
+  public  static final class ServiceReply extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.services.ServiceReply)
       ServiceReplyOrBuilder {
@@ -372,6 +372,356 @@ public final class ServiceReplyOuterClass {
       return new ServiceReply();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ServiceReply(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              ubii.general.SuccessOuterClass.Success.Builder subBuilder = null;
+              if (typeCase_ == 1) {
+                subBuilder = ((ubii.general.SuccessOuterClass.Success) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.general.SuccessOuterClass.Success.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.general.SuccessOuterClass.Success) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 1;
+              break;
+            }
+            case 18: {
+              ubii.general.ErrorOuterClass.Error.Builder subBuilder = null;
+              if (typeCase_ == 2) {
+                subBuilder = ((ubii.general.ErrorOuterClass.Error) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.general.ErrorOuterClass.Error.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.general.ErrorOuterClass.Error) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 2;
+              break;
+            }
+            case 26: {
+              ubii.clients.ClientOuterClass.Client.Builder subBuilder = null;
+              if (typeCase_ == 3) {
+                subBuilder = ((ubii.clients.ClientOuterClass.Client) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.clients.ClientOuterClass.Client.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.clients.ClientOuterClass.Client) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 3;
+              break;
+            }
+            case 34: {
+              ubii.devices.DeviceOuterClass.Device.Builder subBuilder = null;
+              if (typeCase_ == 4) {
+                subBuilder = ((ubii.devices.DeviceOuterClass.Device) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.DeviceOuterClass.Device.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.DeviceOuterClass.Device) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 4;
+              break;
+            }
+            case 42: {
+              ubii.servers.ServerOuterClass.Server.Builder subBuilder = null;
+              if (typeCase_ == 5) {
+                subBuilder = ((ubii.servers.ServerOuterClass.Server) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.servers.ServerOuterClass.Server.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.servers.ServerOuterClass.Server) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 5;
+              break;
+            }
+            case 50: {
+              ubii.sessions.SessionOuterClass.Session.Builder subBuilder = null;
+              if (typeCase_ == 6) {
+                subBuilder = ((ubii.sessions.SessionOuterClass.Session) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.sessions.SessionOuterClass.Session.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.sessions.SessionOuterClass.Session) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 6;
+              break;
+            }
+            case 58: {
+              ubii.sessions.SessionOuterClass.SessionList.Builder subBuilder = null;
+              if (typeCase_ == 7) {
+                subBuilder = ((ubii.sessions.SessionOuterClass.SessionList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.sessions.SessionOuterClass.SessionList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.sessions.SessionOuterClass.SessionList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 7;
+              break;
+            }
+            case 66: {
+              ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder subBuilder = null;
+              if (typeCase_ == 8) {
+                subBuilder = ((ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingModule.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 8;
+              break;
+            }
+            case 74: {
+              ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder subBuilder = null;
+              if (typeCase_ == 9) {
+                subBuilder = ((ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 9;
+              break;
+            }
+            case 82: {
+              ubii.dataStructure.Lists.StringList.Builder subBuilder = null;
+              if (typeCase_ == 10) {
+                subBuilder = ((ubii.dataStructure.Lists.StringList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.Lists.StringList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.Lists.StringList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 10;
+              break;
+            }
+            case 90: {
+              ubii.devices.TopicMuxOuterClass.TopicMux.Builder subBuilder = null;
+              if (typeCase_ == 11) {
+                subBuilder = ((ubii.devices.TopicMuxOuterClass.TopicMux) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.TopicMuxOuterClass.TopicMux.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.TopicMuxOuterClass.TopicMux) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 11;
+              break;
+            }
+            case 98: {
+              ubii.devices.TopicMuxOuterClass.TopicMuxList.Builder subBuilder = null;
+              if (typeCase_ == 12) {
+                subBuilder = ((ubii.devices.TopicMuxOuterClass.TopicMuxList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.TopicMuxOuterClass.TopicMuxList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.TopicMuxOuterClass.TopicMuxList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 12;
+              break;
+            }
+            case 106: {
+              ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder subBuilder = null;
+              if (typeCase_ == 13) {
+                subBuilder = ((ubii.devices.TopicDemuxOuterClass.TopicDemux) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.TopicDemuxOuterClass.TopicDemux.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.TopicDemuxOuterClass.TopicDemux) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 13;
+              break;
+            }
+            case 114: {
+              ubii.devices.TopicDemuxOuterClass.TopicDemuxList.Builder subBuilder = null;
+              if (typeCase_ == 14) {
+                subBuilder = ((ubii.devices.TopicDemuxOuterClass.TopicDemuxList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.TopicDemuxOuterClass.TopicDemuxList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.TopicDemuxOuterClass.TopicDemuxList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 14;
+              break;
+            }
+            case 122: {
+              ubii.clients.ClientOuterClass.ClientList.Builder subBuilder = null;
+              if (typeCase_ == 15) {
+                subBuilder = ((ubii.clients.ClientOuterClass.ClientList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.clients.ClientOuterClass.ClientList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.clients.ClientOuterClass.ClientList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 15;
+              break;
+            }
+            case 130: {
+              ubii.devices.DeviceOuterClass.DeviceList.Builder subBuilder = null;
+              if (typeCase_ == 16) {
+                subBuilder = ((ubii.devices.DeviceOuterClass.DeviceList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.DeviceOuterClass.DeviceList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.DeviceOuterClass.DeviceList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 16;
+              break;
+            }
+            case 138: {
+              ubii.services.ServiceOuterClass.Service.Builder subBuilder = null;
+              if (typeCase_ == 17) {
+                subBuilder = ((ubii.services.ServiceOuterClass.Service) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.services.ServiceOuterClass.Service.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.services.ServiceOuterClass.Service) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 17;
+              break;
+            }
+            case 146: {
+              ubii.services.ServiceOuterClass.ServiceList.Builder subBuilder = null;
+              if (typeCase_ == 18) {
+                subBuilder = ((ubii.services.ServiceOuterClass.ServiceList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.services.ServiceOuterClass.ServiceList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.services.ServiceOuterClass.ServiceList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 18;
+              break;
+            }
+            case 154: {
+              ubii.processing.LockstepProcessing.LockstepProcessingReply.Builder subBuilder = null;
+              if (typeCase_ == 19) {
+                subBuilder = ((ubii.processing.LockstepProcessing.LockstepProcessingReply) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.processing.LockstepProcessing.LockstepProcessingReply.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.processing.LockstepProcessing.LockstepProcessingReply) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 19;
+              break;
+            }
+            case 162: {
+              ubii.devices.ComponentOuterClass.Component.Builder subBuilder = null;
+              if (typeCase_ == 20) {
+                subBuilder = ((ubii.devices.ComponentOuterClass.Component) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.ComponentOuterClass.Component.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.ComponentOuterClass.Component) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 20;
+              break;
+            }
+            case 170: {
+              ubii.devices.ComponentOuterClass.ComponentList.Builder subBuilder = null;
+              if (typeCase_ == 21) {
+                subBuilder = ((ubii.devices.ComponentOuterClass.ComponentList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.ComponentOuterClass.ComponentList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.ComponentOuterClass.ComponentList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 21;
+              break;
+            }
+            case 178: {
+              ubii.conditions.NotifyConditionOuterClass.NotifyCondition.Builder subBuilder = null;
+              if (typeCase_ == 22) {
+                subBuilder = ((ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.conditions.NotifyConditionOuterClass.NotifyCondition.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 22;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.services.ServiceReplyOuterClass.internal_static_ubii_services_ServiceReply_descriptor;
@@ -386,7 +736,6 @@ public final class ServiceReplyOuterClass {
     }
 
     private int typeCase_ = 0;
-    @SuppressWarnings("serial")
     private java.lang.Object type_;
     public enum TypeCase
         implements com.google.protobuf.Internal.EnumLite,
@@ -472,7 +821,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.general.Success success = 1;</code>
      * @return Whether the success field is set.
      */
-    @java.lang.Override
     public boolean hasSuccess() {
       return typeCase_ == 1;
     }
@@ -480,7 +828,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.general.Success success = 1;</code>
      * @return The success.
      */
-    @java.lang.Override
     public ubii.general.SuccessOuterClass.Success getSuccess() {
       if (typeCase_ == 1) {
          return (ubii.general.SuccessOuterClass.Success) type_;
@@ -490,7 +837,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.general.Success success = 1;</code>
      */
-    @java.lang.Override
     public ubii.general.SuccessOuterClass.SuccessOrBuilder getSuccessOrBuilder() {
       if (typeCase_ == 1) {
          return (ubii.general.SuccessOuterClass.Success) type_;
@@ -503,7 +849,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.general.Error error = 2;</code>
      * @return Whether the error field is set.
      */
-    @java.lang.Override
     public boolean hasError() {
       return typeCase_ == 2;
     }
@@ -511,7 +856,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.general.Error error = 2;</code>
      * @return The error.
      */
-    @java.lang.Override
     public ubii.general.ErrorOuterClass.Error getError() {
       if (typeCase_ == 2) {
          return (ubii.general.ErrorOuterClass.Error) type_;
@@ -521,7 +865,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.general.Error error = 2;</code>
      */
-    @java.lang.Override
     public ubii.general.ErrorOuterClass.ErrorOrBuilder getErrorOrBuilder() {
       if (typeCase_ == 2) {
          return (ubii.general.ErrorOuterClass.Error) type_;
@@ -534,7 +877,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.clients.Client client = 3;</code>
      * @return Whether the client field is set.
      */
-    @java.lang.Override
     public boolean hasClient() {
       return typeCase_ == 3;
     }
@@ -542,7 +884,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.clients.Client client = 3;</code>
      * @return The client.
      */
-    @java.lang.Override
     public ubii.clients.ClientOuterClass.Client getClient() {
       if (typeCase_ == 3) {
          return (ubii.clients.ClientOuterClass.Client) type_;
@@ -552,7 +893,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.clients.Client client = 3;</code>
      */
-    @java.lang.Override
     public ubii.clients.ClientOuterClass.ClientOrBuilder getClientOrBuilder() {
       if (typeCase_ == 3) {
          return (ubii.clients.ClientOuterClass.Client) type_;
@@ -565,7 +905,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.Device device = 4;</code>
      * @return Whether the device field is set.
      */
-    @java.lang.Override
     public boolean hasDevice() {
       return typeCase_ == 4;
     }
@@ -573,7 +912,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.Device device = 4;</code>
      * @return The device.
      */
-    @java.lang.Override
     public ubii.devices.DeviceOuterClass.Device getDevice() {
       if (typeCase_ == 4) {
          return (ubii.devices.DeviceOuterClass.Device) type_;
@@ -583,7 +921,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.devices.Device device = 4;</code>
      */
-    @java.lang.Override
     public ubii.devices.DeviceOuterClass.DeviceOrBuilder getDeviceOrBuilder() {
       if (typeCase_ == 4) {
          return (ubii.devices.DeviceOuterClass.Device) type_;
@@ -596,7 +933,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.servers.Server server = 5;</code>
      * @return Whether the server field is set.
      */
-    @java.lang.Override
     public boolean hasServer() {
       return typeCase_ == 5;
     }
@@ -604,7 +940,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.servers.Server server = 5;</code>
      * @return The server.
      */
-    @java.lang.Override
     public ubii.servers.ServerOuterClass.Server getServer() {
       if (typeCase_ == 5) {
          return (ubii.servers.ServerOuterClass.Server) type_;
@@ -614,7 +949,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.servers.Server server = 5;</code>
      */
-    @java.lang.Override
     public ubii.servers.ServerOuterClass.ServerOrBuilder getServerOrBuilder() {
       if (typeCase_ == 5) {
          return (ubii.servers.ServerOuterClass.Server) type_;
@@ -627,7 +961,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.sessions.Session session = 6;</code>
      * @return Whether the session field is set.
      */
-    @java.lang.Override
     public boolean hasSession() {
       return typeCase_ == 6;
     }
@@ -635,7 +968,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.sessions.Session session = 6;</code>
      * @return The session.
      */
-    @java.lang.Override
     public ubii.sessions.SessionOuterClass.Session getSession() {
       if (typeCase_ == 6) {
          return (ubii.sessions.SessionOuterClass.Session) type_;
@@ -645,7 +977,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.sessions.Session session = 6;</code>
      */
-    @java.lang.Override
     public ubii.sessions.SessionOuterClass.SessionOrBuilder getSessionOrBuilder() {
       if (typeCase_ == 6) {
          return (ubii.sessions.SessionOuterClass.Session) type_;
@@ -658,7 +989,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.sessions.SessionList session_list = 7;</code>
      * @return Whether the sessionList field is set.
      */
-    @java.lang.Override
     public boolean hasSessionList() {
       return typeCase_ == 7;
     }
@@ -666,7 +996,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.sessions.SessionList session_list = 7;</code>
      * @return The sessionList.
      */
-    @java.lang.Override
     public ubii.sessions.SessionOuterClass.SessionList getSessionList() {
       if (typeCase_ == 7) {
          return (ubii.sessions.SessionOuterClass.SessionList) type_;
@@ -676,7 +1005,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.sessions.SessionList session_list = 7;</code>
      */
-    @java.lang.Override
     public ubii.sessions.SessionOuterClass.SessionListOrBuilder getSessionListOrBuilder() {
       if (typeCase_ == 7) {
          return (ubii.sessions.SessionOuterClass.SessionList) type_;
@@ -689,7 +1017,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.processing.ProcessingModule processing_module = 8;</code>
      * @return Whether the processingModule field is set.
      */
-    @java.lang.Override
     public boolean hasProcessingModule() {
       return typeCase_ == 8;
     }
@@ -697,7 +1024,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.processing.ProcessingModule processing_module = 8;</code>
      * @return The processingModule.
      */
-    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModule() {
       if (typeCase_ == 8) {
          return (ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_;
@@ -707,7 +1033,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.processing.ProcessingModule processing_module = 8;</code>
      */
-    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModuleOrBuilder() {
       if (typeCase_ == 8) {
          return (ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_;
@@ -720,7 +1045,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.processing.ProcessingModuleList processing_module_list = 9;</code>
      * @return Whether the processingModuleList field is set.
      */
-    @java.lang.Override
     public boolean hasProcessingModuleList() {
       return typeCase_ == 9;
     }
@@ -728,7 +1052,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.processing.ProcessingModuleList processing_module_list = 9;</code>
      * @return The processingModuleList.
      */
-    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList() {
       if (typeCase_ == 9) {
          return (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_;
@@ -738,7 +1061,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.processing.ProcessingModuleList processing_module_list = 9;</code>
      */
-    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder getProcessingModuleListOrBuilder() {
       if (typeCase_ == 9) {
          return (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_;
@@ -751,7 +1073,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.dataStructure.StringList string_list = 10;</code>
      * @return Whether the stringList field is set.
      */
-    @java.lang.Override
     public boolean hasStringList() {
       return typeCase_ == 10;
     }
@@ -759,7 +1080,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.dataStructure.StringList string_list = 10;</code>
      * @return The stringList.
      */
-    @java.lang.Override
     public ubii.dataStructure.Lists.StringList getStringList() {
       if (typeCase_ == 10) {
          return (ubii.dataStructure.Lists.StringList) type_;
@@ -769,7 +1089,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.dataStructure.StringList string_list = 10;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Lists.StringListOrBuilder getStringListOrBuilder() {
       if (typeCase_ == 10) {
          return (ubii.dataStructure.Lists.StringList) type_;
@@ -782,7 +1101,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.TopicMux topic_mux = 11;</code>
      * @return Whether the topicMux field is set.
      */
-    @java.lang.Override
     public boolean hasTopicMux() {
       return typeCase_ == 11;
     }
@@ -790,7 +1108,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.TopicMux topic_mux = 11;</code>
      * @return The topicMux.
      */
-    @java.lang.Override
     public ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux() {
       if (typeCase_ == 11) {
          return (ubii.devices.TopicMuxOuterClass.TopicMux) type_;
@@ -800,7 +1117,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.devices.TopicMux topic_mux = 11;</code>
      */
-    @java.lang.Override
     public ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getTopicMuxOrBuilder() {
       if (typeCase_ == 11) {
          return (ubii.devices.TopicMuxOuterClass.TopicMux) type_;
@@ -813,7 +1129,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.TopicMuxList topic_mux_list = 12;</code>
      * @return Whether the topicMuxList field is set.
      */
-    @java.lang.Override
     public boolean hasTopicMuxList() {
       return typeCase_ == 12;
     }
@@ -821,7 +1136,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.TopicMuxList topic_mux_list = 12;</code>
      * @return The topicMuxList.
      */
-    @java.lang.Override
     public ubii.devices.TopicMuxOuterClass.TopicMuxList getTopicMuxList() {
       if (typeCase_ == 12) {
          return (ubii.devices.TopicMuxOuterClass.TopicMuxList) type_;
@@ -831,7 +1145,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.devices.TopicMuxList topic_mux_list = 12;</code>
      */
-    @java.lang.Override
     public ubii.devices.TopicMuxOuterClass.TopicMuxListOrBuilder getTopicMuxListOrBuilder() {
       if (typeCase_ == 12) {
          return (ubii.devices.TopicMuxOuterClass.TopicMuxList) type_;
@@ -844,7 +1157,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.TopicDemux topic_demux = 13;</code>
      * @return Whether the topicDemux field is set.
      */
-    @java.lang.Override
     public boolean hasTopicDemux() {
       return typeCase_ == 13;
     }
@@ -852,7 +1164,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.TopicDemux topic_demux = 13;</code>
      * @return The topicDemux.
      */
-    @java.lang.Override
     public ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux() {
       if (typeCase_ == 13) {
          return (ubii.devices.TopicDemuxOuterClass.TopicDemux) type_;
@@ -862,7 +1173,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.devices.TopicDemux topic_demux = 13;</code>
      */
-    @java.lang.Override
     public ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getTopicDemuxOrBuilder() {
       if (typeCase_ == 13) {
          return (ubii.devices.TopicDemuxOuterClass.TopicDemux) type_;
@@ -875,7 +1185,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.TopicDemuxList topic_demux_list = 14;</code>
      * @return Whether the topicDemuxList field is set.
      */
-    @java.lang.Override
     public boolean hasTopicDemuxList() {
       return typeCase_ == 14;
     }
@@ -883,7 +1192,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.TopicDemuxList topic_demux_list = 14;</code>
      * @return The topicDemuxList.
      */
-    @java.lang.Override
     public ubii.devices.TopicDemuxOuterClass.TopicDemuxList getTopicDemuxList() {
       if (typeCase_ == 14) {
          return (ubii.devices.TopicDemuxOuterClass.TopicDemuxList) type_;
@@ -893,7 +1201,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.devices.TopicDemuxList topic_demux_list = 14;</code>
      */
-    @java.lang.Override
     public ubii.devices.TopicDemuxOuterClass.TopicDemuxListOrBuilder getTopicDemuxListOrBuilder() {
       if (typeCase_ == 14) {
          return (ubii.devices.TopicDemuxOuterClass.TopicDemuxList) type_;
@@ -906,7 +1213,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.clients.ClientList client_list = 15;</code>
      * @return Whether the clientList field is set.
      */
-    @java.lang.Override
     public boolean hasClientList() {
       return typeCase_ == 15;
     }
@@ -914,7 +1220,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.clients.ClientList client_list = 15;</code>
      * @return The clientList.
      */
-    @java.lang.Override
     public ubii.clients.ClientOuterClass.ClientList getClientList() {
       if (typeCase_ == 15) {
          return (ubii.clients.ClientOuterClass.ClientList) type_;
@@ -924,7 +1229,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.clients.ClientList client_list = 15;</code>
      */
-    @java.lang.Override
     public ubii.clients.ClientOuterClass.ClientListOrBuilder getClientListOrBuilder() {
       if (typeCase_ == 15) {
          return (ubii.clients.ClientOuterClass.ClientList) type_;
@@ -937,7 +1241,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.DeviceList device_list = 16;</code>
      * @return Whether the deviceList field is set.
      */
-    @java.lang.Override
     public boolean hasDeviceList() {
       return typeCase_ == 16;
     }
@@ -945,7 +1248,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.DeviceList device_list = 16;</code>
      * @return The deviceList.
      */
-    @java.lang.Override
     public ubii.devices.DeviceOuterClass.DeviceList getDeviceList() {
       if (typeCase_ == 16) {
          return (ubii.devices.DeviceOuterClass.DeviceList) type_;
@@ -955,7 +1257,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.devices.DeviceList device_list = 16;</code>
      */
-    @java.lang.Override
     public ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder() {
       if (typeCase_ == 16) {
          return (ubii.devices.DeviceOuterClass.DeviceList) type_;
@@ -968,7 +1269,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.services.Service service = 17;</code>
      * @return Whether the service field is set.
      */
-    @java.lang.Override
     public boolean hasService() {
       return typeCase_ == 17;
     }
@@ -976,7 +1276,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.services.Service service = 17;</code>
      * @return The service.
      */
-    @java.lang.Override
     public ubii.services.ServiceOuterClass.Service getService() {
       if (typeCase_ == 17) {
          return (ubii.services.ServiceOuterClass.Service) type_;
@@ -986,7 +1285,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.services.Service service = 17;</code>
      */
-    @java.lang.Override
     public ubii.services.ServiceOuterClass.ServiceOrBuilder getServiceOrBuilder() {
       if (typeCase_ == 17) {
          return (ubii.services.ServiceOuterClass.Service) type_;
@@ -999,7 +1297,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.services.ServiceList service_list = 18;</code>
      * @return Whether the serviceList field is set.
      */
-    @java.lang.Override
     public boolean hasServiceList() {
       return typeCase_ == 18;
     }
@@ -1007,7 +1304,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.services.ServiceList service_list = 18;</code>
      * @return The serviceList.
      */
-    @java.lang.Override
     public ubii.services.ServiceOuterClass.ServiceList getServiceList() {
       if (typeCase_ == 18) {
          return (ubii.services.ServiceOuterClass.ServiceList) type_;
@@ -1017,7 +1313,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.services.ServiceList service_list = 18;</code>
      */
-    @java.lang.Override
     public ubii.services.ServiceOuterClass.ServiceListOrBuilder getServiceListOrBuilder() {
       if (typeCase_ == 18) {
          return (ubii.services.ServiceOuterClass.ServiceList) type_;
@@ -1030,7 +1325,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.processing.LockstepProcessingReply lockstep_processing_reply = 19;</code>
      * @return Whether the lockstepProcessingReply field is set.
      */
-    @java.lang.Override
     public boolean hasLockstepProcessingReply() {
       return typeCase_ == 19;
     }
@@ -1038,7 +1332,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.processing.LockstepProcessingReply lockstep_processing_reply = 19;</code>
      * @return The lockstepProcessingReply.
      */
-    @java.lang.Override
     public ubii.processing.LockstepProcessing.LockstepProcessingReply getLockstepProcessingReply() {
       if (typeCase_ == 19) {
          return (ubii.processing.LockstepProcessing.LockstepProcessingReply) type_;
@@ -1048,7 +1341,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.processing.LockstepProcessingReply lockstep_processing_reply = 19;</code>
      */
-    @java.lang.Override
     public ubii.processing.LockstepProcessing.LockstepProcessingReplyOrBuilder getLockstepProcessingReplyOrBuilder() {
       if (typeCase_ == 19) {
          return (ubii.processing.LockstepProcessing.LockstepProcessingReply) type_;
@@ -1061,7 +1353,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.Component component = 20;</code>
      * @return Whether the component field is set.
      */
-    @java.lang.Override
     public boolean hasComponent() {
       return typeCase_ == 20;
     }
@@ -1069,7 +1360,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.Component component = 20;</code>
      * @return The component.
      */
-    @java.lang.Override
     public ubii.devices.ComponentOuterClass.Component getComponent() {
       if (typeCase_ == 20) {
          return (ubii.devices.ComponentOuterClass.Component) type_;
@@ -1079,7 +1369,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.devices.Component component = 20;</code>
      */
-    @java.lang.Override
     public ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentOrBuilder() {
       if (typeCase_ == 20) {
          return (ubii.devices.ComponentOuterClass.Component) type_;
@@ -1092,7 +1381,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.ComponentList component_list = 21;</code>
      * @return Whether the componentList field is set.
      */
-    @java.lang.Override
     public boolean hasComponentList() {
       return typeCase_ == 21;
     }
@@ -1100,7 +1388,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.devices.ComponentList component_list = 21;</code>
      * @return The componentList.
      */
-    @java.lang.Override
     public ubii.devices.ComponentOuterClass.ComponentList getComponentList() {
       if (typeCase_ == 21) {
          return (ubii.devices.ComponentOuterClass.ComponentList) type_;
@@ -1110,7 +1397,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.devices.ComponentList component_list = 21;</code>
      */
-    @java.lang.Override
     public ubii.devices.ComponentOuterClass.ComponentListOrBuilder getComponentListOrBuilder() {
       if (typeCase_ == 21) {
          return (ubii.devices.ComponentOuterClass.ComponentList) type_;
@@ -1123,7 +1409,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.conditions.NotifyCondition notify_condition = 22;</code>
      * @return Whether the notifyCondition field is set.
      */
-    @java.lang.Override
     public boolean hasNotifyCondition() {
       return typeCase_ == 22;
     }
@@ -1131,7 +1416,6 @@ public final class ServiceReplyOuterClass {
      * <code>.ubii.conditions.NotifyCondition notify_condition = 22;</code>
      * @return The notifyCondition.
      */
-    @java.lang.Override
     public ubii.conditions.NotifyConditionOuterClass.NotifyCondition getNotifyCondition() {
       if (typeCase_ == 22) {
          return (ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_;
@@ -1141,7 +1425,6 @@ public final class ServiceReplyOuterClass {
     /**
      * <code>.ubii.conditions.NotifyCondition notify_condition = 22;</code>
      */
-    @java.lang.Override
     public ubii.conditions.NotifyConditionOuterClass.NotifyConditionOrBuilder getNotifyConditionOrBuilder() {
       if (typeCase_ == 22) {
          return (ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_;
@@ -1229,7 +1512,7 @@ public final class ServiceReplyOuterClass {
       if (typeCase_ == 22) {
         output.writeMessage(22, (ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1326,7 +1609,7 @@ public final class ServiceReplyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(22, (ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1434,7 +1717,7 @@ public final class ServiceReplyOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1537,7 +1820,7 @@ public final class ServiceReplyOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1654,84 +1937,22 @@ public final class ServiceReplyOuterClass {
 
       // Construct using ubii.services.ServiceReplyOuterClass.ServiceReply.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        if (successBuilder_ != null) {
-          successBuilder_.clear();
-        }
-        if (errorBuilder_ != null) {
-          errorBuilder_.clear();
-        }
-        if (clientBuilder_ != null) {
-          clientBuilder_.clear();
-        }
-        if (deviceBuilder_ != null) {
-          deviceBuilder_.clear();
-        }
-        if (serverBuilder_ != null) {
-          serverBuilder_.clear();
-        }
-        if (sessionBuilder_ != null) {
-          sessionBuilder_.clear();
-        }
-        if (sessionListBuilder_ != null) {
-          sessionListBuilder_.clear();
-        }
-        if (processingModuleBuilder_ != null) {
-          processingModuleBuilder_.clear();
-        }
-        if (processingModuleListBuilder_ != null) {
-          processingModuleListBuilder_.clear();
-        }
-        if (stringListBuilder_ != null) {
-          stringListBuilder_.clear();
-        }
-        if (topicMuxBuilder_ != null) {
-          topicMuxBuilder_.clear();
-        }
-        if (topicMuxListBuilder_ != null) {
-          topicMuxListBuilder_.clear();
-        }
-        if (topicDemuxBuilder_ != null) {
-          topicDemuxBuilder_.clear();
-        }
-        if (topicDemuxListBuilder_ != null) {
-          topicDemuxListBuilder_.clear();
-        }
-        if (clientListBuilder_ != null) {
-          clientListBuilder_.clear();
-        }
-        if (deviceListBuilder_ != null) {
-          deviceListBuilder_.clear();
-        }
-        if (serviceBuilder_ != null) {
-          serviceBuilder_.clear();
-        }
-        if (serviceListBuilder_ != null) {
-          serviceListBuilder_.clear();
-        }
-        if (lockstepProcessingReplyBuilder_ != null) {
-          lockstepProcessingReplyBuilder_.clear();
-        }
-        if (componentBuilder_ != null) {
-          componentBuilder_.clear();
-        }
-        if (componentListBuilder_ != null) {
-          componentListBuilder_.clear();
-        }
-        if (notifyConditionBuilder_ != null) {
-          notifyConditionBuilder_.clear();
-        }
         typeCase_ = 0;
         type_ = null;
         return this;
@@ -1760,109 +1981,197 @@ public final class ServiceReplyOuterClass {
       @java.lang.Override
       public ubii.services.ServiceReplyOuterClass.ServiceReply buildPartial() {
         ubii.services.ServiceReplyOuterClass.ServiceReply result = new ubii.services.ServiceReplyOuterClass.ServiceReply(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        if (typeCase_ == 1) {
+          if (successBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = successBuilder_.build();
+          }
+        }
+        if (typeCase_ == 2) {
+          if (errorBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = errorBuilder_.build();
+          }
+        }
+        if (typeCase_ == 3) {
+          if (clientBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = clientBuilder_.build();
+          }
+        }
+        if (typeCase_ == 4) {
+          if (deviceBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = deviceBuilder_.build();
+          }
+        }
+        if (typeCase_ == 5) {
+          if (serverBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = serverBuilder_.build();
+          }
+        }
+        if (typeCase_ == 6) {
+          if (sessionBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = sessionBuilder_.build();
+          }
+        }
+        if (typeCase_ == 7) {
+          if (sessionListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = sessionListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 8) {
+          if (processingModuleBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = processingModuleBuilder_.build();
+          }
+        }
+        if (typeCase_ == 9) {
+          if (processingModuleListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = processingModuleListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 10) {
+          if (stringListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = stringListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 11) {
+          if (topicMuxBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = topicMuxBuilder_.build();
+          }
+        }
+        if (typeCase_ == 12) {
+          if (topicMuxListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = topicMuxListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 13) {
+          if (topicDemuxBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = topicDemuxBuilder_.build();
+          }
+        }
+        if (typeCase_ == 14) {
+          if (topicDemuxListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = topicDemuxListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 15) {
+          if (clientListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = clientListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 16) {
+          if (deviceListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = deviceListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 17) {
+          if (serviceBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = serviceBuilder_.build();
+          }
+        }
+        if (typeCase_ == 18) {
+          if (serviceListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = serviceListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 19) {
+          if (lockstepProcessingReplyBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = lockstepProcessingReplyBuilder_.build();
+          }
+        }
+        if (typeCase_ == 20) {
+          if (componentBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = componentBuilder_.build();
+          }
+        }
+        if (typeCase_ == 21) {
+          if (componentListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = componentListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 22) {
+          if (notifyConditionBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = notifyConditionBuilder_.build();
+          }
+        }
+        result.typeCase_ = typeCase_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(ubii.services.ServiceReplyOuterClass.ServiceReply result) {
-        int from_bitField0_ = bitField0_;
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
-      private void buildPartialOneofs(ubii.services.ServiceReplyOuterClass.ServiceReply result) {
-        result.typeCase_ = typeCase_;
-        result.type_ = this.type_;
-        if (typeCase_ == 1 &&
-            successBuilder_ != null) {
-          result.type_ = successBuilder_.build();
-        }
-        if (typeCase_ == 2 &&
-            errorBuilder_ != null) {
-          result.type_ = errorBuilder_.build();
-        }
-        if (typeCase_ == 3 &&
-            clientBuilder_ != null) {
-          result.type_ = clientBuilder_.build();
-        }
-        if (typeCase_ == 4 &&
-            deviceBuilder_ != null) {
-          result.type_ = deviceBuilder_.build();
-        }
-        if (typeCase_ == 5 &&
-            serverBuilder_ != null) {
-          result.type_ = serverBuilder_.build();
-        }
-        if (typeCase_ == 6 &&
-            sessionBuilder_ != null) {
-          result.type_ = sessionBuilder_.build();
-        }
-        if (typeCase_ == 7 &&
-            sessionListBuilder_ != null) {
-          result.type_ = sessionListBuilder_.build();
-        }
-        if (typeCase_ == 8 &&
-            processingModuleBuilder_ != null) {
-          result.type_ = processingModuleBuilder_.build();
-        }
-        if (typeCase_ == 9 &&
-            processingModuleListBuilder_ != null) {
-          result.type_ = processingModuleListBuilder_.build();
-        }
-        if (typeCase_ == 10 &&
-            stringListBuilder_ != null) {
-          result.type_ = stringListBuilder_.build();
-        }
-        if (typeCase_ == 11 &&
-            topicMuxBuilder_ != null) {
-          result.type_ = topicMuxBuilder_.build();
-        }
-        if (typeCase_ == 12 &&
-            topicMuxListBuilder_ != null) {
-          result.type_ = topicMuxListBuilder_.build();
-        }
-        if (typeCase_ == 13 &&
-            topicDemuxBuilder_ != null) {
-          result.type_ = topicDemuxBuilder_.build();
-        }
-        if (typeCase_ == 14 &&
-            topicDemuxListBuilder_ != null) {
-          result.type_ = topicDemuxListBuilder_.build();
-        }
-        if (typeCase_ == 15 &&
-            clientListBuilder_ != null) {
-          result.type_ = clientListBuilder_.build();
-        }
-        if (typeCase_ == 16 &&
-            deviceListBuilder_ != null) {
-          result.type_ = deviceListBuilder_.build();
-        }
-        if (typeCase_ == 17 &&
-            serviceBuilder_ != null) {
-          result.type_ = serviceBuilder_.build();
-        }
-        if (typeCase_ == 18 &&
-            serviceListBuilder_ != null) {
-          result.type_ = serviceListBuilder_.build();
-        }
-        if (typeCase_ == 19 &&
-            lockstepProcessingReplyBuilder_ != null) {
-          result.type_ = lockstepProcessingReplyBuilder_.build();
-        }
-        if (typeCase_ == 20 &&
-            componentBuilder_ != null) {
-          result.type_ = componentBuilder_.build();
-        }
-        if (typeCase_ == 21 &&
-            componentListBuilder_ != null) {
-          result.type_ = componentListBuilder_.build();
-        }
-        if (typeCase_ == 22 &&
-            notifyConditionBuilder_ != null) {
-          result.type_ = notifyConditionBuilder_.build();
-        }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
-
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.services.ServiceReplyOuterClass.ServiceReply) {
@@ -1968,7 +2277,7 @@ public final class ServiceReplyOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1983,184 +2292,17 @@ public final class ServiceReplyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.services.ServiceReplyOuterClass.ServiceReply parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getSuccessFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 1;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getErrorFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 2;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getClientFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 3;
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getDeviceFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 4;
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getServerFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 5;
-                break;
-              } // case 42
-              case 50: {
-                input.readMessage(
-                    getSessionFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 6;
-                break;
-              } // case 50
-              case 58: {
-                input.readMessage(
-                    getSessionListFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 7;
-                break;
-              } // case 58
-              case 66: {
-                input.readMessage(
-                    getProcessingModuleFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 8;
-                break;
-              } // case 66
-              case 74: {
-                input.readMessage(
-                    getProcessingModuleListFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 9;
-                break;
-              } // case 74
-              case 82: {
-                input.readMessage(
-                    getStringListFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 10;
-                break;
-              } // case 82
-              case 90: {
-                input.readMessage(
-                    getTopicMuxFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 11;
-                break;
-              } // case 90
-              case 98: {
-                input.readMessage(
-                    getTopicMuxListFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 12;
-                break;
-              } // case 98
-              case 106: {
-                input.readMessage(
-                    getTopicDemuxFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 13;
-                break;
-              } // case 106
-              case 114: {
-                input.readMessage(
-                    getTopicDemuxListFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 14;
-                break;
-              } // case 114
-              case 122: {
-                input.readMessage(
-                    getClientListFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 15;
-                break;
-              } // case 122
-              case 130: {
-                input.readMessage(
-                    getDeviceListFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 16;
-                break;
-              } // case 130
-              case 138: {
-                input.readMessage(
-                    getServiceFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 17;
-                break;
-              } // case 138
-              case 146: {
-                input.readMessage(
-                    getServiceListFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 18;
-                break;
-              } // case 146
-              case 154: {
-                input.readMessage(
-                    getLockstepProcessingReplyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 19;
-                break;
-              } // case 154
-              case 162: {
-                input.readMessage(
-                    getComponentFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 20;
-                break;
-              } // case 162
-              case 170: {
-                input.readMessage(
-                    getComponentListFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 21;
-                break;
-              } // case 170
-              case 178: {
-                input.readMessage(
-                    getNotifyConditionFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                typeCase_ = 22;
-                break;
-              } // case 178
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.services.ServiceReplyOuterClass.ServiceReply) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int typeCase_ = 0;
@@ -2178,7 +2320,6 @@ public final class ServiceReplyOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.general.SuccessOuterClass.Success, ubii.general.SuccessOuterClass.Success.Builder, ubii.general.SuccessOuterClass.SuccessOrBuilder> successBuilder_;
@@ -2186,7 +2327,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.general.Success success = 1;</code>
        * @return Whether the success field is set.
        */
-      @java.lang.Override
       public boolean hasSuccess() {
         return typeCase_ == 1;
       }
@@ -2194,7 +2334,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.general.Success success = 1;</code>
        * @return The success.
        */
-      @java.lang.Override
       public ubii.general.SuccessOuterClass.Success getSuccess() {
         if (successBuilder_ == null) {
           if (typeCase_ == 1) {
@@ -2254,9 +2393,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 1) {
             successBuilder_.mergeFrom(value);
-          } else {
-            successBuilder_.setMessage(value);
           }
+          successBuilder_.setMessage(value);
         }
         typeCase_ = 1;
         return this;
@@ -2289,7 +2427,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.general.Success success = 1;</code>
        */
-      @java.lang.Override
       public ubii.general.SuccessOuterClass.SuccessOrBuilder getSuccessOrBuilder() {
         if ((typeCase_ == 1) && (successBuilder_ != null)) {
           return successBuilder_.getMessageOrBuilder();
@@ -2318,7 +2455,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 1;
-        onChanged();
+        onChanged();;
         return successBuilder_;
       }
 
@@ -2328,7 +2465,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.general.Error error = 2;</code>
        * @return Whether the error field is set.
        */
-      @java.lang.Override
       public boolean hasError() {
         return typeCase_ == 2;
       }
@@ -2336,7 +2472,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.general.Error error = 2;</code>
        * @return The error.
        */
-      @java.lang.Override
       public ubii.general.ErrorOuterClass.Error getError() {
         if (errorBuilder_ == null) {
           if (typeCase_ == 2) {
@@ -2396,9 +2531,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 2) {
             errorBuilder_.mergeFrom(value);
-          } else {
-            errorBuilder_.setMessage(value);
           }
+          errorBuilder_.setMessage(value);
         }
         typeCase_ = 2;
         return this;
@@ -2431,7 +2565,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.general.Error error = 2;</code>
        */
-      @java.lang.Override
       public ubii.general.ErrorOuterClass.ErrorOrBuilder getErrorOrBuilder() {
         if ((typeCase_ == 2) && (errorBuilder_ != null)) {
           return errorBuilder_.getMessageOrBuilder();
@@ -2460,7 +2593,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 2;
-        onChanged();
+        onChanged();;
         return errorBuilder_;
       }
 
@@ -2470,7 +2603,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.clients.Client client = 3;</code>
        * @return Whether the client field is set.
        */
-      @java.lang.Override
       public boolean hasClient() {
         return typeCase_ == 3;
       }
@@ -2478,7 +2610,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.clients.Client client = 3;</code>
        * @return The client.
        */
-      @java.lang.Override
       public ubii.clients.ClientOuterClass.Client getClient() {
         if (clientBuilder_ == null) {
           if (typeCase_ == 3) {
@@ -2538,9 +2669,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 3) {
             clientBuilder_.mergeFrom(value);
-          } else {
-            clientBuilder_.setMessage(value);
           }
+          clientBuilder_.setMessage(value);
         }
         typeCase_ = 3;
         return this;
@@ -2573,7 +2703,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.clients.Client client = 3;</code>
        */
-      @java.lang.Override
       public ubii.clients.ClientOuterClass.ClientOrBuilder getClientOrBuilder() {
         if ((typeCase_ == 3) && (clientBuilder_ != null)) {
           return clientBuilder_.getMessageOrBuilder();
@@ -2602,7 +2731,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 3;
-        onChanged();
+        onChanged();;
         return clientBuilder_;
       }
 
@@ -2612,7 +2741,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.Device device = 4;</code>
        * @return Whether the device field is set.
        */
-      @java.lang.Override
       public boolean hasDevice() {
         return typeCase_ == 4;
       }
@@ -2620,7 +2748,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.Device device = 4;</code>
        * @return The device.
        */
-      @java.lang.Override
       public ubii.devices.DeviceOuterClass.Device getDevice() {
         if (deviceBuilder_ == null) {
           if (typeCase_ == 4) {
@@ -2680,9 +2807,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 4) {
             deviceBuilder_.mergeFrom(value);
-          } else {
-            deviceBuilder_.setMessage(value);
           }
+          deviceBuilder_.setMessage(value);
         }
         typeCase_ = 4;
         return this;
@@ -2715,7 +2841,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.devices.Device device = 4;</code>
        */
-      @java.lang.Override
       public ubii.devices.DeviceOuterClass.DeviceOrBuilder getDeviceOrBuilder() {
         if ((typeCase_ == 4) && (deviceBuilder_ != null)) {
           return deviceBuilder_.getMessageOrBuilder();
@@ -2744,7 +2869,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 4;
-        onChanged();
+        onChanged();;
         return deviceBuilder_;
       }
 
@@ -2754,7 +2879,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.servers.Server server = 5;</code>
        * @return Whether the server field is set.
        */
-      @java.lang.Override
       public boolean hasServer() {
         return typeCase_ == 5;
       }
@@ -2762,7 +2886,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.servers.Server server = 5;</code>
        * @return The server.
        */
-      @java.lang.Override
       public ubii.servers.ServerOuterClass.Server getServer() {
         if (serverBuilder_ == null) {
           if (typeCase_ == 5) {
@@ -2822,9 +2945,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 5) {
             serverBuilder_.mergeFrom(value);
-          } else {
-            serverBuilder_.setMessage(value);
           }
+          serverBuilder_.setMessage(value);
         }
         typeCase_ = 5;
         return this;
@@ -2857,7 +2979,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.servers.Server server = 5;</code>
        */
-      @java.lang.Override
       public ubii.servers.ServerOuterClass.ServerOrBuilder getServerOrBuilder() {
         if ((typeCase_ == 5) && (serverBuilder_ != null)) {
           return serverBuilder_.getMessageOrBuilder();
@@ -2886,7 +3007,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 5;
-        onChanged();
+        onChanged();;
         return serverBuilder_;
       }
 
@@ -2896,7 +3017,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.sessions.Session session = 6;</code>
        * @return Whether the session field is set.
        */
-      @java.lang.Override
       public boolean hasSession() {
         return typeCase_ == 6;
       }
@@ -2904,7 +3024,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.sessions.Session session = 6;</code>
        * @return The session.
        */
-      @java.lang.Override
       public ubii.sessions.SessionOuterClass.Session getSession() {
         if (sessionBuilder_ == null) {
           if (typeCase_ == 6) {
@@ -2964,9 +3083,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 6) {
             sessionBuilder_.mergeFrom(value);
-          } else {
-            sessionBuilder_.setMessage(value);
           }
+          sessionBuilder_.setMessage(value);
         }
         typeCase_ = 6;
         return this;
@@ -2999,7 +3117,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.sessions.Session session = 6;</code>
        */
-      @java.lang.Override
       public ubii.sessions.SessionOuterClass.SessionOrBuilder getSessionOrBuilder() {
         if ((typeCase_ == 6) && (sessionBuilder_ != null)) {
           return sessionBuilder_.getMessageOrBuilder();
@@ -3028,7 +3145,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 6;
-        onChanged();
+        onChanged();;
         return sessionBuilder_;
       }
 
@@ -3038,7 +3155,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.sessions.SessionList session_list = 7;</code>
        * @return Whether the sessionList field is set.
        */
-      @java.lang.Override
       public boolean hasSessionList() {
         return typeCase_ == 7;
       }
@@ -3046,7 +3162,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.sessions.SessionList session_list = 7;</code>
        * @return The sessionList.
        */
-      @java.lang.Override
       public ubii.sessions.SessionOuterClass.SessionList getSessionList() {
         if (sessionListBuilder_ == null) {
           if (typeCase_ == 7) {
@@ -3106,9 +3221,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 7) {
             sessionListBuilder_.mergeFrom(value);
-          } else {
-            sessionListBuilder_.setMessage(value);
           }
+          sessionListBuilder_.setMessage(value);
         }
         typeCase_ = 7;
         return this;
@@ -3141,7 +3255,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.sessions.SessionList session_list = 7;</code>
        */
-      @java.lang.Override
       public ubii.sessions.SessionOuterClass.SessionListOrBuilder getSessionListOrBuilder() {
         if ((typeCase_ == 7) && (sessionListBuilder_ != null)) {
           return sessionListBuilder_.getMessageOrBuilder();
@@ -3170,7 +3283,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 7;
-        onChanged();
+        onChanged();;
         return sessionListBuilder_;
       }
 
@@ -3180,7 +3293,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.processing.ProcessingModule processing_module = 8;</code>
        * @return Whether the processingModule field is set.
        */
-      @java.lang.Override
       public boolean hasProcessingModule() {
         return typeCase_ == 8;
       }
@@ -3188,7 +3300,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.processing.ProcessingModule processing_module = 8;</code>
        * @return The processingModule.
        */
-      @java.lang.Override
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModule() {
         if (processingModuleBuilder_ == null) {
           if (typeCase_ == 8) {
@@ -3248,9 +3359,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 8) {
             processingModuleBuilder_.mergeFrom(value);
-          } else {
-            processingModuleBuilder_.setMessage(value);
           }
+          processingModuleBuilder_.setMessage(value);
         }
         typeCase_ = 8;
         return this;
@@ -3283,7 +3393,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.processing.ProcessingModule processing_module = 8;</code>
        */
-      @java.lang.Override
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModuleOrBuilder() {
         if ((typeCase_ == 8) && (processingModuleBuilder_ != null)) {
           return processingModuleBuilder_.getMessageOrBuilder();
@@ -3312,7 +3421,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 8;
-        onChanged();
+        onChanged();;
         return processingModuleBuilder_;
       }
 
@@ -3322,7 +3431,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.processing.ProcessingModuleList processing_module_list = 9;</code>
        * @return Whether the processingModuleList field is set.
        */
-      @java.lang.Override
       public boolean hasProcessingModuleList() {
         return typeCase_ == 9;
       }
@@ -3330,7 +3438,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.processing.ProcessingModuleList processing_module_list = 9;</code>
        * @return The processingModuleList.
        */
-      @java.lang.Override
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList() {
         if (processingModuleListBuilder_ == null) {
           if (typeCase_ == 9) {
@@ -3390,9 +3497,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 9) {
             processingModuleListBuilder_.mergeFrom(value);
-          } else {
-            processingModuleListBuilder_.setMessage(value);
           }
+          processingModuleListBuilder_.setMessage(value);
         }
         typeCase_ = 9;
         return this;
@@ -3425,7 +3531,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.processing.ProcessingModuleList processing_module_list = 9;</code>
        */
-      @java.lang.Override
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder getProcessingModuleListOrBuilder() {
         if ((typeCase_ == 9) && (processingModuleListBuilder_ != null)) {
           return processingModuleListBuilder_.getMessageOrBuilder();
@@ -3454,7 +3559,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 9;
-        onChanged();
+        onChanged();;
         return processingModuleListBuilder_;
       }
 
@@ -3464,7 +3569,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.dataStructure.StringList string_list = 10;</code>
        * @return Whether the stringList field is set.
        */
-      @java.lang.Override
       public boolean hasStringList() {
         return typeCase_ == 10;
       }
@@ -3472,7 +3576,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.dataStructure.StringList string_list = 10;</code>
        * @return The stringList.
        */
-      @java.lang.Override
       public ubii.dataStructure.Lists.StringList getStringList() {
         if (stringListBuilder_ == null) {
           if (typeCase_ == 10) {
@@ -3532,9 +3635,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 10) {
             stringListBuilder_.mergeFrom(value);
-          } else {
-            stringListBuilder_.setMessage(value);
           }
+          stringListBuilder_.setMessage(value);
         }
         typeCase_ = 10;
         return this;
@@ -3567,7 +3669,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.dataStructure.StringList string_list = 10;</code>
        */
-      @java.lang.Override
       public ubii.dataStructure.Lists.StringListOrBuilder getStringListOrBuilder() {
         if ((typeCase_ == 10) && (stringListBuilder_ != null)) {
           return stringListBuilder_.getMessageOrBuilder();
@@ -3596,7 +3697,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 10;
-        onChanged();
+        onChanged();;
         return stringListBuilder_;
       }
 
@@ -3606,7 +3707,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.TopicMux topic_mux = 11;</code>
        * @return Whether the topicMux field is set.
        */
-      @java.lang.Override
       public boolean hasTopicMux() {
         return typeCase_ == 11;
       }
@@ -3614,7 +3714,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.TopicMux topic_mux = 11;</code>
        * @return The topicMux.
        */
-      @java.lang.Override
       public ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux() {
         if (topicMuxBuilder_ == null) {
           if (typeCase_ == 11) {
@@ -3674,9 +3773,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 11) {
             topicMuxBuilder_.mergeFrom(value);
-          } else {
-            topicMuxBuilder_.setMessage(value);
           }
+          topicMuxBuilder_.setMessage(value);
         }
         typeCase_ = 11;
         return this;
@@ -3709,7 +3807,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.devices.TopicMux topic_mux = 11;</code>
        */
-      @java.lang.Override
       public ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getTopicMuxOrBuilder() {
         if ((typeCase_ == 11) && (topicMuxBuilder_ != null)) {
           return topicMuxBuilder_.getMessageOrBuilder();
@@ -3738,7 +3835,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 11;
-        onChanged();
+        onChanged();;
         return topicMuxBuilder_;
       }
 
@@ -3748,7 +3845,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.TopicMuxList topic_mux_list = 12;</code>
        * @return Whether the topicMuxList field is set.
        */
-      @java.lang.Override
       public boolean hasTopicMuxList() {
         return typeCase_ == 12;
       }
@@ -3756,7 +3852,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.TopicMuxList topic_mux_list = 12;</code>
        * @return The topicMuxList.
        */
-      @java.lang.Override
       public ubii.devices.TopicMuxOuterClass.TopicMuxList getTopicMuxList() {
         if (topicMuxListBuilder_ == null) {
           if (typeCase_ == 12) {
@@ -3816,9 +3911,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 12) {
             topicMuxListBuilder_.mergeFrom(value);
-          } else {
-            topicMuxListBuilder_.setMessage(value);
           }
+          topicMuxListBuilder_.setMessage(value);
         }
         typeCase_ = 12;
         return this;
@@ -3851,7 +3945,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.devices.TopicMuxList topic_mux_list = 12;</code>
        */
-      @java.lang.Override
       public ubii.devices.TopicMuxOuterClass.TopicMuxListOrBuilder getTopicMuxListOrBuilder() {
         if ((typeCase_ == 12) && (topicMuxListBuilder_ != null)) {
           return topicMuxListBuilder_.getMessageOrBuilder();
@@ -3880,7 +3973,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 12;
-        onChanged();
+        onChanged();;
         return topicMuxListBuilder_;
       }
 
@@ -3890,7 +3983,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.TopicDemux topic_demux = 13;</code>
        * @return Whether the topicDemux field is set.
        */
-      @java.lang.Override
       public boolean hasTopicDemux() {
         return typeCase_ == 13;
       }
@@ -3898,7 +3990,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.TopicDemux topic_demux = 13;</code>
        * @return The topicDemux.
        */
-      @java.lang.Override
       public ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux() {
         if (topicDemuxBuilder_ == null) {
           if (typeCase_ == 13) {
@@ -3958,9 +4049,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 13) {
             topicDemuxBuilder_.mergeFrom(value);
-          } else {
-            topicDemuxBuilder_.setMessage(value);
           }
+          topicDemuxBuilder_.setMessage(value);
         }
         typeCase_ = 13;
         return this;
@@ -3993,7 +4083,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.devices.TopicDemux topic_demux = 13;</code>
        */
-      @java.lang.Override
       public ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getTopicDemuxOrBuilder() {
         if ((typeCase_ == 13) && (topicDemuxBuilder_ != null)) {
           return topicDemuxBuilder_.getMessageOrBuilder();
@@ -4022,7 +4111,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 13;
-        onChanged();
+        onChanged();;
         return topicDemuxBuilder_;
       }
 
@@ -4032,7 +4121,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.TopicDemuxList topic_demux_list = 14;</code>
        * @return Whether the topicDemuxList field is set.
        */
-      @java.lang.Override
       public boolean hasTopicDemuxList() {
         return typeCase_ == 14;
       }
@@ -4040,7 +4128,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.TopicDemuxList topic_demux_list = 14;</code>
        * @return The topicDemuxList.
        */
-      @java.lang.Override
       public ubii.devices.TopicDemuxOuterClass.TopicDemuxList getTopicDemuxList() {
         if (topicDemuxListBuilder_ == null) {
           if (typeCase_ == 14) {
@@ -4100,9 +4187,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 14) {
             topicDemuxListBuilder_.mergeFrom(value);
-          } else {
-            topicDemuxListBuilder_.setMessage(value);
           }
+          topicDemuxListBuilder_.setMessage(value);
         }
         typeCase_ = 14;
         return this;
@@ -4135,7 +4221,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.devices.TopicDemuxList topic_demux_list = 14;</code>
        */
-      @java.lang.Override
       public ubii.devices.TopicDemuxOuterClass.TopicDemuxListOrBuilder getTopicDemuxListOrBuilder() {
         if ((typeCase_ == 14) && (topicDemuxListBuilder_ != null)) {
           return topicDemuxListBuilder_.getMessageOrBuilder();
@@ -4164,7 +4249,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 14;
-        onChanged();
+        onChanged();;
         return topicDemuxListBuilder_;
       }
 
@@ -4174,7 +4259,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.clients.ClientList client_list = 15;</code>
        * @return Whether the clientList field is set.
        */
-      @java.lang.Override
       public boolean hasClientList() {
         return typeCase_ == 15;
       }
@@ -4182,7 +4266,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.clients.ClientList client_list = 15;</code>
        * @return The clientList.
        */
-      @java.lang.Override
       public ubii.clients.ClientOuterClass.ClientList getClientList() {
         if (clientListBuilder_ == null) {
           if (typeCase_ == 15) {
@@ -4242,9 +4325,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 15) {
             clientListBuilder_.mergeFrom(value);
-          } else {
-            clientListBuilder_.setMessage(value);
           }
+          clientListBuilder_.setMessage(value);
         }
         typeCase_ = 15;
         return this;
@@ -4277,7 +4359,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.clients.ClientList client_list = 15;</code>
        */
-      @java.lang.Override
       public ubii.clients.ClientOuterClass.ClientListOrBuilder getClientListOrBuilder() {
         if ((typeCase_ == 15) && (clientListBuilder_ != null)) {
           return clientListBuilder_.getMessageOrBuilder();
@@ -4306,7 +4387,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 15;
-        onChanged();
+        onChanged();;
         return clientListBuilder_;
       }
 
@@ -4316,7 +4397,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.DeviceList device_list = 16;</code>
        * @return Whether the deviceList field is set.
        */
-      @java.lang.Override
       public boolean hasDeviceList() {
         return typeCase_ == 16;
       }
@@ -4324,7 +4404,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.DeviceList device_list = 16;</code>
        * @return The deviceList.
        */
-      @java.lang.Override
       public ubii.devices.DeviceOuterClass.DeviceList getDeviceList() {
         if (deviceListBuilder_ == null) {
           if (typeCase_ == 16) {
@@ -4384,9 +4463,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 16) {
             deviceListBuilder_.mergeFrom(value);
-          } else {
-            deviceListBuilder_.setMessage(value);
           }
+          deviceListBuilder_.setMessage(value);
         }
         typeCase_ = 16;
         return this;
@@ -4419,7 +4497,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.devices.DeviceList device_list = 16;</code>
        */
-      @java.lang.Override
       public ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder() {
         if ((typeCase_ == 16) && (deviceListBuilder_ != null)) {
           return deviceListBuilder_.getMessageOrBuilder();
@@ -4448,7 +4525,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 16;
-        onChanged();
+        onChanged();;
         return deviceListBuilder_;
       }
 
@@ -4458,7 +4535,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.services.Service service = 17;</code>
        * @return Whether the service field is set.
        */
-      @java.lang.Override
       public boolean hasService() {
         return typeCase_ == 17;
       }
@@ -4466,7 +4542,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.services.Service service = 17;</code>
        * @return The service.
        */
-      @java.lang.Override
       public ubii.services.ServiceOuterClass.Service getService() {
         if (serviceBuilder_ == null) {
           if (typeCase_ == 17) {
@@ -4526,9 +4601,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 17) {
             serviceBuilder_.mergeFrom(value);
-          } else {
-            serviceBuilder_.setMessage(value);
           }
+          serviceBuilder_.setMessage(value);
         }
         typeCase_ = 17;
         return this;
@@ -4561,7 +4635,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.services.Service service = 17;</code>
        */
-      @java.lang.Override
       public ubii.services.ServiceOuterClass.ServiceOrBuilder getServiceOrBuilder() {
         if ((typeCase_ == 17) && (serviceBuilder_ != null)) {
           return serviceBuilder_.getMessageOrBuilder();
@@ -4590,7 +4663,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 17;
-        onChanged();
+        onChanged();;
         return serviceBuilder_;
       }
 
@@ -4600,7 +4673,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.services.ServiceList service_list = 18;</code>
        * @return Whether the serviceList field is set.
        */
-      @java.lang.Override
       public boolean hasServiceList() {
         return typeCase_ == 18;
       }
@@ -4608,7 +4680,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.services.ServiceList service_list = 18;</code>
        * @return The serviceList.
        */
-      @java.lang.Override
       public ubii.services.ServiceOuterClass.ServiceList getServiceList() {
         if (serviceListBuilder_ == null) {
           if (typeCase_ == 18) {
@@ -4668,9 +4739,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 18) {
             serviceListBuilder_.mergeFrom(value);
-          } else {
-            serviceListBuilder_.setMessage(value);
           }
+          serviceListBuilder_.setMessage(value);
         }
         typeCase_ = 18;
         return this;
@@ -4703,7 +4773,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.services.ServiceList service_list = 18;</code>
        */
-      @java.lang.Override
       public ubii.services.ServiceOuterClass.ServiceListOrBuilder getServiceListOrBuilder() {
         if ((typeCase_ == 18) && (serviceListBuilder_ != null)) {
           return serviceListBuilder_.getMessageOrBuilder();
@@ -4732,7 +4801,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 18;
-        onChanged();
+        onChanged();;
         return serviceListBuilder_;
       }
 
@@ -4742,7 +4811,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.processing.LockstepProcessingReply lockstep_processing_reply = 19;</code>
        * @return Whether the lockstepProcessingReply field is set.
        */
-      @java.lang.Override
       public boolean hasLockstepProcessingReply() {
         return typeCase_ == 19;
       }
@@ -4750,7 +4818,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.processing.LockstepProcessingReply lockstep_processing_reply = 19;</code>
        * @return The lockstepProcessingReply.
        */
-      @java.lang.Override
       public ubii.processing.LockstepProcessing.LockstepProcessingReply getLockstepProcessingReply() {
         if (lockstepProcessingReplyBuilder_ == null) {
           if (typeCase_ == 19) {
@@ -4810,9 +4877,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 19) {
             lockstepProcessingReplyBuilder_.mergeFrom(value);
-          } else {
-            lockstepProcessingReplyBuilder_.setMessage(value);
           }
+          lockstepProcessingReplyBuilder_.setMessage(value);
         }
         typeCase_ = 19;
         return this;
@@ -4845,7 +4911,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.processing.LockstepProcessingReply lockstep_processing_reply = 19;</code>
        */
-      @java.lang.Override
       public ubii.processing.LockstepProcessing.LockstepProcessingReplyOrBuilder getLockstepProcessingReplyOrBuilder() {
         if ((typeCase_ == 19) && (lockstepProcessingReplyBuilder_ != null)) {
           return lockstepProcessingReplyBuilder_.getMessageOrBuilder();
@@ -4874,7 +4939,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 19;
-        onChanged();
+        onChanged();;
         return lockstepProcessingReplyBuilder_;
       }
 
@@ -4884,7 +4949,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.Component component = 20;</code>
        * @return Whether the component field is set.
        */
-      @java.lang.Override
       public boolean hasComponent() {
         return typeCase_ == 20;
       }
@@ -4892,7 +4956,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.Component component = 20;</code>
        * @return The component.
        */
-      @java.lang.Override
       public ubii.devices.ComponentOuterClass.Component getComponent() {
         if (componentBuilder_ == null) {
           if (typeCase_ == 20) {
@@ -4952,9 +5015,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 20) {
             componentBuilder_.mergeFrom(value);
-          } else {
-            componentBuilder_.setMessage(value);
           }
+          componentBuilder_.setMessage(value);
         }
         typeCase_ = 20;
         return this;
@@ -4987,7 +5049,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.devices.Component component = 20;</code>
        */
-      @java.lang.Override
       public ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentOrBuilder() {
         if ((typeCase_ == 20) && (componentBuilder_ != null)) {
           return componentBuilder_.getMessageOrBuilder();
@@ -5016,7 +5077,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 20;
-        onChanged();
+        onChanged();;
         return componentBuilder_;
       }
 
@@ -5026,7 +5087,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.ComponentList component_list = 21;</code>
        * @return Whether the componentList field is set.
        */
-      @java.lang.Override
       public boolean hasComponentList() {
         return typeCase_ == 21;
       }
@@ -5034,7 +5094,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.devices.ComponentList component_list = 21;</code>
        * @return The componentList.
        */
-      @java.lang.Override
       public ubii.devices.ComponentOuterClass.ComponentList getComponentList() {
         if (componentListBuilder_ == null) {
           if (typeCase_ == 21) {
@@ -5094,9 +5153,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 21) {
             componentListBuilder_.mergeFrom(value);
-          } else {
-            componentListBuilder_.setMessage(value);
           }
+          componentListBuilder_.setMessage(value);
         }
         typeCase_ = 21;
         return this;
@@ -5129,7 +5187,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.devices.ComponentList component_list = 21;</code>
        */
-      @java.lang.Override
       public ubii.devices.ComponentOuterClass.ComponentListOrBuilder getComponentListOrBuilder() {
         if ((typeCase_ == 21) && (componentListBuilder_ != null)) {
           return componentListBuilder_.getMessageOrBuilder();
@@ -5158,7 +5215,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 21;
-        onChanged();
+        onChanged();;
         return componentListBuilder_;
       }
 
@@ -5168,7 +5225,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.conditions.NotifyCondition notify_condition = 22;</code>
        * @return Whether the notifyCondition field is set.
        */
-      @java.lang.Override
       public boolean hasNotifyCondition() {
         return typeCase_ == 22;
       }
@@ -5176,7 +5232,6 @@ public final class ServiceReplyOuterClass {
        * <code>.ubii.conditions.NotifyCondition notify_condition = 22;</code>
        * @return The notifyCondition.
        */
-      @java.lang.Override
       public ubii.conditions.NotifyConditionOuterClass.NotifyCondition getNotifyCondition() {
         if (notifyConditionBuilder_ == null) {
           if (typeCase_ == 22) {
@@ -5236,9 +5291,8 @@ public final class ServiceReplyOuterClass {
         } else {
           if (typeCase_ == 22) {
             notifyConditionBuilder_.mergeFrom(value);
-          } else {
-            notifyConditionBuilder_.setMessage(value);
           }
+          notifyConditionBuilder_.setMessage(value);
         }
         typeCase_ = 22;
         return this;
@@ -5271,7 +5325,6 @@ public final class ServiceReplyOuterClass {
       /**
        * <code>.ubii.conditions.NotifyCondition notify_condition = 22;</code>
        */
-      @java.lang.Override
       public ubii.conditions.NotifyConditionOuterClass.NotifyConditionOrBuilder getNotifyConditionOrBuilder() {
         if ((typeCase_ == 22) && (notifyConditionBuilder_ != null)) {
           return notifyConditionBuilder_.getMessageOrBuilder();
@@ -5300,7 +5353,7 @@ public final class ServiceReplyOuterClass {
           type_ = null;
         }
         typeCase_ = 22;
-        onChanged();
+        onChanged();;
         return notifyConditionBuilder_;
       }
       @java.lang.Override
@@ -5336,18 +5389,7 @@ public final class ServiceReplyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ServiceReply(input, extensionRegistry);
       }
     };
 

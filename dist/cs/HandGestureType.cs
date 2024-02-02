@@ -30,7 +30,7 @@ namespace Ubii.DataStructure {
             "VVQQAxIICgRGSVNUEAQSDgoKRE9VQkxFX1RBUBAFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ubii.DataStructure.HandGestureType), }, null));
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ubii.DataStructure.HandGestureType), }, null, null));
     }
     #endregion
 

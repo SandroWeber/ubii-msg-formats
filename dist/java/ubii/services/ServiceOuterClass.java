@@ -94,7 +94,7 @@ public final class ServiceOuterClass {
   /**
    * Protobuf type {@code ubii.services.Service}
    */
-  public static final class Service extends
+  public  static final class Service extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.services.Service)
       ServiceOrBuilder {
@@ -107,8 +107,7 @@ public final class ServiceOuterClass {
       topic_ = "";
       requestMessageFormat_ = "";
       responseMessageFormat_ = "";
-      tags_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
     }
 
@@ -119,6 +118,85 @@ public final class ServiceOuterClass {
       return new Service();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Service(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              topic_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestMessageFormat_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              responseMessageFormat_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.services.ServiceOuterClass.internal_static_ubii_services_Service_descriptor;
@@ -133,13 +211,11 @@ public final class ServiceOuterClass {
     }
 
     public static final int TOPIC_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object topic_ = "";
+    private volatile java.lang.Object topic_;
     /**
      * <code>string topic = 1;</code>
      * @return The topic.
      */
-    @java.lang.Override
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
       if (ref instanceof java.lang.String) {
@@ -156,7 +232,6 @@ public final class ServiceOuterClass {
      * <code>string topic = 1;</code>
      * @return The bytes for topic.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getTopicBytes() {
       java.lang.Object ref = topic_;
@@ -172,13 +247,11 @@ public final class ServiceOuterClass {
     }
 
     public static final int REQUEST_MESSAGE_FORMAT_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object requestMessageFormat_ = "";
+    private volatile java.lang.Object requestMessageFormat_;
     /**
      * <code>string request_message_format = 2;</code>
      * @return The requestMessageFormat.
      */
-    @java.lang.Override
     public java.lang.String getRequestMessageFormat() {
       java.lang.Object ref = requestMessageFormat_;
       if (ref instanceof java.lang.String) {
@@ -195,7 +268,6 @@ public final class ServiceOuterClass {
      * <code>string request_message_format = 2;</code>
      * @return The bytes for requestMessageFormat.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getRequestMessageFormatBytes() {
       java.lang.Object ref = requestMessageFormat_;
@@ -211,13 +283,11 @@ public final class ServiceOuterClass {
     }
 
     public static final int RESPONSE_MESSAGE_FORMAT_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object responseMessageFormat_ = "";
+    private volatile java.lang.Object responseMessageFormat_;
     /**
      * <code>string response_message_format = 3;</code>
      * @return The responseMessageFormat.
      */
-    @java.lang.Override
     public java.lang.String getResponseMessageFormat() {
       java.lang.Object ref = responseMessageFormat_;
       if (ref instanceof java.lang.String) {
@@ -234,7 +304,6 @@ public final class ServiceOuterClass {
      * <code>string response_message_format = 3;</code>
      * @return The bytes for responseMessageFormat.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getResponseMessageFormatBytes() {
       java.lang.Object ref = responseMessageFormat_;
@@ -250,9 +319,7 @@ public final class ServiceOuterClass {
     }
 
     public static final int TAGS_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList tags_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList tags_;
     /**
      * <code>repeated string tags = 4;</code>
      * @return A list containing the tags.
@@ -287,13 +354,11 @@ public final class ServiceOuterClass {
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object description_ = "";
+    private volatile java.lang.Object description_;
     /**
      * <code>string description = 5;</code>
      * @return The description.
      */
-    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -310,7 +375,6 @@ public final class ServiceOuterClass {
      * <code>string description = 5;</code>
      * @return The bytes for description.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -339,22 +403,22 @@ public final class ServiceOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
+      if (!getTopicBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestMessageFormat_)) {
+      if (!getRequestMessageFormatBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestMessageFormat_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseMessageFormat_)) {
+      if (!getResponseMessageFormatBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, responseMessageFormat_);
       }
       for (int i = 0; i < tags_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -363,13 +427,13 @@ public final class ServiceOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
+      if (!getTopicBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestMessageFormat_)) {
+      if (!getRequestMessageFormatBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestMessageFormat_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseMessageFormat_)) {
+      if (!getResponseMessageFormatBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, responseMessageFormat_);
       }
       {
@@ -380,10 +444,10 @@ public final class ServiceOuterClass {
         size += dataSize;
         size += 1 * getTagsList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -408,7 +472,7 @@ public final class ServiceOuterClass {
           .equals(other.getTagsList())) return false;
       if (!getDescription()
           .equals(other.getDescription())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -431,7 +495,7 @@ public final class ServiceOuterClass {
       }
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -548,24 +612,32 @@ public final class ServiceOuterClass {
 
       // Construct using ubii.services.ServiceOuterClass.Service.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         topic_ = "";
+
         requestMessageFormat_ = "";
+
         responseMessageFormat_ = "";
-        tags_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         description_ = "";
+
         return this;
       }
 
@@ -592,31 +664,52 @@ public final class ServiceOuterClass {
       @java.lang.Override
       public ubii.services.ServiceOuterClass.Service buildPartial() {
         ubii.services.ServiceOuterClass.Service result = new ubii.services.ServiceOuterClass.Service(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.topic_ = topic_;
+        result.requestMessageFormat_ = requestMessageFormat_;
+        result.responseMessageFormat_ = responseMessageFormat_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tags_ = tags_;
+        result.description_ = description_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(ubii.services.ServiceOuterClass.Service result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.topic_ = topic_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.requestMessageFormat_ = requestMessageFormat_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.responseMessageFormat_ = responseMessageFormat_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          tags_.makeImmutable();
-          result.tags_ = tags_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.description_ = description_;
-        }
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.services.ServiceOuterClass.Service) {
@@ -631,23 +724,20 @@ public final class ServiceOuterClass {
         if (other == ubii.services.ServiceOuterClass.Service.getDefaultInstance()) return this;
         if (!other.getTopic().isEmpty()) {
           topic_ = other.topic_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getRequestMessageFormat().isEmpty()) {
           requestMessageFormat_ = other.requestMessageFormat_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getResponseMessageFormat().isEmpty()) {
           responseMessageFormat_ = other.responseMessageFormat_;
-          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ |= 0x00000008;
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -656,10 +746,9 @@ public final class ServiceOuterClass {
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
-          bitField0_ |= 0x00000010;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -674,56 +763,17 @@ public final class ServiceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.services.ServiceOuterClass.Service parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                topic_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                requestMessageFormat_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                responseMessageFormat_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureTagsIsMutable();
-                tags_.add(s);
-                break;
-              } // case 34
-              case 42: {
-                description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.services.ServiceOuterClass.Service) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -769,9 +819,11 @@ public final class ServiceOuterClass {
        */
       public Builder setTopic(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         topic_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -780,8 +832,8 @@ public final class ServiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTopic() {
+        
         topic_ = getDefaultInstance().getTopic();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -792,10 +844,12 @@ public final class ServiceOuterClass {
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         topic_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -841,9 +895,11 @@ public final class ServiceOuterClass {
        */
       public Builder setRequestMessageFormat(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         requestMessageFormat_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -852,8 +908,8 @@ public final class ServiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRequestMessageFormat() {
+        
         requestMessageFormat_ = getDefaultInstance().getRequestMessageFormat();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -864,10 +920,12 @@ public final class ServiceOuterClass {
        */
       public Builder setRequestMessageFormatBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         requestMessageFormat_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -913,9 +971,11 @@ public final class ServiceOuterClass {
        */
       public Builder setResponseMessageFormat(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         responseMessageFormat_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -924,8 +984,8 @@ public final class ServiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearResponseMessageFormat() {
+        
         responseMessageFormat_ = getDefaultInstance().getResponseMessageFormat();
-        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -936,21 +996,22 @@ public final class ServiceOuterClass {
        */
       public Builder setResponseMessageFormatBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         responseMessageFormat_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList tags_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
-        if (!tags_.isModifiable()) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        }
-        bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <code>repeated string tags = 4;</code>
@@ -958,8 +1019,7 @@ public final class ServiceOuterClass {
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
-        tags_.makeImmutable();
-        return tags_;
+        return tags_.getUnmodifiableView();
       }
       /**
        * <code>repeated string tags = 4;</code>
@@ -993,10 +1053,11 @@ public final class ServiceOuterClass {
        */
       public Builder setTags(
           int index, java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTagsIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
         tags_.set(index, value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1007,10 +1068,11 @@ public final class ServiceOuterClass {
        */
       public Builder addTags(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTagsIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
         tags_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1024,7 +1086,6 @@ public final class ServiceOuterClass {
         ensureTagsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, tags_);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1033,9 +1094,8 @@ public final class ServiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTags() {
-        tags_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);;
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1046,11 +1106,12 @@ public final class ServiceOuterClass {
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         ensureTagsIsMutable();
         tags_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1096,9 +1157,11 @@ public final class ServiceOuterClass {
        */
       public Builder setDescription(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         description_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1107,8 +1170,8 @@ public final class ServiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
+        
         description_ = getDefaultInstance().getDescription();
-        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1119,10 +1182,12 @@ public final class ServiceOuterClass {
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         description_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1159,18 +1224,7 @@ public final class ServiceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Service(input, extensionRegistry);
       }
     };
 
@@ -1221,7 +1275,7 @@ public final class ServiceOuterClass {
   /**
    * Protobuf type {@code ubii.services.ServiceList}
    */
-  public static final class ServiceList extends
+  public  static final class ServiceList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.services.ServiceList)
       ServiceListOrBuilder {
@@ -1241,6 +1295,61 @@ public final class ServiceOuterClass {
       return new ServiceList();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ServiceList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                elements_ = new java.util.ArrayList<ubii.services.ServiceOuterClass.Service>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              elements_.add(
+                  input.readMessage(ubii.services.ServiceOuterClass.Service.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.services.ServiceOuterClass.internal_static_ubii_services_ServiceList_descriptor;
@@ -1255,19 +1364,16 @@ public final class ServiceOuterClass {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<ubii.services.ServiceOuterClass.Service> elements_;
     /**
      * <code>repeated .ubii.services.Service elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.services.ServiceOuterClass.Service> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.services.Service elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.services.ServiceOuterClass.ServiceOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1275,21 +1381,18 @@ public final class ServiceOuterClass {
     /**
      * <code>repeated .ubii.services.Service elements = 1;</code>
      */
-    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.services.Service elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.services.ServiceOuterClass.Service getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.services.Service elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.services.ServiceOuterClass.ServiceOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
@@ -1312,7 +1415,7 @@ public final class ServiceOuterClass {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1325,7 +1428,7 @@ public final class ServiceOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1342,7 +1445,7 @@ public final class ServiceOuterClass {
 
       if (!getElementsList()
           .equals(other.getElementsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1357,7 +1460,7 @@ public final class ServiceOuterClass {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1474,25 +1577,29 @@ public final class ServiceOuterClass {
 
       // Construct using ubii.services.ServiceOuterClass.ServiceList.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getElementsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (elementsBuilder_ == null) {
           elements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          elements_ = null;
           elementsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1519,13 +1626,7 @@ public final class ServiceOuterClass {
       @java.lang.Override
       public ubii.services.ServiceOuterClass.ServiceList buildPartial() {
         ubii.services.ServiceOuterClass.ServiceList result = new ubii.services.ServiceOuterClass.ServiceList(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(ubii.services.ServiceOuterClass.ServiceList result) {
+        int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
@@ -1535,12 +1636,42 @@ public final class ServiceOuterClass {
         } else {
           result.elements_ = elementsBuilder_.build();
         }
+        onBuilt();
+        return result;
       }
 
-      private void buildPartial0(ubii.services.ServiceOuterClass.ServiceList result) {
-        int from_bitField0_ = bitField0_;
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.services.ServiceOuterClass.ServiceList) {
@@ -1579,7 +1710,7 @@ public final class ServiceOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1594,43 +1725,17 @@ public final class ServiceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.services.ServiceOuterClass.ServiceList parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                ubii.services.ServiceOuterClass.Service m =
-                    input.readMessage(
-                        ubii.services.ServiceOuterClass.Service.parser(),
-                        extensionRegistry);
-                if (elementsBuilder_ == null) {
-                  ensureElementsIsMutable();
-                  elements_.add(m);
-                } else {
-                  elementsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.services.ServiceOuterClass.ServiceList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1907,18 +2012,7 @@ public final class ServiceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ServiceList(input, extensionRegistry);
       }
     };
 

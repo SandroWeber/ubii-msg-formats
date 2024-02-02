@@ -29,8 +29,8 @@ namespace Ubii.DataStructure {
             "AyABKAESCQoBYRgEIAEoAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.Color), global::Ubii.DataStructure.Color.Parser, new[]{ "R", "G", "B", "A" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.Color), global::Ubii.DataStructure.Color.Parser, new[]{ "R", "G", "B", "A" }, null, null, null, null)
           }));
     }
     #endregion

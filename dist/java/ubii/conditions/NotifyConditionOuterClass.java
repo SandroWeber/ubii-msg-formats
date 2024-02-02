@@ -87,7 +87,7 @@ public final class NotifyConditionOuterClass {
   /**
    * Protobuf type {@code ubii.conditions.NotifyCondition}
    */
-  public static final class NotifyCondition extends
+  public  static final class NotifyCondition extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.conditions.NotifyCondition)
       NotifyConditionOrBuilder {
@@ -109,6 +109,92 @@ public final class NotifyConditionOuterClass {
       return new NotifyCondition();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private NotifyCondition(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              evaluationFunctionStringified_ = s;
+              break;
+            }
+            case 34: {
+              ubii.clients.ClientOuterClass.Client.Builder subBuilder = null;
+              if (clientProfilePub_ != null) {
+                subBuilder = clientProfilePub_.toBuilder();
+              }
+              clientProfilePub_ = input.readMessage(ubii.clients.ClientOuterClass.Client.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clientProfilePub_);
+                clientProfilePub_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              ubii.clients.ClientOuterClass.Client.Builder subBuilder = null;
+              if (clientProfileSub_ != null) {
+                subBuilder = clientProfileSub_.toBuilder();
+              }
+              clientProfileSub_ = input.readMessage(ubii.clients.ClientOuterClass.Client.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clientProfileSub_);
+                clientProfileSub_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.conditions.NotifyConditionOuterClass.internal_static_ubii_conditions_NotifyCondition_descriptor;
@@ -123,13 +209,11 @@ public final class NotifyConditionOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <code>string id = 1;</code>
      * @return The id.
      */
-    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -146,7 +230,6 @@ public final class NotifyConditionOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -162,13 +245,11 @@ public final class NotifyConditionOuterClass {
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object name_ = "";
+    private volatile java.lang.Object name_;
     /**
      * <code>string name = 2;</code>
      * @return The name.
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -185,7 +266,6 @@ public final class NotifyConditionOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -201,13 +281,11 @@ public final class NotifyConditionOuterClass {
     }
 
     public static final int EVALUATION_FUNCTION_STRINGIFIED_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object evaluationFunctionStringified_ = "";
+    private volatile java.lang.Object evaluationFunctionStringified_;
     /**
      * <code>string evaluation_function_stringified = 3;</code>
      * @return The evaluationFunctionStringified.
      */
-    @java.lang.Override
     public java.lang.String getEvaluationFunctionStringified() {
       java.lang.Object ref = evaluationFunctionStringified_;
       if (ref instanceof java.lang.String) {
@@ -224,7 +302,6 @@ public final class NotifyConditionOuterClass {
      * <code>string evaluation_function_stringified = 3;</code>
      * @return The bytes for evaluationFunctionStringified.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getEvaluationFunctionStringifiedBytes() {
       java.lang.Object ref = evaluationFunctionStringified_;
@@ -245,7 +322,6 @@ public final class NotifyConditionOuterClass {
      * <code>.ubii.clients.Client client_profile_pub = 4;</code>
      * @return Whether the clientProfilePub field is set.
      */
-    @java.lang.Override
     public boolean hasClientProfilePub() {
       return clientProfilePub_ != null;
     }
@@ -253,16 +329,14 @@ public final class NotifyConditionOuterClass {
      * <code>.ubii.clients.Client client_profile_pub = 4;</code>
      * @return The clientProfilePub.
      */
-    @java.lang.Override
     public ubii.clients.ClientOuterClass.Client getClientProfilePub() {
       return clientProfilePub_ == null ? ubii.clients.ClientOuterClass.Client.getDefaultInstance() : clientProfilePub_;
     }
     /**
      * <code>.ubii.clients.Client client_profile_pub = 4;</code>
      */
-    @java.lang.Override
     public ubii.clients.ClientOuterClass.ClientOrBuilder getClientProfilePubOrBuilder() {
-      return clientProfilePub_ == null ? ubii.clients.ClientOuterClass.Client.getDefaultInstance() : clientProfilePub_;
+      return getClientProfilePub();
     }
 
     public static final int CLIENT_PROFILE_SUB_FIELD_NUMBER = 5;
@@ -271,7 +345,6 @@ public final class NotifyConditionOuterClass {
      * <code>.ubii.clients.Client client_profile_sub = 5;</code>
      * @return Whether the clientProfileSub field is set.
      */
-    @java.lang.Override
     public boolean hasClientProfileSub() {
       return clientProfileSub_ != null;
     }
@@ -279,16 +352,14 @@ public final class NotifyConditionOuterClass {
      * <code>.ubii.clients.Client client_profile_sub = 5;</code>
      * @return The clientProfileSub.
      */
-    @java.lang.Override
     public ubii.clients.ClientOuterClass.Client getClientProfileSub() {
       return clientProfileSub_ == null ? ubii.clients.ClientOuterClass.Client.getDefaultInstance() : clientProfileSub_;
     }
     /**
      * <code>.ubii.clients.Client client_profile_sub = 5;</code>
      */
-    @java.lang.Override
     public ubii.clients.ClientOuterClass.ClientOrBuilder getClientProfileSubOrBuilder() {
-      return clientProfileSub_ == null ? ubii.clients.ClientOuterClass.Client.getDefaultInstance() : clientProfileSub_;
+      return getClientProfileSub();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -305,13 +376,13 @@ public final class NotifyConditionOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(evaluationFunctionStringified_)) {
+      if (!getEvaluationFunctionStringifiedBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, evaluationFunctionStringified_);
       }
       if (clientProfilePub_ != null) {
@@ -320,7 +391,7 @@ public final class NotifyConditionOuterClass {
       if (clientProfileSub_ != null) {
         output.writeMessage(5, getClientProfileSub());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -329,13 +400,13 @@ public final class NotifyConditionOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(evaluationFunctionStringified_)) {
+      if (!getEvaluationFunctionStringifiedBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, evaluationFunctionStringified_);
       }
       if (clientProfilePub_ != null) {
@@ -346,7 +417,7 @@ public final class NotifyConditionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getClientProfileSub());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -377,7 +448,7 @@ public final class NotifyConditionOuterClass {
         if (!getClientProfileSub()
             .equals(other.getClientProfileSub())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -402,7 +473,7 @@ public final class NotifyConditionOuterClass {
         hash = (37 * hash) + CLIENT_PROFILE_SUB_FIELD_NUMBER;
         hash = (53 * hash) + getClientProfileSub().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -519,29 +590,38 @@ public final class NotifyConditionOuterClass {
 
       // Construct using ubii.conditions.NotifyConditionOuterClass.NotifyCondition.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = "";
+
         name_ = "";
+
         evaluationFunctionStringified_ = "";
-        clientProfilePub_ = null;
-        if (clientProfilePubBuilder_ != null) {
-          clientProfilePubBuilder_.dispose();
+
+        if (clientProfilePubBuilder_ == null) {
+          clientProfilePub_ = null;
+        } else {
+          clientProfilePub_ = null;
           clientProfilePubBuilder_ = null;
         }
-        clientProfileSub_ = null;
-        if (clientProfileSubBuilder_ != null) {
-          clientProfileSubBuilder_.dispose();
+        if (clientProfileSubBuilder_ == null) {
+          clientProfileSub_ = null;
+        } else {
+          clientProfileSub_ = null;
           clientProfileSubBuilder_ = null;
         }
         return this;
@@ -570,34 +650,55 @@ public final class NotifyConditionOuterClass {
       @java.lang.Override
       public ubii.conditions.NotifyConditionOuterClass.NotifyCondition buildPartial() {
         ubii.conditions.NotifyConditionOuterClass.NotifyCondition result = new ubii.conditions.NotifyConditionOuterClass.NotifyCondition(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.id_ = id_;
+        result.name_ = name_;
+        result.evaluationFunctionStringified_ = evaluationFunctionStringified_;
+        if (clientProfilePubBuilder_ == null) {
+          result.clientProfilePub_ = clientProfilePub_;
+        } else {
+          result.clientProfilePub_ = clientProfilePubBuilder_.build();
+        }
+        if (clientProfileSubBuilder_ == null) {
+          result.clientProfileSub_ = clientProfileSub_;
+        } else {
+          result.clientProfileSub_ = clientProfileSubBuilder_.build();
+        }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(ubii.conditions.NotifyConditionOuterClass.NotifyCondition result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.name_ = name_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.evaluationFunctionStringified_ = evaluationFunctionStringified_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.clientProfilePub_ = clientProfilePubBuilder_ == null
-              ? clientProfilePub_
-              : clientProfilePubBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.clientProfileSub_ = clientProfileSubBuilder_ == null
-              ? clientProfileSub_
-              : clientProfileSubBuilder_.build();
-        }
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
       }
-
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.conditions.NotifyConditionOuterClass.NotifyCondition) {
@@ -612,17 +713,14 @@ public final class NotifyConditionOuterClass {
         if (other == ubii.conditions.NotifyConditionOuterClass.NotifyCondition.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
-          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
-          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getEvaluationFunctionStringified().isEmpty()) {
           evaluationFunctionStringified_ = other.evaluationFunctionStringified_;
-          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.hasClientProfilePub()) {
@@ -631,7 +729,7 @@ public final class NotifyConditionOuterClass {
         if (other.hasClientProfileSub()) {
           mergeClientProfileSub(other.getClientProfileSub());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -646,62 +744,19 @@ public final class NotifyConditionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ubii.conditions.NotifyConditionOuterClass.NotifyCondition parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                evaluationFunctionStringified_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getClientProfilePubFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getClientProfileSubFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.conditions.NotifyConditionOuterClass.NotifyCondition) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -744,9 +799,11 @@ public final class NotifyConditionOuterClass {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -755,8 +812,8 @@ public final class NotifyConditionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
+        
         id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -767,10 +824,12 @@ public final class NotifyConditionOuterClass {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -816,9 +875,11 @@ public final class NotifyConditionOuterClass {
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         name_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -827,8 +888,8 @@ public final class NotifyConditionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearName() {
+        
         name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -839,10 +900,12 @@ public final class NotifyConditionOuterClass {
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         name_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -888,9 +951,11 @@ public final class NotifyConditionOuterClass {
        */
       public Builder setEvaluationFunctionStringified(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         evaluationFunctionStringified_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -899,8 +964,8 @@ public final class NotifyConditionOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEvaluationFunctionStringified() {
+        
         evaluationFunctionStringified_ = getDefaultInstance().getEvaluationFunctionStringified();
-        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -911,10 +976,12 @@ public final class NotifyConditionOuterClass {
        */
       public Builder setEvaluationFunctionStringifiedBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         evaluationFunctionStringified_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -927,7 +994,7 @@ public final class NotifyConditionOuterClass {
        * @return Whether the clientProfilePub field is set.
        */
       public boolean hasClientProfilePub() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return clientProfilePubBuilder_ != null || clientProfilePub_ != null;
       }
       /**
        * <code>.ubii.clients.Client client_profile_pub = 4;</code>
@@ -949,11 +1016,11 @@ public final class NotifyConditionOuterClass {
             throw new NullPointerException();
           }
           clientProfilePub_ = value;
+          onChanged();
         } else {
           clientProfilePubBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -963,11 +1030,11 @@ public final class NotifyConditionOuterClass {
           ubii.clients.ClientOuterClass.Client.Builder builderForValue) {
         if (clientProfilePubBuilder_ == null) {
           clientProfilePub_ = builderForValue.build();
+          onChanged();
         } else {
           clientProfilePubBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
@@ -975,38 +1042,38 @@ public final class NotifyConditionOuterClass {
        */
       public Builder mergeClientProfilePub(ubii.clients.ClientOuterClass.Client value) {
         if (clientProfilePubBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            clientProfilePub_ != null &&
-            clientProfilePub_ != ubii.clients.ClientOuterClass.Client.getDefaultInstance()) {
-            getClientProfilePubBuilder().mergeFrom(value);
+          if (clientProfilePub_ != null) {
+            clientProfilePub_ =
+              ubii.clients.ClientOuterClass.Client.newBuilder(clientProfilePub_).mergeFrom(value).buildPartial();
           } else {
             clientProfilePub_ = value;
           }
+          onChanged();
         } else {
           clientProfilePubBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ubii.clients.Client client_profile_pub = 4;</code>
        */
       public Builder clearClientProfilePub() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        clientProfilePub_ = null;
-        if (clientProfilePubBuilder_ != null) {
-          clientProfilePubBuilder_.dispose();
+        if (clientProfilePubBuilder_ == null) {
+          clientProfilePub_ = null;
+          onChanged();
+        } else {
+          clientProfilePub_ = null;
           clientProfilePubBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ubii.clients.Client client_profile_pub = 4;</code>
        */
       public ubii.clients.ClientOuterClass.Client.Builder getClientProfilePubBuilder() {
-        bitField0_ |= 0x00000008;
+        
         onChanged();
         return getClientProfilePubFieldBuilder().getBuilder();
       }
@@ -1046,7 +1113,7 @@ public final class NotifyConditionOuterClass {
        * @return Whether the clientProfileSub field is set.
        */
       public boolean hasClientProfileSub() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return clientProfileSubBuilder_ != null || clientProfileSub_ != null;
       }
       /**
        * <code>.ubii.clients.Client client_profile_sub = 5;</code>
@@ -1068,11 +1135,11 @@ public final class NotifyConditionOuterClass {
             throw new NullPointerException();
           }
           clientProfileSub_ = value;
+          onChanged();
         } else {
           clientProfileSubBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1082,11 +1149,11 @@ public final class NotifyConditionOuterClass {
           ubii.clients.ClientOuterClass.Client.Builder builderForValue) {
         if (clientProfileSubBuilder_ == null) {
           clientProfileSub_ = builderForValue.build();
+          onChanged();
         } else {
           clientProfileSubBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
@@ -1094,38 +1161,38 @@ public final class NotifyConditionOuterClass {
        */
       public Builder mergeClientProfileSub(ubii.clients.ClientOuterClass.Client value) {
         if (clientProfileSubBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            clientProfileSub_ != null &&
-            clientProfileSub_ != ubii.clients.ClientOuterClass.Client.getDefaultInstance()) {
-            getClientProfileSubBuilder().mergeFrom(value);
+          if (clientProfileSub_ != null) {
+            clientProfileSub_ =
+              ubii.clients.ClientOuterClass.Client.newBuilder(clientProfileSub_).mergeFrom(value).buildPartial();
           } else {
             clientProfileSub_ = value;
           }
+          onChanged();
         } else {
           clientProfileSubBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ubii.clients.Client client_profile_sub = 5;</code>
        */
       public Builder clearClientProfileSub() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        clientProfileSub_ = null;
-        if (clientProfileSubBuilder_ != null) {
-          clientProfileSubBuilder_.dispose();
+        if (clientProfileSubBuilder_ == null) {
+          clientProfileSub_ = null;
+          onChanged();
+        } else {
+          clientProfileSub_ = null;
           clientProfileSubBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.ubii.clients.Client client_profile_sub = 5;</code>
        */
       public ubii.clients.ClientOuterClass.Client.Builder getClientProfileSubBuilder() {
-        bitField0_ |= 0x00000010;
+        
         onChanged();
         return getClientProfileSubFieldBuilder().getBuilder();
       }
@@ -1189,18 +1256,7 @@ public final class NotifyConditionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new NotifyCondition(input, extensionRegistry);
       }
     };
 

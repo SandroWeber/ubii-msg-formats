@@ -30,9 +30,9 @@ namespace Ubii.DataStructure {
             "cnVjdHVyZS5WZWN0b3IyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.Vector2), global::Ubii.DataStructure.Vector2.Parser, new[]{ "X", "Y" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.Vector2List), global::Ubii.DataStructure.Vector2List.Parser, new[]{ "Elements" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.Vector2), global::Ubii.DataStructure.Vector2.Parser, new[]{ "X", "Y" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.Vector2List), global::Ubii.DataStructure.Vector2List.Parser, new[]{ "Elements" }, null, null, null, null)
           }));
     }
     #endregion

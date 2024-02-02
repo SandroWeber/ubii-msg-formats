@@ -1,3 +1,4 @@
+// source: proto/dataStructure/buttonEventType.proto
 /**
  * @fileoverview
  * @enhanceable

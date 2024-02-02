@@ -35,8 +35,8 @@ namespace Ubii.Services.Request {
             "dmljZXMuQ29tcG9uZW50YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Devices.ComponentReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.Request.TopicSubscription), global::Ubii.Services.Request.TopicSubscription.Parser, new[]{ "ClientId", "SubscribeTopics", "UnsubscribeTopics", "SubscribeTopicRegexp", "UnsubscribeTopicRegexp", "SubscribeComponents", "UnsubscribeComponents" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.Request.TopicSubscription), global::Ubii.Services.Request.TopicSubscription.Parser, new[]{ "ClientId", "SubscribeTopics", "UnsubscribeTopics", "SubscribeTopicRegexp", "UnsubscribeTopicRegexp", "SubscribeComponents", "UnsubscribeComponents" }, null, null, null, null)
           }));
     }
     #endregion
