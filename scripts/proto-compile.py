@@ -8,7 +8,7 @@ import subprocess
 from distutils.spawn import find_executable
 
 # Find the Protocol Compiler.
-protoc_relpath = '../external/bin/protoc_3-11-1/protoc'  #'../external/bin/protoc'
+protoc_relpath = '../external/bin/protoc_3.11.1/protoc'
 protoc_local = os.path.join(os.path.dirname(__file__), protoc_relpath)
 protoc_local_windows = os.path.join(os.path.dirname(__file__), protoc_relpath + '.exe')
 if os.path.isfile(protoc_local):
