@@ -119,6 +119,7 @@
     "PM_PROCESSING_MODE": "ubii.processing.ProcessingMode",
 
     "NOTIFY_CONDITION": "ubii.conditions.NotifyCondition",
+    "NOTIFY_CONDITION_LIST": "ubii.conditions.NotifyConditionList",
 
     "TOPIC_DATA": "ubii.topicData.TopicData",
     "TOPIC_DATA_RECORD": "ubii.topicData.TopicDataRecord",

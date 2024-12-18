@@ -10,3 +10,7 @@ message NotifyCondition {
     ubii.clients.Client client_profile_pub = 4;
     ubii.clients.Client client_profile_sub = 5;
 }
+
+message NotifyConditionList {
+    repeated ubii.conditions.NotifyCondition elements = 1;
+}
