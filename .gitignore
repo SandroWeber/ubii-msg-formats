@@ -2,8 +2,12 @@ node_modules/
 .build/
 .devnotes/
 .node_modules/
-lib/tests/
-external/bin/*
+external/*
 *.log
 .vscode/
 .idea/
+proto_compile/*
+dist/*
+.pypirc
+.personal-notes.txt
+.venv-test/
