@@ -2,13 +2,12 @@
 
 import sys, argparse
 import os
-import platform
 import subprocess
 
 from distutils.spawn import find_executable
 
 # Find the Protocol Compiler.
-protoc_relpath = '../external/bin/protoc_3.11.1/protoc'
+protoc_relpath = '../external/protoc_3.20.1/bin/protoc'
 protoc_local = os.path.join(os.path.dirname(__file__), protoc_relpath)
 protoc_local_windows = os.path.join(os.path.dirname(__file__), protoc_relpath + '.exe')
 if os.path.isfile(protoc_local):
@@ -20,6 +19,8 @@ elif 'PROTOC' in os.environ and os.path.exists(os.environ['PROTOC']):
 else:
     protoc = find_executable("protoc")
 print("path to protoc: ", protoc)
+
+compile_dest = '../proto_compile'
 
 DEBUG = False
 
@@ -87,7 +88,7 @@ def generate_proto(source, pathToOutput, pathToProtos, includePath ,protocArg,re
             "or install the binary package.\n")
         sys.exit(-1)
 
-    protoc_command = [ protoc, "-I"+includePath, "-I.", "--"+protocArg+"_out="+pathToOutput, source ]
+    protoc_command = [ protoc, "-I"+includePath, "-I.", "--"+protocArg+"_out="+pathToOutput, "--plugin=./node_modules/.bin/protoc-gen-js", source ]
     if DEBUG == True:
         print(protoc_command)
     if subprocess.call(protoc_command) != 0:
@@ -124,28 +125,28 @@ def chosen_option(args):
     src_directory = os.path.join(file_directory, '../src')
 
     if args.opt == 'py' or args.opt == 'python':
-        p = generateProtos(os.path.join(file_directory, '../dist/py'), proto_src_directory, src_directory, 'python')
+        p = generateProtos(os.path.join(file_directory, compile_dest + '/py'), proto_src_directory, src_directory, 'python')
         generateInits(p)
     elif args.opt == 'j' or args.opt == 'java':
-        generateProtos(os.path.join(file_directory, '../dist/java'), proto_src_directory, src_directory, 'java')
+        generateProtos(os.path.join(file_directory, compile_dest + '/java'), proto_src_directory, src_directory, 'java')
     elif args.opt == 'js' or args.opt == 'javascript':
-        generateProtos(os.path.join(file_directory, '../dist/js'), proto_src_directory, src_directory, 'js')
+        generateProtos(os.path.join(file_directory, compile_dest + '/js'), proto_src_directory, src_directory, 'js')
     elif args.opt == 'cs' or args.opt == 'csharp':
-        generateProtos(os.path.join(file_directory, '../dist/cs'), proto_src_directory, src_directory, 'csharp')
+        generateProtos(os.path.join(file_directory, compile_dest + '/cs'), proto_src_directory, src_directory, 'csharp')
     elif args.opt == 'cpp' or args.opt == 'cplusplus':
-        generateProtos(os.path.join(file_directory, '../dist/cpp'), proto_src_directory, src_directory, 'cpp')
+        generateProtos(os.path.join(file_directory, compile_dest + '/cpp'), proto_src_directory, src_directory, 'cpp')
     elif args.opt == 'all':
         # python
-        p = generateProtos(os.path.join(file_directory, '../dist/py'), proto_src_directory, src_directory, 'python')
+        p = generateProtos(os.path.join(file_directory, compile_dest + '/py'), proto_src_directory, src_directory, 'python')
         generateInits(p)
         # java
-        generateProtos(os.path.join(file_directory, '../dist/java'), proto_src_directory, src_directory, 'java')
+        generateProtos(os.path.join(file_directory, compile_dest + '/java'), proto_src_directory, src_directory, 'java')
         # javascript
-        generateProtos(os.path.join(file_directory, '../dist/js'), proto_src_directory, src_directory, 'js')
+        generateProtos(os.path.join(file_directory, compile_dest + '/js'), proto_src_directory, src_directory, 'js')
         # C#
-        generateProtos(os.path.join(file_directory, '../dist/cs'), proto_src_directory, src_directory, 'csharp')
+        generateProtos(os.path.join(file_directory, compile_dest + '/cs'), proto_src_directory, src_directory, 'csharp')
         # C++
-        generateProtos(os.path.join(file_directory, '../dist/cpp'), proto_src_directory, src_directory, 'cpp')
+        generateProtos(os.path.join(file_directory, compile_dest + '/cpp'), proto_src_directory, src_directory, 'cpp')
 
 
 

@@ -1,5 +1,5 @@
-const proto = require('../../dist/js/protobuf');
-const constants = require('../../dist/js/constants');
+const proto = require('../../proto_compile/js/protobuf');
+const constants = require('../../proto_compile/js/constants');
 const ProtobufUtils = require('./protobufUtils');
 const ProtobufTranslator = require('./protobufTranslator');
 
