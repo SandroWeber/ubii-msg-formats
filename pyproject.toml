@@ -16,7 +16,7 @@ local_scheme = "no-local-version"
 where = ["proto_compile/py/"]
 
 [project]
-name = "ubii-message-formats"
+name = "ubii-msg-formats"
 version = "0.16.7"
 dependencies = [
   "protobuf == 5.29.3"
