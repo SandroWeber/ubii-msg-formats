@@ -35,6 +35,6 @@
     "google-closure-library": "20200315.0.0",
     "google-protobuf": "3.21.4",
     "protobufjs": "6.11.3",
-    "protoc-gen-js": "3.21.4"
+    "protoc-gen-js": "3.21.4-4"
   }
 }

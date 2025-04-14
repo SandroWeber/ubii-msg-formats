@@ -1,7 +1,7 @@
 const childProcess = require('child_process');
 const path = require('path');
 
-let pythonExecutable = 'python3';
+let pythonExecutable = 'python';
 
 let compileProtoPython = () => {
   return new Promise((resolve, reject) => {
@@ -73,12 +73,12 @@ let compileConstants = () => {
   try {
     // compile .proto files via python
     await compileProtoPython();
-
     // compile protobuf.js
     await compileProtobufJS();
-
     // compile constants
     await compileConstants();
+
+    console.info('all compilation finished');
   } catch (error) {
     console.error(error);
   }
