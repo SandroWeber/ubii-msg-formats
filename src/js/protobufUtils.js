@@ -1,4 +1,4 @@
-const proto = require('../../dist/js/protobuf');
+const proto = require('../../proto_compile/js/protobuf');
 
 class ProtobufUtils {
     static getMessageOfType(typeString) {
