@@ -3,6 +3,7 @@
   "version": "0.16.8",
   "description": "",
   "main": "src/js/index.js",
+  "files": ["src/js/**", "src/constants.json", "proto_compile/js/**"],
   "repository": {
     "type": "git",
     "url": "https://github.com/SandroWeber/ubii-msg-formats.git"
